@@ -1,31 +1,54 @@
-import { useState } from 'react';
+import Carousel from './carousel.tsx';
+
 import placeholder from "../../assets/placeholder.png"
-import rand from "../../assets/rand.png"
 import header from "../../assets/header.png"
 import working from "../../assets/working.png"
+import person from "../../assets/person.png"
+import partners from "../../assets/partners.png"
+import laptop from "../../assets/laptop.png"
+import core from "../../assets/core.png"
+import motherboard from "../../assets/motherboard.png"
+import memory from "../../assets/memory.png"
+import graphics from "../../assets/graphics.png"
+import monitor from "../../assets/monitor.png"
 
 
 function Landing() {
 
-    const [selectedIndex, setSelectedIndex] = useState(0);
-
-    const cardData = [
-        { icon: rand, title: 'Working from Home', content: 'Info on Section 1' },
-        { icon: placeholder, title: 'Office Workspace', content: 'Info on Section 2' },
-        { icon: rand, title: 'Remote Learning', content: 'Info on Section 3' },
+    let slides = [
+        {
+            image: "https://learn.credly.com/hs-fs/hubfs/shutterstock_370595594-2000x400-sfw-1.webp?width=2000&height=400&name=shutterstock_370595594-2000x400-sfw-1.webp",
+            text: "Corporate Pricing",
+            body: "Corporate savings on a wide range of products that will help your organization grow."
+        },
+        {
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGgCwrQ9IuQEc-Afea7lwVHZoJXvskB0BPdQ&s",
+            text: "Flexible Payment Options",
+            body: "NET30 Credit Account (Subject to approval), Credit Card, EFT, In-store payments, leasing via our preferred partner and more."
+        },
+        {
+            image: "https://www.havanail.gov/wp-content/uploads/header-sunflowers-2000x400.jpg",
+            text: "Local Account Manager",
+            body: "Let our dedicated Account Manager process your orders, answer your queries, and hear your personal requests for a smooth, worry-free experience."
+        },
+        {
+            image: "https://www.acuraofmoncton.ca/images/ckfinder/Acura-Tire-2000x400.jpg",
+            text: "Warranty Coverage",
+            body: "A hassle-free experience with the privilege of replacement parts for eligible purchases to save your time and effort."
+        }
     ];
+    
 
     return (
         <>
 
             {/* Homepage */}
             <div>
-                <div className="overflow-hidden bg-cover h-128" style={{backgroundImage:`url(${header})`}}>
+                <div className="overflow-hidden bg-cover h-[90vh] max-w-[100vw]" style={{backgroundImage:`url(${header})`}}>
                     <div className="contents absolute">
                         <div className="px-32 py-16">
-                            <h1 className="text-5xl font-bold text-ghost-white mt-10">
-                                Welcome to Better<br></br>Business Buying
-                            </h1>
+                            <h1 className="text-5xl font-bold text-ghost-white mt-10">Welcome to Better</h1>
+                            <h1 className="text-5xl font-bold text-ghost-white mt-3">Business Buying</h1>
                             <p className="text-xl text-ghost-white font-mono mt-6">Elevate your business to the next level</p>
                             <button className="text-lg bg-ghost-white hover:bg-slate-300 text-oxford-blue font-bold py-2 px-8 my-8 rounded-sm">
                                 Explore
@@ -39,10 +62,10 @@ function Landing() {
             <div className="bg-gradient-to-b from-slate-300 to-ghost-white">
                 <div className="flex px-32 py-20">
                     <div className="contents text-black">
-                        <div>
+                        <div className="m-auto">
                             <div className="text-2xl">We are Canada Computers</div>
                             <p className="mt-4 text-md">Over its 32-year history, Canada Computers & Electronics has continued to provide customers with the best products at the best value. Its first location established itself in the heart of Kingston, Ontario, with an initial vision of providing high-quality products for university students, at a student-friendly price. Striving to serve the great minds of our future, there was no better place to start than a location near Kingston's Queens University.</p>
-                            <button className="bg-slate-300 hover:bg-slate-400 text-oxford-blue rounded-sm px-3 py-2 hover:text-oxford-blue mt-4">
+                            <button className="bg-slate-300 hover:bg-slate-400 text-oxford-blue rounded-sm px-3 py-2 hover:text-oxford-blue mt-4 m-auto">
                                 Learn More About Us
                             </button>
                         </div>
@@ -51,88 +74,92 @@ function Landing() {
                 </div>
             </div>
 
-            {/* Solutions */}
+            {/* Industries */}
             <div className="bg-ghost-white">
-                <h1 className="text-2xl text-oxford-blue font-bold text-center py-6">
-                    SOLUTIONS
+                <h1 className="text-2xl text-oxford-blue text-center py-6">
+                    WHY CHOOSE US
                 </h1>
-                <h1 className="text-base text-oxford-blue text-lg font-mono text-center">
+                <h1 className="text-base text-oxford-blue text-lg font-mono text-center mb-6">
                     Productivity and Efficiency Supercharged with the proper Equipment and Technology
                 </h1>
-
-                <div className="text-black mt-10">
-                    <div className="flex">
-                        <div className="flex flex-col items-center">
-                            <div className="flex flex-col space-y-4">
-                                {cardData.map((_, index) => (
-                                    <img
-                                    key={index}
-                                    src={cardData[index].icon}
-                                    alt={`Icon ${index + 1}`}
-                                    className={`ml-48 mt-2 border w-20 h-20 px-4 py-4 bg-white hover:border-blue-800 rounded-xl cursor-pointer ${
-                                        selectedIndex === index ? 'border-oxford-blue' : ''}`}onClick={() => setSelectedIndex(index)}/>))}
-                            </div>
-                        </div>
-                        <div className="ml-6 flex-1 mb-20">
-                            <div className=" border px-24 py-16 w-192 h-72 bg-white rounded-md">
-                                <h2 className="text-xl font-bold">{cardData[selectedIndex].title}</h2>
-                                <p className="mt-4">{cardData[selectedIndex].content}</p>
-                            </div>
-                        </div>
-                    </div>
+                <div>
+                    <Carousel slides={slides} />
                 </div>
-            </div>    
-            
-            {/* INDUSTRIES */}
-            <div className="bg-oxford-blue">
-                <h1 className="text-2xl text-white font-bold text-center py-8">
-                    WORK
-                    <span className="text-2xl text-blue-400 font-bold py-10 ml-2">WITH US</span>
-                </h1>
-                <p className="text-base text-white pb-5 text-center">Canada Computers very cool thumbs up</p>
-                <p className="text-base text-white pb-5 text-center">Include Partners (who we work with) in this section too.</p>
             </div>
 
             {/* Products */}
-            <div className="bg-white flex">
+            <div className="bg-gradient-to-b from-ghost-white to-white">
                 <div className="grid grid-cols-1 divide-y text-black">
-                    <div className="text-xl text-black font-bold py-2 mt-5 mb-5 ml-14">Bestselling Products
-                        <div className="flex">
-                            <div className="contents">
-                                <img src = {placeholder} className="w-40 h-48 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
+                    <div className="text-xl text-black font-bold py-2 mt-20 mb-5 ml-14">Power Deals
+                        <div className="flex flex-wrap mt-8">
+                            <div className="card w-44 h-48 mb-4 bg-white">
+                                <img src={laptop} className="w-full h-3/4 rounded-sm" alt="Product Image" />
+                                <p className="text-center text-base font-semibold font-sans mt-2">Laptop</p>
+                            </div>
+                            <div className="card w-44 h-48 mx-4 mb-4 bg-white">
+                                <img src={core} className="w-full h-3/4 rounded-sm" alt="Product Image" />
+                                <p className="text-center text-base font-semibold font-sans mt-2">Core</p>
+                            </div>
+                            <div className="card w-44 h-48 mb-4 bg-white">
+                                <img src={motherboard} className="w-full h-3/4 rounded-sm" alt="Product Image" />
+                                <p className="text-center text-base font-semibold font-sans mt-2">Motherboard</p>
+                            </div>
+                            <div className="card w-44 h-48 mx-4 mb-4 bg-white">
+                                <img src={memory} className="w-full h-3/4 rounded-sm" alt="Product Image" />
+                                <p className="text-center text-base font-semibold font-sans mt-2">Memory</p>
+                            </div>
+                            <div className="card w-44 h-48 mb-4 bg-white">
+                                <img src={graphics} className="w-full h-3/4 rounded-sm" alt="Product Image" />
+                                <p className="text-center text-base font-semibold font-sans mt-2">Graphics Card</p>
+                            </div>
+                            <div className="card w-44 h-48 mx-4 mb-4 bg-white">
+                                <img src={monitor} className="w-full h-3/4 rounded-sm" alt="Product Image" />
+                                <p className="text-center text-base font-semibold font-sans mt-2">Monitor</p>
                             </div>
                         </div>
                     </div>
-                    <div className="text-xl text-black font-bold py-2 mb-5 ml-14">New Arrivals
+
+                    <div className="text-xl text-black font-bold py-2 mb-5 ml-14">Shop by Categories
                         <div className="flex">
                             <div className="contents">
-                                <img src = {placeholder} className="w-40 h-48 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
+                                <img src = {placeholder} className="w-40 h-32 mt-8 rounded-sm"></img>
+                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded-sm"></img>
+                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded-sm"></img>
+                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded-sm"></img>
+                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded-sm"></img>
+                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded-sm"></img>
                             </div>
                         </div>
                     </div>
-                    <div className="text-xl text-black font-bold py-2 mb-8 ml-14">Shop by Categories
+                    <div className="text-xl text-black font-bold py-2 mb-8 ml-14">Shop by Brands
                         <div className="flex">
                             <div className="contents">
-                                <img src = {placeholder} className="w-40 h-48 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-48 ml-10 mt-8 rounded"></img>
+                                <img src = {placeholder} className="w-40 h-32 mt-8 rounded"></img>
+                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded"></img>
+                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded"></img>
+                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded"></img>
+                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded"></img>
+                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded"></img>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            {/* Partners */}
+            <div className="bg-white flex flex-col items-center py-4">
+                <h1 className="text-2xl text-oxford-blue font-bold font-mono text-center mb-4 mt-10">
+                    OUR PARTNERS
+                    <img src={partners} className="max-w-[60vw] mb-6 mt-4" />   
+                </h1>
+            </div>
+
+            {/* Text */}
+            <div className="bg-oxford-blue flex flex-col items-center py-8">
+                <h1 className="text-2xl text-white font-semibold text-center">
+                    TAKE YOUR BUSINESS
+                    <span className="text-2xl text-glaucous font-bold ml-2">TO THE NEXT LEVEL</span>  
+                </h1>
             </div>
 
             {/* Contact Form */}
@@ -141,11 +168,13 @@ function Landing() {
                     <div className="contents">
                         {/* Leftside */}
                         <div className="text-oxford-blue ml-24 py-8">
-                            <div className="text-2xl font-bold mt-8">CONTACT US</div>
-                            <p className="mt-6">We help businesses</p>
-                            <p className="mt-4">Get more than a business partner</p>
-                            <p className="mt-4">Start by contacting us today</p>
-                            <img src={rand} className="mt-10 w-96 h-128 rounded-full"></img>
+                            <div className="text-3xl font-bold mt-8 ml-12">CONTACT US FOR THE<br></br>SOLUTIONS YOU NEED</div>
+                            <p className="mt-6 ml-12">Whether you're looking to redefine your office<br></br>workspace, improve day-to-day operations, or
+                                <br></br>provide the perfect work-at-home gear for your
+                                <br></br>employees, we're here to help you acquire the
+                                <br></br>best tech solutions for your business.
+                            </p>
+                            <img src={person} className="mt-20 max-w-[40vw] rounded-full"></img>
                         </div>
 
                         {/* Rightside */}
@@ -219,7 +248,7 @@ function Landing() {
                                 </div>
                             </div>
                             <div className="px-3">
-                                <button className=" px-3 mb-28 w-full shadow bg-purple-500 hover:bg-purple-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 rounded">
+                                <button className=" px-3 mb-28 w-full shadow bg-glaucous hover:bg-blue-900 focus:shadow-outline focus:outline-none text-white font-bold py-2 rounded">
                                     Get in Touch
                                 </button>
                             </div>
