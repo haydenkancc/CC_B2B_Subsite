@@ -9,6 +9,11 @@ export default {
         'glaucous': '#6184d8',
         'ghost-white': '#f8f7ff',
         'lavender': '#e1dee9',
+      },
+      spacing: {
+        '128': '32rem',
+        '192': '48rem',
+        '224': '56rem',
       }
     },
   },
