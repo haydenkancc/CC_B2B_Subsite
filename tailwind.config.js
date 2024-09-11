@@ -6,11 +6,15 @@ export default {
       colors: {
         'oxford-blue': '#0c1b3d',
         'school-bus-yellow': '#ffdd00',
-        'glaucous': '#6184d8',
+        'glaucous': '#0f224d',
         'ghost-white': '#f8f7ff',
-        'lavender': '#e1dee9',
+        'lavender': '#e6e6fa',
       }
     },
+    fontFamily: {
+      'display': ['Manrope'],
+      'body': ['Inter'],
+    }
   },
   plugins: [],
 }
