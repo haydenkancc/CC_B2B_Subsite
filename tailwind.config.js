@@ -9,6 +9,11 @@ export default {
         'glaucous': '#0f224d',
         'ghost-white': '#f8f7ff',
         'lavender': '#e6e6fa',
+      },
+      spacing: {
+        '128': '32rem',
+        '192': '48rem',
+        '224': '56rem',
       }
     },
     fontFamily: {
