@@ -7,10 +7,9 @@ import AnonymousProfile from '../../../assets/anonymous-profile.jpg';
 
 function MyTable({items}) {
     return (
-        <Table className="w-full border-separate border-spacing-0" aria-label="Files" selectionMode="multiple">
+        <Table className="w-full border-separate border-spacing-0" aria-label="Addresses">
             <MyTableHeader>
-                <MyColumn width={16} minWidth={0}/>
-                <MyColumn isRowHeader>Location</MyColumn>
+                <MyColumn className="pl-4" isRowHeader>Location</MyColumn>
                 <MyColumn>Address</MyColumn>
                 <MyColumn></MyColumn>
                 <MyColumn></MyColumn>
@@ -18,10 +17,9 @@ function MyTable({items}) {
             </MyTableHeader>
             <TableBody items={items}>
                 {item => (
-                    <MyRow onAction={() => (<div>hello!</div>)}>
-                        <Cell className="pl-4"/>
+                    <MyRow>
                         <Cell>
-                            <div className="flex gap-4 pt-4 pb-4">
+                            <div className="flex gap-4 pt-4 pl-4 pb-4">
                                 <span className="flex flex-col">
                                     <span className="text-lg">{item.location}</span>
                                     <span className="text-sm text-oxford-blue/75">{item.first} {item.last}</span>
@@ -43,7 +41,7 @@ function MyTable({items}) {
                                     :
                                     (
                                         <Button className="flex pl-2 pr-2 pt-1 pb-1 bg-lavender text-oxford-blue rounded-sm shadow-md">
-                                            Set as Shipping Address
+                                            Set as shipping address
                                         </Button>
                                     )
                                 }
@@ -58,7 +56,7 @@ function MyTable({items}) {
                                     :
                                     (
                                         <Button className="flex pl-2 pr-2 pt-1 pb-1 bg-lavender text-oxford-blue rounded-sm shadow-md">
-                                            Set as Billing Address
+                                            Set as billing address
                                         </Button>
                                     )
                                 }

@@ -7,10 +7,9 @@ import AnonymousProfile from '../../../assets/anonymous-profile.jpg';
 
 function MyTable({items}) {
     return (
-        <Table className="w-full border-separate border-spacing-0" aria-label="Files" selectionMode="multiple">
+        <Table className="w-full border-separate border-spacing-0" aria-label="Contacts">
             <MyTableHeader>
-                <MyColumn width={16} minWidth={0}/>
-                <MyColumn isRowHeader>User</MyColumn>
+                <MyColumn className="pl-4" isRowHeader>User</MyColumn>
                 <MyColumn>Contact</MyColumn>
                 <MyColumn>Address</MyColumn>
 
@@ -21,9 +20,8 @@ function MyTable({items}) {
             <TableBody items={items}>
                 {item => (
                     <MyRow onAction={() => (<div>hello!</div>)}>
-                        <Cell className="pl-4"/>
                         <Cell>
-                            <div className="flex gap-4 pt-4 pb-4">
+                            <div className="flex gap-4 pt-4 pl-4 pb-4">
                                 <img src={AnonymousProfile} className="h-12 w-12 rounded-full"/>
                                 <span className="flex flex-col">
                                     <span className="text-lg">{item.first} {item.last}</span>

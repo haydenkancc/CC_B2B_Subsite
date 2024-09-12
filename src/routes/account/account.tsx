@@ -68,7 +68,7 @@ const pages = ['Dashboard', 'Orders', 'Billing', 'Wishlists', 'Tickets', 'Accoun
 
 function Account() {
     return (
-        <div className="bg-lavender/10 text-oxford-blue border-lavender">
+        <div className="bg-lavender/10 text-oxford-blue border-lavender pb-32">
             <NavbarTop/>
             <NavbarBottom pages={pages} />
             <div className="flex justify-center">

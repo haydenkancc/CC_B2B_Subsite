@@ -1,9 +1,9 @@
 import {Column, ColumnProps} from 'react-aria-components';
 import './my-column.css';
 
-function MyColumn(props: ColumnProps) {
+function MyColumn({className, ...props} : ColumnProps) {
     return (
-        <Column className="my-column-Column" {...props}>
+        <Column className={`${className} my-column-Column`} {...props}>
         </Column>
     );
 }

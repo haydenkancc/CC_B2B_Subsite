@@ -10,7 +10,7 @@ function General() {
                     Save Changes
                 </Button>
                 <Button className="general-Button--cancel shadow-sm">
-                    Clear Changes
+                    Discard Changes
                 </Button>
             </div>
             <div className="pl-4 pr-4 pt-8 pb-8 bg-ghost-white border rounded-sm">

@@ -36,7 +36,7 @@ function MyGrid({ items }) {
                                 :
                                 (
                                     <Button className="flex pl-2 pr-2 pt-1 pb-1 bg-lavender text-oxford-blue rounded-sm shadow-md">
-                                        Set as Shipping Address
+                                        Set as shipping address
                                     </Button>
                                 )
                             }
@@ -47,7 +47,7 @@ function MyGrid({ items }) {
                                 :
                                 (
                                     <Button className="flex pl-2 pr-2 pt-1 pb-1 bg-lavender text-oxford-blue rounded-sm shadow-md">
-                                        Set as Billing Address
+                                        Set as billing address
                                     </Button>
                                 )
                             }

@@ -14,7 +14,7 @@ function MyDialogForm({children, ...props} : DialogProps) {
                     {({ close }) => (
                         <form className="grid grid-cols-2 pl-8 pr-8 gap-y-3 gap-x-4 pb-8 bg-lavender/10">
                             {children}
-                            <div className="col-span-2 flex justify-between pt-12">
+                            <div className="col-span-2 flex justify-between pt-6">
                                 <Button className="my-dialog-form-Button--cancel" onPress={close}>
                                     Cancel
                                 </Button>
