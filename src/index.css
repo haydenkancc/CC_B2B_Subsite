@@ -6,10 +6,11 @@
 
 :root {
 
-  --oxford-blue: #0C1B3D;
+  --oxford-blue: rgb(12, 27, 61);
   --school-bus-yellow: #FFDD00;
   --ghost-white: #F8F7FF;
   --lavender: lavender;
+  --slate-gray: #798A9E;
 
   color-scheme: light dark;
   color: var(--oxford-blue);

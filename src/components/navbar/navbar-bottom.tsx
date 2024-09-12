@@ -62,7 +62,7 @@ function NavbarBottom({ pages }) {
                 document.body.style.overflow = 'auto';
             }
         }}>
-            <div className="flex justify-center shadow-sm relative z-50">
+            <div className="flex justify-center shadow-sm relative z-20 bg-ghost-white">
                 <div className="flex w-full align-middle max-w-[1440px]">
                     <NavigationMenu.List className="flex">
                         <NavigationMenu.Item>
@@ -71,7 +71,7 @@ function NavbarBottom({ pages }) {
                             </NavigationMenu.Trigger>
                             <NavigationMenu.Content className="max-w-[1440px] w-full pl-4 pr-4 flex">
                                 <div className="absolute top-0 left-0 right-0 h-[100vh] z-0 bg-black/50 pointer-events-none"></div>
-                                <Tabs className="bg-ghost-white flex grow z-40 shadow-sm rounded-b-md">
+                                <Tabs className="bg-ghost-white flex grow z-10 shadow-sm rounded-b-md">
                                     <TabList className="rounded-bl-md bg-lavender pl-6 pr-6 pt-10 pb-14 flex flex-col gap-2" items={items}>
                                         {item => (
                                             <Tab className="navbar-bottom-Tab">

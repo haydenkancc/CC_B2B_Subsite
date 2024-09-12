@@ -1,0 +1,33 @@
+
+.account-Tab {
+    position: relative;
+    padding: 0.5rem 1rem 0.75rem 1rem;
+    cursor: pointer;
+
+    &[data-focused] {
+        outline: none;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 50%;
+        right: 50%;
+        height: 4px;
+        background: var(--lavender);
+        transition: all 200ms;
+        border-radius: 1rem;
+    }
+
+    &[data-hovered]::after, &[data-focused]::after {
+        left: 0;
+        right: 0;
+    }
+    &[data-selected]::after {
+        left: 0;
+        right: 0;
+        background: var(--school-bus-yellow);
+    }
+}
+
