@@ -1,19 +1,30 @@
+import React, { useState } from "react";
+import "./landing.css";
 import Carousel from './carousel.tsx';
 
-import placeholder from "../../assets/placeholder.png"
 import header from "../../assets/header.png"
 import working from "../../assets/working.png"
 import person from "../../assets/person.png"
 import partners from "../../assets/partners.png"
-import laptop from "../../assets/laptop.png"
-import core from "../../assets/core.png"
-import motherboard from "../../assets/motherboard.png"
-import memory from "../../assets/memory.png"
-import graphics from "../../assets/graphics.png"
-import monitor from "../../assets/monitor.png"
+import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
+import NavbarTop from '../../components/navbar/navbar-top.tsx';
+import adspace from "../../assets/adspace.png"
+import services from "../../assets/services.png"
+import hardware from "../../assets/hardware.png"
+import software from "../../assets/software.png"
+import prototype from "../../assets/prototype.png"
+
+const pages = ['Partners', 'Industry', 'About'];
+
 
 
 function Landing() {
+
+    const [currentRelationship, setCurrentRelationship] = useState("");
+
+    const handleSelectChange = (event) => {
+        setCurrentRelationship(event.target.value);
+    };
 
     let slides = [
         {
@@ -42,16 +53,22 @@ function Landing() {
     return (
         <>
 
+            {/* NavBar */}
+            <div className="w-screen overflow-hidden">
+                <NavbarTop />
+                <NavbarBottom pages={pages} />
+            </div>
+
             {/* Homepage */}
             <div>
-                <div className="overflow-hidden bg-cover h-[90vh] max-w-[100vw]" style={{backgroundImage:`url(${header})`}}>
+                <div className="overflow-hidden bg-cover h-[85vh]" style={{backgroundImage:`url(${header})`}}>
                     <div className="contents absolute">
                         <div className="px-32 py-16">
                             <h1 className="text-5xl font-bold text-ghost-white mt-10">Welcome to Better</h1>
                             <h1 className="text-5xl font-bold text-ghost-white mt-3">Business Buying</h1>
                             <p className="text-xl text-ghost-white font-mono mt-6">Elevate your business to the next level</p>
                             <button className="text-lg bg-ghost-white hover:bg-slate-300 text-oxford-blue font-bold py-2 px-8 my-8 rounded-sm">
-                                Explore
+                                LEARN MORE
                             </button>
                         </div>
                     </div>
@@ -59,23 +76,26 @@ function Landing() {
             </div>
 
             {/* About Us */}
-            <div className="bg-gradient-to-b from-slate-300 to-ghost-white">
-                <div className="flex px-32 py-20">
-                    <div className="contents text-black">
-                        <div className="m-auto">
+            <div className="bg-gradient-to-b from-slate-300 to-ghost-white w-screen overflow-hidden flex items-center justify-center">
+                <div className="flex py-20 max-w-screen-lg w-full">
+                    <div className="flex items-center justify-between w-full">
+                        <div className="text-black max-w-md">
                             <div className="text-2xl">We are Canada Computers</div>
-                            <p className="mt-4 text-md">Over its 32-year history, Canada Computers & Electronics has continued to provide customers with the best products at the best value. Its first location established itself in the heart of Kingston, Ontario, with an initial vision of providing high-quality products for university students, at a student-friendly price. Striving to serve the great minds of our future, there was no better place to start than a location near Kingston's Queens University.</p>
-                            <button className="bg-slate-300 hover:bg-slate-400 text-oxford-blue rounded-sm px-3 py-2 hover:text-oxford-blue mt-4 m-auto">
+                            <p className="mt-4 text-md">
+                                Over its 32-year history, Canada Computers & Electronics has continued to provide customers with the best products at the best value. Its first location established itself in the heart of Kingston, Ontario, with an initial vision of providing high-quality products for university students, at a student-friendly price. Striving to serve the great minds of our future, there was no better place to start than a location near Kingston's Queens University.
+                            </p>
+                            <button className="bg-slate-300 hover:bg-slate-400 text-oxford-blue rounded-sm px-3 py-2 hover:text-oxford-blue mt-4">
                                 Learn More About Us
                             </button>
                         </div>
-                        <img src={ working } className="ml-20 h-72"></img>
+                        <img src={working} alt="Working" className="ml-10 h-72 hidden md:block"/>
                     </div>
                 </div>
             </div>
 
+
             {/* Industries */}
-            <div className="bg-ghost-white">
+            <div className="bg-gradient-to-b from-ghost-white to-white w-screen overflow-hidden">
                 <h1 className="text-2xl text-oxford-blue text-center py-6">
                     WHY CHOOSE US
                 </h1>
@@ -88,66 +108,49 @@ function Landing() {
             </div>
 
             {/* Products */}
-            <div className="bg-gradient-to-b from-ghost-white to-white">
-                <div className="grid grid-cols-1 divide-y text-black">
-                    <div className="text-xl text-black font-bold py-2 mt-20 mb-5 ml-14">Power Deals
-                        <div className="flex flex-wrap mt-8">
-                            <div className="card w-44 h-48 mb-4 bg-white">
-                                <img src={laptop} className="w-full h-3/4 rounded-sm" alt="Product Image" />
-                                <p className="text-center text-base font-semibold font-sans mt-2">Laptop</p>
-                            </div>
-                            <div className="card w-44 h-48 mx-4 mb-4 bg-white">
-                                <img src={core} className="w-full h-3/4 rounded-sm" alt="Product Image" />
-                                <p className="text-center text-base font-semibold font-sans mt-2">Core</p>
-                            </div>
-                            <div className="card w-44 h-48 mb-4 bg-white">
-                                <img src={motherboard} className="w-full h-3/4 rounded-sm" alt="Product Image" />
-                                <p className="text-center text-base font-semibold font-sans mt-2">Motherboard</p>
-                            </div>
-                            <div className="card w-44 h-48 mx-4 mb-4 bg-white">
-                                <img src={memory} className="w-full h-3/4 rounded-sm" alt="Product Image" />
-                                <p className="text-center text-base font-semibold font-sans mt-2">Memory</p>
-                            </div>
-                            <div className="card w-44 h-48 mb-4 bg-white">
-                                <img src={graphics} className="w-full h-3/4 rounded-sm" alt="Product Image" />
-                                <p className="text-center text-base font-semibold font-sans mt-2">Graphics Card</p>
-                            </div>
-                            <div className="card w-44 h-48 mx-4 mb-4 bg-white">
-                                <img src={monitor} className="w-full h-3/4 rounded-sm" alt="Product Image" />
-                                <p className="text-center text-base font-semibold font-sans mt-2">Monitor</p>
-                            </div>
+            <div className="bg-white flex flex-col items-center">
+                <div className="flex gap-4">
+                    <div className="contents">
+                        <div className="bg-slate-200 rounded-sm w-80 h-60 mb-4 px-8 py-7 mt-28">
+                            <img src={services} className="w-10 mb-2"/>
+                            <div className="text-black font-semibold py-1">Our Services</div>
+                            <div className="text-black text-sm">Clearing the path ahead with action plans and roadmaps; we provide guidance and mentorship for the entire journey.</div>
+                            <div className="cursor-pointer text-blue-600 text-sm py-2">Explore the services we offer →</div>
+                        </div>
+                        <div className="bg-slate-200 rounded-sm w-164 h-60 mb-4 mt-28">
+                            <img src={adspace} className="w-full h-full object-contain" />
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div className="text-xl text-black font-bold py-2 mb-5 ml-14">Shop by Categories
-                        <div className="flex">
-                            <div className="contents">
-                                <img src = {placeholder} className="w-40 h-32 mt-8 rounded-sm"></img>
-                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded-sm"></img>
-                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded-sm"></img>
-                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded-sm"></img>
-                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded-sm"></img>
-                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded-sm"></img>
-                            </div>
+            <div className="bg-gradient-to-b from-white to-ghost-white flex flex-col items-center">
+                <div className="flex gap-4">
+                    <div className="contents">
+                        <div className="bg-slate-200 rounded-sm w-80 h-60 mb-10 px-8 py-7">
+                            <img src={hardware} className="w-10 mb-2"/>
+                            <div className="text-black font-semibold py-1">Hardware Products</div>
+                            <div className="text-black text-sm">Components exceeding in performance and durability for every precision-engineered part or comprehensive hardware system.</div>
+                            <div className="cursor-pointer text-blue-600 text-sm py-2">Explore our hardware products →</div>
                         </div>
-                    </div>
-                    <div className="text-xl text-black font-bold py-2 mb-8 ml-14">Shop by Brands
-                        <div className="flex">
-                            <div className="contents">
-                                <img src = {placeholder} className="w-40 h-32 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded"></img>
-                                <img src = {placeholder} className="w-40 h-32 ml-10 mt-8 rounded"></img>
-                            </div>
+                        <div className="bg-slate-200 rounded-sm w-80 h-60 mb-10 px-8 py-7">
+                            <img src={software} className="w-10 mb-2"/>
+                            <div className="text-black font-semibold py-1">Software Products</div>
+                            <div className="text-black text-sm">Cutting-edge applications and solutions using the latest technologies and best practices with exceptional quality.</div>
+                            <div className="cursor-pointer text-blue-600 text-sm py-2">Explore our software products →</div>
+                        </div>
+                        <div className="bg-slate-200 rounded-sm w-80 h-60 mb-10 px-8 py-7">
+                            <img src={prototype} className="w-10 mb-2"/>
+                            <div className="text-black font-semibold py-1">Prototyping and Development</div>
+                            <div className="text-black text-sm">Competitive product manufacturing within the tech industry using high quality materials with the best terms, rates, conditions, and prices.</div>
+                            <div className="cursor-pointer text-blue-600 text-sm py-2">Explore our sourcing options →</div>
                         </div>
                     </div>
                 </div>
             </div>
 
             {/* Partners */}
-            <div className="bg-white flex flex-col items-center py-4">
+            <div className="bg-white flex flex-col items-center py-4 w-screen overflow-hidden">
                 <h1 className="text-2xl text-oxford-blue font-bold font-mono text-center mb-4 mt-10">
                     OUR PARTNERS
                     <img src={partners} className="max-w-[60vw] mb-6 mt-4" />   
@@ -155,19 +158,19 @@ function Landing() {
             </div>
 
             {/* Text */}
-            <div className="bg-oxford-blue flex flex-col items-center py-8">
+            <div className="bg-oxford-blue flex flex-col items-center py-8 w-screen overflow-hidden">
                 <h1 className="text-2xl text-white font-semibold text-center">
                     TAKE YOUR BUSINESS
-                    <span className="text-2xl text-glaucous font-bold ml-2">TO THE NEXT LEVEL</span>  
+                    <span className="text-2xl text-blue-400 font-bold ml-2">TO THE NEXT LEVEL</span>  
                 </h1>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-ghost-white">
+            <div className="bg-ghost-white w-screen overflow-hidden">
                 <div className="flex">
                     <div className="contents">
                         {/* Leftside */}
-                        <div className="text-oxford-blue ml-24 py-8">
+                        <div className="text-oxford-blue ml-24 py-8 mt-12">
                             <div className="text-3xl font-bold mt-8 ml-12">CONTACT US FOR THE<br></br>SOLUTIONS YOU NEED</div>
                             <p className="mt-6 ml-12">Whether you're looking to redefine your office<br></br>workspace, improve day-to-day operations, or
                                 <br></br>provide the perfect work-at-home gear for your
@@ -184,13 +187,13 @@ function Landing() {
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                         First Name
                                     </label>
-                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"></input>
+                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:bg-white"></input>
                                 </div>
                                 <div className="w-full md:w-1/2 px-3">
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                         Last Name
                                     </label>
-                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"></input>
+                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:bg-white"></input>
                                 </div>
                             </div>
                             <div className="flex flex-wrap px-3 mb-6">
@@ -198,15 +201,15 @@ function Landing() {
                                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                     Company Name
                                 </label>
-                                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"></input>
+                                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:bg-white"></input>
                                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                     Business Email
                                 </label>
-                                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"></input>
+                                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:bg-white"></input>
                                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                     Phone Number
                                 </label>
-                                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"></input>
+                                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:bg-white"></input>
                                 </div>
                             </div>
                             <div className="flex flex-wrap px-3 mb-6">
@@ -214,41 +217,70 @@ function Landing() {
                                     What is your current working relationship with us?
                                 </label>
                                 <div className="relative w-full">
-                                    <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                    <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:bg-white" value={currentRelationship} onChange={handleSelectChange}>
                                     <option value="" disabled selected>Please Select</option>
-                                    <option>I'm am currently working with Canada Computers</option>
-                                    <option>I'm not currently working with Canada Computers</option>
-                                    <option>I want to work with Canada Computers</option>
+                                    <option value="working">I'm currently working with Canada Computers</option>
+                                    <option value="not-working">I'm not currently working with Canada Computers</option>
+                                    <option value="want-to-work">I want to work with Canada Computers</option>
                                     </select>
                                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                                     <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                                     </div>
                                 </div>
+                                {currentRelationship === "working" && (
+                                    <div className="flex flex-wrap py-4">
+                                        <div className="w-full md:w-1/2 mb-6 pr-3 md:mb-0">
+                                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                                Account Number
+                                            </label>
+                                            <input className="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:bg-white"></input>
+                                        </div>
+                                        <div className="w-full md:w-1/2 pl-3">
+                                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                                Corporate Account Rep
+                                            </label>
+                                            <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:bg-white"></input>
+                                        </div>
+                                        <div className="w-full md:w-1/2 mb-6 pr-3 md:mb-0">
+                                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                                Invoice Number
+                                            </label>
+                                            <input className="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:bg-white"></input>
+                                        </div>
+                                        <div className="w-full md:w-1/2 pl-3">
+                                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                                Quote/Order Number
+                                            </label>
+                                            <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:bg-white"></input>
+                                        </div>
+                                    </div>                                    
+                                )}
                                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 mt-6">
                                     Where should we route your inquiry?
                                 </label>
                                 <div className="relative w-full">
-                                    <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                    <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:bg-white">
                                     <option value="" disabled selected>Please Select</option>
                                     <option>General Questions/Comments</option>
                                     <option>Human Resources</option>
                                     <option>Product, Service, or Business Solution</option>
                                     </select>
                                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                                     </div>
                                 </div>
                             </div>
+                            
                             <div className="flex flex-wrap px-3 mb-4">
                                 <div className="w-full">
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                         How can we help you?
                                     </label>
-                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-6 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"></input>
+                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-6 px-4 mb-3 leading-tight focus:bg-white"></input>
                                 </div>
                             </div>
                             <div className="px-3">
-                                <button className=" px-3 mb-28 w-full shadow bg-glaucous hover:bg-blue-900 focus:shadow-outline focus:outline-none text-white font-bold py-2 rounded">
+                                <button className=" px-3 mb-28 w-full shadow bg-glaucous hover:bg-blue-900 focus:shadow-outline text-white font-bold py-2 rounded">
                                     Get in Touch
                                 </button>
                             </div>

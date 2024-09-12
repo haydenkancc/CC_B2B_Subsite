@@ -12,7 +12,7 @@ function Carousel({ slides }) {
     }, [slides.length]);
 
     return (
-        <div className="relative overflow-hidden w-screen h-64">
+        <div className="relative overflow-hidden w-screen h-72">
             <div
                 className={`flex transition-transform duration-1000 ease-in-out`}
                 style={{ transform: `translateX(-${current * 100}%)` }}
@@ -23,14 +23,14 @@ function Carousel({ slides }) {
                     >
                         <img
                             src={s.image}
-                            className="w-full h-full object-cover blur-sm"
+                            className="w-full h-full object-cover blur-sm scale-125"
                             alt={`Slide ${index}`}
                         />
-                        <div className="absolute inset-0 flex flex-col justify-center p-10">
-                            <div className="text-white text-xl font-bold mb-2">
+                        <div className="absolute inset-0 flex flex-col justify-center p-20">
+                            <div className="text-white text-xl font-bold mb-4">
                                 <span>{s.text}</span>
                             </div>
-                            <div className="text-white text-md font-mono mb-4">
+                            <div className="text-white text-md font-mono mb-8">
                                 <span>{s.body}</span>
                             </div>
                             <button className="text-sm bg-white hover:bg-ghost-white text-oxford-blue font-bold py-1.5 rounded-sm">
@@ -41,12 +41,12 @@ function Carousel({ slides }) {
                 ))}
             </div>
 
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3">
+            <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
                 {slides.map((s, i) => (
                     <div
                         onClick={() => setCurrent(i)}
                         key={"circle" + i}
-                        className={`rounded-full w-3 h-3 cursor-pointer hover:bg-ghost-white ${i === current ? "bg-ghost-white" : "bg-slate-300"}`}
+                        className={`rounded-full w-2 h-2 cursor-pointer hover:bg-ghost-white ${i === current ? "bg-ghost-white" : "bg-slate-300"}`}
                     ></div>
                 ))}
             </div>
