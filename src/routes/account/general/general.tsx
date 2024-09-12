@@ -21,7 +21,9 @@ function General() {
                     <ListBoxItem>
                         <MyTextField label="Trade Company Name"/>
                     </ListBoxItem>
-                    <ListBoxItem/>
+                    <ListBoxItem>
+                        
+                    </ListBoxItem>
                     <ListBoxItem>
                         <MyTextField label="Date of Application"/>
                     </ListBoxItem>
