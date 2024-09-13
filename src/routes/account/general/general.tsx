@@ -9,7 +9,7 @@ function General() {
                 <Button className="general-Button">
                     Save Changes
                 </Button>
-                <Button className="general-Button--cancel shadow-sm">
+                <Button className="general-Button--cancel">
                     Discard Changes
                 </Button>
             </div>
