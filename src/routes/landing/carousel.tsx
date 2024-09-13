@@ -1,4 +1,20 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+function UsersIndexPage({ pages }) {
+    return (
+        <div>
+        <h1>Users</h1>
+        <ul>
+            {pages.map((page) => (
+            <li key={page.id}>
+                <Link to={page.id}>{page.name}</Link>
+            </li>
+            ))}
+        </ul>
+        </div>
+    );
+}
 
 function Carousel({ slides }) {
     const [current, setCurrent] = useState(0);
@@ -33,9 +49,9 @@ function Carousel({ slides }) {
                             <div className="text-white text-md font-mono mb-8">
                                 <span>{s.body}</span>
                             </div>
-                            <button className="text-sm bg-white hover:bg-ghost-white text-oxford-blue font-bold py-1.5 rounded-sm">
+                            <Link to="/enterprise-solutions" className="text-sm bg-white hover:bg-ghost-white text-oxford-blue font-bold py-1.5 rounded-sm text-center">
                                 Learn More
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 ))}

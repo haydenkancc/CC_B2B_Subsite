@@ -12,6 +12,8 @@ export default {
         'slate-gray': '#798A9E'
       },
       spacing: {
+        '60': '15rem',
+        '116': '29rem',
         '128': '32rem',
         '164': '41rem',
         '192': '48rem',

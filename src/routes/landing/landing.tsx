@@ -26,6 +26,8 @@ function Landing() {
         setCurrentRelationship(event.target.value);
     };
 
+
+
     let slides = [
         {
             image: "https://learn.credly.com/hs-fs/hubfs/shutterstock_370595594-2000x400-sfw-1.webp?width=2000&height=400&name=shutterstock_370595594-2000x400-sfw-1.webp",
@@ -61,7 +63,12 @@ function Landing() {
 
             {/* Homepage */}
             <div>
-                <div className="overflow-hidden bg-cover h-[85vh]" style={{backgroundImage:`url(${header})`}}>
+                <div
+                    className="overflow-hidden bg-cover h-[85vh]"
+                    style={{
+                        backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 75%), url(${header})`,
+                    }}
+                >
                     <div className="contents absolute">
                         <div className="px-32 py-16">
                             <h1 className="text-5xl font-bold text-ghost-white mt-10">Welcome to Better</h1>
@@ -94,7 +101,7 @@ function Landing() {
             </div>
 
 
-            {/* Industries */}
+            {/* Solutions */}
             <div className="bg-gradient-to-b from-ghost-white to-white w-screen overflow-hidden">
                 <h1 className="text-2xl text-oxford-blue text-center py-6">
                     WHY CHOOSE US
@@ -108,7 +115,7 @@ function Landing() {
             </div>
 
             {/* Products */}
-            <div className="bg-white flex flex-col items-center">
+            <div className="bg-ghost-white flex flex-col items-center">
                 <div className="flex gap-4">
                     <div className="contents">
                         <div className="bg-slate-200 rounded-sm w-80 h-60 mb-4 px-8 py-7 mt-28">
@@ -124,7 +131,7 @@ function Landing() {
                 </div>
             </div>
 
-            <div className="bg-gradient-to-b from-white to-ghost-white flex flex-col items-center">
+            <div className="bg-gradient-to-b from-ghost-white to-white flex flex-col items-center">
                 <div className="flex gap-4">
                     <div className="contents">
                         <div className="bg-slate-200 rounded-sm w-80 h-60 mb-10 px-8 py-7">
@@ -153,11 +160,11 @@ function Landing() {
             <div className="bg-white flex flex-col items-center py-4 w-screen overflow-hidden">
                 <h1 className="text-2xl text-oxford-blue font-bold font-mono text-center mb-4 mt-10">
                     OUR PARTNERS
-                    <img src={partners} className="max-w-[60vw] mb-6 mt-4" />   
+                    <img src={partners} className="max-w-[70vw] mb-6 mt-4" />
                 </h1>
             </div>
 
-            {/* Text */}
+            {/* Banner */}
             <div className="bg-oxford-blue flex flex-col items-center py-8 w-screen overflow-hidden">
                 <h1 className="text-2xl text-white font-semibold text-center">
                     TAKE YOUR BUSINESS
