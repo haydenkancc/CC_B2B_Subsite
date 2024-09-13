@@ -1,21 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function UsersIndexPage({ pages }) {
-    return (
-        <div>
-        <h1>Users</h1>
-        <ul>
-            {pages.map((page) => (
-            <li key={page.id}>
-                <Link to={page.id}>{page.name}</Link>
-            </li>
-            ))}
-        </ul>
-        </div>
-    );
-}
-
 function Carousel({ slides }) {
     const [current, setCurrent] = useState(0);
 
