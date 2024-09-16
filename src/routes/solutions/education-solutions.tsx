@@ -4,7 +4,7 @@ import CorporateSalesCarousel from "./corporate-sales-carousel.tsx";
 
 import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
-import enterprise from "../../assets/enterprise.png"
+import education from "../../assets/education.png"
 import home from "../../assets/home.png"
 import office from "../../assets/office.png"
 import meeting from "../../assets/meeting.png"
@@ -16,7 +16,7 @@ import story1 from "../../assets/story1.png"
 
 const pages = ['Partners', 'Industry', 'About'];
 
-function EnterpriseSolutions() {
+function EducationSolutions() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -58,16 +58,16 @@ function EnterpriseSolutions() {
 
             {/* Homepage */}
             <div
-                className="overflow-hidden h-116 w-[100vw] bg-center"
+                className="overflow-hidden h-116 w-[100vw] bg-left"
                 style={{
-                    backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 1) 100%), url(${enterprise})`,
+                    backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 1) 100%), url(${education})`,
                     backgroundSize: '100%',
                     backgroundRepeat: 'no-repeat',
                 }}
             >
                 <div className="contents absolute">
                     <div className=" px-[10vw] py-24">
-                        <p className="text-xl text-ghost-white mt-6">BUSINESS</p>
+                        <p className="text-xl text-ghost-white mt-6">EDUCATION</p>
                         <h1 className="text-4xl font-bold text-ghost-white mt-6">Fulfill the Needs of Your</h1>
                         <h1 className="text-4xl font-bold text-ghost-white mt-2">Employees and Unlock</h1>
                         <h1 className="text-4xl font-bold text-ghost-white mt-2">Your Team's True Potential</h1>
@@ -289,4 +289,4 @@ function EnterpriseSolutions() {
     );
 }
 
-export default EnterpriseSolutions;
+export default EducationSolutions;

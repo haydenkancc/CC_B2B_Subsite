@@ -29,23 +29,21 @@ function Landing() {
     let slides = [
         {
             image: "https://learn.credly.com/hs-fs/hubfs/shutterstock_370595594-2000x400-sfw-1.webp?width=2000&height=400&name=shutterstock_370595594-2000x400-sfw-1.webp",
-            text: "Corporate Pricing",
-            body: "Corporate savings on a wide range of products that will help your organization grow."
+            text: "Enterprise Solutions",
+            body: "Unlock unparalleled growth and efficiency with our advanced enterprise solutions, crafted to streamline your operations and propel your business forward.",
+            link: "/enterprise-solutions",
         },
         {
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGgCwrQ9IuQEc-Afea7lwVHZoJXvskB0BPdQ&s",
-            text: "Flexible Payment Options",
-            body: "NET30 Credit Account (Subject to approval), Credit Card, EFT, In-store payments, leasing via our preferred partner and more."
+            text: "Healthcare Solutions",
+            body: "Enhance patient care and operational excellence with our state-of-the-art healthcare solutions, designed to meet the unique needs of your medical practice or facility.",
+            link: "/healthcare-solutions",
         },
         {
             image: "https://www.havanail.gov/wp-content/uploads/header-sunflowers-2000x400.jpg",
-            text: "Local Account Manager",
-            body: "Let our dedicated Account Manager process your orders, answer your queries, and hear your personal requests for a smooth, worry-free experience."
-        },
-        {
-            image: "https://www.acuraofmoncton.ca/images/ckfinder/Acura-Tire-2000x400.jpg",
-            text: "Warranty Coverage",
-            body: "A hassle-free experience with the privilege of replacement parts for eligible purchases to save your time and effort."
+            text: "Education Solutions",
+            body: "Revolutionize your educational environment with our innovative solutions, offering tools and resources that empower both educators and students for success.",
+            link: "/education-solutions",
         }
     ];
     

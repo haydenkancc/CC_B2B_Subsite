@@ -4,9 +4,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Landing from './routes/landing/landing.tsx';
 import Dashboard from './routes/dashboard/dashboard.tsx';
 import Account from './routes/account/account.tsx';
-import EnterpriseSolutions from './routes/solutions/enterprise-solutions.tsx';
 import './index.css'
+import EnterpriseSolutions from './routes/solutions/enterprise-solutions.tsx';
 import HealthcareSolutions from './routes/solutions/healthcare-solutions.tsx';
+import EducationSolutions from './routes/solutions/education-solutions.tsx';
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
     {
       path: "healthcare-solutions",
       element: <HealthcareSolutions />,
+    },
+    {
+        path: "education-solutions",
+        element: <EducationSolutions />,
     },
     {
         path: "dashboard",

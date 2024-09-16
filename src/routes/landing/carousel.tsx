@@ -7,7 +7,7 @@ function Carousel({ slides }) {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrent(prev => (prev + 1) % slides.length);
-        }, 7000); //1000ms = 1 second
+        }, 8000); //1000ms = 1 second
 
         return () => clearInterval(interval);
     }, [slides.length]);
@@ -35,7 +35,7 @@ function Carousel({ slides }) {
                             <div className="text-white text-md font-mono mb-8">
                                 <span>{s.body}</span>
                             </div>
-                            <Link to="/enterprise-solutions" className="text-sm bg-white hover:bg-ghost-white text-oxford-blue font-bold py-1.5 rounded-sm text-center">
+                            <Link to={s.link} className="text-sm bg-white hover:bg-ghost-white text-oxford-blue font-bold py-1.5 rounded-sm text-center">
                                 Learn More
                             </Link>
                         </div>
