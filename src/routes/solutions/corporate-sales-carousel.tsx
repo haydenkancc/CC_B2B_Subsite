@@ -1,59 +1,162 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { CaretLeft, CaretRight, Envelope, Phone } from '@phosphor-icons/react';
 
 function CorporateSalesCarousel({ slides }) {
     const [current, setCurrent] = useState(0);
-    const slidesPerPage = 4;
-    const totalChunks = Math.ceil(slides.length / slidesPerPage);
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setCurrent(prev => (prev + 1) % totalChunks);
-    //     }, 10000); //10000ms = 10 seconds
+    const prev = () => {
+        if (current > 0) {
+            setCurrent(curr => curr - 1);
+        }
+    };
 
-    //     return () => clearInterval(interval);
-    // }, [totalChunks]);
+    const next = () => {
+        if (current < slides.length - 1) {
+            setCurrent(curr => curr + 1);
+        }
+    };
 
-    const chunkedSlides = [];
-
-    for (let i = 0; i < totalChunks; i++) {
-        chunkedSlides.push(slides.slice(i, i + slidesPerPage));
-    }
+    const isFirstSlide = current === 0;
+    const isLastSlide = current === slides.length - 1;
 
     return (
-        <div className="relative overflow-hidden w-screen h-96 bg-blue-300">
+        <div className="relative overflow-hidden w-full">
             <div
-                className="flex transition-transform duration-1000 ease-in-out"
+                className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${current * 100}%)` }}
             >
-                {chunkedSlides.map((chunk, chunkIndex) => (
-                    <div key={chunkIndex} className="flex flex-wrap w-screen">
-                        {chunk.map((s, index) => (
-                            <div key={index} className="flex-shrink-0 w-1/4 p-2">
-                                <div className="relative w-full h-40">
-                                    <img
-                                        src={s.image}
-                                        className="w-full h-full object-cover"
-                                        alt={`Slide ${index}`}
-                                    />
+                {slides.map((slide, index) => (
+                    <div
+                        key={index}
+                        className="flex-shrink-0 w-full h-full flex"
+                    >
+                        <div className="flex flex-1 items-center justify-center ml-24 py-6">
+                            <div className="flex flex-col items-center text-center">
+                                <img
+                                    src={slide.image}
+                                    className="w-24 h-24 rounded-full object-cover mb-4"
+                                    alt={`Profile ${index}`}
+                                />
+                                <div className="font-semibold mb-2">
+                                    {slide.text}
                                 </div>
-                                <div className="p-4">
-                                    <h3 className="text-lg font-bold text-gray-900">{s.text}</h3>
-                                    <p className="text-gray-700">{s.body}</p>
+                                <div className="text-sm">
+                                    {slide.body}
+                                </div>
+                                <div className="flex flex-row items-center mt-2">
+                                    <Envelope size={20} weight="light" className="mr-2" />
+                                    <div className="text-sm">
+                                        {slide.mail}
+                                    </div>
+                                </div>
+                                <div className="flex flex-row items-center mt-2">
+                                    <Phone size={20} weight="light" className="mr-2" />
+                                    <div className="text-sm">
+                                        {slide.phone}
+                                    </div>
                                 </div>
                             </div>
-                        ))}
+                        </div>
+                        <div className="flex flex-1 items-center justify-center px-6 py-6">
+                            <div className="flex flex-col items-center text-center">
+                                <img
+                                    src={slide.image}
+                                    className="w-24 h-24 rounded-full object-cover mb-4"
+                                    alt={`Profile ${index}`}
+                                />
+                                <div className="font-semibold mb-2">
+                                    {slide.text}
+                                </div>
+                                <div className="text-sm">
+                                    {slide.body}
+                                </div>
+                                <div className="flex flex-row items-center mt-2">
+                                    <Envelope size={20} weight="light" className="mr-2" />
+                                    <div className="text-sm">
+                                        {slide.mail}
+                                    </div>
+                                </div>
+                                <div className="flex flex-row items-center mt-2">
+                                    <Phone size={20} weight="light" className="mr-2" />
+                                    <div className="text-sm">
+                                        {slide.phone}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex flex-1 items-center justify-center py-6">
+                            <div className="flex flex-col items-center text-center">
+                                <img
+                                    src={slide.image}
+                                    className="w-24 h-24 rounded-full object-cover mb-4"
+                                    alt={`Profile ${index}`}
+                                />
+                                <div className="font-semibold mb-2">
+                                    {slide.text}
+                                </div>
+                                <div className="text-sm">
+                                    {slide.body}
+                                </div>
+                                <div className="flex flex-row items-center mt-2">
+                                    <Envelope size={20} weight="light" className="mr-2" />
+                                    <div className="text-sm">
+                                        {slide.mail}
+                                    </div>
+                                </div>
+                                <div className="flex flex-row items-center mt-2">
+                                    <Phone size={20} weight="light" className="mr-2" />
+                                    <div className="text-sm">
+                                        {slide.phone}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex flex-1 items-center justify-center px-6 mr-14 py-6">
+                            <div className="flex flex-col items-center text-center">
+                                <img
+                                    src={slide.image}
+                                    className="w-24 h-24 rounded-full object-cover mb-4"
+                                    alt={`Profile ${index}`}
+                                />
+                                <div className="font-semibold mb-2">
+                                    {slide.text}
+                                </div>
+                                <div className="text-sm">
+                                    {slide.body}
+                                </div>
+                                <div className="flex flex-row items-center mt-2">
+                                    <Envelope size={20} weight="light" className="mr-2" />
+                                    <div className="text-sm">
+                                        {slide.mail}
+                                    </div>
+                                </div>
+                                <div className="flex flex-row items-center mt-2">
+                                    <Phone size={20} weight="light" className="mr-2" />
+                                    <div className="text-sm">
+                                        {slide.phone}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
 
-            <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
-                {chunkedSlides.map((_, i) => (
-                    <div
-                        onClick={() => setCurrent(i)}
-                        key={"circle" + i}
-                        className={`rounded-full w-2 h-2 cursor-pointer hover:bg-ghost-white ${i === current ? "bg-ghost-white" : "bg-slate-300"}`}
-                    ></div>
-                ))}
+            <div className="absolute inset-0 flex items-center justify-between p-8">
+                <button
+                    onClick={prev}
+                    disabled={isFirstSlide}
+                    className={`p-2 rounded-full ${isFirstSlide ? 'text-white' : 'text-gray-800'}`}
+                >
+                    <CaretLeft size={32} weight="bold" />
+                </button>
+                <button
+                    onClick={next}
+                    disabled={isLastSlide}
+                    className={`p-2 rounded-full ${isLastSlide ? 'text-white' : 'text-gray-800'}`}
+                >
+                    <CaretRight size={32} weight="bold" />
+                </button>
             </div>
         </div>
     );

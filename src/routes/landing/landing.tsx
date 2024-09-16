@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./landing.css";
 import Carousel from './carousel.tsx';
 
@@ -25,8 +25,6 @@ function Landing() {
     const handleSelectChange = (event) => {
         setCurrentRelationship(event.target.value);
     };
-
-
 
     let slides = [
         {

@@ -12,6 +12,7 @@ function Carousel({ slides }) {
         return () => clearInterval(interval);
     }, [slides.length]);
 
+
     return (
         <div className="relative overflow-hidden w-screen h-72">
             <div
