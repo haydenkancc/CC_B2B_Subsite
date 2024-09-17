@@ -28,7 +28,7 @@ function Carousel({ slides }) {
                             className="w-full h-full object-cover blur-sm scale-125"
                             alt={`Slide ${index}`}
                         />
-                        <div className="absolute inset-0 flex flex-col justify-center p-20">
+                        <div className="absolute inset-0 flex flex-col justify-center px-[10vw] 2xl:px-[20vw]">
                             <div className="text-white text-xl font-bold mb-4">
                                 <span>{s.text}</span>
                             </div>

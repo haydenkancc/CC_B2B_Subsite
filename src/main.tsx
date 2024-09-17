@@ -8,6 +8,7 @@ import './index.css'
 import EnterpriseSolutions from './routes/solutions/enterprise-solutions.tsx';
 import HealthcareSolutions from './routes/solutions/healthcare-solutions.tsx';
 import EducationSolutions from './routes/solutions/education-solutions.tsx';
+import Hardware from './routes/hardware/hardware.tsx';
 
 const router = createBrowserRouter([
     {
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
     {
         path: "account",
         element: <Account />,
-    }
+    },
+    {
+        path: "hardware",
+        element: <Hardware />
+    },
 ]);
 
 

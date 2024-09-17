@@ -66,7 +66,7 @@ function Landing() {
                     }}
                 >
                     <div className="contents absolute">
-                        <div className="px-32 py-16">
+                        <div className="px-[10vw] 2xl:px-[20vw] py-16">
                             <h1 className="text-5xl font-bold text-ghost-white mt-10">Welcome to Better</h1>
                             <h1 className="text-5xl font-bold text-ghost-white mt-3">Business Buying</h1>
                             <p className="text-xl text-ghost-white font-mono mt-6">Elevate your business to the next level</p>
@@ -80,9 +80,9 @@ function Landing() {
 
             {/* About Us */}
             <div className="bg-gradient-to-b from-slate-300 to-ghost-white w-screen overflow-hidden flex items-center justify-center">
-                <div className="flex py-20 max-w-screen-lg w-full">
+                <div className="flex py-20 px-[10vw] 2xl:px-[20vw] w-full">
                     <div className="flex items-center justify-between w-full">
-                        <div className="text-black max-w-md">
+                        <div className="text-black w-128">
                             <div className="text-2xl">We are Canada Computers</div>
                             <p className="mt-4 text-md">
                                 Over its 32-year history, Canada Computers & Electronics has continued to provide customers with the best products at the best value. Its first location established itself in the heart of Kingston, Ontario, with an initial vision of providing high-quality products for university students, at a student-friendly price. Striving to serve the great minds of our future, there was no better place to start than a location near Kingston's Queens University.
@@ -154,9 +154,9 @@ function Landing() {
 
             {/* Partners */}
             <div className="bg-white flex flex-col items-center py-4 w-screen overflow-hidden">
-                <h1 className="text-2xl text-oxford-blue font-bold font-mono text-center mb-4 mt-10">
+                <h1 className="text-2xl text-oxford-blue font-bold font-mono text-center mb-4 mt-10 px-[10vw] 2xl:px-[20vw]">
                     OUR PARTNERS
-                    <img src={partners} className="max-w-[70vw] mb-6 mt-4" />
+                    <img src={partners} className="w-[75vw] 2xl:w-[55vw] mb-6 mt-4" />
                 </h1>
             </div>
 
@@ -170,12 +170,12 @@ function Landing() {
 
             {/* Contact Form */}
             <div className="bg-ghost-white w-screen overflow-hidden">
-                <div className="flex">
+                <div className="flex justify-between px-[10vw] 2xl:px-[20vw]">
                     <div className="contents">
                         {/* Leftside */}
-                        <div className="text-oxford-blue ml-24 py-8 mt-12">
-                            <div className="text-3xl font-bold mt-8 ml-12">CONTACT US FOR THE<br></br>SOLUTIONS YOU NEED</div>
-                            <p className="mt-6 ml-12">Whether you're looking to redefine your office<br></br>workspace, improve day-to-day operations, or
+                        <div className="text-oxford-blue py-8 mt-12">
+                            <div className="text-3xl font-bold mt-8">CONTACT US FOR THE<br></br>SOLUTIONS YOU NEED</div>
+                            <p className="mt-6">Whether you're looking to redefine your office<br></br>workspace, improve day-to-day operations, or
                                 <br></br>provide the perfect work-at-home gear for your
                                 <br></br>employees, we're here to help you acquire the
                                 <br></br>best tech solutions for your business.
@@ -184,7 +184,7 @@ function Landing() {
                         </div>
 
                         {/* Rightside */}
-                        <form className="w-full max-w-md ml-48">
+                        <form className="w-full max-w-lg">
                             <div className="flex flex-wrap mb-6 mt-24">
                                 <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
