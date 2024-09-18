@@ -21,9 +21,9 @@ const pages = ['Partners', 'Industry', 'About'];
 
 function HealthcareSolutions() {
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location]);
+    // useEffect(() => {
+    //     window.scrollTo(0, 0);
+    // }, [location]);
 
     let slides = [
         {
@@ -54,14 +54,14 @@ function HealthcareSolutions() {
         <>
 
             {/* NavBar */}
-            <div className="w-screen overflow-hidden">
+            <div className="w-full overflow-hidden">
                 <NavbarTop />
                 <NavbarBottom pages={pages} />
             </div>
 
             {/* Homepage */}
             <div
-                className="overflow-hidden h-116 w-[100vw] bg-left-bottom"
+                className="overflow-hidden h-116 w-full bg-left-bottom"
                 style={{
                     backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 1) 100%), url(${healthcare})`,
                     backgroundSize: '100%',
@@ -79,7 +79,7 @@ function HealthcareSolutions() {
             </div>
 
             {/* Business */}
-            <div className="bg-gradient-to-b from-white to-ghost-white py-4 w-screen overflow-hidden items-center justify-between px-[10vw] 2xl:px-[20vw]">
+            <div className="bg-gradient-to-b from-white to-ghost-white py-4 w-full overflow-hidden items-center justify-between px-[10vw] 2xl:px-[20vw]">
                 <div className="flex flex-row items-center justify-between">
                     <div className="contents">
                         <div className="w-136">
@@ -114,7 +114,7 @@ function HealthcareSolutions() {
             </div>
 
             {/* Benefits */}
-            <div className="bg-ghost-white flex flex-col items-center py-4 w-screen overflow-hidden">
+            <div className="bg-ghost-white flex flex-col items-center py-4 w-full overflow-hidden">
                 <h1 className="text-2xl text-black font-bold text-center mt-12">Create Solutions for Every Healthcare Facility</h1>
                 <div className="text-black py-6">We’ll design customized strategies to improve efficiency and boost performance in every healthcare setting.</div>
             </div>
@@ -167,7 +167,7 @@ function HealthcareSolutions() {
             </div>
             
             {/* Why */}
-            <div className="bg-white py-4 w-screen overflow-hidden px-[10vw] 2xl:px-[20vw]">
+            <div className="bg-white py-4 w-full overflow-hidden px-[10vw] 2xl:px-[20vw]">
                 <div className="mb-20">
                     <div className="flex justify-between">
                         <div className="">
@@ -209,10 +209,10 @@ function HealthcareSolutions() {
             </div>
 
             {/* Succeed */}
-            <div className="bg-ghost-white flex flex-col items-center py-4 px-20 w-screen overflow-hidden justify-center px-[10vw] 2xl:px-[20vw]">
+            <div className="bg-ghost-white flex flex-col items-center py-4 px-20 w-full overflow-hidden justify-center px-[10vw] 2xl:px-[20vw]">
                 <div className="text-xl text-oxford-blue font-bold text-center mt-12 mb-10">With unmatched expertise and a deep understanding of healthcare needs, we address challenges and drive innovation across various medical settings. We design customized solutions to improve functionality and elevate patient care, ensuring that every aspect of your facility operates at its best.</div>
             </div>
-            <div className="bg-ghost-white items-center w-screen overflow-hidden py-4">
+            <div className="bg-ghost-white items-center w-full overflow-hidden py-4">
                 <div className="flex flex-row justify-between gap-x-8 px-[10vw] 2xl:px-[20vw]">
                     <div className="bg-white rounded-lg shadow flex flex-wrap justify-center gap-10 mb-8">
                         <div className="flex flex-col w-80">
@@ -266,7 +266,7 @@ function HealthcareSolutions() {
             </div>
 
             {/* Banner */}
-            <div className="bg-oxford-blue flex py-10 w-screen overflow-hidden relative flex justify-between px-[10vw] 2xl:px-[20vw]">
+            <div className="bg-oxford-blue flex py-10 w-full overflow-hidden relative flex justify-between px-[10vw] 2xl:px-[20vw]">
                 <div className="contents">
                     <div>
                         <div className="text-3xl text-white font-bold mb-4">Empower your Workplace Today</div>

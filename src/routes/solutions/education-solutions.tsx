@@ -24,9 +24,9 @@ const pages = ['Partners', 'Industry', 'About'];
 
 function EducationSolutions() {
     
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location]);
+    // useEffect(() => {
+    //     window.scrollTo(0, 0);
+    // }, [location]);
 
     let slides = [
         {
@@ -57,14 +57,14 @@ function EducationSolutions() {
         <>
 
             {/* NavBar */}
-            <div className="w-screen overflow-hidden">
+            <div className="w-full overflow-hidden">
                 <NavbarTop />
                 <NavbarBottom pages={pages} />
             </div>
 
             {/* Homepage */}
             <div
-                className="overflow-hidden h-116 w-[100vw] bg-center"
+                className="overflow-hidden h-116 w-full bg-center"
                 style={{
                     backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 1) 100%), url(${education})`,
                     backgroundSize: '100%',
@@ -82,7 +82,7 @@ function EducationSolutions() {
             </div>
 
             {/* Business */}
-            <div className="bg-gradient-to-b from-white to-ghost-white py-4 w-screen overflow-hidden items-center justify-between px-[10vw] 2xl:px-[20vw]">
+            <div className="bg-gradient-to-b from-white to-ghost-white py-4 w-full overflow-hidden items-center justify-between px-[10vw] 2xl:px-[20vw]">
                 <div className="flex flex-row items-center justify-between">
                     <div className="contents">
                         <div className="mt-10 w-136">
@@ -124,7 +124,7 @@ function EducationSolutions() {
             </div>
 
             {/* Benefits */}
-            <div className="bg-ghost-white flex flex-col items-center py-4 w-screen overflow-hidden">
+            <div className="bg-ghost-white flex flex-col items-center py-4 w-full overflow-hidden">
                 <h1 className="text-2xl text-black font-bold text-center mt-12">Prepare Solutions for Every Space</h1>
                 <div className="text-black py-6">We'll craft tailored solutions that optimize functionality and enhance performance in every space.</div>
             </div>
@@ -218,7 +218,7 @@ function EducationSolutions() {
             </div>
             
             {/* Why */}
-            <div className="bg-white py-4 w-screen overflow-hidden px-[10vw] 2xl:px-[20vw]">
+            <div className="bg-white py-4 w-full overflow-hidden px-[10vw] 2xl:px-[20vw]">
                 <div className="mb-20">
                     <div className="flex justify-between">
                         <div className="">
@@ -260,10 +260,10 @@ function EducationSolutions() {
             </div>
 
             {/* Succeed */}
-            <div className="bg-ghost-white flex flex-col items-center py-4 px-20 w-screen overflow-hidden justify-center px-[10vw] 2xl:px-[20vw]">
+            <div className="bg-ghost-white flex flex-col items-center py-4 px-20 w-full overflow-hidden justify-center px-[10vw] 2xl:px-[20vw]">
                 <div className="text-xl text-oxford-blue font-bold text-center mt-12 mb-10">With our extensive experience in education, we simplify complex challenges and drive innovation in learning spaces with customized solutions that elevate the overall educational experience.</div>
             </div>
-            <div className="bg-ghost-white items-center w-screen overflow-hidden py-4">
+            <div className="bg-ghost-white items-center w-full overflow-hidden py-4">
                 <div className="flex flex-row justify-between gap-x-8 px-[10vw] 2xl:px-[20vw]">
                     <div className="bg-white rounded-lg shadow flex flex-wrap justify-center gap-10 mb-8">
                         <div className="flex flex-col w-80">
@@ -317,7 +317,7 @@ function EducationSolutions() {
             </div>
 
             {/* Banner */}
-            <div className="bg-oxford-blue flex py-10 w-screen overflow-hidden relative flex justify-between px-[10vw] 2xl:px-[20vw]">
+            <div className="bg-oxford-blue flex py-10 w-full overflow-hidden relative flex justify-between px-[10vw] 2xl:px-[20vw]">
                 <div className="contents">
                     <div>
                         <div className="text-3xl text-white font-bold mb-4">Empower your Workplace Today</div>

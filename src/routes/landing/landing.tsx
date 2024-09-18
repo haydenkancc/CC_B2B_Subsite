@@ -52,7 +52,7 @@ function Landing() {
         <>
 
             {/* NavBar */}
-            <div className="w-screen overflow-hidden">
+            <div className="w-full overflow-hidden">
                 <NavbarTop />
                 <NavbarBottom pages={pages} />
             </div>
@@ -79,7 +79,7 @@ function Landing() {
             </div>
 
             {/* About Us */}
-            <div className="bg-gradient-to-b from-slate-300 to-ghost-white w-screen overflow-hidden flex items-center justify-center">
+            <div className="bg-gradient-to-b from-slate-300 to-ghost-white w-full overflow-hidden flex items-center justify-center">
                 <div className="flex py-20 px-[10vw] 2xl:px-[20vw] w-full">
                     <div className="flex items-center justify-between w-full">
                         <div className="text-black w-128">
@@ -98,7 +98,7 @@ function Landing() {
 
 
             {/* Solutions */}
-            <div className="bg-gradient-to-b from-ghost-white to-white w-screen overflow-hidden">
+            <div className="bg-gradient-to-b from-ghost-white to-white w-full overflow-hidden">
                 <h1 className="text-2xl text-oxford-blue text-center py-6">
                     WHY CHOOSE US
                 </h1>
@@ -153,7 +153,7 @@ function Landing() {
             </div>
 
             {/* Partners */}
-            <div className="bg-white flex flex-col items-center py-4 w-screen overflow-hidden">
+            <div className="bg-white flex flex-col items-center py-4 w-full overflow-hidden">
                 <h1 className="text-2xl text-oxford-blue font-bold font-mono text-center mb-4 mt-10 px-[10vw] 2xl:px-[20vw]">
                     OUR PARTNERS
                     <img src={partners} className="w-[75vw] 2xl:w-[55vw] mb-6 mt-4" />
@@ -161,7 +161,7 @@ function Landing() {
             </div>
 
             {/* Banner */}
-            <div className="bg-oxford-blue flex flex-col items-center py-8 w-screen overflow-hidden">
+            <div className="bg-oxford-blue flex flex-col items-center py-8 w-full overflow-hidden">
                 <h1 className="text-2xl text-white font-semibold text-center">
                     TAKE YOUR BUSINESS
                     <span className="text-2xl text-blue-400 font-bold ml-2">TO THE NEXT LEVEL</span>  
@@ -169,7 +169,7 @@ function Landing() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-ghost-white w-screen overflow-hidden">
+            <div className="bg-ghost-white w-full overflow-hidden">
                 <div className="flex justify-between px-[10vw] 2xl:px-[20vw]">
                     <div className="contents">
                         {/* Leftside */}
