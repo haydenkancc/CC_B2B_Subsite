@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./landing.css";
 import Carousel from './carousel.tsx';
+import { Link } from "react-router-dom";
 
 import header from "../../assets/header.png"
 import working from "../../assets/working.png"
@@ -134,7 +135,10 @@ function Landing() {
                             <img src={hardware} className="w-10 mb-2"/>
                             <div className="text-black font-semibold py-1">Hardware Products</div>
                             <div className="text-black text-sm">Components exceeding in performance and durability for every precision-engineered part or comprehensive hardware system.</div>
-                            <div className="cursor-pointer text-blue-600 text-sm py-2">Explore our hardware products →</div>
+                            <Link to={"/hardware"} className="text-blue-600 text-sm py-2">
+                                Explore our hardware products →
+                            </Link>
+
                         </div>
                         <div className="bg-slate-200 rounded-sm w-80 h-60 mb-10 px-8 py-7">
                             <img src={software} className="w-10 mb-2"/>

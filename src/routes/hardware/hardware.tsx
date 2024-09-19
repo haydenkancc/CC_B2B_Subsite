@@ -1,23 +1,36 @@
-import { useEffect } from "react";
-import "./hardware.css"
+import React, { useState } from "react";
+import "./hardware.css";
 
 import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
 import typing from '../../assets/typing.png';
-import { CaretRight } from "@phosphor-icons/react";
+import laptop from '../../assets/laptop.png';
+import { CaretRight, CaretDown, CaretUp, Star } from "@phosphor-icons/react";
+import Logo from '../../assets/Canada_Computers_(Icon).svg?react';
+import adspace1 from "../../assets/adspace1.png"
+import adspace2 from "../../assets/adspace2.png"
+import adspace3 from "../../assets/adspace3.png"
+import adspace4 from "../../assets/adspace4.png"
+import adspace5 from "../../assets/adspace5.png"
+import HardwareCarousel from "./hardware-carousel.tsx";
 
 const pages = ['Partners', 'Industry', 'About'];
 
 function Hardware() {
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    // }, [location]);
+    const isLargeScreen = window.innerWidth >= 1536;
 
-    const isLargeScreen = window.innerWidth >= 1536; // 2xl breakpoint
+    const [openFilters, setOpenFilters] = useState({});
 
-    let row1 = [
+    const handleSelectChange = (filterValue) => {
+        setOpenFilters((prev) => ({
+            ...prev,
+            [filterValue]: !prev[filterValue],
+        }));
+    };
+
+    const row1 = [
         {
-            image: typing,
+            image: laptop,
             name: "Accessories",
             text1: "Keyboards",
             text2: "Headsets",
@@ -27,7 +40,7 @@ function Hardware() {
             text6: "PC Components",
         },
         {
-            image: typing,
+            image: laptop,
             name: "Monitors",
             text1: "Computer Displays",
             text2: "Large Displays",
@@ -37,7 +50,7 @@ function Hardware() {
             text6: "Medical Displays",
         },
         {
-            image: typing,
+            image: laptop,
             name: "Laptops",
             text1: "Notebooks",
             text2: "MacBooks",
@@ -47,17 +60,17 @@ function Hardware() {
             text6: "Chromebooks",
         },
         {
-            image: typing,
+            image: laptop,
             name: "Electronics",
             text1: "Audio & Video",
             text2: "Smart Phones",
             text3: "Microphones",
             text4: "Speakers",
             text5: "Cameras",
-            text6: "Video Suirveillance",
+            text6: "Video Surveillance",
         },
         {
-            image: typing,
+            image: laptop,
             name: "Desktops",
             text1: "Workstations",
             text2: "Small Form Factor",
@@ -66,28 +79,69 @@ function Hardware() {
             text5: "Desktop Towers",
             text6: "POS System",
         },
-    ]
+    ];
 
-    let featured = [
+    const featured = [
         {
-            image: typing,
+            image: laptop,
             name: "Very Cool Accessory",
             text: "Power through the day with this cool new device from Canada Computers. This is obv a placeholder btw.",
         },
         {
-            image: typing,
+            image: laptop,
             name: "Very Cool Monitor",
             text: "Power through the day with this cool new device from Canada Computers. This is obv a placeholder btw.",
         },
         {
-            image: typing,
+            image: laptop,
             name: "Very Cool Laptop",
             text: "Power through the day with this cool new device from Canada Computers. This is obv a placeholder btw.",
         },
         {
-            image: typing,
+            image: laptop,
             name: "Very Cool Electronic",
             text: "Power through the day with this cool new device from Canada Computers. This is obv a placeholder btw.",
+        },
+    ];
+
+    const sidebar = [
+        {
+            name: "Sort By",
+            filterValue: "sort",
+        },
+        {
+            name: "Category",
+            filterValue: "category",
+        },
+        {
+            name: "Price",
+            filterValue: "price",
+        },
+        {
+            name: "Brand",
+            filterValue: "brand",
+        },
+        {
+            name: "Rating",
+            filterValue: "rating",
+        },
+    ];
+
+    const ads = [
+        {
+            image: adspace1,
+        },
+        {
+            image: adspace2,
+        },
+        {
+            image: adspace3,
+        },
+        {
+            image: adspace4,
+        },
+        {
+            image: adspace5,
         },
     ]
 
@@ -103,7 +157,7 @@ function Hardware() {
             <div
                 className="overflow-hidden h-64 w-full bg-center"
                 style={{
-                    backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0) ${isLargeScreen ? '20%' : '10%'}, rgba(0, 0, 0, 0.5) ${isLargeScreen ? '20%' : '10%'}, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 60%), url(${typing})`,
+                    backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0) ${isLargeScreen ? '20vw' : '10vw'}, rgba(0, 0, 0, 0.5) ${isLargeScreen ? '20vw' : '10vw'}, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 60%), url(${typing})`,
                     backgroundSize: '100%',
                     backgroundRepeat: 'no-repeat',
                 }}
@@ -118,12 +172,12 @@ function Hardware() {
 
             {/* Categories */}
             <div className="bg-ghost-white text-black flex flex-col px-[10vw] 2xl:px-[20vw]">
-                <div className="mt-10 text-center text-lg">
+                <div className="mt-20 text-center text-lg font-semibold">
                     Find Top-Rated Hardware for Business Applications
                 </div>
-                <div className="flex flex-row justify-between">
+                <div className="flex justify-between">
                     {row1.map((category, index) => (
-                        <div key={index} className="flex-1 flex justify-center py-10">
+                        <div key={index} className="py-10">
                             <div className="flex flex-col items-center">
                                 <img
                                     src={category.image}
@@ -134,16 +188,9 @@ function Hardware() {
                                     {category.name}
                                     <span className="absolute left-0 bottom-[-5px] h-[2px] w-full bg-black transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
                                 </div>
-                                <div className="text-sm bg-slate-200 rounded-sm w-48 h-46 px-4 py-4">
+                                <div className="text-sm bg-slate-200 rounded-sm w-48 px-4 py-4">
                                     <div className="flex-col">
-                                        {[
-                                            category.text1,
-                                            category.text2,
-                                            category.text3,
-                                            category.text4,
-                                            category.text5,
-                                            category.text6,
-                                        ].map((text, index) => (
+                                        {[category.text1, category.text2, category.text3, category.text4, category.text5, category.text6].map((text, index) => (
                                             <div className="flex flex-row items-center mb-1.5 group" key={index}>
                                                 <span>{text}</span>
                                                 <CaretRight className="ml-1 transition-transform duration-100 group-hover:translate-x-1" />
@@ -159,115 +206,250 @@ function Hardware() {
 
             {/* Featured Products */}
             <div className="bg-ghost-white text-black flex flex-col px-[10vw] 2xl:px-[20vw]">
-                <div className="mt-10 text-center text-lg">
-                    Our Featured Products
+                <div className="mt-10 text-center text-lg font-semibold">
+                    Shop Featured Products
                 </div>
-                <div className="flex flex-row gap-x-4">
+                <div className="flex justify-between">
                     {featured.map((product, index) => (
-                        <div key={index} className="flex-1 flex justify-center py-10">
-                            <div className="flex flex-col items-center bg-slate-200 rounded-sm">
+                        <div key={index} className="py-10">
+                            <div className="flex flex-col items-center">
                                 <img
                                     src={product.image}
-                                    className="w-58 h-32 rounded-t-sm object-cover"
+                                    className="w-58 h-36 object-cover mb-2 -mt-4" // Adjust -mt-4 as needed
                                     alt={`Profile ${index}`}
                                 />
-                                <div className="text-sm w-58 h-46 px-4 py-4">
-                                    <div className="flex-col">
-                                        <div className="font-medium">{product.name}</div>
-                                        <div className="mt-1">{product.text}</div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
 
+            {/* Carousel */}
+            <div className="bg-ghost-white w-full mt-10">
+                <div>
+                    <HardwareCarousel ads={ads} />
+                </div> 
+            </div>
+
             {/* Catalogue */}
-            <div className="flex bg-ghost-white text-black px-[10vw] 2xl:px-[20vw] mt-10">
+            <div className="flex bg-ghost-white text-black px-[10vw] 2xl:px-[20vw] mt-20">
                 {/* Sidebar */}
-                <div className="bg-slate-200 p-4 pr-20">
-                    <h2 className="text-lg font-semibold mb-4">Categories</h2>
-                    <div className="mb-4">
-                        <label className="mr-2">In Stock:</label>
-                        <input type="checkbox" />
-                    </div>
-                    <h3 className="font-medium">Categories</h3>
-                    <div className="flex flex-col mt-2 mb-4">
-                        <button className="text-left py-2 hover:bg-gray-300">Price</button>
-                        <button className="text-left py-2 hover:bg-gray-300">Brand</button>
-                        <button className="text-left py-2 hover:bg-gray-300">Category</button>
-                        <button className="text-left py-2 hover:bg-gray-300">Rating</button>
+                <div className="flex">
+                    <div className="pr-10">
+                        <div className="text-lg flex flex-col">
+                            <div className="border-b border-gray-300 py-4 font-md uppercase">Filter & Sort</div>
+                            {sidebar.map((item, index) => (
+                                <div key={index} className={`py-4 ${index < sidebar.length - 1 ? 'border-b border-gray-300' : ''}`}>
+                                    <div className="flex justify-between font-md uppercase">
+                                        <div>{item.name}</div>
+                                        <button className="ml-12" onClick={() => handleSelectChange(item.filterValue)}>
+                                            {openFilters[item.filterValue] ? (
+                                                <CaretUp color="#656161" />
+                                            ) : (
+                                                <CaretDown color="#656161" />
+                                            )}
+                                        </button>
+                                    </div>
+                                    <div
+                                        className={`overflow-hidden transition-all duration-300 ${openFilters[item.filterValue] ? 'max-h-40' : 'max-h-0'}`}
+                                        style={{ transitionProperty: 'max-height' }}
+                                    >
+                                        {openFilters[item.filterValue] && (
+                                            <div className="flex flex-row py-4">
+                                                <div className="flex flex-col">
+                                                    {item.filterValue === 'sort' && (
+                                                        <>
+                                                            <div className="flex items-center mb-2">
+                                                                <input type="radio" className="bg-gray-200 w-4 h-4" />
+                                                                <label className="text-sm ml-3">Relevancy</label>
+                                                            </div>
+                                                            <div className="flex items-center mb-2">
+                                                                <input type="radio" className="bg-gray-200 w-4 h-4" />
+                                                                <label className="text-sm ml-3">Deals</label>
+                                                            </div>
+                                                            <div className="flex items-center">
+                                                                <input type="radio" className="bg-gray-200 w-4 h-4" />
+                                                                <label className="text-sm ml-3">Newest</label>
+                                                            </div>
+                                                        </>
+                                                    )}
+                                                    {item.filterValue === 'category' && (
+                                                        <>
+                                                            <div className="flex items-center mb-2">
+                                                                <input type="checkbox" className="bg-gray-200 w-4 h-4" />
+                                                                <label className="text-sm ml-3">Accessories</label>
+                                                            </div>
+                                                            <div className="flex items-center mb-2">
+                                                                <input type="checkbox" className="bg-gray-200 w-4 h-4" />
+                                                                <label className="text-sm ml-3">Monitors</label>
+                                                            </div>
+                                                            <div className="flex items-center mb-2">
+                                                                <input type="checkbox" className="bg-gray-200 w-4 h-4" />
+                                                                <label className="text-sm ml-3">Laptops</label>
+                                                            </div>
+                                                            <div className="flex items-center mb-2">
+                                                                <input type="checkbox" className="bg-gray-200 w-4 h-4" />
+                                                                <label className="text-sm ml-3">Electronics</label>
+                                                            </div>
+                                                            <div className="flex items-center">
+                                                                <input type="checkbox" className="bg-gray-200 w-4 h-4" />
+                                                                <label className="text-sm ml-3">Desktops</label>
+                                                            </div>
+                                                        </>
+                                                    )}
+                                                    {item.filterValue === 'price' && (
+                                                        <>
+                                                            <div className="flex items-center mb-2">
+                                                                <input type="radio" className="bg-gray-200 w-4 h-4" />
+                                                                <label className="text-sm ml-3">Low to High</label>
+                                                            </div>
+                                                            <div className="flex items-center mb-4">
+                                                                <input type="radio" className="bg-gray-200 w-4 h-4" />
+                                                                <label className="text-sm ml-3">High to Low</label>
+                                                            </div>
+                                                            <div className="flex flex-row items-center">
+                                                                <div className="flex items-center">
+                                                                    <input
+                                                                        type="text"
+                                                                        placeholder="$"
+                                                                        className="border border-gray-300 rounded-sm text-sm p-2 bg-white w-18 h-8"
+                                                                    />
+                                                                </div>
+                                                                <div className="text-sm text-gray-500 text-center px-1">-</div>
+                                                                <div className="flex items-center">
+                                                                    <input
+                                                                        type="text"
+                                                                        placeholder="$"
+                                                                        className="border border-gray-300 rounded-sm text-sm p-2 bg-white w-18 h-8"
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                            <button className="bg-slate-200 rounded-sm text-sm h-8 hover:bg-slate-300 mt-2">Search</button>
+                                                        </>
+                                                    )}
+                                                    {item.filterValue === 'brand' && (
+                                                        <>
+                                                            <div className="flex items-center mb-2">
+                                                                <input
+                                                                    type="text"
+                                                                    placeholder="Acer"
+                                                                    className="border border-gray-300 rounded-sm text-sm p-2 bg-white w-39 h-8"
+                                                                />
+                                                            </div>
+                                                            <button className="bg-slate-200 rounded-sm text-sm h-8 hover:bg-slate-300">Search</button>
+                                                        </>
+                                                    )}
+                                                    {item.filterValue === 'rating' && (
+                                                        <>
+                                                            <div className="flex items-center mb-2">
+                                                                <input type="radio" className="bg-gray-200 w-4 h-4" />
+                                                                <Star size={18} color="#ffdd00" weight="fill" className="ml-3" />
+                                                                <Star size={18} color="#ffdd00" weight="fill" />
+                                                                <Star size={18} color="#ffdd00" weight="fill" />
+                                                                <Star size={18} color="#ffdd00" weight="fill" />
+                                                                <Star size={18} color="#ffdd00" weight="fill" />
+                                                            </div>
+                                                            <div className="flex items-center mb-2">
+                                                                <input type="radio" className="bg-gray-200 w-4 h-4" />
+                                                                <Star size={18} color="#ffdd00" weight="fill" className="ml-3" />
+                                                                <Star size={18} color="#ffdd00" weight="fill" />
+                                                                <Star size={18} color="#ffdd00" weight="fill" />
+                                                                <Star size={18} color="#ffdd00" weight="fill" />
+                                                                <Star size={18} color="#9e9e9e" weight="light" />
+                                                            </div>
+                                                            <div className="flex items-center mb-2">
+                                                                <input type="radio" className="bg-gray-200 w-4 h-4" />
+                                                                <Star size={18} color="#ffdd00" weight="fill" className="ml-3" />
+                                                                <Star size={18} color="#ffdd00" weight="fill" />
+                                                                <Star size={18} color="#ffdd00" weight="fill" />
+                                                                <Star size={18} color="#9e9e9e" weight="light" />
+                                                                <Star size={18} color="#9e9e9e" weight="light" />
+                                                            </div>
+                                                        </>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
                 {/* Products */}
-                <div className="flex-1 p-4">
-                    {/* Categories */}
-                    <div className="bg-slate-200 rounded-sm text-lg flex-1 flex justify-center">
-                        Find Top-Rated Hardware for Business Applications
+                <div className="flex flex-col gap-y-8 w-full">
+                    <div className="flex flex-row justify-between">
+                        {featured.map((product, index) => (
+                            <div key={index} className="flex flex-col">
+                                <img
+                                    src={product.image}
+                                    className="w-48 h-32 rounded-sm object-cover bg-slate-200"
+                                    alt={`Profile ${index}`}
+                                />
+                                <div className="text-sm w-48 px-4 py-4 rounded-sm">
+                                    <div className="flex-col">
+                                        <div className="font-medium">{product.name}</div>
+                                        <div className="mt-1">{product.text}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                     <div className="flex flex-row justify-between">
-                        {row1.map((category, index) => (
-                            <div key={index} className="flex-1 flex justify-center py-10">
-                                <div className="flex flex-col items-center">
-                                    <img src={category.image} className="w-48 h-32 rounded-sm object-cover mb-2" alt={`Profile ${index}`} />
-                                    <div className="font-semibold mb-4 relative group">
-                                        {category.name}
-                                        <span className="absolute left-0 bottom-[-5px] h-[2px] w-full bg-black transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
-                                    </div>
-                                    <div className="text-sm bg-slate-200 rounded-sm w-48 h-46 px-4 py-4">
-                                        <div className="flex-col">
-                                            {[
-                                                category.text1,
-                                                category.text2,
-                                                category.text3,
-                                                category.text4,
-                                                category.text5,
-                                                category.text6,
-                                            ].map((text, index) => (
-                                                <div className="flex flex-row items-center mb-1.5 group" key={index}>
-                                                    <span>{text}</span>
-                                                    <CaretRight className="ml-1 transition-transform duration-100 group-hover:translate-x-1" />
-                                                </div>
-                                            ))}
-                                        </div>
+                        {featured.map((product, index) => (
+                            <div key={index} className="flex flex-col">
+                                <img
+                                    src={product.image}
+                                    className="w-48 h-32 rounded-sm object-cover bg-slate-200"
+                                    alt={`Profile ${index}`}
+                                />
+                                <div className="text-sm w-48 px-4 py-4 rounded-sm">
+                                    <div className="flex-col">
+                                        <div className="font-medium">{product.name}</div>
+                                        <div className="mt-1">{product.text}</div>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
-
-                    {/* Featured Products */}
-                    <div className="flex flex-row gap-x-4 mb-10">
+                    <div className="flex flex-row justify-between">
                         {featured.map((product, index) => (
-                            <div key={index} className="flex-1 flex justify-center py-10">
-                                <div className="flex flex-col items-center bg-slate-200 rounded-sm">
-                                    <img src={product.image} className="w-58 h-32 rounded-t-sm object-cover" alt={`Profile ${index}`} />
-                                    <div className="text-sm w-58 h-46 px-4 py-4">
-                                        <div className="flex-col">
-                                            <div className="font-medium">{product.name}</div>
-                                            <div className="mt-1">{product.text}</div>
-                                        </div>
+                            <div key={index} className="flex flex-col">
+                                <img
+                                    src={product.image}
+                                    className="w-48 h-32 rounded-sm object-cover bg-slate-200"
+                                    alt={`Profile ${index}`}
+                                />
+                                <div className="text-sm w-48 px-4 py-4 rounded-sm">
+                                    <div className="flex-col">
+                                        <div className="font-medium">{product.name}</div>
+                                        <div className="mt-1">{product.text}</div>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
-
-                    {/* Additional Products */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="flex flex-row justify-between mb-20">
                         {featured.map((product, index) => (
-                            <div key={index} className="flex flex-col items-center bg-slate-200 rounded-sm p-4">
-                                <img src={product.image} className="w-32 h-32 rounded-t-sm object-cover" alt={`Product ${index}`} />
-                                <div className="text-sm mt-2 font-medium">{product.name}</div>
-                                <div className="text-xs">{product.text}</div>
+                            <div key={index} className="flex flex-col">
+                                <img
+                                    src={product.image}
+                                    className="w-48 h-32 rounded-sm object-cover bg-slate-200"
+                                    alt={`Profile ${index}`}
+                                />
+                                <div className="text-sm w-48 px-4 py-4 rounded-sm">
+                                    <div className="flex-col">
+                                        <div className="font-medium">{product.name}</div>
+                                        <div className="mt-1">{product.text}</div>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>
                 </div>
+                
             </div>
-
         </>
     );
 }
