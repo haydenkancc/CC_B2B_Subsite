@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./hardware.css";
 
 import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
@@ -17,6 +17,11 @@ import HardwareCarousel from "./hardware-carousel.tsx";
 const pages = ['Partners', 'Industry', 'About'];
 
 function Hardware() {
+
+    // useEffect(() => {
+    //     window.scrollTo(0, 0);
+    // }, [location]);
+
     const isLargeScreen = window.innerWidth >= 1536;
 
     const [openFilters, setOpenFilters] = useState({});
@@ -215,9 +220,15 @@ function Hardware() {
                             <div className="flex flex-col items-center">
                                 <img
                                     src={product.image}
-                                    className="w-58 h-36 object-cover mb-2 -mt-4" // Adjust -mt-4 as needed
+                                    className="w-58 h-36 object-cover mb-2"
                                     alt={`Profile ${index}`}
                                 />
+                                <div className="bg-slate-200 text-sm w-58 px-4 py-4 rounded-sm">
+                                    <div className="flex-col">
+                                        <div className="font-medium">{product.name}</div>
+                                        <div className="mt-1">{product.text}</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     ))}
@@ -237,10 +248,10 @@ function Hardware() {
                 <div className="flex">
                     <div className="pr-10">
                         <div className="text-lg flex flex-col">
-                            <div className="border-b border-gray-300 py-4 font-md uppercase">Filter & Sort</div>
+                            <div className="border-b border-gray-300 py-4 font-semibold uppercase">Filter & Sort</div>
                             {sidebar.map((item, index) => (
-                                <div key={index} className={`py-4 ${index < sidebar.length - 1 ? 'border-b border-gray-300' : ''}`}>
-                                    <div className="flex justify-between font-md uppercase">
+                                <div key={index} className={`py-4 ${index < sidebar.length ? 'border-b border-gray-300' : ''}`}>
+                                    <div className="flex justify-between font-semibold uppercase">
                                         <div>{item.name}</div>
                                         <button className="ml-12" onClick={() => handleSelectChange(item.filterValue)}>
                                             {openFilters[item.filterValue] ? (
@@ -373,6 +384,7 @@ function Hardware() {
                                     </div>
                                 </div>
                             ))}
+                            <button className="mt-6 py-2 uppercase bg-slate-200 rounded-sm text-base hover:bg-slate-300 flex items-center font-semibold justify-center">Clear Filters</button>
                         </div>
                     </div>
                 </div>
@@ -430,7 +442,7 @@ function Hardware() {
                             </div>
                         ))}
                     </div>
-                    <div className="flex flex-row justify-between mb-20">
+                    <div className="flex flex-row justify-between">
                         {featured.map((product, index) => (
                             <div key={index} className="flex flex-col">
                                 <img
@@ -446,6 +458,9 @@ function Hardware() {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                    <div className="flex justify-center">
+                        <button className="py-2 w-32 uppercase bg-slate-200 rounded-sm hover:bg-slate-300 mb-20">Load More</button>
                     </div>
                 </div>
                 

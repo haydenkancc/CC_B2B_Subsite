@@ -61,19 +61,21 @@ function Landing() {
             {/* Homepage */}
             <div>
                 <div
-                    className="overflow-hidden bg-cover h-[85vh]"
+                    className="overflow-hidden bg-cover h-[85vh] 2xl:h-[90vh]"
                     style={{
-                        backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 75%), url(${header})`,
+                        backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 75%), url(${header})`,
                     }}
                 >
-                    <div className="contents absolute">
-                        <div className="px-[10vw] 2xl:px-[20vw] py-16">
-                            <h1 className="text-5xl font-bold text-ghost-white mt-10">Welcome to Better</h1>
-                            <h1 className="text-5xl font-bold text-ghost-white mt-3">Business Buying</h1>
-                            <p className="text-xl text-ghost-white font-mono mt-6">Elevate your business to the next level</p>
-                            <button className="text-lg bg-ghost-white hover:bg-slate-300 text-oxford-blue font-bold py-2 px-8 my-8 rounded-sm">
-                                LEARN MORE
-                            </button>
+                    <div className="text-ghost-white h-full">
+                        <div className="px-[10vw] 2xl:px-[20vw] h-full flex items-center">
+                            <div>
+                                <h1 className="text-5xl font-bold">Welcome to Better</h1>
+                                <h1 className="text-5xl font-bold mt-3">Business Buying</h1>
+                                <p className="text-xl font-mono mt-6">Elevate your business to the next level</p>
+                                <button className="text-lg bg-ghost-white hover:bg-slate-300 text-oxford-blue font-bold py-2 px-8 my-8 rounded-sm">
+                                    LEARN MORE
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -150,7 +152,7 @@ function Landing() {
                             <img src={prototype} className="w-10 mb-2"/>
                             <div className="text-black font-semibold py-1">Prototyping and Development</div>
                             <div className="text-black text-sm">Competitive product manufacturing within the tech industry using high quality materials with the best terms, rates, conditions, and prices.</div>
-                            <div className="cursor-pointer text-blue-600 text-sm py-2">Explore our sourcing options →</div>
+                            <div className="cursor-pointer text-blue-600 text-sm py-2">Explore our procurement options →</div>
                         </div>
                     </div>
                 </div>

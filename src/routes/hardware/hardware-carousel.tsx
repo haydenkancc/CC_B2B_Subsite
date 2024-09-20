@@ -20,12 +20,14 @@ function HardwareCarousel({ ads }) {
                 style={{ transform: `translateX(-${current * 100}%)` }}
             >
                 {ads.map((s, index) => (
-                    <div key={index} className="relative flex-shrink-0 w-full h-full 2xl:h-128 opacity-0 transition-opacity duration-1000 ease-in-out"
-                         style={{ opacity: index === current ? 1 : 0 }}
+                    <div
+                        key={index}
+                        className="relative flex-shrink-0 w-full h-80 2xl:h-116 opacity-0 transition-opacity duration-1000 ease-in-out"
+                        style={{ opacity: index === current ? 1 : 0 }}
                     >
                         <img
                             src={s.image}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover object-bottom"
                             alt={`Slide ${index}`}
                         />
                     </div>
