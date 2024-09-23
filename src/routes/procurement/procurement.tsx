@@ -8,46 +8,88 @@ import quote1 from "../../assets/quote1.png"
 import quote2 from "../../assets/quote2.png"
 import cclogo from "../../assets/cclogo.png"
 import tmulogo from "../../assets/tmulogo.png"
+import tmumeeting from "../../assets/tmumeeting.png"
+import out from "../../assets/out.png"
+
+import { Strategy, Coins, HeadCircuit, Headset, ClockUser  } from "@phosphor-icons/react";
 
 const pages = ['Partners', 'Industry', 'About'];
+
+const problems1 = [
+    {
+        title: "Cost",
+        sub: "Address Cost Pressure Effectively.",
+        text: "Leveraging strategic sourcing, negotiation, and supplier relationships is essential for achieving cost savings and enhancing overall procurement efficiency.",
+    },
+    {
+        title: "Disruption",
+        sub: "Mitigate Supply Chain Disruptions.",
+        text: "Conducting thorough risk assessments while diversifying suppliers is crucial for strengthening supply chain resilience and mitigating disruptions.",
+    },
+]
+
+const problems2 = [
+    {
+        title: "Relationship",
+        sub: "Strengthen Supplier Relationships.",
+        text: "Showcasing industry and supply chain expertise along with buying power is essential to negotiate better terms and prices.",
+    },
+    {
+        title: "Risk",
+        sub: "Manage Risk for Greater Stability.",
+        text: "Thoroughly assessing and prioritizing risks while evaluating supplier stability and regulatory compliance are key to maintaining a resilient supply chain.",
+    },
+]
 
 const stratcards1 = [
     {
         image: laptop,
-        title: "Custom Solutions",
-        text: "Tailored strategies to address your unique business needs.",
+        title: "Initial Assessment and Needs Analysis",
+        text1: "Understanding the Client's Goals: Clearly define the client's objectives, challenges, and desired outcomes.",
+        text2: "Identifying Key Areas: Pinpoint specific areas where procurement can be improved, such as cost reduction, risk management, or supplier performance.",
+        text3: "Assessing Current Processes: Evaluate the client's existing procurement practices, identifying strengths, weaknesses, and opportunities for improvement.",
     },
     {
         image: laptop,
-        title: "Change Management",
-        text: "Leveraging analytics for informed decision-making and growth.",
+        title: "Strategic Planning",
+        text1: "Leveraging analytics for informed decision-making and growth.",
     },
     {
         image: laptop,
-        title: "Data-Driven Insights",
-        text: "Guiding seamless transitions during transformative periods.",
+        title: "Contract Negotiation",
+        text1: "Guiding seamless transitions during transformative periods.",
+    },
+    {
+        image: laptop,
+        title: "Continuous Improvement",
+        text1: "Guiding seamless transitions during transformative periods.",
     },
 ];
 
 const stratcards2 = [
     {
         image: laptop,
-        title: "Custom Solutions",
-        text: "Tailored strategies to address your unique business needs.",
+        title: "Data Collection and Analysis",
+        text1: "Tailored strategies to address your unique business needs.",
     },
     {
         image: laptop,
-        title: "Change Management",
-        text: "Leveraging analytics for informed decision-making and growth.",
+        title: "Supplier Evaluation and Selection",
+        text1: "Leveraging analytics for informed decision-making and growth.",
+    },
+    {
+        image: laptop,
+        title: "Supplier Relationship Management",
+        text1: "Leveraging analytics for informed decision-making and growth.",
     },
 ];
 
 const quotes = [
-    {
-        question: "How would you describe the overall satisfaction and trust you have in our company?",
-        answer: "Extremely satisfied. Canada Computers has never been anything other than timely in responses and supportive of any issues that we are dealing with at the creative school. They have been a joy to work with throughout.",
-        person: "- Geoffrey Lachapelle",
-    },
+    // {
+    //     question: "How would you describe the overall satisfaction and trust you have in our company?",
+    //     answer: "Extremely satisfied. Canada Computers has never been anything other than timely in responses and supportive of any issues that we are dealing with at the creative school. They have been a joy to work with throughout.",
+    //     person: "- Geoffrey Lachapelle",
+    // },
     {
         question: "Are there any specific team members or individuals from our company who have made a significant impact on your experience?",
         answer: "I have been overjoyed to be working with Austin Kuo and Marco Mo throughout this process. I can happily say that I have rarely had the privilege to work with a company contact who is as prompt, communicative, and (when needed) patient with solving challenges and working on projects as Austin is.",
@@ -70,11 +112,11 @@ function Procurement() {
 
         const revenueInterval = setInterval(() => {
             setRevenue(prev => {
-                if (prev < revenueTarget) return Math.min(prev + 0.1, revenueTarget);
+                if (prev < revenueTarget) return Math.min(prev + 1, revenueTarget);
                 clearInterval(revenueInterval);
                 return revenueTarget;
             });
-        }, 50);
+        }, 1000);
 
         const marketShareInterval = setInterval(() => {
             setMarketShare(prev => {
@@ -82,7 +124,7 @@ function Procurement() {
                 clearInterval(marketShareInterval);
                 return marketShareTarget;
             });
-        }, 100);
+        }, 150);
 
         const satisfactionInterval = setInterval(() => {
             setSatisfaction(prev => {
@@ -143,80 +185,160 @@ function Procurement() {
             </div>
 
             {/* Homepage */}
-            <div>
-                <div
-                    className="overflow-hidden bg-cover h-[85vh] 2xl:h-[90vh] bg-center"
-                    style={{
-                        backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 75%), url(${changebuilding})`,
-                    }}
-                >
-                    <div className="text-ghost-white h-full">
-                        <div className="px-[10vw] 2xl:px-[20vw] h-full flex items-center">
-                            <div>
-                                <h1 className="text-4xl font-bold uppercase">Unlocking Solutions with</h1>
-                                <h1 className="text-4xl font-bold uppercase mt-3">Canada Computers & Electronics</h1>
-                                <p className="text-xl font-medium mt-6">Innovative Consulting Services to Drive Your Success</p>
+            <div
+                className="overflow-hidden bg-cover h-116 bg-top"
+                style={{
+                    backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 75%), url(${changebuilding})`,
+                }}
+            >
+                <div className="text-ghost-white h-full">
+                    <div className="px-[10vw] 2xl:px-[20vw] h-full flex items-center">
+                        <div>
+                            <h1 className="text-4xl font-bold uppercase">Unlocking Solutions with</h1>
+                            <h1 className="text-4xl font-bold uppercase mt-3">Canada Computers & Electronics</h1>
+                            <p className="text-xl font-medium mt-6">Innovative Consulting Services to Drive Your Success</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Problems */}
+            <div className="bg-ghost-white px-[10vw] 2xl:px-[20vw]">
+                <div className="flex flex-row mt-20 mb-18">
+                    <img src={out} className="rounded-sm object-cover w-72" />
+                    <div className="flex flex-col ml-10">
+                        <div className="text-2xl font-bold flex mt-10 mb-2 ml-4">
+                            The Problems And How We Address Them
+                        </div>
+                        <div className="flex flex-col">
+                            {/* First row of problems */}
+                            <div className="flex flex-row justify-between gap-x-6">
+                                {problems1.map((problem, index) => (
+                                    <div key={index} className="py-6 flex-1">
+                                        <div className={`text-sm w-full px-4 py-4 rounded-sm`}>
+                                            <div className="flex-col">
+                                                <div className="bg-oxford-blue text-white rounded-full p-1.5 w-28 text-center mt-1 font-semibold">{problem.title}</div>
+                                                <div className="mt-4 text-base font-semibold">{problem.sub}</div>
+                                                <div className="mt-4">{problem.text}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            {/* Second row of problems */}
+                            <div className="flex flex-row justify-between gap-x-6">
+                                {problems2.map((problem, index) => (
+                                    <div key={index} className="flex-1">
+                                        <div className={`text-sm w-full px-4 mb-4 rounded-sm`}>
+                                            <div className="flex-col">
+                                                <div className="bg-oxford-blue text-white rounded-full p-1.5 w-28 text-center mt-1 font-semibold">{problem.title}</div>
+                                                <div className="mt-4 text-base font-semibold">{problem.sub}</div>
+                                                <div className="mt-4">{problem.text}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="flex justify-center mt-5">
+                                <button className="bg-oxford-blue text-white rounded-md w-32 p-2 font-semibold text-sm items-center hover:bg-slate-700">Learn More</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Banner */}
-            <div className="bg-oxford-blue flex flex-col py-20 w-full items-center overflow-hidden px-[10vw] 2xl:px-[20vw]">
-                <div className="text-2xl text-white font-bold text-center">Canada Computers & Electronics empowers businesses with transformative strategies, delivering results that are 50% more efficient.</div>
+            {/* Services */}
+            <div className="bg-white py-4 w-full overflow-hidden px-[10vw] 2xl:px-[20vw]">
+                <div className="mb-20">
+                    <div className="flex justify-between">
+                        <div className="flex-grow">
+                            <h1 className="text-2xl text-black mt-12 font-semibold">Our Services</h1>
+                            <div className="flex flex-row justify-between mt-4">
+                                <div className="mt-6">
+                                    <div className="rounded-sm w-72 flex flex-col">
+                                        <Strategy size={52} weight="light" />
+                                    </div>
+                                    <div className="rounded-sm w-72 mb-8 flex flex-col py-4">
+                                        <div className="text-black font-medium">Strategic Sourcing</div>
+                                        <div className="text-black text-sm mt-2">Enhance your procurement process by leveraging data-driven insights and supplier collaboration to drive value and efficiency.</div>
+                                    </div>
+                                    <div className="rounded-sm w-72 flex flex-col">
+                                        <Headset size={52} weight="light" />
+                                    </div>
+                                    <div className="rounded-sm w-72 flex flex-col py-4">
+                                        <div className="text-black font-medium">Supplier Relationship Management</div>
+                                        <div className="text-black text-sm mt-2">Cultivate strong partnerships with suppliers through effective communication and performance metrics, fostering collaboration that drives innovation and value.</div>
+                                    </div>
+                                </div>
+                                <div className="mt-6">
+                                    <div className="rounded-sm w-72 flex flex-col">
+                                        <Coins size={52} weight="light" />
+                                    </div>
+                                    <div className="rounded-sm w-72 mb-8 flex flex-col py-4">
+                                        <div className="text-black font-medium">Spend Analysis</div>
+                                        <div className="text-black text-sm mt-2">Unlock actionable insights by dissecting your spending patterns, enabling informed decisions that maximize cost savings and improve budget management.</div>
+                                    </div>
+                                    <div className="rounded-sm w-72 flex flex-col">
+                                        <ClockUser size={52} weight="light" />
+                                    </div>
+                                    <div className="rounded-sm w-72 flex flex-col py-4">
+                                        <div className="text-black font-medium">Procurement Process Optimization</div>
+                                        <div className="text-black text-sm mt-2">Streamline your purchasing workflows by identifying bottlenecks and implementing best practices, ensuring efficiency and cost-effectiveness throughout the supply chain.</div>
+                                    </div>
+                                </div>
+                                <div className="mt-6">
+                                    <div className="rounded-sm w-72 flex flex-col">
+                                        <HeadCircuit size={52} weight="light" />
+                                    </div>
+                                    <div className="rounded-sm w-72 flex flex-col py-4">
+                                        <div className="text-black font-medium">Contract Negotiation</div>
+                                        <div className="text-black text-sm mt-2">Achieve favorable terms and strengthen supplier relationships through skilled negotiation tactics that align with your business objectives and drive value.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            {/* Strategy */}
+            {/* Process */}
             <div className="bg-ghost-white flex flex-col mt-14 w-full overflow-hidden px-[10vw] 2xl:px-[20vw]">
-                <div className="text-2xl text-black font-bold text-center">Our Strategic Approach</div>
-                <div className="flex flex-row justify-center mt-10">
+                <div className="text-2xl text-black font-bold text-center mt-6">Our Process</div>
+                <div className="flex flex-row justify-center">
                     {/* Leftside */}
-                    <div className="w-1/3 flex flex-col items-center">
+                    <div className="w-2/5 flex flex-col items-center">
                         <div className="flex flex-col">
                             {stratcards1.map((strat, index) => (
                                 <div key={index} className="py-6">
                                     <div className="flex flex-col items-center">
-                                        <div className={`fade-in-right mt-4`} ref={el => leftRefs.current[index] = el}>
-                                            <div className={`bg-slate-200 text-sm w-58 px-4 py-4 rounded-sm`}>
+                                        <div className={`fade-in-left mt-4`} ref={el => leftRefs.current[index] = el}>
+                                            <div className={`bg-slate-200 text-sm w-80 px-4 py-4 rounded-sm`}>
                                                 <div className="flex-col">
                                                     <div className="mt-1 text-md font-semibold">{strat.title}</div>
-                                                    <div className="mt-1">{strat.text}</div>
+                                                    <div className="mt-1">{strat.text1}</div>
                                                 </div>
                                             </div>
-                                            <img src={strat.image} className={`w-58 h-36 object-cover`} />
+                                            <img src={strat.image} className={`w-80 h-48 object-cover`} />
                                         </div>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     </div>
-                    {/* Center */}
-                    <div className="w-10 flex flex-col items-center relative">
-                        <div className="absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-1 bg-black" />
-                        <div className="flex flex-col items-center">
-                            {stratcards1.map((strat, index) => (
-                                <div key={index} className="py-10">
-                                    <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white" />
-                                    <div className="h-60" />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
                     {/* Rightside */}
-                    <div className="w-1/3 flex flex-col items-center justify-center">
+                    <div className="w-2/5 flex flex-col items-center justify-center">
                         <div className="flex flex-col">
                             {stratcards2.map((strat, index) => (
                                 <div key={index} className="py-6">
                                     <div className="flex flex-col items-center">
                                         <div className={`fade-in-right mt-4`} ref={el => rightRefs.current[index] = el}>
-                                            <div className={`bg-slate-200 text-sm w-58 px-4 py-4 rounded-sm`}>
+                                            <div className={`bg-slate-200 text-sm w-80 px-4 py-4 rounded-sm`}>
                                                 <div className="flex-col">
                                                     <div className="mt-1 text-md font-semibold">{strat.title}</div>
-                                                    <div className="mt-1">{strat.text}</div>
+                                                    <div className="mt-1">{strat.text1}</div>
                                                 </div>
                                             </div>
-                                            <img src={strat.image} className={`w-58 h-36 object-cover`} />
+                                            <img src={strat.image} className={`w-80 h-48 object-cover`} />
                                         </div>
                                     </div>
                                 </div>
@@ -250,31 +372,27 @@ function Procurement() {
 
             {/* Quotes */}
             <div className="bg-ghost-white px-[10vw] 2xl:px-[20vw]">
-                <div className="flex flex-row justify-between mt-20">
-                    <img src={quote1} className="w-120" />
-                    <img src={quote2} className="w-120" />
-                </div>
-            </div>
-
-            <div className="bg-ghost-white px-[10vw] 2xl:px-[20vw]">
-                <div className="flex flex-row justify-between text-center py-20">
+                <div className="flex justify-between py-10">
                     {quotes.map((quote, index) => (
                         <div key={index} className="py-10">
-                            <div className="bg-slate-200 w-120 h-96 flex flex-col justify-between px-10 py-4">
-                                <div className="py-2">
-                                    <div className="flex flex-row h-16 justify-center gap-x-14">
-                                        <img src={cclogo} />
-                                        <img src={tmulogo} />
+                            <div className="bg-slate-200 w-full flex flex-col rounded-lg p-8">
+                                <div className="flex flex-row justify-between">
+                                    <div className="w-1/2 flex items-center justify-center">
+                                        <div className="w-88 2xl:mr-14">
+                                            <img src={tmumeeting} className="rounded-sm" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="uppercase text-black text-sm font-semibold py-2">
-                                    {quote.question}
-                                </div>
-                                <div className="uppercase text-black text-sm font-semibold py-2">
-                                    {quote.answer}
-                                </div>
-                                <div className="text-black text-sm font-semibold py-2">
-                                    {quote.person}
+                                    <div className="absolute m-auto">
+                                        <img src={tmulogo} className="h-18" />
+                                    </div>
+                                    <div className="w-1/2 py-6">
+                                        <div className="text-black text-lg font-medium py-2">
+                                            "{quote.answer}"
+                                        </div>
+                                        <div className="text-black text-md py-2">
+                                            {quote.person}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

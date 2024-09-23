@@ -152,7 +152,9 @@ function Landing() {
                             <img src={prototype} className="w-10 mb-2"/>
                             <div className="text-black font-semibold py-1">Prototyping and Development</div>
                             <div className="text-black text-sm">Competitive product manufacturing within the tech industry using high quality materials with the best terms, rates, conditions, and prices.</div>
-                            <div className="cursor-pointer text-blue-600 text-sm py-2">Explore our procurement options →</div>
+                            <Link to={"/procurement"} className="text-blue-600 text-sm py-2">
+                                Explore our procurement options →
+                            </Link>
                         </div>
                     </div>
                 </div>
