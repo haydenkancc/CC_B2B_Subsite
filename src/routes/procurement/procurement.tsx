@@ -1,17 +1,20 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { startTransition, useEffect, useRef, useState } from "react";
 import "./procurement.css";
 import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
 import changebuilding from "../../assets/changebuilding.gif";
-import laptop from "../../assets/laptop.png";
-import quote1 from "../../assets/quote1.png"
-import quote2 from "../../assets/quote2.png"
-import cclogo from "../../assets/cclogo.png"
 import tmulogo from "../../assets/tmulogo.png"
 import tmumeeting from "../../assets/tmumeeting.png"
 import out from "../../assets/out.png"
+import strat1 from "../../assets/strat1.png"
+import strat2 from "../../assets/strat2.png"
+import strat3 from "../../assets/strat3.png"
+import strat4 from "../../assets/strat4.png"
+import strat5 from "../../assets/strat5.png"
+import strat6 from "../../assets/strat6.png"
+import strat7 from "../../assets/strat7.png"
 
-import { Strategy, Coins, HeadCircuit, Headset, ClockUser  } from "@phosphor-icons/react";
+import { Strategy, Coins, HeadCircuit, Headset, ClockUser, Scales, DesktopTower, Brain, Lightbulb, Handshake, BookOpenText  } from "@phosphor-icons/react";
 
 const pages = ['Partners', 'Industry', 'About'];
 
@@ -41,48 +44,86 @@ const problems2 = [
     },
 ]
 
-const stratcards1 = [
+const stratcards = [
     {
-        image: laptop,
+        image: strat1,
+        step: "Step 1",
         title: "Initial Assessment and Needs Analysis",
-        text1: "Understanding the Client's Goals: Clearly define the client's objectives, challenges, and desired outcomes.",
-        text2: "Identifying Key Areas: Pinpoint specific areas where procurement can be improved, such as cost reduction, risk management, or supplier performance.",
-        text3: "Assessing Current Processes: Evaluate the client's existing procurement practices, identifying strengths, weaknesses, and opportunities for improvement.",
+        sub1: "Understanding the Client's Goals:",
+        sub2: "Identifying Key Areas:",
+        sub3: "Assessing Current Processes:",
+        text1: "Clearly define the client's objectives, challenges, and desired outcomes.",
+        text2: "Pinpoint specific areas where procurement can be improved, such as cost reduction, risk management, or supplier performance.",
+        text3: "Evaluate the client's existing procurement practices, identifying strengths, weaknesses, and opportunities for improvement.",
     },
     {
-        image: laptop,
+        image: strat2,
+        step: "Step 2",
+        title: "Data Collection and Analysis",
+        sub1: "Spend Analysis:",
+        sub2: "Supplier Performance Review:",
+        sub3: "Benchmarking:",
+        text1: "Gather and analyze spending data to identify areas of potential cost savings.",
+        text2: "Evaluate supplier performance against established metrics.",
+        text3: "Compare the client's procurement practices to industry benchmarks.",
+    },
+    {
+        image: strat3,
+        step: "Step 3",
         title: "Strategic Planning",
-        text1: "Leveraging analytics for informed decision-making and growth.",
+        sub1: "Goal Setting:",
+        sub2: "Strategy Development:",
+        sub3: "Risk Assessment:",
+        text1: "Develop clear, measurable goals for procurement.",
+        text2: "Create a strategic plan outlining the steps needed to achieve the goals.",
+        text3: "Identify potential risks and develop mitigation strategies.",
     },
     {
-        image: laptop,
+        image: strat4,
+        step: "Step 4",
+        title: "Supplier Evaluation and Selection",
+        sub1: "Supplier Identification: ",
+        sub2: "Supplier Evaluation:",
+        sub3: "Supplier Selection:",
+        text1: "Identify potential suppliers based on criteria such as cost, quality, delivery time, and sustainability.",
+        text2: "Evaluate suppliers using a structured evaluation process.",
+        text3: "Select the most suitable suppliers based on the evaluation criteria.",
+    },
+    {
+        image: strat5,
+        step: "Step 5",
         title: "Contract Negotiation",
-        text1: "Guiding seamless transitions during transformative periods.",
+        sub1: "Contract Development:",
+        sub2: "Risk Mitigation:",
+        sub3: "Performance Metrics:",
+        text1: "Draft and negotiate contracts with selected suppliers.",
+        text2: "Ensure that contracts include appropriate clauses to mitigate risks.",
+        text3: "Establish clear performance metrics to measure supplier performance.",
     },
     {
-        image: laptop,
+        image: strat6,
+        step: "Step 6",
+        title: "Supplier Relationship Management",
+        sub1: "Ongoing Monitoring:",
+        sub2: "Collaboration:",
+        sub3: "Performance Improvement:",
+        text1: "Monitor supplier performance and address any issues proactively.",
+        text2: "Foster collaboration with suppliers to improve efficiency and reduce costs.",
+        text3: "Work with suppliers to identify areas for improvement and implement corrective actions.",
+    },
+    {
+        image: strat7,
+        step: "Step 7",
         title: "Continuous Improvement",
-        text1: "Guiding seamless transitions during transformative periods.",
+        sub1: "Regular Reviews: ",
+        sub2: "Data Analysis:",
+        sub3: "",
+        text1: "Conduct regular reviews of procurement processes and performance.",
+        text2: "Use data analytics to identify trends and opportunities for improvement.",
+        text3: "",
     },
 ];
 
-const stratcards2 = [
-    {
-        image: laptop,
-        title: "Data Collection and Analysis",
-        text1: "Tailored strategies to address your unique business needs.",
-    },
-    {
-        image: laptop,
-        title: "Supplier Evaluation and Selection",
-        text1: "Leveraging analytics for informed decision-making and growth.",
-    },
-    {
-        image: laptop,
-        title: "Supplier Relationship Management",
-        text1: "Leveraging analytics for informed decision-making and growth.",
-    },
-];
 
 const quotes = [
     // {
@@ -104,42 +145,56 @@ function Procurement() {
     const [revenue, setRevenue] = useState(0);
     const [marketShare, setMarketShare] = useState(0);
     const [satisfaction, setSatisfaction] = useState(0);
+    const [startAnimation, setStartAnimation] = useState(false);
 
     useEffect(() => {
         const revenueTarget = 5;
         const marketShareTarget = 30;
         const satisfactionTarget = 97;
-
-        const revenueInterval = setInterval(() => {
-            setRevenue(prev => {
-                if (prev < revenueTarget) return Math.min(prev + 1, revenueTarget);
+    
+        const startAnimationWithDelay = setTimeout(() => {
+            const revenueInterval = setInterval(() => {
+                if (startAnimation) {
+                    setRevenue(prev => {
+                        if (prev < revenueTarget) return Math.min(prev + 1, revenueTarget);
+                        clearInterval(revenueInterval);
+                        return revenueTarget;
+                    });
+                }
+            }, 500);
+    
+            const marketShareInterval = setInterval(() => {
+                if (startAnimation) {
+                    setMarketShare(prev => {
+                        if (prev < marketShareTarget) return Math.min(prev + 1, marketShareTarget);
+                        clearInterval(marketShareInterval);
+                        return marketShareTarget;
+                    });
+                }
+            }, 83.33);
+    
+            const satisfactionInterval = setInterval(() => {
+                if (startAnimation) {
+                    setSatisfaction(prev => {
+                        if (prev < satisfactionTarget) return Math.min(prev + 1, satisfactionTarget);
+                        clearInterval(satisfactionInterval);
+                        return satisfactionTarget;
+                    });
+                }
+            }, 25.77);
+    
+            return () => {
                 clearInterval(revenueInterval);
-                return revenueTarget;
-            });
-        }, 1000);
-
-        const marketShareInterval = setInterval(() => {
-            setMarketShare(prev => {
-                if (prev < marketShareTarget) return Math.min(prev + 1, marketShareTarget);
                 clearInterval(marketShareInterval);
-                return marketShareTarget;
-            });
-        }, 150);
-
-        const satisfactionInterval = setInterval(() => {
-            setSatisfaction(prev => {
-                if (prev < satisfactionTarget) return Math.min(prev + 1, satisfactionTarget);
                 clearInterval(satisfactionInterval);
-                return satisfactionTarget;
-            });
-        }, 50);
-
+            };
+        }, 1000); // Delay of 1 second
+    
         return () => {
-            clearInterval(revenueInterval);
-            clearInterval(marketShareInterval);
-            clearInterval(satisfactionInterval);
+            clearTimeout(startAnimationWithDelay);
         };
-    }, []);
+    }, [startAnimation]);
+    
 
     useEffect(() => {
         const options = {
@@ -150,6 +205,7 @@ function Procurement() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    setStartAnimation(true);
                     entry.target.classList.add('visible');
                     observer.unobserve(entry.target); // Stop lookin once its in view
                 }
@@ -194,7 +250,7 @@ function Procurement() {
                 <div className="text-ghost-white h-full">
                     <div className="px-[10vw] 2xl:px-[20vw] h-full flex items-center">
                         <div>
-                            <h1 className="text-4xl font-bold uppercase">Unlocking Solutions with</h1>
+                            <h1 className="text-4xl font-bold uppercase">Optimize your technology with</h1>
                             <h1 className="text-4xl font-bold uppercase mt-3">Canada Computers & Electronics</h1>
                             <p className="text-xl font-medium mt-6">Innovative Consulting Services to Drive Your Success</p>
                         </div>
@@ -303,79 +359,107 @@ function Procurement() {
 
             {/* Process */}
             <div className="bg-ghost-white flex flex-col mt-14 w-full overflow-hidden px-[10vw] 2xl:px-[20vw]">
-                <div className="text-2xl text-black font-bold text-center mt-6">Our Process</div>
-                <div className="flex flex-row justify-center">
-                    {/* Leftside */}
-                    <div className="w-2/5 flex flex-col items-center">
-                        <div className="flex flex-col">
-                            {stratcards1.map((strat, index) => (
-                                <div key={index} className="py-6">
-                                    <div className="flex flex-col items-center">
-                                        <div className={`fade-in-left mt-4`} ref={el => leftRefs.current[index] = el}>
-                                            <div className={`bg-slate-200 text-sm w-80 px-4 py-4 rounded-sm`}>
-                                                <div className="flex-col">
-                                                    <div className="mt-1 text-md font-semibold">{strat.title}</div>
-                                                    <div className="mt-1">{strat.text1}</div>
-                                                </div>
-                                            </div>
-                                            <img src={strat.image} className={`w-80 h-48 object-cover`} />
-                                        </div>
+                <div className="text-2xl text-black font-bold mt-4">Join our network.</div>
+                <div className="text-2xl text-black font-bold mb-10">Simplify the process.</div>
+                <div className="flex flex-col mb-14">
+                    {stratcards.map((strat, index) => (
+                        <div key={index} className={`py-2.5 ${index % 2 === 1 ? 'ml-72' : ''}`}>
+                            <div className={`fade-in-left`} ref={el => leftRefs.current[index] = el}>
+                                <div className="flex flex-row">
+                                    <img src={strat.image} className="w-64 h-48 object-cover rounded-xl" />
+                                    <div className="flex flex-col ml-8 justify-center">
+                                        <div className="text-blue-700 text-sm uppercase">{strat.step}</div>
+                                        <div className="text-lg font-semibold">{strat.title}</div>
+                                        <span>
+                                            <span className="text-sm font-medium">{strat.sub1}</span>
+                                            <span className="ml-1 text-sm">{strat.text1}</span>
+                                        </span>
+                                        <span>
+                                            <span className="text-sm font-medium">{strat.sub2}</span>
+                                            <span className="ml-1 text-sm">{strat.text2}</span>
+                                        </span>
+                                        <span>
+                                            <span className="text-sm font-medium">{strat.sub3}</span>
+                                            <span className="ml-1 text-sm">{strat.text3}</span>
+                                        </span>
                                     </div>
                                 </div>
-                            ))}
+                            </div>
                         </div>
+                    ))} 
+                </div>
+            </div>
+
+            {/* Expertise */}
+            <div className="bg-ghost-white w-full px-[10vw] 2xl:px-[20vw] py-14 text-center mb-8">
+                <div className="text-2xl text-black font-semibold">What We Do Best</div>
+                <div className="text-md text-black mt-4">
+                    Under our main brand, we are a leading technology retailer in Canada, we have a strong foundation in procurement and sourcing due to our extensive experience and operations.
+                </div>
+                <div className="flex flex-row justify-between mt-10">
+                    <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
+                        <Scales size={52} />
+                        <div className="text-black font-semibold mt-2">Scale and Buying Power</div>
+                        <div className="text-black text-sm mt-2">Using significant purchasing power and expert negotiation skills to secure advantageous terms.</div>
                     </div>
-                    {/* Rightside */}
-                    <div className="w-2/5 flex flex-col items-center justify-center">
-                        <div className="flex flex-col">
-                            {stratcards2.map((strat, index) => (
-                                <div key={index} className="py-6">
-                                    <div className="flex flex-col items-center">
-                                        <div className={`fade-in-right mt-4`} ref={el => rightRefs.current[index] = el}>
-                                            <div className={`bg-slate-200 text-sm w-80 px-4 py-4 rounded-sm`}>
-                                                <div className="flex-col">
-                                                    <div className="mt-1 text-md font-semibold">{strat.title}</div>
-                                                    <div className="mt-1">{strat.text1}</div>
-                                                </div>
-                                            </div>
-                                            <img src={strat.image} className={`w-80 h-48 object-cover`} />
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                    <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
+                        <DesktopTower size={52} />
+                        <div className="text-black font-semibold mt-2">Supply Chain Management</div>
+                        <div className="text-black text-sm mt-2">Sourcing products efficiently with a global supply chian network while expertly managing risks.</div>
+                    </div>
+                    <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
+                        <Brain size={52} />
+                        <div className="text-black font-semibold mt-2">Product Knowledge</div>
+                        <div className="text-black text-sm mt-2">A deep understanding of technology products ensures we can accurately evaluate quality.</div>
+                    </div>
+                </div>
+                <div className="flex flex-row justify-between mt-10">
+                    <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
+                        <Lightbulb size={52} />
+                        <div className="text-black font-semibold mt-2">Technology Expertise</div>
+                        <div className="text-black text-sm mt-2">Leverage data analytics with a robust IT infrastructure to streamline procurement processes and identify savings.</div>
+                    </div>
+                    <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
+                        <Handshake size={52} />
+                        <div className="text-black font-semibold mt-2">Supplier Relationships</div>
+                        <div className="text-black text-sm mt-2">Long-term partnerships with suppliers through trust and ethical practices provide us with a competitive advantage.</div>
+                    </div>
+                    <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
+                        <BookOpenText size={52} />
+                        <div className="text-black font-semibold mt-2">Regulatory Compliance</div>
+                        <div className="text-black text-sm mt-2">Being well-versed in industry regulations and standards ensure compliance while helping clients navigate complexities and mitigate risks.</div>
                     </div>
                 </div>
             </div>
 
-            {/* Success */}
-            <div className="bg-oxford-blue text-ghost-white flex flex-col mt-20 w-full overflow-hidden px-[10vw] 2xl:px-[20vw]">
-                <div className="text-2xl font-bold text-center mt-10">Proven Success</div>
-                <div className="flex flex-row justify-between py-10">
+            {/* Banner */}
+            <div className="bg-oxford-blue text-ghost-white flex flex-col w-full overflow-hidden px-[10vw] 2xl:px-[20vw]">
+                <div className="flex flex-row justify-between py-14">
                     {/* Leftside */}
-                    <div className="w-1/3 flex flex-col items-center justify-center">
-                        <div>+${revenue.toLocaleString()}M</div>
-                        <div>Generated additional revenue for our clients</div>
+                    <div className="w-1/3 flex flex-col items-center justify-center" ref={el => leftRefs.current.push(el)}>
+                        <div className="font-bold text-4xl">${revenue}M</div>
+                        <div className="mt-4 font-medium">Additional Revenue</div>
                     </div>
                     {/* Center */}
                     <div className="w-1/3 flex flex-col items-center justify-center">
-                        <div>+{marketShare}%</div>
-                        <div>Achieved growth in client market share</div>
+                        <div className="font-bold text-4xl">{marketShare}%</div>
+                        <div className="mt-4 font-medium">Increased Growth in Client Market Share</div>
                     </div>
                     {/* Rightside */}
-                    <div className="w-1/3 flex flex-col items-center justify-center">
-                        <div>{satisfaction}%</div>
-                        <div>Client satisfaction rate</div>
+                    <div className="w-1/3 flex flex-col items-center justify-center" ref={el => rightRefs.current.push(el)}>
+                        <div className="font-bold text-4xl">{satisfaction}%</div>
+                        <div className="mt-4 font-medium">Client Satisfaction Rate</div>
                     </div>
                 </div>
             </div>
 
+
             {/* Quotes */}
-            <div className="bg-ghost-white px-[10vw] 2xl:px-[20vw]">
-                <div className="flex justify-between py-10">
+            <div className="bg-ghost-white px-[10vw] 2xl:px-[20vw] mb-10">
+                <div className="flex justify-between py-20">
                     {quotes.map((quote, index) => (
-                        <div key={index} className="py-10">
-                            <div className="bg-slate-200 w-full flex flex-col rounded-lg p-8">
+                        <div key={index}>
+                            <div className="bg-slate-200 w-full rounded-lg p-8">
                                 <div className="flex flex-row justify-between">
                                     <div className="w-1/2 flex items-center justify-center">
                                         <div className="w-88 2xl:mr-14">
@@ -386,10 +470,10 @@ function Procurement() {
                                         <img src={tmulogo} className="h-18" />
                                     </div>
                                     <div className="w-1/2 py-6">
-                                        <div className="text-black text-lg font-medium py-2">
+                                        <div className="text-black text-md font-medium py-2">
                                             "{quote.answer}"
                                         </div>
-                                        <div className="text-black text-md py-2">
+                                        <div className="text-black text-md font-light py-2">
                                             {quote.person}
                                         </div>
                                     </div>
