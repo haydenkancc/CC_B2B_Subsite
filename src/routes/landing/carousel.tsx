@@ -14,25 +14,25 @@ function Carousel({ slides }) {
 
 
     return (
-        <div className="relative overflow-hidden w-screen h-72">
+        <div className="relative overflow-hidden w-full items-center h-72">
             <div
                 className={`flex transition-transform duration-1000 ease-in-out`}
                 style={{ transform: `translateX(-${current * 100}%)` }}
             >
                 {slides.map((s, index) => (
-                    <div key={index} className="relative flex-shrink-0 w-screen h-full opacity-0 transition-opacity duration-1000 ease-in-out"
+                    <div key={index} className="relative flex-shrink-0 w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out"
                          style={{ opacity: index === current ? 1 : 0 }}
                     >
                         <img
                             src={s.image}
-                            className="w-full h-full object-cover blur-sm scale-125"
+                            className="w-full h-full object-cover blur-sm scale-150"
                             alt={`Slide ${index}`}
                         />
                         <div className="absolute inset-0 flex flex-col justify-center px-[10vw] 2xl:px-[20vw]">
                             <div className="text-white text-xl font-bold mb-4">
                                 <span>{s.text}</span>
                             </div>
-                            <div className="text-white text-md font-mono mb-8">
+                            <div className="text-white font-mono mb-8">
                                 <span>{s.body}</span>
                             </div>
                             <Link to={s.link} className="text-sm bg-white hover:bg-ghost-white text-oxford-blue font-bold py-1.5 rounded-sm text-center">

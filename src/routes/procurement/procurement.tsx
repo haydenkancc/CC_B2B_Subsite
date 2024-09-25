@@ -124,20 +124,6 @@ const stratcards = [
     },
 ];
 
-
-const quotes = [
-    // {
-    //     question: "How would you describe the overall satisfaction and trust you have in our company?",
-    //     answer: "Extremely satisfied. Canada Computers has never been anything other than timely in responses and supportive of any issues that we are dealing with at the creative school. They have been a joy to work with throughout.",
-    //     person: "- Geoffrey Lachapelle",
-    // },
-    {
-        question: "Are there any specific team members or individuals from our company who have made a significant impact on your experience?",
-        answer: "I have been overjoyed to be working with Austin Kuo and Marco Mo throughout this process. I can happily say that I have rarely had the privilege to work with a company contact who is as prompt, communicative, and (when needed) patient with solving challenges and working on projects as Austin is.",
-        person: "- Geoffrey Lachapelle",
-    },
-]
-
 function Procurement() {
     const leftRefs = useRef([]);
     const rightRefs = useRef([]);
@@ -252,7 +238,7 @@ function Procurement() {
                         <div>
                             <h1 className="text-4xl font-bold uppercase">Optimize your technology with</h1>
                             <h1 className="text-4xl font-bold uppercase mt-3">Canada Computers & Electronics</h1>
-                            <p className="text-xl font-medium mt-6">Innovative Consulting Services to Drive Your Success</p>
+                            <p className="text-xl font-medium mt-6">Innovative Services to Drive Your Success</p>
                         </div>
                     </div>
                 </div>
@@ -262,13 +248,13 @@ function Procurement() {
             <div className="bg-ghost-white px-[10vw] 2xl:px-[20vw]">
                 <div className="flex flex-row mt-20 mb-18">
                     <img src={out} className="rounded-sm object-cover w-72" />
-                    <div className="flex flex-col ml-10">
+                    <div className="flex flex-col ml-14">
                         <div className="text-2xl font-bold flex mt-10 mb-2 ml-4">
                             The Problems And How We Address Them
                         </div>
                         <div className="flex flex-col">
                             {/* First row of problems */}
-                            <div className="flex flex-row justify-between gap-x-6">
+                            <div className="flex flex-row justify-between gap-x-7">
                                 {problems1.map((problem, index) => (
                                     <div key={index} className="py-6 flex-1">
                                         <div className={`text-sm w-full px-4 py-4 rounded-sm`}>
@@ -436,53 +422,23 @@ function Procurement() {
             <div className="bg-oxford-blue text-ghost-white flex flex-col w-full overflow-hidden px-[10vw] 2xl:px-[20vw]">
                 <div className="flex flex-row justify-between py-14">
                     {/* Leftside */}
-                    <div className="w-1/3 flex flex-col items-center justify-center" ref={el => leftRefs.current.push(el)}>
+                    <div className="w-1/3 flex flex-col items-center justify-center">
                         <div className="font-bold text-4xl">${revenue}M</div>
-                        <div className="mt-4 font-medium">Additional Revenue</div>
+                        <div className="mt-4 font-medium" ref={el => rightRefs.current.push(el)}>Additional Revenue</div>
                     </div>
                     {/* Center */}
                     <div className="w-1/3 flex flex-col items-center justify-center">
                         <div className="font-bold text-4xl">{marketShare}%</div>
-                        <div className="mt-4 font-medium">Increased Growth in Client Market Share</div>
+                        <div className="mt-4 font-medium" ref={el => rightRefs.current.push(el)}>Increased Growth in Client Market Share</div>
                     </div>
                     {/* Rightside */}
-                    <div className="w-1/3 flex flex-col items-center justify-center" ref={el => rightRefs.current.push(el)}>
+                    <div className="w-1/3 flex flex-col items-center justify-center">
                         <div className="font-bold text-4xl">{satisfaction}%</div>
-                        <div className="mt-4 font-medium">Client Satisfaction Rate</div>
+                        <div className="mt-4 font-medium" ref={el => rightRefs.current.push(el)}>Client Satisfaction Rate</div>
                     </div>
                 </div>
             </div>
-
-
-            {/* Quotes */}
-            <div className="bg-ghost-white px-[10vw] 2xl:px-[20vw] mb-10">
-                <div className="flex justify-between py-20">
-                    {quotes.map((quote, index) => (
-                        <div key={index}>
-                            <div className="bg-slate-200 w-full rounded-lg p-8">
-                                <div className="flex flex-row justify-between">
-                                    <div className="w-1/2 flex items-center justify-center">
-                                        <div className="w-88 2xl:mr-14">
-                                            <img src={tmumeeting} className="rounded-sm" />
-                                        </div>
-                                    </div>
-                                    <div className="absolute m-auto">
-                                        <img src={tmulogo} className="h-18" />
-                                    </div>
-                                    <div className="w-1/2 py-6">
-                                        <div className="text-black text-md font-medium py-2">
-                                            "{quote.answer}"
-                                        </div>
-                                        <div className="text-black text-md font-light py-2">
-                                            {quote.person}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            
         </>
     );
 }

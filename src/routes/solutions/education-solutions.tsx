@@ -19,14 +19,29 @@ import { ClipboardText, Cardholder, HandCoins, UserCircleGear, CaretRight, Check
 import enterprise1 from "../../assets/enterprise1.png"
 import enterprise2 from "../../assets/enterprise2.png"
 import enterprise3 from "../../assets/enterprise3.png"
+import tmumeeting from "../../assets/tmumeeting.png"
+import tmulogo from "../../assets/tmulogo.png"
 
 const pages = ['Partners', 'Industry', 'About'];
 
+const quotes = [
+    // {
+    //     question: "How would you describe the overall satisfaction and trust you have in our company?",
+    //     answer: "Extremely satisfied. Canada Computers has never been anything other than timely in responses and supportive of any issues that we are dealing with at the creative school. They have been a joy to work with throughout.",
+    //     person: "- Geoffrey Lachapelle",
+    // },
+    {
+        question: "Are there any specific team members or individuals from our company who have made a significant impact on your experience?",
+        answer: "I have been overjoyed to be working with Austin Kuo and Marco Mo throughout this process. I can happily say that I have rarely had the privilege to work with a company contact who is as prompt, communicative, and (when needed) patient with solving challenges and working on projects as Austin is.",
+        person: "- Geoffrey Lachapelle",
+    },
+]
+
 function EducationSolutions() {
     
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location]);
+    // useEffect(() => {
+    //     window.scrollTo(0, 0);
+    // }, [location]);
 
     let slides = [
         {
@@ -261,10 +276,42 @@ function EducationSolutions() {
 
             {/* Succeed */}
             <div className="bg-ghost-white flex flex-col items-center py-4 px-20 w-full overflow-hidden justify-center px-[10vw] 2xl:px-[20vw]">
-                <div className="text-xl text-oxford-blue font-bold text-center mt-12 mb-10">With our extensive experience in education, we simplify complex challenges and drive innovation in learning spaces with customized solutions that elevate the overall educational experience.</div>
+                <div className="text-xl text-oxford-blue font-bold text-center mt-12">With our extensive experience in education, we simplify complex challenges and drive innovation in learning spaces with customized solutions that elevate the overall educational experience.</div>
             </div>
+
+            {/* Quotes */}
+            <div className="bg-ghost-white px-[10vw] 2xl:px-[20vw]">
+                <div className="flex justify-between py-10">
+                    {quotes.map((quote, index) => (
+                        <div key={index}>
+                            <div className="bg-slate-200 w-full rounded-sm p-8">
+                                <div className="flex flex-row justify-between">
+                                    <div className="w-1/2 flex items-center justify-center">
+                                        <div className="w-88 2xl:mr-14">
+                                            <img src={tmumeeting} className="rounded-sm" />
+                                        </div>
+                                    </div>
+                                    <div className="absolute m-auto">
+                                        <img src={tmulogo} className="h-18" />
+                                    </div>
+                                    <div className="w-1/2 py-6">
+                                        <div className="text-black text-md py-2">
+                                            "{quote.answer}"
+                                        </div>
+                                        <div className="text-black text-md font-light py-2">
+                                            {quote.person}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Stories */}
             <div className="bg-ghost-white items-center w-full overflow-hidden py-4">
-                <div className="flex flex-row justify-between gap-x-8 px-[10vw] 2xl:px-[20vw]">
+                <div className="flex flex-row justify-between px-[10vw] 2xl:px-[20vw]">
                     <div className="bg-white rounded-lg shadow flex flex-wrap justify-center gap-10 mb-8">
                         <div className="flex flex-col w-80">
                             <div className="flex items-center justify-center">
