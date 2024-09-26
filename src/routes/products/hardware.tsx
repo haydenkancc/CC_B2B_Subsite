@@ -12,7 +12,7 @@ import adspace2 from "../../assets/adspace2.png"
 import adspace3 from "../../assets/adspace3.png"
 import adspace4 from "../../assets/adspace4.png"
 import adspace5 from "../../assets/adspace5.png"
-import HardwareCarousel from "./hardware-carousel.tsx";
+import ProductsCarousel from "./products-carousel.tsx";
 
 const pages = ['Partners', 'Industry', 'About'];
 
@@ -169,7 +169,7 @@ function Hardware() {
             >
                 <div className="contents absolute">
                     <div className="px-[15vw] 2xl:px-[25vw] py-16">
-                        <div className="text-6xl text-ghost-white font-bold">HARDWARE</div>
+                        <div className="text-6xl text-ghost-white font-bold uppercase">Hardware</div>
                         <div className="text-xl text-ghost-white mt-6">Explore IT hardware and technology for your business.</div>
                     </div>
                 </div>
@@ -238,7 +238,7 @@ function Hardware() {
             {/* Carousel */}
             <div className="bg-ghost-white w-full mt-10">
                 <div>
-                    <HardwareCarousel ads={ads} />
+                    <ProductsCarousel ads={ads} />
                 </div> 
             </div>
 

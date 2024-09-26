@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function HardwareCarousel({ ads }) {
+function ProductsCarousel({ ads }) {
     const [current, setCurrent] = useState(0);
 
     useEffect(() => {
@@ -47,4 +47,4 @@ function HardwareCarousel({ ads }) {
     );
 }
 
-export default HardwareCarousel;
+export default ProductsCarousel;

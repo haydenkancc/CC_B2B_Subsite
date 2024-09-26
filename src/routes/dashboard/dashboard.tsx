@@ -95,8 +95,6 @@ function Dashboard() {
        <div className="bg-ghost-white text-oxford-blue">
            <div className="bg-ghost-white text-oxford-blue border-lavender">
                <NavbarTop/>
-               {/* Remove NavbarBottom Line to make work */}
-               <NavbarBottom />
            </div>
            {<div className="bg-glaucous/10 border-b w-full flex flex-col align-middle pl-8 pt-16 pr-8 pb-16">
                <div className="uppercase font-light">

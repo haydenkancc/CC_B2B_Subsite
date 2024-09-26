@@ -13,8 +13,17 @@ import strat4 from "../../assets/strat4.png"
 import strat5 from "../../assets/strat5.png"
 import strat6 from "../../assets/strat6.png"
 import strat7 from "../../assets/strat7.png"
-
-import { Strategy, Coins, HeadCircuit, Headset, ClockUser, Scales, DesktopTower, Brain, Lightbulb, Handshake, BookOpenText  } from "@phosphor-icons/react";
+import scale from "../../assets/scale.png"
+import supply from "../../assets/supply.png"
+import knowledge from "../../assets/knowledge.png"
+import tech from "../../assets/tech.png"
+import relationships from "../../assets/relationships.png"
+import compliance from "../../assets/compliance.png"
+import strategy from "../../assets/strategy.png"
+import spend from "../../assets/spend.png"
+import contract from "../../assets/contract.png"
+import supplier from "../../assets/supplier.png"
+import optimization from "../../assets/optimization.png"
 
 const pages = ['Partners', 'Industry', 'About'];
 
@@ -127,83 +136,86 @@ const stratcards = [
 function Procurement() {
     const leftRefs = useRef([]);
     const rightRefs = useRef([]);
+    const bannerRef = useRef(null);
 
     const [revenue, setRevenue] = useState(0);
     const [marketShare, setMarketShare] = useState(0);
     const [satisfaction, setSatisfaction] = useState(0);
-    const [startAnimation, setStartAnimation] = useState(false);
+    const [startProcessAnimation, setStartProcessAnimation] = useState(false);
+    const [startBannerAnimation, setStartBannerAnimation] = useState(false);
 
+    // Animation for revenue, market share, and satisfaction
     useEffect(() => {
         const revenueTarget = 5;
         const marketShareTarget = 30;
         const satisfactionTarget = 97;
-    
+
         const startAnimationWithDelay = setTimeout(() => {
             const revenueInterval = setInterval(() => {
-                if (startAnimation) {
+                if (startBannerAnimation) {
                     setRevenue(prev => {
                         if (prev < revenueTarget) return Math.min(prev + 1, revenueTarget);
                         clearInterval(revenueInterval);
                         return revenueTarget;
                     });
                 }
-            }, 500);
-    
+            }, 400);
+
             const marketShareInterval = setInterval(() => {
-                if (startAnimation) {
+                if (startBannerAnimation) {
                     setMarketShare(prev => {
                         if (prev < marketShareTarget) return Math.min(prev + 1, marketShareTarget);
                         clearInterval(marketShareInterval);
                         return marketShareTarget;
                     });
                 }
-            }, 83.33);
-    
+            }, 66.67);
+
             const satisfactionInterval = setInterval(() => {
-                if (startAnimation) {
+                if (startBannerAnimation) {
                     setSatisfaction(prev => {
                         if (prev < satisfactionTarget) return Math.min(prev + 1, satisfactionTarget);
                         clearInterval(satisfactionInterval);
                         return satisfactionTarget;
                     });
                 }
-            }, 25.77);
-    
+            }, 20.62);
+
             return () => {
                 clearInterval(revenueInterval);
                 clearInterval(marketShareInterval);
                 clearInterval(satisfactionInterval);
             };
-        }, 1000); // Delay of 1 second
-    
+        }, 500); // 1000 = Delay of 1 second
+
         return () => {
             clearTimeout(startAnimationWithDelay);
         };
-    }, [startAnimation]);
-    
+    }, [startBannerAnimation]);
 
+    // Observer for the process section
     useEffect(() => {
         const options = {
-            root: null, // Viewport as root
-            threshold: 0.1 // Trigger at 10% of the element in view
+            root: null,
+            threshold: 0.1
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    setStartAnimation(true);
+                    setStartProcessAnimation(true);
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Stop lookin once its in view
+                    observer.unobserve(entry.target); // Stop lookin once it's in view
                 }
             });
         }, options);
 
-        // Observe left-side
+        // Observe left-side process elements
         leftRefs.current.forEach(ref => {
             if (ref) observer.observe(ref);
         });
 
-        // Observe right-side
+        // Observe right-side process elements
         rightRefs.current.forEach(ref => {
             if (ref) observer.observe(ref);
         });
@@ -215,6 +227,35 @@ function Procurement() {
             rightRefs.current.forEach(ref => {
                 if (ref) observer.unobserve(ref);
             });
+        };
+    }, []);
+
+    // Observer for the banner
+    useEffect(() => {
+        const options = {
+            root: null,
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setStartBannerAnimation(true);
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once it's in view
+                }
+            });
+        }, options);
+
+        // Observe the banner only
+        if (bannerRef.current) {
+            observer.observe(bannerRef.current);
+        }
+
+        return () => {
+            if (bannerRef.current) {
+                observer.unobserve(bannerRef.current);
+            }
         };
     }, []);
 
@@ -298,14 +339,14 @@ function Procurement() {
                             <div className="flex flex-row justify-between mt-4">
                                 <div className="mt-6">
                                     <div className="rounded-sm w-72 flex flex-col">
-                                        <Strategy size={52} weight="light" />
+                                        <img src={strategy} className="w-12 py-1"/>
                                     </div>
                                     <div className="rounded-sm w-72 mb-8 flex flex-col py-4">
                                         <div className="text-black font-medium">Strategic Sourcing</div>
                                         <div className="text-black text-sm mt-2">Enhance your procurement process by leveraging data-driven insights and supplier collaboration to drive value and efficiency.</div>
                                     </div>
                                     <div className="rounded-sm w-72 flex flex-col">
-                                        <Headset size={52} weight="light" />
+                                        <img src={supplier} className="w-12 py-1"/>
                                     </div>
                                     <div className="rounded-sm w-72 flex flex-col py-4">
                                         <div className="text-black font-medium">Supplier Relationship Management</div>
@@ -314,14 +355,14 @@ function Procurement() {
                                 </div>
                                 <div className="mt-6">
                                     <div className="rounded-sm w-72 flex flex-col">
-                                        <Coins size={52} weight="light" />
+                                        <img src={spend} className="w-12 py-1"/>
                                     </div>
                                     <div className="rounded-sm w-72 mb-8 flex flex-col py-4">
                                         <div className="text-black font-medium">Spend Analysis</div>
                                         <div className="text-black text-sm mt-2">Unlock actionable insights by dissecting your spending patterns, enabling informed decisions that maximize cost savings and improve budget management.</div>
                                     </div>
                                     <div className="rounded-sm w-72 flex flex-col">
-                                        <ClockUser size={52} weight="light" />
+                                        <img src={optimization} className="w-12 py-1"/>
                                     </div>
                                     <div className="rounded-sm w-72 flex flex-col py-4">
                                         <div className="text-black font-medium">Procurement Process Optimization</div>
@@ -330,7 +371,7 @@ function Procurement() {
                                 </div>
                                 <div className="mt-6">
                                     <div className="rounded-sm w-72 flex flex-col">
-                                        <HeadCircuit size={52} weight="light" />
+                                        <img src={contract} className="w-12 py-1"/>
                                     </div>
                                     <div className="rounded-sm w-72 flex flex-col py-4">
                                         <div className="text-black font-medium">Contract Negotiation</div>
@@ -384,34 +425,34 @@ function Procurement() {
                 </div>
                 <div className="flex flex-row justify-between mt-10">
                     <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
-                        <Scales size={52} />
+                        <img src={scale} className="w-12 py-1"/>
                         <div className="text-black font-semibold mt-2">Scale and Buying Power</div>
                         <div className="text-black text-sm mt-2">Using significant purchasing power and expert negotiation skills to secure advantageous terms.</div>
                     </div>
                     <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
-                        <DesktopTower size={52} />
+                        <img src={supply} className="w-12 py-1"/>
                         <div className="text-black font-semibold mt-2">Supply Chain Management</div>
                         <div className="text-black text-sm mt-2">Sourcing products efficiently with a global supply chian network while expertly managing risks.</div>
                     </div>
                     <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
-                        <Brain size={52} />
+                        <img src={knowledge} className="w-12 py-1"/>
                         <div className="text-black font-semibold mt-2">Product Knowledge</div>
                         <div className="text-black text-sm mt-2">A deep understanding of technology products ensures we can accurately evaluate quality.</div>
                     </div>
                 </div>
                 <div className="flex flex-row justify-between mt-10">
                     <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
-                        <Lightbulb size={52} />
+                        <img src={tech} className="w-12 py-1"/>
                         <div className="text-black font-semibold mt-2">Technology Expertise</div>
                         <div className="text-black text-sm mt-2">Leverage data analytics with a robust IT infrastructure to streamline procurement processes and identify savings.</div>
                     </div>
                     <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
-                        <Handshake size={52} />
+                        <img src={relationships} className="w-12 py-1"/>
                         <div className="text-black font-semibold mt-2">Supplier Relationships</div>
                         <div className="text-black text-sm mt-2">Long-term partnerships with suppliers through trust and ethical practices provide us with a competitive advantage.</div>
                     </div>
                     <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
-                        <BookOpenText size={52} />
+                        <img src={compliance} className="w-12 py-1"/>
                         <div className="text-black font-semibold mt-2">Regulatory Compliance</div>
                         <div className="text-black text-sm mt-2">Being well-versed in industry regulations and standards ensure compliance while helping clients navigate complexities and mitigate risks.</div>
                     </div>
@@ -419,7 +460,7 @@ function Procurement() {
             </div>
 
             {/* Banner */}
-            <div className="bg-oxford-blue text-ghost-white flex flex-col w-full overflow-hidden px-[10vw] 2xl:px-[20vw]">
+            <div ref={bannerRef} className={`bg-oxford-blue text-ghost-white flex flex-col w-full overflow-hidden px-[10vw] 2xl:px-[20vw] ${startBannerAnimation ? 'animate' : ''}`}>
                 <div className="flex flex-row justify-between py-14">
                     {/* Leftside */}
                     <div className="w-1/3 flex flex-col items-center justify-center">

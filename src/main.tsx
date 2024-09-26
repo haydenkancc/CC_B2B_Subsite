@@ -8,8 +8,10 @@ import './index.css'
 import EnterpriseSolutions from './routes/solutions/enterprise-solutions.tsx';
 import HealthcareSolutions from './routes/solutions/healthcare-solutions.tsx';
 import EducationSolutions from './routes/solutions/education-solutions.tsx';
-import Hardware from './routes/hardware/hardware.tsx';
+import Hardware from './routes/products/hardware.tsx';
 import Procurement from './routes/procurement/procurement.tsx';
+import Software from './routes/products/software.tsx';
+import Signin from './routes/user/signin.tsx'
 
 const router = createBrowserRouter([
     {
@@ -41,9 +43,17 @@ const router = createBrowserRouter([
         element: <Hardware />
     },
     {
+        path: "software",
+        element: <Software />
+    },
+    {
         path: "procurement",
         element: <Procurement />
-    }
+    },
+    {
+        path: "sign-in",
+        element: <Signin />
+    },
 ]);
 
 
