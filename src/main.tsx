@@ -11,7 +11,10 @@ import EducationSolutions from './routes/solutions/education-solutions.tsx';
 import Hardware from './routes/products/hardware.tsx';
 import Procurement from './routes/procurement/procurement.tsx';
 import Software from './routes/products/software.tsx';
-import Signin from './routes/user/signin.tsx'
+import Signin from './routes/user/signin.tsx';
+import Forgot from './routes/user/forgot.tsx';
+import Create from './routes/user/create.tsx';
+import ForgotSubmission from './routes/user/forgot-submission.tsx';
 
 const router = createBrowserRouter([
     {
@@ -53,6 +56,18 @@ const router = createBrowserRouter([
     {
         path: "sign-in",
         element: <Signin />
+    },
+    {
+        path: "forgot-password",
+        element: <Forgot />
+    },
+    {
+        path: "create-account",
+        element: <Create />
+    },
+    {
+        path: "forgot-submission",
+        element: <ForgotSubmission />
     },
 ]);
 

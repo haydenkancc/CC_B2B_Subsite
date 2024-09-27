@@ -134,6 +134,11 @@ const stratcards = [
 ];
 
 function Procurement() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     const leftRefs = useRef([]);
     const rightRefs = useRef([]);
     const bannerRef = useRef(null);

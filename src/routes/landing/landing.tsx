@@ -116,70 +116,6 @@ function Landing() {
                 </div>
             </div>
 
-            {/* Old Solutions
-            <div className="bg-gradient-to-b from-ghost-white to-white w-full">
-                <h1 className="text-2xl text-oxford-blue text-center py-6">
-                    WHY CHOOSE US
-                </h1>
-                <h1 className="text-base text-oxford-blue text-lg font-mono text-center mb-6">
-                    Productivity and Efficiency Supercharged with the proper Equipment and Technology
-                </h1>
-                <div>
-                    <Carousel slides={slides} />
-                </div>
-            </div> */}
-
-            {/* Old Products
-            <div className="px-[10vw] 2xl:px-[20vw]">
-                <div className="bg-ghost-white flex flex-col">
-                    <div className="flex flex-row justify-between">
-                        <div className="bg-slate-200 rounded-sm w-2/5 h-60 mb-4 px-8 py-7 mt-10 mr-4">
-                            <img src={services} className="w-10 mb-2"/>
-                            <div className="text-black font-semibold py-1">Our Services</div>
-                            <div className="text-black text-sm">Clearing the path ahead with action plans and roadmaps; we provide guidance and mentorship for the entire journey.</div>
-                            <Link to={"/hardware"} className="text-blue-600 text-sm py-2 flex flex-row items-center">
-                                Explore the servies we offer
-                                <CaretRight size={20} weight="light" />
-                            </Link>
-                        </div>
-                        <div className="bg-slate-200 rounded-sm w-3/5 h-60 mb-4 mt-10">
-                            <img src={adspace} className="w-full h-full object-contain" />
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-ghost-white flex flex-col">
-                    <div className="flex flex-row justify-between gap-4">
-                        <div className="bg-slate-200 rounded-sm w-1/3 h-60 mb-10 px-8 py-7">
-                            <img src={hardware} className="w-10 mb-2"/>
-                            <div className="text-black font-semibold py-1">Hardware Products</div>
-                            <div className="text-black text-sm">Components exceeding in performance and durability for every precision-engineered part or comprehensive hardware system.</div>
-                            <Link to={"/hardware"} className="text-blue-600 text-sm py-2 flex flex-row items-center">
-                                Explore our hardware products
-                                <CaretRight size={20} weight="light" />
-                            </Link>
-                        </div>
-                        <div className="bg-slate-200 rounded-sm w-1/3 h-60 mb-10 px-8 py-7">
-                            <img src={software} className="w-10 mb-2"/>
-                            <div className="text-black font-semibold py-1">Software Products</div>
-                            <div className="text-black text-sm">Cutting-edge applications and solutions using the latest technologies and best practices with exceptional quality.</div>
-                            <Link to={"/hardware"} className="text-blue-600 text-sm py-2 flex flex-row items-center">
-                                Explore our software products
-                                <CaretRight size={20} weight="light" />
-                            </Link>
-                        </div>
-                        <div className="bg-slate-200 rounded-sm w-1/3 h-60 mb-10 px-8 py-7">
-                            <img src={prototype} className="w-10 mb-2"/>
-                            <div className="text-black font-semibold py-1">Prototyping and Development</div>
-                            <div className="text-black text-sm">Competitive product manufacturing within the tech industry using high quality materials with the best terms, rates, conditions, and prices.</div>
-                            <Link to={"/procurement"} className="text-blue-600 text-sm py-2 flex flex-row items-center">
-                                Explore our procurement options
-                                <CaretRight size={20} weight="light" />
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-
             {/* Solutions */}
             <div className="px-[10vw] 2xl:px-[20vw]">
                 <div className="bg-ghost-white flex flex-col">
@@ -231,7 +167,7 @@ function Landing() {
                 </div>
             </div>
 
-            {/* Products */}
+            {/* Products
             <div className="bg-gradient-to-b from-ghost-white to-white px-[10vw] 2xl:px-[20vw]">
                 <div className="flex flex-row justify-between text-center mt-20">
                     <div
@@ -244,7 +180,6 @@ function Landing() {
                                 className="absolute inset-0 transition-opacity duration-300 ease-in-out"
                                 style={{
                                     backgroundImage: `url(${softwarebg})`,
-                                    opacity: 1,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
                                     backgroundRepeat: 'no-repeat'
@@ -278,7 +213,6 @@ function Landing() {
                                 className="absolute inset-0 transition-opacity duration-300 ease-in-out"
                                 style={{
                                     backgroundImage: `url(${hardwarebg})`,
-                                    opacity: 1,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
                                     backgroundRepeat: 'no-repeat'
@@ -302,6 +236,46 @@ function Landing() {
                         )}
 
                     </div>
+                </div>
+            </div> */}
+
+            {/* Products */}
+            <div className="bg-gradient-to-b from-ghost-white to-white px-[10vw] 2xl:px-[20vw]">
+                <div className="flex flex-col mt-10">
+                    <div className="flex flex-row justify-between text-center mt-10">
+                        <img src={hardwarebg} className="bg-cover w-1/2 rounded-tl-sm" />
+                        <div className="relative bg-oxford-blue w-1/2 h-90 flex flex-col justify-center items-center ease-in-out text-ghost-white rounded-tr-sm">
+                            <div className="font-bold text-xl z-10 relative">
+                                    Hardware for Enhanced Performance
+                            </div>
+                            <div className="text-lg font-medium px-10 py-1 z-10 relative flex flex-col items-center">
+                                <div className="text-center">
+                                    Enhance efficiency and reliability—invest in the best for your business.
+                                </div>
+                                <Link to={"/hardware"} className="text-sm uppercase border-2 border-ghost-white px-2 py-1 font-semibold mt-4 flex flex-row items-center z-10 relative">
+                                    Shop Now
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-row justify-between text-center">
+                        <div className="relative bg-slate-200 w-1/2 h-90 flex flex-col justify-center items-center ease-in-out text-oxford-blue rounded-bl-sm">
+                            <div className="font-bold text-xl z-10 relative">
+                                Software for a Smarter Workplace
+                            </div>
+                            <div className="text-lg font-medium px-10 py-1 z-10 relative flex flex-col items-center">
+                                <div className="text-center">
+                                    Streamline processes and boost productivity—transform the way you work.
+                                </div>
+                                <Link to={"/software"} className="text-sm uppercase border-2 border-oxford-blue px-2 py-1 font-semibold mt-4">
+                                    Shop Now
+                                </Link>
+                            </div>
+                        </div>
+                        <img src={softwarebg} className="bg-contain w-1/2 rounded-br-sm" />
+                    </div>
+
                 </div>
             </div>
 
@@ -337,7 +311,7 @@ function Landing() {
                         <div className="text-sm">Ottawa Area : 613-225-8188</div>
                         <div className="text-sm">Vancouver Area : 604-235-3251</div>
                     </div>
-                    <Link to={"/hardware"} className="flex flex-col items-center font-medium text-lg mt-10 w-28 h-18">
+                    <Link to={"/create-account"} className="flex flex-col items-center font-medium text-lg mt-10 w-28 h-18">
                         <Pen size={40} weight="light" />
                         <div>Sign Up</div>
                     </Link>
@@ -379,7 +353,7 @@ function Landing() {
                                             <label className="block tracking-wide text-black text-sm font-bold mb-2">What is your current working relationship with us?</label>
                                             <div className="relative w-full">
                                                 <select className="block appearance-none w-full bg-white border-2 border-slate-300 text-black py-2.5 px-3 pr-8 rounded leading-tight" value={currentRelationship} onChange={handleSelectChange}>
-                                                    <option value="" disabled>Please Select</option>
+                                                    <option value="" disabled selected>Please Select</option>
                                                     <option value="working">I'm currently working with Canada Computers</option>
                                                     <option value="not-working">I'm not currently working with Canada Computers</option>
                                                     <option value="want-to-work">I want to work with Canada Computers</option>

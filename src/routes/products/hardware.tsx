@@ -18,9 +18,9 @@ const pages = ['Partners', 'Industry', 'About'];
 
 function Hardware() {
 
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    // }, [location]);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
     const isLargeScreen = window.innerWidth >= 1536;
 
