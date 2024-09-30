@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import header from "../../assets/header.png"
 import working from "../../assets/working.png"
 import person from "../../assets/person.png"
+import person2 from "../../assets/person2.png"
 import partners from "../../assets/partners.png"
 import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
@@ -245,14 +246,14 @@ function Landing() {
                     <div className="flex flex-row justify-between text-center mt-10">
                         <img src={hardwarebg} className="bg-cover w-1/2 rounded-tl-sm" />
                         <div className="relative bg-oxford-blue w-1/2 h-90 flex flex-col justify-center items-center ease-in-out text-ghost-white rounded-tr-sm">
-                            <div className="font-bold text-xl z-10 relative">
+                            <div className="font-bold text-xl relative">
                                     Hardware for Enhanced Performance
                             </div>
-                            <div className="text-lg font-medium px-10 py-1 z-10 relative flex flex-col items-center">
+                            <div className="text-lg font-medium px-10 py-1 relative flex flex-col items-center">
                                 <div className="text-center">
                                     Enhance efficiency and reliability—invest in the best for your business.
                                 </div>
-                                <Link to={"/hardware"} className="text-sm uppercase border-2 border-ghost-white px-2 py-1 font-semibold mt-4 flex flex-row items-center z-10 relative">
+                                <Link to={"/hardware"} className="text-sm uppercase border-2 border-ghost-white px-2 py-1 font-semibold mt-4 flex flex-row items-center relative">
                                     Shop Now
                                 </Link>
                             </div>
@@ -261,10 +262,10 @@ function Landing() {
 
                     <div className="flex flex-row justify-between text-center">
                         <div className="relative bg-slate-200 w-1/2 h-90 flex flex-col justify-center items-center ease-in-out text-oxford-blue rounded-bl-sm">
-                            <div className="font-bold text-xl z-10 relative">
+                            <div className="font-bold text-xl relative">
                                 Software for a Smarter Workplace
                             </div>
-                            <div className="text-lg font-medium px-10 py-1 z-10 relative flex flex-col items-center">
+                            <div className="text-lg font-medium px-10 py-1 relative flex flex-col items-center">
                                 <div className="text-center">
                                     Streamline processes and boost productivity—transform the way you work.
                                 </div>
@@ -323,7 +324,8 @@ function Landing() {
                             <div className="h-[90vh] overflow-y-auto">
                             <div className="flex flex-row">
                                 <div className="bg-oxford-blue rounded-l-sm w-1/2">
-                                    <img src={person} className="rounded-l-sm w-1/2 items-center bottom-10 absolute bg-contain" />
+                                    {/* <img src={person} className="rounded-l-sm w-1/2 items-center bottom-10 absolute bg-contain" /> */}
+                                    <img src={person2} className="rounded-l-sm h-full ml-14 absolute bg-contain" />
                                 </div>
                                 <form className="rounded-r-sm w-1/2 h-full">
                                     <img src={solutionsblue} className="h-10 mt-8 px-[3vw]" />

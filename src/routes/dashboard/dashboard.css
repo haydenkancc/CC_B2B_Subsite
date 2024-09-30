@@ -1,0 +1,34 @@
+
+.new-account-Tab {
+    position: relative;
+    padding: 0.5rem 1.25rem 0.5rem 2.25rem;
+    cursor: pointer;
+
+    &[data-focused] {
+        outline: none;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top:50%;
+        left: 0px;
+        width: 4px;
+        height: 100%;
+        /* background: var(--lavender); */
+        transform: translateY(-50%);
+    }
+
+    &[data-hovered]::after {
+        left: 0;
+        right: 0;
+        background: var(--lavendar);
+    }
+    
+    &[data-focused]::after {
+        left: 0;
+        right: 0;
+        background: var(--school-bus-yellow);
+    }
+}
+
