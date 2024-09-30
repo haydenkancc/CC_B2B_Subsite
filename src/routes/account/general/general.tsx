@@ -42,10 +42,11 @@ function General() {
                     <ListBoxItem>
                         <MyTextField label="Date of Application"/>
                     </ListBoxItem>
-
                 </ListBox>
-
             </div>
+            <Button className="general-Button--cancel mt-8">
+                Change Password
+            </Button>
         </div>
     )
 }

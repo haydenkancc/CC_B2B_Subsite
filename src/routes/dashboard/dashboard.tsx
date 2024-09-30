@@ -4,6 +4,8 @@ import NavbarTop from '../../components/navbar/navbar-top.tsx';
 import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
 import Wishlist from './wishlist/wishlist.tsx';
 import Tickets from './tickets/tickets.tsx';
+import AccountInformation from './account-information/account-information.tsx';
+import Orders from './orders/orders.tsx';
 import "./dashboard.css";
 import {
     Button,
@@ -22,16 +24,16 @@ import {
 const pages = ['Dashboard', 'Orders', 'Billing', 'Wishlists', 'Tickets', 'Account']
 
 const actions = [
-    {id: 1, title: 'Dashboard', subtitle: 'hello', current: true, content: <Wishlist /> },
-    {id: 2, title: 'Account Information', subtitle: 'hello', current: false, content: <Tickets /> },
-    {id: 3, title: 'Your Orders', subtitle: 'hello', current: false, content: <Wishlist /> },
-    {id: 4, title: 'Wish List', subtitle: 'hello', current: false, content: <Tickets /> },
-    {id: 5, title: 'Address Book', subtitle: 'hello', current: false, content: <Wishlist /> },
-    {id: 6, title: 'Billing Information', subtitle: 'hello', current: false, content: <Tickets /> },
-    {id: 7, title: 'Tickets', subtitle: 'hello', current: false, content: <Wishlist /> },
-    {id: 8, title: 'Message Center', subtitle: 'hello', current: false, content: <Tickets /> },
-    {id: 9, title: 'Documents', subtitle: 'hello', current: false, content: <Wishlist /> },
-    {id: 10, title: 'Account History', subtitle: 'hello', current: false, content: <Tickets /> },
+    {id: 1, title: 'Dashboard', current: true, content: <Wishlist /> },
+    {id: 2, title: 'Account Information', current: false, content: <AccountInformation /> },
+    {id: 3, title: 'Your Orders', current: false, content: <Orders /> },
+    {id: 4, title: 'Wish List', current: false, content: <Wishlist /> },
+    {id: 5, title: 'Address Book', current: false, content: <Wishlist /> },
+    {id: 6, title: 'Billing Information', current: false, content: <Wishlist /> },
+    {id: 7, title: 'Tickets', current: false, content: <Tickets /> },
+    {id: 8, title: 'Message Center', current: false, content: <Wishlist /> },
+    {id: 9, title: 'Documents', current: false, content: <Wishlist /> },
+    {id: 10, title: 'Account History', current: false, content: <Wishlist /> },
 ]
 
 function Dashboard() {
@@ -53,7 +55,7 @@ function Dashboard() {
                 </div>
             </div>}
             <div className="flex">
-                <div className="flex flex-col border-r">
+                {/* <div className="flex flex-col border-r">
                     <div className="rounded-md">
                         {actions.map((action) => (
                             <>
@@ -64,18 +66,6 @@ function Dashboard() {
                                     <CaretRight width="1em" />
                                 </div>
                                 <div className="border-t" />
-                                {/* <Tabs className="">
-                                    <TabList className="flex text-lg border-b gap-1" items={actions}>
-                                        {item => <Tab className="account-Tab">{item.title}</Tab>}
-                                    </TabList>
-                                    <Collection items={actions}>
-                                        {item => (
-                                            <TabPanel className="pt-16">
-                                                {item.content}
-                                            </TabPanel>
-                                        )}
-                                    </Collection>
-                                </Tabs> */}
                             </>
                         ))}
                         <div className="mt-2 p-4 flex flex-col items-center gap-4">
@@ -86,11 +76,20 @@ function Dashboard() {
                             <span>(416) 123-4567</span>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <Tabs className="flex flex-row">
-                    <TabList className="flex flex-col" items={actions}>
-                        {item => <Tab className="flex flex-row items-center justify-between gap-x-8 new-account-Tab hover:bg-lavender/50 border-b border-r">{item.title}<CaretRight width="1em" /></Tab>}
-                    </TabList>
+                    <div className="flex flex-col">
+                        <TabList items={actions}>
+                            {item => <Tab className="flex flex-row items-center justify-between gap-x-8 new-account-Tab hover:bg-lavender/50 border-b border-r">{item.title}<CaretRight width="1em" /></Tab>}
+                        </TabList>
+                        <div className="mt-2 p-4 flex flex-col items-center gap-4 border-r">
+                            My Account Manager
+                            <img className="object-cover w-16 h-16 rounded-full" src={profile} />
+                            <span>John Doe</span>
+                            <span>john.doe@cc.ca</span>
+                            <span>(416) 123-4567</span>
+                        </div>
+                    </div>
                     <Collection items={actions}>
                         {item => (
                             <TabPanel className="pl-10">

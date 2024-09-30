@@ -25,7 +25,7 @@
         background: var(--lavendar);
     }
     
-    &[data-focused]::after {
+    &[data-focused]::after, &[data-selected]::after {
         left: 0;
         right: 0;
         background: var(--school-bus-yellow);
