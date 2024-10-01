@@ -23,18 +23,15 @@ const items = [
 function MyOrders() {
     return (
         <>
-            <div className="bg-slate-200 flex flex-row justify-between">
+            <div className="bg-slate-200 flex flex-row justify-between items-center">
                 <div className="flex flex-row items-center border border-1 border-oxford-blue rounded-full bg-white">
                     <Input className="pl-3 pr-3 pt-2 pb-2 text-oxford-blue flex-grow rounded-l-full focus:outline-none" placeholder="Search" />
                     <div className="flex items-center pr-3 cursor-pointer">
                         <MagnifyingGlass size={20} />
                     </div>
                 </div>
-                <div className="flex flex-row items-center border border-1 border-oxford-blue rounded-full bg-white">
-                    <Input className="pl-3 pr-3 pt-2 pb-2 text-oxford-blue flex-grow rounded-l-full focus:outline-none" placeholder="Search" />
-                    <div className="flex items-center pr-3 cursor-pointer">
-                        <MagnifyingGlass size={20} />
-                    </div>
+                <div className="flex flex-row px-10">
+                    <div>Year to Date</div>
                 </div>
             </div>
 
