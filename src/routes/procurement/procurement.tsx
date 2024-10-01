@@ -31,12 +31,12 @@ const problems1 = [
     {
         title: "Cost",
         sub: "Address Cost Pressure Effectively.",
-        text: "Leveraging strategic sourcing, negotiation, and supplier relationships is essential for achieving cost savings and enhancing overall procurement efficiency.",
+        text: "Strategic sourcing, negotiation, and cost analysis are key to improving procurement efficiency and driving savings. Exploring supplier diversity and conducting reverse auctions reveal competitive options.",
     },
     {
         title: "Disruption",
         sub: "Mitigate Supply Chain Disruptions.",
-        text: "Conducting thorough risk assessments while diversifying suppliers is crucial for strengthening supply chain resilience and mitigating disruptions.",
+        text: "Supply chain risk management involves assessments, contingency planning, and supplier diversification, alongside strong inventory practices and monitoring systems for resilience.",
     },
 ]
 
@@ -44,12 +44,12 @@ const problems2 = [
     {
         title: "Relationship",
         sub: "Strengthen Supplier Relationships.",
-        text: "Showcasing industry and supply chain expertise along with buying power is essential to negotiate better terms and prices.",
+        text: "Leveraging strategic sourcing and strong supplier relationships is key to driving cost savings and improving procurement efficiency. We'll optimize these areas, secuing better pricing and streamlining supply chains.",
     },
     {
         title: "Risk",
         sub: "Manage Risk for Greater Stability.",
-        text: "Thoroughly assessing and prioritizing risks while evaluating supplier stability and regulatory compliance are key to maintaining a resilient supply chain.",
+        text: "Risk management involves assessing and prioritizing operational and financial risks, evaluating supplier stability, diversifying sources, and ensuring regulatory compliance through audits.",
     },
 ]
 
@@ -280,7 +280,7 @@ function Procurement() {
                 }}
             >
                 <div className="text-ghost-white h-full">
-                    <div className="px-[10vw] 2xl:px-[20vw] h-full flex items-center">
+                    <div className="max-[1440px] px-6 h-full flex justify-center items-center">
                         <div>
                             <h1 className="text-4xl font-bold uppercase">Optimize your technology with</h1>
                             <h1 className="text-4xl font-bold uppercase mt-3">Canada Computers & Electronics</h1>
@@ -291,16 +291,16 @@ function Procurement() {
             </div>
 
             {/* Problems */}
-            <div className="bg-ghost-white px-[10vw] 2xl:px-[20vw]">
-                <div className="flex flex-row mt-20 mb-18">
+            <div className="bg-ghost-white max-w-[1440px] px-4 mx-auto">
+                <div className="flex flex-row mt-20 mb-18 justify-center">
                     <img src={out} className="rounded-sm object-cover w-72" />
                     <div className="flex flex-col ml-14">
-                        <div className="text-2xl font-bold flex mt-10 mb-2 ml-4">
+                        <div className="text-2xl font-bold flex mt-6 mb-2 justify-center"> {/* Changed to justify-center */}
                             The Problems And How We Address Them
                         </div>
                         <div className="flex flex-col">
                             {/* First row of problems */}
-                            <div className="flex flex-row justify-between gap-x-7">
+                            <div className="flex flex-row justify-center gap-x-7"> {/* Changed justify-between to justify-center */}
                                 {problems1.map((problem, index) => (
                                     <div key={index} className="py-6 flex-1">
                                         <div className={`text-sm w-full px-4 py-4 rounded-sm`}>
@@ -314,7 +314,7 @@ function Procurement() {
                                 ))}
                             </div>
                             {/* Second row of problems */}
-                            <div className="flex flex-row justify-between gap-x-6">
+                            <div className="flex flex-row justify-center gap-x-6"> {/* Changed justify-between to justify-center */}
                                 {problems2.map((problem, index) => (
                                     <div key={index} className="flex-1">
                                         <div className={`text-sm w-full px-4 mb-4 rounded-sm`}>
@@ -336,51 +336,62 @@ function Procurement() {
             </div>
 
             {/* Services */}
-            <div className="bg-white py-4 w-full overflow-hidden px-[10vw] 2xl:px-[20vw]">
-                <div className="mb-20">
-                    <div className="flex justify-between">
+            <div className="bg-white py-4 w-full overflow-hidden">
+                <div className="max-w-[1440px] px-4 mx-auto mb-20">
+                    <div className="flex justify-center">
                         <div className="flex-grow">
                             <h1 className="text-2xl text-black mt-12 font-semibold">Our Services</h1>
-                            <div className="flex flex-row justify-between mt-4">
-                                <div className="mt-6">
-                                    <div className="rounded-sm w-72 flex flex-col">
-                                        <img src={strategy} className="w-12 py-1"/>
+                            <div className="flex flex-col mt-4">
+                                <div className="flex flex-row justify-between mt-6">
+                                    <div>
+                                        <div className="rounded-sm w-96 flex flex-col">
+                                            <img src={strategy} className="w-12 py-1"/>
+                                        </div>
+                                        <div className="rounded-sm w-96 mb-8 flex flex-col py-4">
+                                            <div className="text-black font-medium">Strategic Sourcing</div>
+                                            <div className="text-black text-sm mt-2">Enhance your procurement process by leveraging data-driven insights and supplier collaboration to drive value and efficiency.</div>
+                                        </div>
                                     </div>
-                                    <div className="rounded-sm w-72 mb-8 flex flex-col py-4">
-                                        <div className="text-black font-medium">Strategic Sourcing</div>
-                                        <div className="text-black text-sm mt-2">Enhance your procurement process by leveraging data-driven insights and supplier collaboration to drive value and efficiency.</div>
+                                    <div>
+                                        <div className="rounded-sm w-96 flex flex-col">
+                                            <img src={spend} className="w-12 py-1"/>
+                                        </div>
+                                        <div className="rounded-sm w-96 mb-8 flex flex-col py-4">
+                                            <div className="text-black font-medium">Spend Analysis</div>
+                                            <div className="text-black text-sm mt-2">Unlock actionable insights by dissecting your spending patterns, enabling informed decisions that maximize cost savings and improve budget management.</div>
+                                        </div>
                                     </div>
-                                    <div className="rounded-sm w-72 flex flex-col">
-                                        <img src={supplier} className="w-12 py-1"/>
-                                    </div>
-                                    <div className="rounded-sm w-72 flex flex-col py-4">
-                                        <div className="text-black font-medium">Supplier Relationship Management</div>
-                                        <div className="text-black text-sm mt-2">Cultivate strong partnerships with suppliers through effective communication and performance metrics, fostering collaboration that drives innovation and value.</div>
-                                    </div>
-                                </div>
-                                <div className="mt-6">
-                                    <div className="rounded-sm w-72 flex flex-col">
-                                        <img src={spend} className="w-12 py-1"/>
-                                    </div>
-                                    <div className="rounded-sm w-72 mb-8 flex flex-col py-4">
-                                        <div className="text-black font-medium">Spend Analysis</div>
-                                        <div className="text-black text-sm mt-2">Unlock actionable insights by dissecting your spending patterns, enabling informed decisions that maximize cost savings and improve budget management.</div>
-                                    </div>
-                                    <div className="rounded-sm w-72 flex flex-col">
-                                        <img src={optimization} className="w-12 py-1"/>
-                                    </div>
-                                    <div className="rounded-sm w-72 flex flex-col py-4">
-                                        <div className="text-black font-medium">Procurement Process Optimization</div>
-                                        <div className="text-black text-sm mt-2">Streamline your purchasing workflows by identifying bottlenecks and implementing best practices, ensuring efficiency and cost-effectiveness throughout the supply chain.</div>
+                                    <div>
+                                        <div className="rounded-sm w-96 flex flex-col">
+                                            <img src={contract} className="w-12 py-1"/>
+                                        </div>
+                                        <div className="rounded-sm w-96 flex flex-col py-4">
+                                            <div className="text-black font-medium">Contract Negotiation</div>
+                                            <div className="text-black text-sm mt-2">Achieve favorable terms and strengthen supplier relationships through skilled negotiation tactics that align with your business objectives and drive value.</div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="mt-6">
-                                    <div className="rounded-sm w-72 flex flex-col">
-                                        <img src={contract} className="w-12 py-1"/>
+                                <div className="flex flex-row justify-between mt-6">
+                                    <div>
+                                        <div className="rounded-sm w-96 flex flex-col">
+                                            <img src={supplier} className="w-12 py-1"/>
+                                        </div>
+                                        <div className="rounded-sm w-96 flex flex-col py-4">
+                                            <div className="text-black font-medium">Supplier Relationship Management</div>
+                                            <div className="text-black text-sm mt-2">Cultivate strong partnerships with suppliers through effective communication and performance metrics, fostering collaboration that drives innovation and value.</div>
+                                        </div>
                                     </div>
-                                    <div className="rounded-sm w-72 flex flex-col py-4">
-                                        <div className="text-black font-medium">Contract Negotiation</div>
-                                        <div className="text-black text-sm mt-2">Achieve favorable terms and strengthen supplier relationships through skilled negotiation tactics that align with your business objectives and drive value.</div>
+                                    <div>
+                                        <div className="rounded-sm w-96 flex flex-col">
+                                            <img src={optimization} className="w-12 py-1"/>
+                                        </div>
+                                        <div className="rounded-sm w-96 flex flex-col py-4">
+                                            <div className="text-black font-medium">Procurement Process Optimization</div>
+                                            <div className="text-black text-sm mt-2">Streamline your purchasing workflows by identifying bottlenecks and implementing best practices, ensuring efficiency and cost-effectiveness throughout the supply chain.</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="rounded-sm w-96" />
                                     </div>
                                 </div>
                             </div>
@@ -390,7 +401,7 @@ function Procurement() {
             </div>
 
             {/* Process */}
-            <div className="bg-ghost-white flex flex-col mt-14 w-full overflow-hidden px-[10vw] 2xl:px-[20vw]">
+            <div className="bg-ghost-white flex flex-col mt-14 max-w-[1440px] px-4 mx-auto overflow-hidden">
                 <div className="text-2xl text-black font-bold mt-4">Join our network.</div>
                 <div className="text-2xl text-black font-bold mb-10">Simplify the process.</div>
                 <div className="flex flex-col mb-14">
@@ -423,40 +434,40 @@ function Procurement() {
             </div>
 
             {/* Expertise */}
-            <div className="bg-ghost-white w-full px-[10vw] 2xl:px-[20vw] py-14 text-center mb-8">
+            <div className="bg-ghost-white max-w-[1440px] px-4 mx-auto py-14 text-center mb-8">
                 <div className="text-2xl text-black font-semibold">What We Do Best</div>
                 <div className="text-md text-black mt-4">
                     Under our main brand, we are a leading technology retailer in Canada, we have a strong foundation in procurement and sourcing due to our extensive experience and operations.
                 </div>
                 <div className="flex flex-row justify-between mt-10">
-                    <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
+                    <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
                         <img src={scale} className="w-12 py-1"/>
                         <div className="text-black font-semibold mt-2">Scale and Buying Power</div>
                         <div className="text-black text-sm mt-2">Using significant purchasing power and expert negotiation skills to secure advantageous terms.</div>
                     </div>
-                    <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
+                    <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
                         <img src={supply} className="w-12 py-1"/>
                         <div className="text-black font-semibold mt-2">Supply Chain Management</div>
                         <div className="text-black text-sm mt-2">Sourcing products efficiently with a global supply chian network while expertly managing risks.</div>
                     </div>
-                    <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
+                    <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
                         <img src={knowledge} className="w-12 py-1"/>
                         <div className="text-black font-semibold mt-2">Product Knowledge</div>
                         <div className="text-black text-sm mt-2">A deep understanding of technology products ensures we can accurately evaluate quality.</div>
                     </div>
                 </div>
                 <div className="flex flex-row justify-between mt-10">
-                    <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
+                    <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
                         <img src={tech} className="w-12 py-1"/>
                         <div className="text-black font-semibold mt-2">Technology Expertise</div>
                         <div className="text-black text-sm mt-2">Leverage data analytics with a robust IT infrastructure to streamline procurement processes and identify savings.</div>
                     </div>
-                    <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
+                    <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
                         <img src={relationships} className="w-12 py-1"/>
                         <div className="text-black font-semibold mt-2">Supplier Relationships</div>
                         <div className="text-black text-sm mt-2">Long-term partnerships with suppliers through trust and ethical practices provide us with a competitive advantage.</div>
                     </div>
-                    <div className="bg-slate-200 w-80 flex flex-col items-center p-4">
+                    <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
                         <img src={compliance} className="w-12 py-1"/>
                         <div className="text-black font-semibold mt-2">Regulatory Compliance</div>
                         <div className="text-black text-sm mt-2">Being well-versed in industry regulations and standards ensure compliance while helping clients navigate complexities and mitigate risks.</div>
@@ -465,22 +476,24 @@ function Procurement() {
             </div>
 
             {/* Banner */}
-            <div ref={bannerRef} className={`bg-oxford-blue text-ghost-white flex flex-col w-full overflow-hidden px-[10vw] 2xl:px-[20vw] ${startBannerAnimation ? 'animate' : ''}`}>
-                <div className="flex flex-row justify-between py-14">
-                    {/* Leftside */}
-                    <div className="w-1/3 flex flex-col items-center justify-center">
-                        <div className="font-bold text-4xl">${revenue}M</div>
-                        <div className="mt-4 font-medium" ref={el => rightRefs.current.push(el)}>Additional Revenue</div>
-                    </div>
-                    {/* Center */}
-                    <div className="w-1/3 flex flex-col items-center justify-center">
-                        <div className="font-bold text-4xl">{marketShare}%</div>
-                        <div className="mt-4 font-medium" ref={el => rightRefs.current.push(el)}>Increased Growth in Client Market Share</div>
-                    </div>
-                    {/* Rightside */}
-                    <div className="w-1/3 flex flex-col items-center justify-center">
-                        <div className="font-bold text-4xl">{satisfaction}%</div>
-                        <div className="mt-4 font-medium" ref={el => rightRefs.current.push(el)}>Client Satisfaction Rate</div>
+            <div ref={bannerRef} className={`bg-oxford-blue text-ghost-white flex flex-col w-full overflow-hidden ${startBannerAnimation ? 'animate' : ''}`}>
+                <div className="max-w-[1440px] px-4 mx-auto">
+                    <div className="flex flex-row py-14 gap-x-20">
+                        {/* Leftside */}
+                        <div className="w-88 flex flex-col items-center">
+                            <div className="font-bold text-4xl">${revenue}M</div>
+                            <div className="mt-4 font-medium" ref={el => rightRefs.current.push(el)}>Additional Revenue</div>
+                        </div>
+                        {/* Center */}
+                        <div className="w-88 flex flex-col items-center">
+                            <div className="font-bold text-4xl">{marketShare}%</div>
+                            <div className="mt-4 font-medium" ref={el => rightRefs.current.push(el)}>Increased Growth in Client Market Share</div>
+                        </div>
+                        {/* Rightside */}
+                        <div className="w-88 flex flex-col items-center">
+                            <div className="font-bold text-4xl">{satisfaction}%</div>
+                            <div className="mt-4 font-medium" ref={el => rightRefs.current.push(el)}>Client Satisfaction Rate</div>
+                        </div>
                     </div>
                 </div>
             </div>

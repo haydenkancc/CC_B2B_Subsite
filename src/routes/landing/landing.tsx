@@ -83,7 +83,7 @@ function Landing() {
                 }}
             >
                 <div className="text-ghost-white h-full">
-                    <div className="px-[10vw] 2xl:px-[20vw] h-full flex items-center">
+                    <div className="max-w-[1440px] px-4 mx-auto h-full flex items-center">
                         <div>
                             <h1 className="text-5xl font-bold">Welcome to Better</h1>
                             <h1 className="text-5xl font-bold mt-3">Business Buying</h1>
@@ -97,12 +97,12 @@ function Landing() {
             </div>
             
             {/* About Us */}
-            <div className="bg-ghost-white px-[10vw] 2xl:px-[20vw]">
-                <div className="flex flex-row items-center justify-between gap-x-12 py-20">
+            <div className="bg-ghost-white max-w-[1440px] px-4 mx-auto">
+                <div className="flex flex-row items-center justify-between py-20">
                     <div className="flex flex-col text-black w-1/2">
                         <div className="text-2xl font-semibold">Transform your future with technology.</div>
                         <p className="mt-4">
-                            We empower businesses to thrive in a rapidly evolving digital landscape. Our comprehensive IT solutions enable organizations to harness the power of technology, fostering agility and innovation across teams. We'll drive success for both your customers and your workforce.
+                        At Canada Computers & Electronics, we empower businesses to thrive in the digital landscape with tailored IT solutions, including hardware, software, cloud services, and cybersecurity. Our focus on agility and innovation enhances collaboration and productivity, driving success for your workforce and customers. With industry-specific solutions and ongoing support, we help you navigate the digital world. Connect with us to unlock new growth opportunities!
                         </p>
                         <Link to={"/enterprise-solutions"} className="text-oxford-blue text-sm font-semibold mt-5 flex flex-row items-center">
                             Learn more about us
@@ -113,12 +113,12 @@ function Landing() {
                             <CaretRight size={20} weight="light" />
                         </Link>
                     </div>
-                    <img src={working} className="w-1/2 h-72 w-116 rounded-sm object-fill" />
+                    <img src={working} className="h-64 w-2/5 rounded-sm object-fill" />
                 </div>
             </div>
 
             {/* Solutions */}
-            <div className="px-[10vw] 2xl:px-[20vw]">
+            <div className="max-w-[1440px] px-4 mx-auto">
                 <div className="bg-ghost-white flex flex-col">
                     <div className="flex flex-row justify-between">
                         <div className="bg-slate-200 rounded-sm w-2/5 h-60 mb-4 px-8 py-7 mt-10 mr-4">
@@ -241,8 +241,8 @@ function Landing() {
             </div> */}
 
             {/* Products */}
-            <div className="bg-gradient-to-b from-ghost-white to-white px-[10vw] 2xl:px-[20vw]">
-                <div className="flex flex-col mt-10">
+            <div className="bg-gradient-to-b from-ghost-white to-white">
+                <div className="flex flex-col mt-10 max-w-[1440px] px-4 mx-auto">
                     <div className="flex flex-row justify-between text-center mt-10">
                         <img src={hardwarebg} className="bg-cover w-1/2 rounded-tl-sm" />
                         <div className="relative bg-oxford-blue w-1/2 h-90 flex flex-col justify-center items-center ease-in-out text-ghost-white rounded-tr-sm">
@@ -281,8 +281,8 @@ function Landing() {
             </div>
 
             {/* Partners */}
-            <div className="bg-white flex flex-col items-center py-4 w-full overflow-hidden px-[10vw] 2xl:px-[20vw]">
-                <h1 className="text-2xl text-oxford-blue font-bold font-mono text-center mb-4 mt-14">
+            <div className="bg-white flex flex-col items-center py-4 w-full overflow-hidden">
+                <h1 className="text-2xl text-oxford-blue font-bold font-mono text-center max-w-[1440px] px-4 mx-auto mb-4 mt-14">
                     OUR PARTNERS
                     <img src={partners} className="w-[75vw] 2xl:w-[55vw] mb-6 mt-4" />
                 </h1>
@@ -323,9 +323,9 @@ function Landing() {
                         <div className="bg-ghost-white rounded shadow-lg w-full max-w-[70vw] relative">
                             <div className="h-[90vh] overflow-y-auto">
                             <div className="flex flex-row">
-                                <div className="bg-oxford-blue rounded-l-sm w-1/2">
+                                <div className="bg-oxford-blue rounded-l-sm w-1/2 h-[90vh]">
                                     {/* <img src={person} className="rounded-l-sm w-1/2 items-center bottom-10 absolute bg-contain" /> */}
-                                    <img src={person2} className="rounded-l-sm h-full ml-14 absolute bg-contain" />
+                                    <img src={person2} className="rounded-l-sm h-full absolute bg-contain" />
                                 </div>
                                 <form className="rounded-r-sm w-1/2 h-full">
                                     <img src={solutionsblue} className="h-10 mt-8 px-[3vw]" />
@@ -334,27 +334,27 @@ function Landing() {
                                         <div className="flex flex-wrap mb-2 justify-between">
                                             <div className="w-2/5 ml-[3vw]">
                                                 <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">First Name</label>
-                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2.5 px-3 mb-3 leading-tight" />
+                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
                                             </div>
                                             <div className="w-2/5 mr-[3vw]">
                                                 <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Last Name</label>
-                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2.5 px-3 leading-tight" />
+                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
                                             </div>
                                         </div>
                                         <div className="flex flex-wrap px-[3vw] mb-2">
                                             <div className="w-full">
                                                 <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Company Name</label>
-                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2.5 px-3 mb-3 leading-tight" />
+                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
                                                 <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Business Email</label>
-                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2.5 px-3 mb-3 leading-tight" />
+                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
                                                 <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Phone Number</label>
-                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2.5 px-3 mb-3 leading-tight" />
+                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
                                             </div>
                                         </div>
                                         <div className="flex flex-wrap px-[3vw] mb-2">
                                             <label className="block tracking-wide text-black text-sm font-bold mb-2">What is your current working relationship with us?</label>
                                             <div className="relative w-full">
-                                                <select className="block appearance-none w-full bg-white border-2 border-slate-300 text-black py-2.5 px-3 pr-8 rounded leading-tight" value={currentRelationship} onChange={handleSelectChange}>
+                                                <select className="block appearance-none w-full bg-white border-2 border-slate-300 text-black py-2 px-3 pr-8 rounded leading-tight" value={currentRelationship} onChange={handleSelectChange}>
                                                     <option value="" disabled selected>Please Select</option>
                                                     <option value="working">I'm currently working with Canada Computers</option>
                                                     <option value="not-working">I'm not currently working with Canada Computers</option>
@@ -368,19 +368,19 @@ function Landing() {
                                                 <div className="flex flex-wrap mt-4 mb-2">
                                                     <div className="w-full md:w-1/2 mb-6 pr-3 md:mb-0">
                                                         <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Account Number</label>
-                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2.5 px-3 mb-3 leading-tight" />
+                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
                                                     </div>
                                                     <div className="w-full md:w-1/2 pl-3">
                                                         <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Corporate Account Rep</label>
-                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2.5 px-3 leading-tight" />
+                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
                                                     </div>
                                                     <div className="w-full md:w-1/2 mb-6 pr-3 md:mb-0">
                                                         <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Invoice Number</label>
-                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2.5 px-3 leading-tight" />
+                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
                                                     </div>
                                                     <div className="w-full md:w-1/2 pl-3">
                                                         <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Quote/Order Number</label>
-                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2.5 px-3 leading-tight" />
+                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
                                                     </div>
                                                 </div>
                                             )}
@@ -388,7 +388,7 @@ function Landing() {
                                         <div className="flex flex-wrap px-[3vw] mb-4">
                                             <div className="w-full">
                                                 <label className="block tracking-wide text-left text-black text-sm font-bold mt-3 mb-2">How can we be of assistance?</label>
-                                                <textarea className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-4 px-3 mb-3 leading-tight" rows="3" />
+                                                <textarea className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-6" rows="3" />
                                             </div>
                                         </div>
                                         <div className="px-[3vw]">
@@ -399,7 +399,7 @@ function Landing() {
                                     </form>
                                 </div>
                             </div>
-                            <button className="absolute top-2 right-8 text-gray-500" onClick={handleClose}>
+                            <button className="absolute top-6 right-8 text-gray-500 text-xl" onClick={handleClose}>
                                 ✖
                             </button>
                         </div>
