@@ -31,7 +31,7 @@ const items = [
 
 function Contacts() {
 
-    const [ showGrid, setShowGrid ] = useState(true);
+    const [ showGrid, setShowGrid ] = useState(false);
 
     return (
         <div className="pb-32">

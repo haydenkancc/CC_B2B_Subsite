@@ -19,6 +19,10 @@ import General from './general/general.tsx';
 import Contacts from './contacts/contacts.tsx';
 import Documents from './documents/documents.tsx';
 import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
+import PortalHeading from '../../components/portal-page/portal-heading.tsx';
+import PortalBody from '../../components/portal-page/portal-body.tsx';
+import PageWrap from '../../components/portal-page/page-wrap.tsx';
+import PageTabs from '../../components/portal-page/page-tabs.tsx';
 
 const items = [
     {
@@ -68,34 +72,14 @@ const pages = ['Dashboard', 'Orders', 'Billing', 'Wishlists', 'Tickets', 'Accoun
 
 function Account() {
     return (
-        <div className="bg-lavender/10 text-oxford-blue border-lavender pb-32">
+        <PortalBody>
             <NavbarTop/>
             <NavbarBottom pages={pages} />
-            <div className="flex justify-center">
-                <div className="max-w-[1440px] flex-grow pl-4 pt-4">
-                    <div className="pt-8 pb-16">
-                        <div className="text-4xl pb-2">
-                            Account
-                        </div>
-                        <div>
-                            View and modify your account details
-                        </div>
-                    </div>
-                    <Tabs className="">
-                        <TabList className="flex text-lg border-b gap-1" items={tabs}>
-                            {item => <Tab className="account-Tab">{item.title}</Tab>}
-                        </TabList>
-                        <Collection items={tabs}>
-                            {item => (
-                                <TabPanel className="pt-16">
-                                    {item.content}
-                                </TabPanel>
-                            )}
-                        </Collection>
-                    </Tabs>
-                </div>
-            </div>
-        </div>
+            <PageWrap>
+                <PortalHeading heading="Account" subheading="View and modify your account details" />
+                <PageTabs tabs={tabs} />
+            </PageWrap>
+        </PortalBody>
     )
 }
 

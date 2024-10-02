@@ -15,6 +15,7 @@ import Signin from './routes/user/signin.tsx';
 import Forgot from './routes/user/forgot.tsx';
 import Create from './routes/user/create.tsx';
 import ForgotSubmission from './routes/user/forgot-submission.tsx';
+import YourOrders from './routes/your-orders/your-orders.tsx';
 
 const router = createBrowserRouter([
     {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
         path: "forgot-submission",
         element: <ForgotSubmission />
     },
+    {
+        path: "your-orders",
+        element: <YourOrders />
+    }
 ]);
 
 

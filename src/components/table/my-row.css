@@ -1,10 +1,12 @@
 .my-row-Row {
     color: var(--oxford-blue);
     transition: background-color 100ms;
-
+    /*
     &:nth-child(2n) td {
         background: rgba(230, 230, 250, 0.35);
     }
+    */
+
 
     td {
         border-bottom: 1px solid var(--lavender);

@@ -12,7 +12,7 @@ const items = [
 ]
 
 function Addresses() {
-    const [ showGrid, setShowGrid ] = useState(true);
+    const [ showGrid, setShowGrid ] = useState(false);
     return (
         <div className="pb-32">
             <div className="pb-12 flex justify-between">
