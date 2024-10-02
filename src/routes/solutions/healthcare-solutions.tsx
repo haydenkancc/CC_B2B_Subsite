@@ -12,7 +12,7 @@ import hmeeting from "../../assets/hmeeting.png"
 import Logo from '../../assets/Canada_Computers_(Icon).svg?react';
 import envelope from "../../assets/envelope.png"
 import call from "../../assets/call.png"
-import { ClipboardText, Cardholder, HandCoins, UserCircleGear, CaretRight, Check } from '@phosphor-icons/react';
+import { ClipboardText, Cardholder, HandCoins, UserCircleGear, CaretRight, Check, UserFocus, ChartLineUp } from '@phosphor-icons/react';
 import enterprise1 from "../../assets/enterprise1.png"
 import enterprise2 from "../../assets/enterprise2.png"
 import enterprise3 from "../../assets/enterprise3.png"
@@ -69,7 +69,7 @@ function HealthcareSolutions() {
                 }}
             >
                 <div className="contents absolute">
-                    <div className="px-[10vw] 2xl:px-[20vw] py-24">
+                    <div className="max-w-[1440px] px-4 mx-auto py-24">
                         <p className="text-xl text-ghost-white mt-6">HEALTHCARE</p>
                         <h1 className="text-4xl font-bold text-ghost-white mt-6">Enhance Patient Care and</h1>
                         <h1 className="text-4xl font-bold text-ghost-white mt-2">Empower Your Healthcare</h1>
@@ -79,8 +79,8 @@ function HealthcareSolutions() {
             </div>
 
             {/* Business */}
-            <div className="bg-gradient-to-b from-white to-ghost-white py-4 w-full overflow-hidden items-center justify-between px-[10vw] 2xl:px-[20vw]">
-                <div className="flex flex-row items-center justify-between">
+            <div className="bg-gradient-to-b from-white to-ghost-white py-4 w-full overflow-hidden items-center justify-between">
+                <div className="flex flex-row items-center justify-between max-w-[1440px] px-4 mx-auto">
                     <div className="contents">
                         <div className="w-136">
                             <h1 className="text-3xl text-black mt-12 font-semibold">Transform Healthcare Efficiency with Canada Computers & Electronics</h1>
@@ -88,7 +88,7 @@ function HealthcareSolutions() {
                         <div className="mt-12 ml-8 w-192 text-black py-6">Whether you're just starting or well into your digital transformation, our expertise is designed to help your healthcare organization harness technology to enhance patient care and streamline operations. We focus on boosting your IT capabilities by improving data resilience, system flexibility, operational efficiency, patient insights, and cybersecurity. Our skilled team will partner with you to craft a comprehensive strategy that not only advances healthcare delivery but also ensures you remain a leader in the field. Let us guide you in achieving superior outcomes and staying ahead in the ever-evolving healthcare landscape.</div>
                     </div>
                 </div>
-                <div className="flex flex-row mt-10">
+                <div className="flex flex-row mt-10 max-w-[1440px] px-4 mx-auto">
                     <div className="flex flex-col">
                         <div className="w-80 flex flex-row items-center text-center">
                             <Check size={32} weight="light" />
@@ -120,44 +120,44 @@ function HealthcareSolutions() {
             </div>
 
             {/* Solutions */}
-            <div className="bg-gradient-to-b from-ghost-white to-white flex flex-col">
-                <div className="px-[10vw] 2xl:px-[20vw]">
+            <div className="bg-gradient-to-b from-ghost-white to-white">
+                <div className="flex flex-col max-w-[1440px] px-4 mx-auto">
                     <div className="flex flex-row justify-between">
                         <div>
-                            <div className="rounded-sm w-76 h-52 flex flex-col items-center">
-                                <img src={common} className="rounded-sm w-76 w-full h-full object-cover"/>
+                            <div className="rounded-sm w-96 h-52 flex flex-col items-center">
+                                <img src={common} className="rounded-sm w-96 w-full h-full object-cover"/>
                             </div>
-                            <div className="rounded-sm w-76 py-6 flex flex-col">
+                            <div className="rounded-sm w-96 py-6 flex flex-col">
                                 <div className="text-black font-semibold mb-2">Common Areas and Patient Rooms</div>
                                 <div className="text-black text-sm">Transform your common areas and patient rooms with our personalized solutions. We focus on creating spaces that are both comfortable and functional, making sure they feel welcoming and supportive. Our designs help improve the atmosphere, making life easier for both patients and healthcare staff.</div>
                                 <button className="w-24 flex flex-row items-center mb-6">
-                                    <div className= "text-black text-sm py-2.5">Read More</div>
+                                    <div className= "text-oxford-blue text-sm py-2.5">Read More</div>
                                     <CaretRight size={20} weight="light" />
                                 </button>
                             </div>
                         </div>
                         <div>
-                        <div className="rounded-sm w-76 h-52 flex flex-col items-center">
-                                <img src={hoffice} className="rounded-sm w-76 w-full h-full object-cover"/>
+                        <div className="rounded-sm w-96 h-52 flex flex-col items-center">
+                                <img src={hoffice} className="rounded-sm w-96 w-full h-full object-cover"/>
                             </div>
-                            <div className="rounded-sm w-76 py-6 flex flex-col">
+                            <div className="rounded-sm w-96 py-6 flex flex-col">
                                 <div className="text-black font-semibold mb-2">Office, Labs, and Front Desks</div>
                                 <div className="text-black text-sm">Upgrade your office spaces, labs, and front desks with our customized solutions. We design environments that combine comfort and efficiency, ensuring smooth operations and a professional atmosphere. Our approach enhances functionality and supports a productive, welcoming experience for both staff and visitors.</div>
                                 <button className="w-24 flex flex-row items-center mb-6">
-                                    <div className= "text-black text-sm py-2.5">Read More</div>
+                                    <div className= "text-oxford-blue text-sm py-2.5">Read More</div>
                                     <CaretRight size={20} weight="light" />
                                 </button>
                             </div>
                         </div>
                         <div>
-                            <div className="rounded-sm w-76 h-52 flex flex-col items-center">
-                                <img src={hmeeting} className="rounded-sm w-76 w-full h-full object-cover"/>
+                        <div className="rounded-sm w-96 h-52 flex flex-col items-center">
+                                <img src={hmeeting} className="rounded-sm w-96 w-full h-full object-cover"/>
                             </div>
-                            <div className="rounded-sm w-76 py-6 flex flex-col">
+                            <div className="rounded-sm w-96 py-6 flex flex-col">
                                 <div className="text-black font-semibold mb-2">Meeting Spaces</div>
                                 <div className="text-black text-sm">Revitalize your meeting spaces with our tailored solutions. We create environments that foster collaboration and focus, blending comfort with practicality to ensure productive and engaging meetings. Our designs help make every discussion more effective and every gathering more seamless.</div>
                                 <button className="w-24 flex flex-row items-center mb-6">
-                                    <div className= "text-black text-sm py-2.5">Read More</div>
+                                    <div className= "text-oxford-blue text-sm py-2.5">Read More</div>
                                     <CaretRight size={20} weight="light" />
                                 </button>
                             </div>
@@ -167,40 +167,56 @@ function HealthcareSolutions() {
             </div>
             
             {/* Why */}
-            <div className="bg-white py-4 w-full overflow-hidden px-[10vw] 2xl:px-[20vw]">
-                <div className="mb-20">
-                    <div className="flex justify-between">
-                        <div className="">
-                            <h1 className="text-2xl text-black mt-12 font-semibold">Why Partner with Canada Computers & Electonics?</h1>
-                            <div className="text-black py-6">Empower your developers with platforms that provide the tools and services <br></br>they need to create value for your organization without sacrificing the<br></br> governance, spend control and required security. We ensure you have the <br></br>expertise and technology partnerships to transform your business and stay <br></br>ahead of what's next.</div>
-                        </div>
-                        <div className="flex flex-row">
-                            <div className="mt-6">
-                                <div className="rounded-sm w-40 flex flex-col items-center">
-                                    <ClipboardText size={52} weight="light" />
-                                </div>
-                                <div className="rounded-sm w-40 mb-8 flex flex-col items-center text-center">
-                                    <div className="text-black">Access to an Account Manager</div>
-                                </div>
-                                <div className="rounded-sm w-40 flex flex-col items-center">
-                                    <Cardholder size={52} weight="light" />
-                                </div>
-                                <div className="rounded-sm w-40 flex flex-col items-center text-center">
-                                    <div className="text-black">Flexible Payment Options</div>
-                                </div>
+            <div className="bg-white">
+                <div className="bg-white py-4 w-full overflow-hidden max-w-[1440px] px-4 mx-auto">
+                    <div className="mb-20">
+                        <div className="flex flex-row justify-between gap-x-10">
+                            <div className="w-1/2">
+                                <h1 className="text-2xl text-black mt-12 font-semibold">Why Partner with Canada Computers & Electronics?</h1>
+                                <div className="text-black py-6">Empower your developers with platforms that provide the tools and services they need to create value for your organization without sacrificing the governance, spend control and required security. We'll ensure you have the expertise and technology partnerships to transform your business and stay ahead of what's next.</div>
                             </div>
-                            <div className="ml-12 mt-6">
-                                <div className="rounded-sm w-40 flex flex-col items-center">
-                                    <HandCoins size={52} weight="light" />
+                            <div className="flex flex-row 2xl:gap-x-4">
+                                <div className="mt-6">
+                                    <div className="rounded-sm w-40 flex flex-col items-center">
+                                        <ClipboardText size={52} weight="light" />
+                                    </div>
+                                    <div className="rounded-sm w-40 mb-8 flex flex-col items-center text-center">
+                                        <div className="text-black">Access to an Account Manager</div>
+                                    </div>
+                                    <div className="rounded-sm w-40 flex flex-col items-center">
+                                        <Cardholder size={52} weight="light" />
+                                    </div>
+                                    <div className="rounded-sm w-40 flex flex-col items-center text-center">
+                                        <div className="text-black">Flexible Payment Options</div>
+                                    </div>
                                 </div>
-                                <div className="rounded-sm w-40 mb-8 flex flex-col items-center text-center">
-                                    <div className="text-black">Education Savings on Products</div>
+                                <div className="ml-12 mt-6">
+                                    <div className="rounded-sm w-40 flex flex-col items-center">
+                                        <HandCoins size={52} weight="light" />
+                                    </div>
+                                    <div className="rounded-sm w-40 mb-8 flex flex-col items-center text-center">
+                                        <div className="text-black">Education Savings on Products</div>
+                                    </div>
+                                    <div className="rounded-sm w-40 flex flex-col items-center">
+                                        <UserCircleGear size={52} weight="light" />
+                                    </div>
+                                    <div className="rounded-sm w-40 flex flex-col items-center text-center">
+                                        <div className="text-black">Support throughout Product Cycle</div>
+                                    </div>
                                 </div>
-                                <div className="rounded-sm w-40 flex flex-col items-center">
-                                    <UserCircleGear size={52} weight="light" />
-                                </div>
-                                <div className="rounded-sm w-40 flex flex-col items-center text-center">
-                                    <div className="text-black">Support throughout Product Cycle</div>
+                                <div className="ml-12 mt-6">
+                                    <div className="rounded-sm w-40 flex flex-col items-center">
+                                        <UserFocus size={52} weight="light" />
+                                    </div>
+                                    <div className="rounded-sm w-40 mb-8 flex flex-col items-center text-center">
+                                        <div className="text-black">Tailored Solutions for Clients</div>
+                                    </div>
+                                    <div className="rounded-sm w-40 flex flex-col items-center">
+                                        <ChartLineUp size={52} weight="light" />
+                                    </div>
+                                    <div className="rounded-sm w-40 flex flex-col items-center text-center">
+                                        <div className="text-black">Performance Analytics</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -209,15 +225,15 @@ function HealthcareSolutions() {
             </div>
 
             {/* Succeed */}
-            <div className="bg-ghost-white flex flex-col items-center py-4 px-20 w-full overflow-hidden justify-center px-[10vw] 2xl:px-[20vw]">
+            <div className="bg-ghost-white flex flex-col items-center py-4 px-20 w-full overflow-hidden justify-center max-w-[1440px] px-12 mx-auto">
                 <div className="text-xl text-oxford-blue font-bold text-center mt-12 mb-10">With unmatched expertise and a deep understanding of healthcare needs, we address challenges and drive innovation across various medical settings. We design customized solutions to improve functionality and elevate patient care, ensuring that every aspect of your facility operates at its best.</div>
             </div>
             <div className="bg-ghost-white items-center w-full overflow-hidden py-4">
-                <div className="flex flex-row justify-between gap-x-8 px-[10vw] 2xl:px-[20vw]">
-                    <div className="bg-white rounded-lg shadow flex flex-wrap justify-center gap-10 mb-8">
-                        <div className="flex flex-col w-80">
+                <div className="flex flex-row justify-between max-w-[1440px] px-4 mx-auto">
+                    <div className="bg-white rounded-lg shadow flex flex-wrap justify-center gap-10 mb-8 ml-2 2xl:ml-0">
+                        <div className="flex flex-col w-96">
                             <div className="flex items-center justify-center">
-                                <img src={enterprise1} className="rounded-t-lg w-80 h-48 object-cover" />
+                                <img src={enterprise1} className="rounded-t-lg w-96 h-48 object-cover" />
                             </div>
                             <div className="px-6">
                                 <div className="mt-4 font-bold text-oxford-blue">Doubling Revenue with Cutting-Edge Analytics</div>
@@ -230,13 +246,13 @@ function HealthcareSolutions() {
                         </div>
                     </div>
                     <div className="bg-white rounded-lg shadow flex flex-wrap justify-center gap-10 mb-8">
-                        <div className="flex flex-col w-80">
+                        <div className="flex flex-col w-96">
                             <div className="flex items-center justify-center">
-                                <img src={enterprise2} className="rounded-t-lg w-80 h-48 object-cover" />
+                                <img src={enterprise2} className="rounded-t-lg w-96 h-48 object-cover" />
                             </div>
                             <div className="px-6">
                                 <div className="mt-4 font-bold text-oxford-blue">Transforming Success with Tailored Solutions</div>
-                                <div className="mt-2 text-oxford-blue text-sm mb-3">By adopting our custom digital solutions, Company Y improved their operational efficiency by 200% in just three months, revolutionizing their processes and accelerating their growth trajectory.</div>
+                                <div className="mt-2 text-oxford-blue text-sm mb-3">By adopting our custom digital solutions, Company Y improved their operational efficiency by 200% in just three months, revolutionizing their processes and accelerating their growth.</div>
                                 <button className="flex flex-row items-center mb-6">
                                     <div className= "text-oxford-blue text-sm">Read More</div>
                                     <CaretRight size={20} weight="light" />
@@ -245,12 +261,12 @@ function HealthcareSolutions() {
                         </div>
                     </div>
                     <div className="bg-white rounded-lg shadow flex flex-wrap justify-center gap-10 mb-8">
-                        <div className="flex flex-col w-80">
+                        <div className="flex flex-col w-96">
                             <div className="flex items-center justify-center">
-                                <img src={enterprise3} className="rounded-t-lg w-80 h-48 object-cover" />
+                                <img src={enterprise3} className="rounded-t-lg w-96 h-48 object-cover" />
                             </div>
                             <div className="px-6">
-                                <div className="mt-4 font-bold text-oxford-blue">Enhancing Customer Engagement with Advanced CRM Toolscs</div>
+                                <div className="mt-4 font-bold text-oxford-blue">Enhancing Customer Engagement with Advanced CRM Tools</div>
                                 <div className="mt-2 text-oxford-blue text-sm mb-3">Using our cutting-edge CRM system, Company Z boosted customer retention rates by 130% within just five months, significantly improving their engagement strategy and customer satisfaction.</div>
                                 <button className="flex flex-row items-center mb-6">
                                     <div className= "text-oxford-blue text-sm">Read More</div>
@@ -261,14 +277,14 @@ function HealthcareSolutions() {
                     </div>
                 </div>
                 <div className="flex justify-center">
-                    <button className="bg-oxford-blue hover:bg-slate-700 w-40 h-8 text-white text-sm font-semibold mb-10 rounded-sm">See more stories</button>
+                    <button className="bg-oxford-blue hover:bg-slate-700 w-44 h-10 text-white text-md font-semibold mb-10 rounded-sm">See more stories</button>
                 </div>
             </div>
 
             {/* Banner */}
-            <div className="bg-oxford-blue flex py-10 w-full overflow-hidden relative flex justify-between px-[10vw] 2xl:px-[20vw]">
-                <div className="contents">
-                    <div>
+            <div className="bg-oxford-blue py-10 w-full relative">
+                <div className="flex flex-row justify-between max-w-[1440px] px-4 mx-auto">
+                    <div className="flex flex-col">
                         <div className="text-3xl text-white font-bold mb-4">Empower your Workplace Today</div>
                         <h1 className="text-xl text-white">Contact us today to get started!</h1>
                     </div>
