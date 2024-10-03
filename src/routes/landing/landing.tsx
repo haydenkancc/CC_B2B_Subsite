@@ -247,7 +247,7 @@ function Landing() {
                         <img src={hardwarebg} className="bg-cover w-1/2 rounded-tl-sm" />
                         <div className="relative bg-oxford-blue w-1/2 h-90 flex flex-col justify-center items-center ease-in-out text-ghost-white rounded-tr-sm">
                             <div className="font-bold text-xl relative">
-                                    Hardware for Enhanced Performance
+                                Hardware for Enhanced Performance
                             </div>
                             <div className="text-lg font-medium px-10 py-1 relative flex flex-col items-center">
                                 <div className="text-center">
@@ -323,8 +323,7 @@ function Landing() {
                         <div className="bg-ghost-white rounded shadow-lg w-full max-w-[70vw] relative">
                             <div className="h-[90vh] overflow-y-auto">
                             <div className="flex flex-row">
-                                <div className="bg-oxford-blue rounded-l-sm w-1/2 h-[90vh]">
-                                    {/* <img src={person} className="rounded-l-sm w-1/2 items-center bottom-10 absolute bg-contain" /> */}
+                                <div className="bg-oxford-blue w-1/2">
                                     <img src={person2} className="rounded-l-sm h-full absolute bg-contain" />
                                 </div>
                                 <form className="rounded-r-sm w-1/2 h-full">

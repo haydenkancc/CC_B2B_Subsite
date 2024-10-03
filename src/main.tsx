@@ -15,7 +15,9 @@ import Signin from './routes/user/signin.tsx';
 import Forgot from './routes/user/forgot.tsx';
 import Create from './routes/user/create.tsx';
 import ForgotSubmission from './routes/user/forgot-submission.tsx';
-import Orders from './routes/orders/orders.tsx';
+import Orders from './routes/your-orders/orders/orders.tsx';
+import Wishlist from './routes/wishlist/wishlist.tsx';
+import Standards from './routes/wishlist/standards.tsx';
 
 const router = createBrowserRouter([
     {
@@ -73,6 +75,14 @@ const router = createBrowserRouter([
     {
         path: "orders",
         element: <Orders />
+    },
+    {
+        path: "wishlist",
+        element: <Wishlist />
+    },
+    {
+        path: "standards",
+        element: <Standards />
     },
 ]);
 

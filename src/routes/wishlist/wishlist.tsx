@@ -1,6 +1,7 @@
+import React, { useState } from "react";
 import NavbarTop from "../../components/navbar/navbar-top";
 import NavbarBottom from "../../components/navbar/navbar-bottom";
-import { Trash, NotePencil, Check, X, ShoppingCart, BellRinging } from "@phosphor-icons/react";
+import { Trash, Check, X, ShoppingCart, BellRinging } from "@phosphor-icons/react";
 import laptop from "../../assets/laptop.png";
 import MyCheckbox from "../../components/form/my-checkbox";
 import Actions from "./actions";
@@ -8,11 +9,15 @@ import Actions from "./actions";
 const pages = ['Dashboard', 'Orders', 'Billing', 'Wishlists', 'Tickets', 'Account'];
 
 const items = [
-    { id: 1, image: laptop, name: "Macally Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612",  onlineIcon: <X weight="bold" />, onlineText: "Unavailable Online", storeIcon: <X weight="bold" />, storeText: "Unavailable In-Store", date: "2024-10-02", user: "Porky Pig", price: "$17.99", quantity: "2" },
-    { id: 2, image: laptop, name: "ICAN 10000mAh Super Quick Charge - QC & PD 18W Power Bank (F1002PD)", code: "NAFOX00001", onlineIcon: <Check weight="bold" />, onlineText: "Available Online", storeIcon: <Check weight="bold" />, storeText: "Available In-Store", date: "2024-09-28", user: "Bugs Bunny", price: "$24.99", quantity: "2" },
+    { id: 1, image: laptop, name: "Macally Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612", onlineIcon: <X weight="bold" />, onlineText: "Unavailable Online", storeIcon: <X weight="bold" />, storeText: "Unavailable In-Store", date: "2024-10-02", user: "Porky Pig", price: 17.99},
+    { id: 2, image: laptop, name: "ICAN 10000mAh Super Quick Charge - QC & PD 18W Power Bank (F1002PD)", code: "NAFOX00001", onlineIcon: <Check weight="bold" />, onlineText: "Available Online", storeIcon: <Check weight="bold" />, storeText: "Available In-Store", date: "2024-09-28", user: "Bugs Bunny", price: 24.99 },
+    { id: 3, image: laptop, name: "Macally Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612", onlineIcon: <Check weight="bold" />, onlineText: "Available Online", storeIcon: <X weight="bold" />, storeText: "Unavailable In-Store", date: "2024-10-02", user: "Porky Pig", price: 17.99 },
 ];
 
 function Wishlist() {
+
+    const [isHovered, setIsHovered] = useState(false);
+    
     return (
         <div className="bg-lavender/10 text-oxford-blue border-lavender pb-32">
             <NavbarTop />
@@ -66,14 +71,16 @@ function Wishlist() {
                                             <div className="flex flex-col w-32">
                                                 <textarea
                                                     placeholder="Add a note..."
-                                                    className="p-2 focus:outline-none bg-lavendar"
+                                                    className="p-2 focus:outline-none bg-lavendar h-20"
                                                 />
                                             </div>
                                         </td>
                                         <td className="py-2 px-4 w-40">
-                                            <button className="flex flex-row justify-center items-center gap-x-2">
+                                            <button className="flex flex-row justify-center items-center gap-x-2"
+                                                onMouseEnter={() => setIsHovered(true)}
+                                                onMouseLeave={() => setIsHovered(false)}
+                                            >
                                                 <ShoppingCart weight="light" size={24} />
-                                                {/* <NotePencil weight="light" size={24} /> */}
                                                 <BellRinging weight="light" size={24} />
                                                 <Trash weight="light" size={24} />
                                             </button>
@@ -82,7 +89,7 @@ function Wishlist() {
                                 ))}
                             </tbody>
                         </table>
-                        <div className="flex flex-row justify-between mt-8 mb-32">
+                        <div className="flex flex-row justify-between mt-8">
                             <div className="flex flex-row items-center">
                                 <div className="font-semibold uppercase">Apply this action to for all items selected:</div>
                                 <Actions />

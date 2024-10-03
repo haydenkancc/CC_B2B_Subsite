@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./solutions.css"
 import CorporateSalesCarousel from "./corporate-sales-carousel.tsx";
 
@@ -11,18 +11,21 @@ import meeting from "../../assets/meeting.png"
 import Logo from '../../assets/Canada_Computers_(Icon).svg?react';
 import envelope from "../../assets/envelope.png"
 import call from "../../assets/call.png"
-import { ClipboardText, Cardholder, HandCoins, UserCircleGear, CaretRight, Check, ChartLineUp, UserFocus } from '@phosphor-icons/react';
+import { ClipboardText, Cardholder, HandCoins, UserCircleGear, CaretRight, Check, ChartLineUp, UserFocus, Envelope, Pen, Phone } from '@phosphor-icons/react';
 import enterprise1 from "../../assets/enterprise1.png"
 import enterprise2 from "../../assets/enterprise2.png"
 import enterprise3 from "../../assets/enterprise3.png"
+import { Link } from "react-router-dom";
+import person2 from "../../assets/person2.png"
+import solutionsblue from "../../assets/solutionsblue.png"
 
 const pages = ['Partners', 'Industry', 'About'];
 
 function EnterpriseSolutions() {
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location]);
+    // useEffect(() => {
+    //     window.scrollTo(0, 0);
+    // }, [location]);
 
     let slides = [
         {
@@ -47,6 +50,21 @@ function EnterpriseSolutions() {
             phone: "905-780-2632",
         },
     ];
+
+    const [currentRelationship, setCurrentRelationship] = useState("");
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleSelectChange = (event) => {
+        setCurrentRelationship(event.target.value);
+    };
+
+    const handleOpen = () => setIsOpen(true);
+    const handleClose = () => setIsOpen(false);
+
+    const bottomRef = useRef(null);
+    const [isHighlighted, setIsHighlighted] = useState(false);
+
 
     return (
         <>
@@ -79,11 +97,23 @@ function EnterpriseSolutions() {
             {/* Business */}
             <div className="bg-gradient-to-b from-white to-ghost-white py-4 w-full overflow-hidden items-center justify-between">
                 <div className="flex flex-row items-center justify-between max-w-[1440px] px-4 mx-auto">
-                    <div className="contents">
-                        <div className="mt-10 w-1/2">
+                    <div className="flex flex-row">
+                        <div className="flex flex-col mt-10 w-1/2">
                             <h1 className="text-3xl text-black mt-12 font-semibold">Gain Business Agility Through Canada Computers & Electronics</h1>
                             <div className="text-black py-6">Regardless of where you are on your cloud journey, our services and expertise can empower your team to innovate with technology and mature your business processes. We focus on helping organizations improve their IT maturity through advancement in resiliency, portability, manageability, observability and cybersecurity. Our team of experts will help you build a cohesive strategyto drive business value and extend your lead over the competition. your lead over the competition.</div>
-                        </div>
+                                <button 
+                                    onClick={() => {
+                                        bottomRef.current.scrollIntoView({ behavior: 'smooth' });
+                                        setIsHighlighted(true);
+                                        setTimeout(() => {
+                                            setIsHighlighted(false);
+                                        }, 2000); // Highlight for 2 seconds
+                                    }} 
+                                    className="text-oxford-blue border-2 border-oxford-blue rounded-sm py-2 px-4 font-medium w-44 hover:bg-oxford-blue hover:text-ghost-white"
+                                >
+                                    Inquire More
+                                </button>
+                            </div>
                         <div className="ml-20 mt-20 w-1/2">
                             <div className="flex flex-col">
                                 <div className="w-96 flex flex-row items-center text-center">
@@ -306,15 +336,117 @@ function EnterpriseSolutions() {
                 </div>
             </div>
 
-            {/* Apply */}
-            <div className="bg-white flex flex-col items-center">
-                <div className="text-2xl text-black font-bold uppercase mb-4">Apply for an account today</div>
-                <div className="flex flex-row items-center py-3 mb-20 px-[10vw] 2xl:px-[20vw]">
-                    <img src={envelope} className="w-6"/>
-                    <div className="cursor-pointer text-black ml-2">corporate@canadacomputers.com</div>
-                    <img src={call} className="w-6 ml-24"/>
-                    <div className="cursor-pointer text-black ml-2">Telephone: 905-780-2632</div>
+            {/* Contact */}
+            <div className="bg-ghost-white w-full py-14 px-[10vw] 2xl:px-[20vw] text-center" ref={bottomRef}>
+                <div className="uppercase text-2xl font-semibold">Contact us for the solutions you need</div>
+                <div className="flex flex-row justify-between">
+                    <div 
+                        className={`flex flex-col items-center font-medium text-lg mt-10 w-28 h-18 cursor-pointer rounded-sm ${isHighlighted ? 'button-highlight' : ''}`} 
+                        onClick={handleOpen}
+                    >
+                        <Envelope size={40} weight="light" />
+                        <div>Message Us</div>
+                    </div>
+                    <div className="flex flex-col items-center font-medium text-lg mt-10 w-72">
+                        <Phone size={40} weight="light" />
+                        <div>Call Us</div>
+                        <div className="text-sm">Toll-Free : 1-855-940-2400</div>
+                        <div className="text-sm">Toronto/GTA : 905-780-2632</div>
+                        <div className="text-sm">Ottawa Area : 613-225-8188</div>
+                        <div className="text-sm">Vancouver Area : 604-235-3251</div>
+                    </div>
+                    <Link to={"/create-account"} className="flex flex-col items-center font-medium text-lg mt-10 w-28 h-18">
+                        <Pen size={40} weight="light" />
+                        <div>Sign Up</div>
+                    </Link>
                 </div>
+
+                {isOpen && (
+                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                        <div className="bg-ghost-white rounded shadow-lg w-full max-w-[70vw] relative">
+                            <div className="h-[90vh] overflow-y-auto">
+                            <div className="flex flex-row">
+                                <div className="bg-oxford-blue w-1/2">
+                                    <img src={person2} className="rounded-l-sm h-full absolute bg-contain" />
+                                </div>
+                                <form className="rounded-r-sm w-1/2 h-full">
+                                    <img src={solutionsblue} className="h-10 mt-8 px-[3vw]" />
+                                    <div className="text-2xl text-black font-semibold mt-4 px-[3vw] text-left">Send us a Message</div>
+                                    <div className="text-slate-500 text-sm font-medium text-left py-2.5 px-[3vw]">Have a question or need assistance? Just fill out the form, and we'll get back to you shortly.</div>
+                                        <div className="flex flex-wrap mb-2 justify-between">
+                                            <div className="w-2/5 ml-[3vw]">
+                                                <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">First Name</label>
+                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
+                                            </div>
+                                            <div className="w-2/5 mr-[3vw]">
+                                                <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Last Name</label>
+                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-wrap px-[3vw] mb-2">
+                                            <div className="w-full">
+                                                <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Company Name</label>
+                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
+                                                <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Business Email</label>
+                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
+                                                <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Phone Number</label>
+                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-wrap px-[3vw] mb-2">
+                                            <label className="block tracking-wide text-black text-sm font-bold mb-2">What is your current working relationship with us?</label>
+                                            <div className="relative w-full">
+                                                <select className="block appearance-none w-full bg-white border-2 border-slate-300 text-black py-2 px-3 pr-8 rounded leading-tight" value={currentRelationship} onChange={handleSelectChange}>
+                                                    <option value="" disabled selected>Please Select</option>
+                                                    <option value="working">I'm currently working with Canada Computers</option>
+                                                    <option value="not-working">I'm not currently working with Canada Computers</option>
+                                                    <option value="want-to-work">I want to work with Canada Computers</option>
+                                                </select>
+                                                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-black">
+                                                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                                </div>
+                                            </div>
+                                            {currentRelationship === "working" && (
+                                                <div className="flex flex-wrap mt-4 mb-2">
+                                                    <div className="w-full md:w-1/2 mb-6 pr-3 md:mb-0">
+                                                        <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Account Number</label>
+                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
+                                                    </div>
+                                                    <div className="w-full md:w-1/2 pl-3">
+                                                        <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Corporate Account Rep</label>
+                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
+                                                    </div>
+                                                    <div className="w-full md:w-1/2 mb-6 pr-3 md:mb-0">
+                                                        <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Invoice Number</label>
+                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
+                                                    </div>
+                                                    <div className="w-full md:w-1/2 pl-3">
+                                                        <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Quote/Order Number</label>
+                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="flex flex-wrap px-[3vw] mb-4">
+                                            <div className="w-full">
+                                                <label className="block tracking-wide text-left text-black text-sm font-bold mt-3 mb-2">How can we be of assistance?</label>
+                                                <textarea className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-6" rows="3" />
+                                            </div>
+                                        </div>
+                                        <div className="px-[3vw]">
+                                            <button type="submit" className="px-[3vw] mb-6 w-full shadow bg-blue-900 hover:bg-blue-800 text-white font-medium py-2 rounded">
+                                                Send Message
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <button className="absolute top-6 right-8 text-gray-500 text-xl" onClick={handleClose}>
+                                ✖
+                            </button>
+                        </div>
+                    </div>
+                )}
             </div>
 
         </>
