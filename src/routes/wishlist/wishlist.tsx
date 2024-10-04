@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavbarTop from "../../components/navbar/navbar-top";
+import NavbarTopAccount from '../../components/navbar/navbar-top-account.tsx';
 import NavbarBottom from "../../components/navbar/navbar-bottom";
 import { Trash, Check, X, ShoppingCart, BellRinging } from "@phosphor-icons/react";
 import laptop from "../../assets/laptop.png";
 import MyCheckbox from "../../components/form/my-checkbox";
 import Actions from "./actions";
 
-const pages = ['Dashboard', 'Orders', 'Billing', 'Wishlists', 'Tickets', 'Account'];
+const pages = ['Dashboard', 'Orders', 'Billing', 'Standards', 'Tickets', 'Account'];
 
 const items = [
     { id: 1, image: laptop, name: "Macally Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612", onlineIcon: <X weight="bold" />, onlineText: "Unavailable Online", storeIcon: <X weight="bold" />, storeText: "Unavailable In-Store", date: "2024-10-02", user: "Porky Pig", price: 17.99},
@@ -16,11 +17,15 @@ const items = [
 
 function Wishlist() {
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     const [isHovered, setIsHovered] = useState(false);
     
     return (
         <div className="bg-lavender/10 text-oxford-blue border-lavender pb-32">
-            <NavbarTop />
+            <NavbarTopAccount />
             <NavbarBottom pages={pages} />
             <div className="flex justify-center">
                 <div className="max-w-[1440px] flex-grow pl-4 pt-4">
@@ -28,15 +33,15 @@ function Wishlist() {
                         <div className="text-4xl pb-6">
                             Wishlist
                         </div>
-                        <table className="w-full bg-transparent border-lavender">
+                        <table className="w-full bg-transparent border-lavender mt-8">
                             <thead>
                                 <tr className="text-oxford-blue border-b border-black">
                                     <th></th>
-                                    <th className="py-2 text-left">Product</th>
+                                    <th className="py-2 text-left">Product:</th>
                                     <th className="py-2 px-4 text-left">Date Added:</th>
                                     <th className="py-2 px-4 text-left">Price:</th>
                                     <th className="py-2 px-4 text-left">Note:</th>
-                                    <th className="py-2 px-4 text-left">Actions</th>
+                                    <th className="py-2 px-4 text-left">Actions:</th>
                                 </tr>
                             </thead>
                             <tbody>

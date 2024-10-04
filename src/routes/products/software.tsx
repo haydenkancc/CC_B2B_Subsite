@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./software.css";
+import "./products.css";
 
 import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
 import typing from '../../assets/typing.png';
 import laptop from '../../assets/laptop.png';
 import { CaretRight, CaretDown, CaretUp, Star } from "@phosphor-icons/react";
-import Logo from '../../assets/Canada_Computers_(Icon).svg?react';
 import adspace1 from "../../assets/adspace1.png"
 import adspace2 from "../../assets/adspace2.png"
 import adspace3 from "../../assets/adspace3.png"
@@ -21,8 +20,6 @@ function Software() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location]);
-
-    const isLargeScreen = window.innerWidth >= 1536;
 
     const [openFilters, setOpenFilters] = useState({});
 
@@ -84,6 +81,16 @@ function Software() {
             text5: "Desktop Towers",
             text6: "POS System",
         },
+        {
+            image: laptop,
+            name: "PC Components",
+            text1: "Graphic Cards",
+            text2: "Memory",
+            text3: "Motherboards",
+            text4: "CPUs",
+            text5: "Computer Cases",
+            text6: "SSDs",
+        },
     ];
 
     const featured = [
@@ -105,6 +112,11 @@ function Software() {
         {
             image: laptop,
             name: "Very Cool Electronic",
+            text: "Power through the day with this cool new device from Canada Computers. This is obv a placeholder btw.",
+        },
+        {
+            image: laptop,
+            name: "Very Cool Desktop",
             text: "Power through the day with this cool new device from Canada Computers. This is obv a placeholder btw.",
         },
     ];
@@ -162,23 +174,23 @@ function Software() {
             <div
                 className="overflow-hidden h-64 w-full bg-center"
                 style={{
-                    backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0) ${isLargeScreen ? '20vw' : '10vw'}, rgba(0, 0, 0, 0.5) ${isLargeScreen ? '20vw' : '10vw'}, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 60%), url(${typing})`,
+                    backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0) 25vw, rgba(0, 0, 0, 0.5) 25vw, rgba(0, 0, 0, 0.5) 75vw, rgba(0, 0, 0, 0) 75vw), url(${typing})`,
                     backgroundSize: '100%',
                     backgroundRepeat: 'no-repeat',
                 }}
             >
                 <div className="contents absolute">
-                    <div className="px-[15vw] 2xl:px-[25vw] py-16">
-                        <div className="text-6xl text-ghost-white font-bold uppercase">Software</div>
-                        <div className="text-xl text-ghost-white mt-6">Explore IT software and technology for your business.</div>
+                    <div className="max-w-[1440px] px-4 mx-auto py-16">
+                        <div className="text-6xl text-ghost-white font-bold uppercase text-center">Software</div>
+                        <div className="text-xl text-ghost-white mt-6 text-center">Explore IT software and technology for your business.</div>
                     </div>
                 </div>
             </div>
 
             {/* Categories */}
-            <div className="bg-ghost-white text-black flex flex-col px-[10vw] 2xl:px-[20vw]">
+            <div className="bg-ghost-white text-black flex flex-col max-w-[1440px] px-4 mx-auto">
                 <div className="mt-20 text-center text-lg font-semibold">
-                    Find Top-Rated Software for Business Applications
+                    Find Top-Rated Hardware for Business Applications
                 </div>
                 <div className="flex justify-between">
                     {row1.map((category, index) => (
@@ -210,7 +222,7 @@ function Software() {
             </div>
 
             {/* Featured Products */}
-            <div className="bg-ghost-white text-black flex flex-col px-[10vw] 2xl:px-[20vw]">
+            <div className="bg-ghost-white text-black flex flex-col max-w-[1440px] px-4 mx-auto">
                 <div className="mt-10 text-center text-lg font-semibold">
                     Shop Featured Products
                 </div>
@@ -243,7 +255,7 @@ function Software() {
             </div>
 
             {/* Catalogue */}
-            <div className="flex bg-ghost-white text-black px-[10vw] 2xl:px-[20vw] mt-20">
+            <div className="flex bg-ghost-white text-black max-w-[1440px] px-4 mx-auto mt-20">
                 {/* Sidebar */}
                 <div className="flex">
                     <div className="pr-10">

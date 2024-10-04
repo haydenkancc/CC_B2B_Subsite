@@ -297,7 +297,7 @@ function Landing() {
             </div>
 
             {/* Contact */}
-            <div className="bg-ghost-white w-full py-14 px-[10vw] 2xl:px-[20vw] text-center">
+            <div className="bg-ghost-white w-full py-14 max-w-[1440px] px-4 mx-auto text-center">
                 <div className="uppercase text-2xl font-semibold">Contact us for the solutions you need</div>
                 <div className="flex flex-row justify-between">
                     <div className="flex flex-col items-center font-medium text-lg mt-10 w-28 h-18 cursor-pointer" onClick={handleOpen}>

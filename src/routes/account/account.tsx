@@ -1,4 +1,5 @@
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
+import NavbarTopAccount from '../../components/navbar/navbar-top-account.tsx';
 import {
     Button,
     Collection,
@@ -67,13 +68,13 @@ const tabs = [
     { id: 5, title: 'Logs', content: <Logs /> },
 ]
 
-const pages = ['Dashboard', 'Orders', 'Billing', 'Wishlists', 'Tickets', 'Account']
+const pages = ['Dashboard', 'Orders', 'Billing', 'Standards', 'Tickets', 'Account']
 
 
 function Account() {
     return (
         <PortalBody>
-            <NavbarTop/>
+            <NavbarTopAccount/>
             <NavbarBottom pages={pages} />
             <PageWrap>
                 <PortalHeading heading="Account" subheading="View and modify your account details" />

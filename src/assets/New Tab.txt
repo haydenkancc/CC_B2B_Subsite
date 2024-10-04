@@ -1,0 +1,21 @@
+ERP NOTES:
+
+Under Sales Panel:
+- deactivate account
+- change permissins
+- authorize account
+- reporting metrics (sales today, sales last month, etc.)
+
+Under Billing:
+- creation date
+- HST, GST, or PST
+- terms
+- price level
+- first invoice date
+- last invoice date
+- available credit limit
+- credit limit
+- credit approval number
+- credit approval by
+- credit instant approval amount
+- credit approval date

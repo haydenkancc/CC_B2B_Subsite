@@ -23,63 +23,61 @@ function Bundle() {
     const totalPrice = items.reduce((total, item) => total + item.price, 0) * bundleQuantity;
 
     return (
-        <div className="bg-lavender/10 text-oxford-blue border-lavender mb-24 w-full">
-            <div className="flex justify-center">
-                <div className="flex flex-col pl-4 pt-4">
-                    <div className="text-2xl font-medium p-2 ml-6">Bundles</div>
-                    <div className="pt-8 flex flex-row">
-                        <div className="flex flex-col ml-8">
-                            <div className="text-2xl font-medium pb-6">Laptops</div>
-                            <table className="w-164 bg-transparent">
-                                <thead>
-                                    <tr className="text-oxford-blue border-b border-black">
-                                        <th className="py-2 text-left">Product</th>
-                                        <th className="py-2 px-4 text-left">Price:</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {items.map(item => (
-                                        <tr key={item.id} className="border-b border-black">
-                                            <td className="py-2 flex flex-row">
-                                                <img src={item.image} className="border w-32" alt={item.name} />
-                                                <div className="flex flex-col gap-y-1 ml-4 w-80 text-sm">
-                                                    <div>Item Code: {item.code}</div>
-                                                    <div>{item.name}</div>
-                                                    <div className="flex flex-row items-center gap-x-1">
-                                                        <div>{item.onlineIcon}</div>
-                                                        <div>{item.onlineText}</div>
-                                                        <div className="ml-3">{item.storeIcon}</div>
-                                                        <div>{item.storeText}</div>
-                                                    </div>
+        <div className="bg-lavender/10 text-oxford-blue border-lavender mb-16 w-full">
+            <div className="flex flex-col pl-4 pt-4">
+                <div className="text-2xl font-medium p-2 ml-6">Bundles</div>
+                <div className="pt-8 flex flex-row justify-between">
+                    <div className="flex flex-col ml-8">
+                        <div className="text-2xl font-medium pb-6">Laptops</div>
+                        <table className="w-164 bg-transparent">
+                            <thead>
+                                <tr className="text-oxford-blue border-b border-black">
+                                    <th className="py-2 text-left">Product</th>
+                                    <th className="py-2 px-4 text-left">Price:</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {items.map(item => (
+                                    <tr key={item.id} className="border-b border-black">
+                                        <td className="py-2 flex flex-row">
+                                            <img src={item.image} className="border w-32" alt={item.name} />
+                                            <div className="flex flex-col gap-y-1 ml-4 w-80 text-sm">
+                                                <div>Item Code: {item.code}</div>
+                                                <div>{item.name}</div>
+                                                <div className="flex flex-row items-center gap-x-1">
+                                                    <div>{item.onlineIcon}</div>
+                                                    <div>{item.onlineText}</div>
+                                                    <div className="ml-3">{item.storeIcon}</div>
+                                                    <div>{item.storeText}</div>
                                                 </div>
-                                            </td>
-                                            <td className="py-2 px-4 text-sm font-medium w-28">${item.price.toFixed(2)}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                                            </div>
+                                        </td>
+                                        <td className="py-2 px-4 text-sm font-medium w-28">${item.price.toFixed(2)}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div className="flex flex-col ml-8 w-48 mr-10">
+                        <div>Bundle Price:</div>
+                        <div className="font-medium text-lg">${totalPrice.toFixed(2)}</div>
+                        <div className="mt-4">Quantity:</div>
+                        <div className="flex justify-center">
+                            <button onClick={handleDecrease} className="p-2 bg-gray-200">
+                                <Minus size={10} />
+                            </button>
+                            <input
+                                type="number"
+                                value={bundleQuantity}
+                                readOnly
+                                className="w-full mx-2 pl-3 border border-gray-300 focus:outline-none text-center"
+                            />
+                            <button onClick={handleIncrease} className="p-2 bg-gray-200">
+                                <Plus size={10} />
+                            </button>
                         </div>
-                        <div className="flex flex-col ml-8 w-48 mr-10">
-                            <div>Bundle Price:</div>
-                            <div className="font-medium text-lg">${totalPrice.toFixed(2)}</div>
-                            <div className="mt-4">Quantity:</div>
-                            <div className="flex justify-center">
-                                <button onClick={handleDecrease} className="p-2 bg-gray-200">
-                                    <Minus size={10} />
-                                </button>
-                                <input
-                                    type="number"
-                                    value={bundleQuantity}
-                                    readOnly
-                                    className="w-full mx-2 pl-3 border border-gray-300 focus:outline-none text-center"
-                                />
-                                <button onClick={handleIncrease} className="p-2 bg-gray-200">
-                                    <Plus size={10} />
-                                </button>
-                            </div>
-                            <button className="border border-oxford-blue text-center px-4 py-1 hover:bg-oxford-blue hover:text-ghost-white mt-4">Add Bundle to Cart</button>
-                            <Link to={"/wishlist"} className="border border-oxford-blue text-center px-4 py-1 hover:bg-oxford-blue hover:text-ghost-white mt-2">Edit Bundle</Link>
-                        </div>
+                        <button className="border border-oxford-blue text-center px-4 py-1 hover:bg-oxford-blue hover:text-ghost-white mt-4">Add Bundle to Cart</button>
+                        <Link to={"/wishlist"} className="border border-oxford-blue text-center px-4 py-1 hover:bg-oxford-blue hover:text-ghost-white mt-2">Edit Bundle</Link>
                     </div>
                 </div>
             </div>

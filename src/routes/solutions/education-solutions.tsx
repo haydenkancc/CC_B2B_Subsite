@@ -253,7 +253,7 @@ function EducationSolutions() {
             <div className="bg-white">
                 <div className="bg-white py-4 w-full overflow-hidden max-w-[1440px] px-4 mx-auto">
                     <div className="mb-20">
-                        <div className="flex flex-row justify-between gap-x-10">
+                        <div className="flex flex-row justify-between items-center gap-x-10">
                             <div className="w-1/2">
                                 <h1 className="text-2xl text-black mt-12 font-semibold">Why Partner with Canada Computers & Electronics?</h1>
                                 <div className="text-black py-6">Empower your developers with platforms that provide the tools and services they need to create value for your organization without sacrificing the governance, spend control and required security. We'll ensure you have the expertise and technology partnerships to transform your business and stay ahead of what's next.</div>
@@ -410,13 +410,13 @@ function EducationSolutions() {
 
             {/* Corporate Sales Carousel */}
             <div className="bg-white">
-                <div className="py-20 px-[4vw] 2xl:px-[14vw]">
+                <div className="py-20 max-w-[1440px] px-4 mx-auto">
                     <CorporateSalesCarousel slides={slides} />
                 </div>
             </div>
 
             {/* Contact */}
-            <div className="bg-ghost-white w-full py-14 px-[10vw] 2xl:px-[20vw] text-center">
+            <div className="bg-ghost-white w-full py-14 max-w-[1440px] px-44 mx-auto text-center">
                 <div className="uppercase text-2xl font-semibold">Contact us for the solutions you need</div>
                 <div className="flex flex-row justify-between">
                     <div className="flex flex-col items-center font-medium text-lg mt-10 w-28 h-18 cursor-pointer" onClick={handleOpen}>

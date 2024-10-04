@@ -1,6 +1,7 @@
 import CaretRight from '../../assets/caret-right-bold.svg?react';
 import profile from '../../assets/l60Hf.png';
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
+import NavbarTopAccount from '../../components/navbar/navbar-top-account.tsx';
 import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
 import Wishlist from './wishlist/wishlist.tsx';
 import Tickets from './tickets/tickets.tsx';
@@ -21,7 +22,7 @@ import {
     TextField
 } from 'react-aria-components';
 
-const pages = ['Dashboard', 'Orders', 'Billing', 'Wishlists', 'Tickets', 'Account']
+const pages = ['Dashboard', 'Orders', 'Billing', 'Standards', 'Tickets', 'Account']
 
 const actions = [
     {id: 1, title: 'Dashboard', current: true, content: <Wishlist /> },
@@ -40,7 +41,7 @@ function Dashboard() {
     return (
         <div className="bg-ghost-white text-oxford-blue">
             <div className="bg-ghost-white text-oxford-blue border-lavender">
-                <NavbarTop />
+                <NavbarTopAccount />
                 <NavbarBottom  pages={pages} />
             </div>
             {<div className="bg-glaucous/10 border-b w-full flex flex-col align-middle pl-8 pt-16 pr-8 pb-16">

@@ -1,9 +1,11 @@
 import NavbarTop from "../../components/navbar/navbar-top";
+import NavbarTopAccount from '../../components/navbar/navbar-top-account.tsx';
 import NavbarBottom from "../../components/navbar/navbar-bottom";
 import Bundle from "./bundle";
+import Recent from "./recent.tsx";
 import { CaretRight } from "@phosphor-icons/react";
 
-const pages = ['Dashboard', 'Orders', 'Billing', 'Wishlists', 'Tickets', 'Account'];
+const pages = ['Dashboard', 'Orders', 'Billing', 'Standards', 'Tickets', 'Account'];
 
 const portDevices = [
     { name: "Laptops" },
@@ -29,15 +31,15 @@ const wishlists = [
 
 function Standards() {
     return (
-        <div className="bg-lavender/10 text-oxford-blue border-lavender pb-32">
-            <NavbarTop />
+        <div className="bg-lavender/10 text-oxford-blue border-lavender pb-10">
+            <NavbarTopAccount />
             <NavbarBottom pages={pages} />
             <div className="max-w-[1440px] mx-auto pl-4 pt-12 pb-16">
                 <div className="text-4xl pb-6">
                     Standards List
                 </div>
-                <div className="flex flex-row justify-between">
-                    <div className="flex flex-col">
+                <div className="flex flex-row justify-between gap-x-4 mt-8">
+                    <div className="flex flex-col w-1/5">
                         <div className="flex flex-row gap-x-2">
                             <button className="border border-oxford-blue hover:bg-oxford-blue hover:text-ghost-white font-medium w-32 px-2 py-1">New List</button>
                             <button className="border border-oxford-blue hover:bg-oxford-blue hover:text-ghost-white font-medium w-32 px-2 py-1">Edit Lists</button>
@@ -77,8 +79,9 @@ function Standards() {
                             ))}
                         </div>
                     </div>
-                    <div className="flex flex-col border border-oxford-blue">
+                    <div className="flex flex-col border border-oxford-blue w-4/5 mr-4">
                         <Bundle />
+                        <Recent />
                     </div>
                 </div>
             </div>
