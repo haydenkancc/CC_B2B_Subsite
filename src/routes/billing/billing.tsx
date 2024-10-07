@@ -1,36 +1,35 @@
 import React, { useState, useEffect } from "react";
-import NavbarTop from "../../components/navbar/navbar-top";
 import NavbarTopAccount from '../../components/navbar/navbar-top-account.tsx';
 import NavbarBottom from "../../components/navbar/navbar-bottom";
 import './billing.css'
-import BillingContacts from "./billing-contacts.tsx";
-import Wallet from "./wallet.tsx";
+import PortalHeading from '../../components/portal-page/portal-heading.tsx';
+import PortalBody from '../../components/portal-page/portal-body.tsx';
+import PageWrap from '../../components/portal-page/page-wrap.tsx';
+import PageTabs from '../../components/portal-page/page-tabs.tsx';
+import Overview from "./overview.tsx";
+import Contacts from './contacts/contacts.tsx';
+import Invoices from "./invoices.tsx";
 
-const pages = ['Dashboard', 'Orders', 'Billing', 'Standards', 'Tickets', 'Account'];
+const tabs = [
+    { id: 1, title: 'Overview', content: <Overview /> },
+    { id: 2, title: 'Contacts', content: <Contacts /> },
+    { id: 3, title: 'Invoices', content: <Invoices /> },
+]
 
-function Billing() {
+const pages = ['Dashboard', 'Orders', 'Billing', 'Standards', 'Tickets', 'Account']
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location]);
-    
+
+function Account() {
     return (
-        <div className="bg-lavender/10 text-oxford-blue border-lavender pb-32">
-            <NavbarTopAccount />
+        <PortalBody>
+            <NavbarTopAccount/>
             <NavbarBottom pages={pages} />
-            <div className="max-w-[1440px] px-4">
-                <div className="pl-4 pt-12 pb-16 justify-between">
-                    <div className="text-4xl pb-6">
-                        Billing
-                    </div>
-                    <div className="flex flex-row justify-between">
-                        <BillingContacts />
-                        <Wallet />
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+            <PageWrap>
+                <PortalHeading heading="Billing" subheading="View and modify your billing information" />
+                <PageTabs tabs={tabs} />
+            </PageWrap>
+        </PortalBody>
+    )
 }
 
-export default Billing;
+export default Account;
