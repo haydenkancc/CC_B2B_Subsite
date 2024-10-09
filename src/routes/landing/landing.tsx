@@ -80,6 +80,8 @@ function Landing() {
                 className="overflow-hidden bg-cover h-116"
                 style={{
                     backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 75%), url(${header})`,
+                    backgroundSize: '100%', // Adjust this value as needed
+                    backgroundPosition: 'center'
                 }}
             >
                 <div className="text-ghost-white h-full">
@@ -89,7 +91,7 @@ function Landing() {
                             <h1 className="text-5xl font-bold mt-3">Business Buying</h1>
                             <p className="text-xl mt-6">Elevate your business to the next level</p>
                             <button className="text-lg bg-ghost-white hover:bg-slate-300 text-oxford-blue font-bold py-2 px-8 my-8 rounded-sm">
-                                LEARN MORE
+                                EXPLORE
                             </button>
                         </div>
                     </div>
@@ -102,14 +104,10 @@ function Landing() {
                     <div className="flex flex-col text-black w-1/2">
                         <div className="text-2xl font-semibold">Transform your future with technology.</div>
                         <p className="mt-4">
-                        At Canada Computers & Electronics, we empower businesses to thrive in the digital landscape with tailored IT solutions, including hardware, software, cloud services, and cybersecurity. Our focus on agility and innovation enhances collaboration and productivity, driving success for your workforce and customers. With industry-specific solutions and ongoing support, we help you navigate the digital world. Connect with us to unlock new growth opportunities!
+                        At Canada Computers & Electronics, we empower businesses to thrive in the digital landscape with tailored IT solutions, including hardware, software, and electronics service. Our focus on agility and innovation enhances collaboration and productivity, driving success for your workforce and customers. With industry-specific solutions and ongoing support, we help you navigate the digital world. Connect with us to unlock new growth opportunities!
                         </p>
                         <Link to={"/enterprise-solutions"} className="text-oxford-blue text-sm font-semibold mt-5 flex flex-row items-center">
                             Learn more about us
-                            <CaretRight size={20} weight="light" />
-                        </Link>
-                        <Link to={"/enterprise-solutions"} className="text-oxford-blue text-sm font-semibold mt-3 flex flex-row items-center">
-                            Explore career opportunities
                             <CaretRight size={20} weight="light" />
                         </Link>
                     </div>

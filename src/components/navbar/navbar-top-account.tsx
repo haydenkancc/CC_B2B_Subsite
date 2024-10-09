@@ -7,7 +7,7 @@ import User from '../../assets/user-circle.svg?react';
 import Question from '../../assets/question.svg?react';
 import { Button, Input, TextField } from 'react-aria-components';
 import { Link } from 'react-router-dom';
-import { UserGear, Gear, SignOut, BellRinging } from '@phosphor-icons/react';
+import { UserGear, Gear, SignOut, BellRinging, ListBullets, List, File } from '@phosphor-icons/react';
 
 function NavbarTopAccount() {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
@@ -64,15 +64,19 @@ function NavbarTopAccount() {
                                 {/* <div className="triangle"></div> */}
                                 <Link to="/account" className=" dropdown-item flex flex-row items-center px-4 py-3 mt-2 border-l-4 border-oxford-blue hover:border-school-bus-yellow">
                                     <UserGear size={18} />
-                                    <div className="ml-4">Profile</div>
+                                    <div className="ml-4">Account</div>
                                 </Link>
                                 <Link to="/account" className=" dropdown-item flex flex-row items-center px-4 py-3 border-l-4 border-oxford-blue hover:border-school-bus-yellow">
                                     <BellRinging size={18} />
                                     <div className="ml-4">Notifications</div>
                                 </Link>
-                                <Link to="/dashboard" className=" dropdown-item flex flex-row items-center px-4 py-3 border-l-4 border-oxford-blue hover:border-school-bus-yellow">
-                                    <Gear size={18} />
-                                    <div className="ml-4">Settings</div>
+                                <Link to="/orders" className=" dropdown-item flex flex-row items-center px-4 py-3 border-l-4 border-oxford-blue hover:border-school-bus-yellow">
+                                    <File size={18} />
+                                    <div className="ml-4">Orders</div>
+                                </Link>
+                                <Link to="/saved-lists" className=" dropdown-item flex flex-row items-center px-4 py-3 border-l-4 border-oxford-blue hover:border-school-bus-yellow">
+                                    <List size={18} />
+                                    <div className="ml-4">Saved Lists</div>
                                 </Link>
                                 <Link to="/sign-in" className=" dropdown-item flex flex-row items-center px-4 py-3 mb-2 border-l-4 border-oxford-blue hover:border-school-bus-yellow">
                                     <SignOut size={18} />

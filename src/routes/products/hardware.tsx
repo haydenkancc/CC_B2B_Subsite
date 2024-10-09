@@ -5,7 +5,7 @@ import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
 import typing from '../../assets/typing.png';
 import laptop from '../../assets/laptop.png';
-import { CaretRight, CaretDown, CaretUp, Star } from "@phosphor-icons/react";
+import { CaretRight, CaretDown, CaretUp, Star, Check, X } from "@phosphor-icons/react";
 import adspace1 from "../../assets/adspace1.png"
 import adspace2 from "../../assets/adspace2.png"
 import adspace3 from "../../assets/adspace3.png"
@@ -97,29 +97,71 @@ function Hardware() {
         {
             image: laptop,
             name: "Very Cool Accessory",
-            text: "Power through the day with this cool new device from Canada Computers. This is obv a placeholder btw.",
+            text: "Power through the day with this device from Canada Computers. This is a placeholder.",
         },
         {
             image: laptop,
             name: "Very Cool Monitor",
-            text: "Power through the day with this cool new device from Canada Computers. This is obv a placeholder btw.",
+            text: "Power through the day with this device from Canada Computers. This is a placeholder.",
         },
         {
             image: laptop,
             name: "Very Cool Laptop",
-            text: "Power through the day with this cool new device from Canada Computers. This is obv a placeholder btw.",
+            text: "Power through the day with this device from Canada Computers. This is a placeholder.",
         },
         {
             image: laptop,
             name: "Very Cool Electronic",
-            text: "Power through the day with this cool new device from Canada Computers. This is obv a placeholder btw.",
+            text: "Power through the day with this device from Canada Computers. This is a placeholder.",
         },
         {
             image: laptop,
             name: "Very Cool Desktop",
-            text: "Power through the day with this cool new device from Canada Computers. This is obv a placeholder btw.",
+            text: "Power through the day with this device from Canada Computers. This is a placeholder.",
         },
     ];
+
+    const items = [
+        {
+            image: laptop,
+            name: "G2 Gaming Laptop Intel i9",
+            price: "$2000.00",
+            rating: "4.2",
+            onlineIcon: <Check weight="bold" />,
+            onlineText: "Available Online",
+            storeIcon: <X weight="bold" />,
+            storeText: "Unavailable In-Store",
+        },
+        {
+            image: laptop,
+            name: "G3 Gaming Laptop Intel i9",
+            price: "$3000.00",
+            rating: "4.3",
+            onlineIcon: <Check weight="bold" />,
+            onlineText: "Available Online",
+            storeIcon: <X weight="bold" />,
+            storeText: "Unavailable In-Store",
+        },
+        {
+            image: laptop,
+            name: "G4 Gaming Laptop Intel i9",
+            price: "$4000.00",
+            rating: "4.4",
+            onlineIcon: <Check weight="bold" />,
+            onlineText: "Available Online",
+            storeIcon: <X weight="bold" />,
+            storeText: "Unavailable In-Store",
+        },
+        {
+            image: laptop,
+            name: "G5 Gaming Laptop Intel i9",
+            price: "$5000.00",
+            rating: "4.5",onlineIcon: <Check weight="bold" />,
+            onlineText: "Available Online",
+            storeIcon: <X weight="bold" />,
+            storeText: "Unavailable In-Store",
+        },
+    ]
 
     const sidebar = [
         {
@@ -138,10 +180,10 @@ function Hardware() {
             name: "Brand",
             filterValue: "brand",
         },
-        {
-            name: "Rating",
-            filterValue: "rating",
-        },
+        // {
+        //     name: "Rating",
+        //     filterValue: "rating",
+        // },
     ];
 
     const ads = [
@@ -172,22 +214,22 @@ function Hardware() {
 
             {/* Homepage */}
             <div
-                className="overflow-hidden h-64 w-full bg-center"
+                className="overflow-hidden h-116 w-full bg-center"
                 style={{
-                    backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0) 25vw, rgba(0, 0, 0, 0.5) 25vw, rgba(0, 0, 0, 0.5) 75vw, rgba(0, 0, 0, 0) 75vw), url(${typing})`,
+                    backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0) 0vw, rgba(0, 0, 0, 0.5) 0vw, rgba(0, 0, 0, 0.5) 50vw, rgba(0, 0, 0, 0) 70vw), url(${typing})`,
                     backgroundSize: '100%',
                     backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center'
                 }}
             >
-                <div className="contents absolute">
-                    <div className="max-w-[1440px] px-4 mx-auto py-16">
-                        <div className="text-6xl text-ghost-white font-bold uppercase text-center">Hardware</div>
-                        <div className="text-xl text-ghost-white mt-6 text-center">Explore IT hardware and technology for your business.</div>
-                    </div>
+                <div className="flex flex-col justify-center h-full max-w-[1440px] px-4 mx-auto py-16">
+                    <div className="text-3xl text-ghost-white font-medium uppercase">Hardware</div>
+                    <div className="text-5xl text-ghost-white font-bold uppercase mt-2.5">PRODUCTS</div>
+                    <div className="text-2xl text-ghost-white font-medium mt-5">Explore IT hardware and technology.</div>
                 </div>
             </div>
 
-            {/* Categories */}
+            {/* Categories
             <div className="bg-ghost-white text-black flex flex-col max-w-[1440px] px-4 mx-auto">
                 <div className="mt-20 text-center text-lg font-semibold">
                     Find Top-Rated Hardware for Business Applications
@@ -219,9 +261,9 @@ function Hardware() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
 
-            {/* Featured Products */}
+            {/* Featured Products
             <div className="bg-ghost-white text-black flex flex-col max-w-[1440px] px-4 mx-auto">
                 <div className="mt-10 text-center text-lg font-semibold">
                     Shop Featured Products
@@ -245,17 +287,24 @@ function Hardware() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
 
-            {/* Carousel */}
+            {/* Carousel
             <div className="bg-ghost-white w-full mt-10">
                 <div>
                     <ProductsCarousel ads={ads} />
                 </div> 
+            </div> */}
+
+            {/* Banner */}
+            <div className="bg-slate-200 py-8">
+                <div className="max-w-[1440px] px-4 mx-auto">
+                    <div className="text-center text-black text-lg font-bold uppercase">Free 15-Day Returns Policy -- Exclusions Apply</div>
+                </div>
             </div>
 
             {/* Catalogue */}
-            <div className="flex bg-ghost-white text-black max-w-[1440px] px-4 mx-auto mt-20">
+            <div className="flex bg-ghost-white text-black max-w-[1440px] px-4 mx-auto mt-14">
                 {/* Sidebar */}
                 <div className="flex">
                     <div className="pr-10">
@@ -366,25 +415,25 @@ function Hardware() {
                                                         <>
                                                             <div className="flex items-center mb-2">
                                                                 <input type="radio" className="bg-gray-200 w-4 h-4" />
-                                                                <Star size={18} color="#ffdd00" weight="fill" className="ml-3" />
-                                                                <Star size={18} color="#ffdd00" weight="fill" />
-                                                                <Star size={18} color="#ffdd00" weight="fill" />
-                                                                <Star size={18} color="#ffdd00" weight="fill" />
-                                                                <Star size={18} color="#ffdd00" weight="fill" />
+                                                                <Star size={18} weight="fill" className="ml-3" />
+                                                                <Star size={18} weight="fill" />
+                                                                <Star size={18} weight="fill" />
+                                                                <Star size={18} weight="fill" />
+                                                                <Star size={18} weight="fill" />
                                                             </div>
                                                             <div className="flex items-center mb-2">
                                                                 <input type="radio" className="bg-gray-200 w-4 h-4" />
-                                                                <Star size={18} color="#ffdd00" weight="fill" className="ml-3" />
-                                                                <Star size={18} color="#ffdd00" weight="fill" />
-                                                                <Star size={18} color="#ffdd00" weight="fill" />
-                                                                <Star size={18} color="#ffdd00" weight="fill" />
+                                                                <Star size={18} weight="fill" className="ml-3" />
+                                                                <Star size={18} weight="fill" />
+                                                                <Star size={18} weight="fill" />
+                                                                <Star size={18} weight="fill" />
                                                                 <Star size={18} color="#9e9e9e" weight="light" />
                                                             </div>
                                                             <div className="flex items-center mb-2">
                                                                 <input type="radio" className="bg-gray-200 w-4 h-4" />
-                                                                <Star size={18} color="#ffdd00" weight="fill" className="ml-3" />
-                                                                <Star size={18} color="#ffdd00" weight="fill" />
-                                                                <Star size={18} color="#ffdd00" weight="fill" />
+                                                                <Star size={18} weight="fill" className="ml-3" />
+                                                                <Star size={18} weight="fill" />
+                                                                <Star size={18} weight="fill" />
                                                                 <Star size={18} color="#9e9e9e" weight="light" />
                                                                 <Star size={18} color="#9e9e9e" weight="light" />
                                                             </div>
@@ -403,79 +452,143 @@ function Hardware() {
 
                 {/* Products */}
                 <div className="flex flex-col gap-y-8 w-full">
-                    <div className="flex flex-row justify-between">
-                        {featured.map((product, index) => (
-                            <div key={index} className="flex flex-col">
+                    <div className="flex flex-row justify-between gap-x-2.5">
+                        {items.map((product, index) => (
+                            <div key={index} className="flex flex-col w-full">
                                 <img
                                     src={product.image}
-                                    className="w-48 h-32 rounded-sm object-cover bg-slate-200"
+                                    className="w-full h-32 rounded-sm object-cover bg-slate-300"
                                     alt={`Profile ${index}`}
                                 />
-                                <div className="text-sm w-48 px-4 py-4 rounded-sm">
-                                    <div className="flex-col">
-                                        <div className="font-medium">{product.name}</div>
-                                        <div className="mt-1">{product.text}</div>
+                                <div className="text-sm w-full px-0.5 py-2.5 rounded-sm">
+                                    <div className="flex flex-col gap-y-1.5">
+                                        <div className="flex flex-row justify-between">
+                                            <div className="font-medium">{product.name}</div>
+                                            <div className="flex flex-row items-center">
+                                                <Star weight="fill" className="ml-0.5" />
+                                                <div className="ml-0.5">{product.rating}</div>
+                                            </div>
+                                        </div>
+                                        <div className="text-slate-600">
+                                            <div className="flex flex-row items-center gap-x-1">
+                                                <div>{product.onlineIcon}</div>
+                                                <div>{product.onlineText}</div>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-x-1 mt-0.5">
+                                                <div>{product.storeIcon}</div>
+                                                <div>{product.storeText}</div>
+                                            </div>
+                                        </div>
+                                        <div className="font-medium mt-1">{product.price}</div>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
-                    <div className="flex flex-row justify-between">
-                        {featured.map((product, index) => (
-                            <div key={index} className="flex flex-col">
+                    <div className="flex flex-row justify-between gap-x-2.5">
+                        {items.map((product, index) => (
+                            <div key={index} className="flex flex-col w-full">
                                 <img
                                     src={product.image}
-                                    className="w-48 h-32 rounded-sm object-cover bg-slate-200"
+                                    className="w-full h-32 rounded-sm object-cover bg-slate-300"
                                     alt={`Profile ${index}`}
                                 />
-                                <div className="text-sm w-48 px-4 py-4 rounded-sm">
-                                    <div className="flex-col">
-                                        <div className="font-medium">{product.name}</div>
-                                        <div className="mt-1">{product.text}</div>
+                                <div className="text-sm w-full px-0.5 py-2.5 rounded-sm">
+                                    <div className="flex flex-col gap-y-1.5">
+                                        <div className="flex flex-row justify-between">
+                                            <div className="font-medium">{product.name}</div>
+                                            <div className="flex flex-row items-center">
+                                                <Star weight="fill" className="ml-0.5" />
+                                                <div className="ml-0.5">{product.rating}</div>
+                                            </div>
+                                        </div>
+                                        <div className="text-slate-600">
+                                            <div className="flex flex-row items-center gap-x-1">
+                                                <div>{product.onlineIcon}</div>
+                                                <div>{product.onlineText}</div>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-x-1 mt-0.5">
+                                                <div>{product.storeIcon}</div>
+                                                <div>{product.storeText}</div>
+                                            </div>
+                                        </div>
+                                        <div className="font-medium mt-1">{product.price}</div>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
-                    <div className="flex flex-row justify-between">
-                        {featured.map((product, index) => (
-                            <div key={index} className="flex flex-col">
+                    <div className="flex flex-row justify-between gap-x-2.5">
+                        {items.map((product, index) => (
+                            <div key={index} className="flex flex-col w-full">
                                 <img
                                     src={product.image}
-                                    className="w-48 h-32 rounded-sm object-cover bg-slate-200"
+                                    className="w-full h-32 rounded-sm object-cover bg-slate-300"
                                     alt={`Profile ${index}`}
                                 />
-                                <div className="text-sm w-48 px-4 py-4 rounded-sm">
-                                    <div className="flex-col">
-                                        <div className="font-medium">{product.name}</div>
-                                        <div className="mt-1">{product.text}</div>
+                                <div className="text-sm w-full px-0.5 py-2.5 rounded-sm">
+                                    <div className="flex flex-col gap-y-1.5">
+                                        <div className="flex flex-row justify-between">
+                                            <div className="font-medium">{product.name}</div>
+                                            <div className="flex flex-row items-center">
+                                                <Star weight="fill" className="ml-0.5" />
+                                                <div className="ml-0.5">{product.rating}</div>
+                                            </div>
+                                        </div>
+                                        <div className="text-slate-600">
+                                            <div className="flex flex-row items-center gap-x-1">
+                                                <div>{product.onlineIcon}</div>
+                                                <div>{product.onlineText}</div>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-x-1 mt-0.5">
+                                                <div>{product.storeIcon}</div>
+                                                <div>{product.storeText}</div>
+                                            </div>
+                                        </div>
+                                        <div className="font-medium mt-1">{product.price}</div>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
-                    <div className="flex flex-row justify-between">
-                        {featured.map((product, index) => (
-                            <div key={index} className="flex flex-col">
+                    <div className="flex flex-row justify-between gap-x-2.5">
+                        {items.map((product, index) => (
+                            <div key={index} className="flex flex-col w-full">
                                 <img
                                     src={product.image}
-                                    className="w-48 h-32 rounded-sm object-cover bg-slate-200"
+                                    className="w-full h-32 rounded-sm object-cover bg-slate-300"
                                     alt={`Profile ${index}`}
                                 />
-                                <div className="text-sm w-48 px-4 py-4 rounded-sm">
-                                    <div className="flex-col">
-                                        <div className="font-medium">{product.name}</div>
-                                        <div className="mt-1">{product.text}</div>
+                                <div className="text-sm w-full px-0.5 py-2.5 rounded-sm">
+                                    <div className="flex flex-col gap-y-1.5">
+                                        <div className="flex flex-row justify-between">
+                                            <div className="font-medium">{product.name}</div>
+                                            <div className="flex flex-row items-center">
+                                                <Star weight="fill" className="ml-0.5" />
+                                                <div className="ml-0.5">{product.rating}</div>
+                                            </div>
+                                        </div>
+                                        <div className="text-slate-600">
+                                            <div className="flex flex-row items-center gap-x-1">
+                                                <div>{product.onlineIcon}</div>
+                                                <div>{product.onlineText}</div>
+                                            </div>
+                                            <div className="flex flex-row items-center gap-x-1 mt-0.5">
+                                                <div>{product.storeIcon}</div>
+                                                <div>{product.storeText}</div>
+                                            </div>
+                                        </div>
+                                        <div className="font-medium mt-1">{product.price}</div>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
+                    
                     <div className="flex justify-center">
                         <button className="py-2 w-32 uppercase bg-slate-200 rounded-sm hover:bg-slate-300 mb-20">Load More</button>
                     </div>
                 </div>
-                
             </div>
         </>
     );

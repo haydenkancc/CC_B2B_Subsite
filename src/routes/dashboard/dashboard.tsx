@@ -22,7 +22,7 @@ import {
     TextField
 } from 'react-aria-components';
 
-const pages = ['Dashboard', 'Orders', 'Billing', 'Standards', 'Tickets', 'Account']
+const pages = ['Dashboard', 'Orders', 'Billing', 'Saved Lists', 'Tickets', 'Account']
 
 const actions = [
     {id: 1, title: 'Dashboard', current: true, content: <Wishlist /> },

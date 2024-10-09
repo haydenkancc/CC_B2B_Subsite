@@ -67,7 +67,7 @@ const Actions = () => {
                 <option className="font-semibold" value="remove">Remove item</option>
             </select>
             <button
-                className="uppercase border-2 border-oxford-blue px-5 py-1 ml-6 rounded-sm font-semibold"
+                className="uppercase border-2 border-oxford-blue px-5 py-1 ml-6 rounded-sm font-semibold hover:bg-oxford-blue hover:text-ghost-white"
                 onClick={handleApplyClick}
                 // onClick={() => setIsModalOpen(false)}
             >

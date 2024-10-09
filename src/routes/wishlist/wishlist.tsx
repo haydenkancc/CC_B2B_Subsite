@@ -7,7 +7,7 @@ import laptop from "../../assets/laptop.png";
 import MyCheckbox from "../../components/form/my-checkbox";
 import Actions from "./actions";
 
-const pages = ['Dashboard', 'Orders', 'Billing', 'Standards', 'Tickets', 'Account'];
+const pages = ['Dashboard', 'Orders', 'Billing', 'Saved Lists', 'Tickets', 'Account'];
 
 const items = [
     { id: 1, image: laptop, name: "Macally Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612", onlineIcon: <X weight="bold" />, onlineText: "Unavailable Online", storeIcon: <X weight="bold" />, storeText: "Unavailable In-Store", date: "2024-10-02", user: "Porky Pig", price: 17.99},
@@ -99,7 +99,7 @@ function Wishlist() {
                                 <div className="font-semibold uppercase">Apply this action to for all items selected:</div>
                                 <Actions />
                             </div>
-                            <button className="uppercase bg-oxford-blue text-ghost-white px-5 py-1 rounded-sm font-semibold">Add all to cart</button>
+                            <button className="uppercase border-2 bg-oxford-blue text-ghost-white hover:bg-ghost-white hover:text-oxford-blue hover:border-oxford-blue px-5 py-1 rounded-sm font-semibold">Add all to cart</button>
                         </div>
                     </div>
                 </div>

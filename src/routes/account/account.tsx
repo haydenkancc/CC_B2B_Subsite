@@ -68,7 +68,7 @@ const tabs = [
     { id: 5, title: 'Logs', content: <Logs /> },
 ]
 
-const pages = ['Dashboard', 'Orders', 'Billing', 'Standards', 'Tickets', 'Account']
+const pages = ['Dashboard', 'Orders', 'Billing', 'Saved Lists', 'Tickets', 'Account']
 
 
 function Account() {

@@ -5,7 +5,7 @@ import Bundle from "./bundle";
 import Recent from "./recent.tsx";
 import { CaretRight } from "@phosphor-icons/react";
 
-const pages = ['Dashboard', 'Orders', 'Billing', 'Standards', 'Tickets', 'Account'];
+const pages = ['Dashboard', 'Orders', 'Billing', 'Saved Lists', 'Tickets', 'Account'];
 
 const portDevices = [
     { name: "Laptops" },
@@ -36,7 +36,7 @@ function Standards() {
             <NavbarBottom pages={pages} />
             <div className="max-w-[1440px] mx-auto pl-4 pt-12 pb-16">
                 <div className="text-4xl pb-6">
-                    Standards List
+                    Saved Lists
                 </div>
                 <div className="flex flex-row justify-between gap-x-4 mt-8">
                     <div className="flex flex-col w-1/5">

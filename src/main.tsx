@@ -82,7 +82,7 @@ const router = createBrowserRouter([
         element: <Wishlist />
     },
     {
-        path: "standards",
+        path: "saved-lists",
         element: <Standards />
     },
     {
