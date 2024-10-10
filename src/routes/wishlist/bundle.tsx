@@ -25,10 +25,10 @@ function Bundle() {
     return (
         <div className="bg-lavender/10 text-oxford-blue border-lavender mb-16 w-full">
             <div className="flex flex-col pl-4 pt-4">
-                <div className="text-2xl font-medium p-2 ml-6">Bundles</div>
+                <div className="text-2xl font-medium p-2 ml-6">Wishlists</div>
                 <div className="pt-8 flex flex-row justify-between">
                     <div className="flex flex-col ml-8">
-                        <div className="text-2xl font-medium pb-6">Laptops</div>
+                        <div className="text-2xl font-medium pb-6">Bugs' Wishlist</div>
                         <table className="w-164 bg-transparent">
                             <thead>
                                 <tr className="text-oxford-blue border-b border-black">
@@ -76,8 +76,8 @@ function Bundle() {
                                 <Plus size={10} />
                             </button>
                         </div>
-                        <button className="border border-oxford-blue text-center px-4 py-1 hover:bg-oxford-blue hover:text-ghost-white mt-4">Add Bundle to Cart</button>
-                        <Link to={"/wishlist"} className="border border-oxford-blue text-center px-4 py-1 hover:bg-oxford-blue hover:text-ghost-white mt-2">Edit Bundle</Link>
+                        <button className="border border-oxford-blue text-center px-4 py-1 hover:bg-oxford-blue hover:text-ghost-white mt-4">Add Wishlist to Cart</button>
+                        <Link to={"/wishlist"} className="border border-oxford-blue text-center px-4 py-1 hover:bg-oxford-blue hover:text-ghost-white mt-2">Edit Wishlist</Link>
                     </div>
                 </div>
             </div>

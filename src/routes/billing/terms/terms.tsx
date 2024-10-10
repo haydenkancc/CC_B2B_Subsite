@@ -42,7 +42,7 @@ function Terms() {
                         <div className="block appearance-none w-full bg-ghost-white border border-slate-300 text-oxford-blue py-2 px-3 rounded-sm">$12,000.00</div>
                     </div>
                     <div className="w-1/3">
-                        <div className="font-medium mb-2">Outsanding Invoice Amount</div>
+                        <div className="font-medium mb-2">Outstanding Invoice Amount</div>
                         <div className="block appearance-none w-full bg-ghost-white border border-slate-300 text-oxford-blue py-2 px-3 rounded-sm">$22,000.00</div>
                     </div>
                 </div>

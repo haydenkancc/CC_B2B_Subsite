@@ -55,9 +55,11 @@ function NavbarTopAccount() {
                         Cart
                     </Button>
                     <div className="relative" ref={dropdownRef}>
-                        <Button className="navbar-top-Button" onClick={toggleDropdown}>
-                            <User className="fill-ghost-white" height="1.5em" width="1.5em" />
-                            Wile C.
+                        <Button className="navbar-top-Button">
+                            <div className="flex flex-row items-center gap-x-1.5" onClick={toggleDropdown}>
+                                <User className="fill-ghost-white" height="1.5em" width="1.5em" />
+                                Wile C.
+                            </div>
                         </Button>
                         {isDropdownVisible && (
                             <div className="absolute right-0 top-12 w-40 text-left bg-oxford-blue shadow-lg rounded-md z-50 flex flex-col">

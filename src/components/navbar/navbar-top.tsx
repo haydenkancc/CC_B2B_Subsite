@@ -32,10 +32,12 @@ function NavbarTop() {
                         <Cart className="fill-ghost-white" height="1.5em" width="1.5em" />
                         Cart
                     </Button>
-                    <Link to={"/sign-in"} className="navbar-top-Button">
-                        <User className="fill-ghost-white" height="1.5em" width="1.5em" />
-                        Sign In
-                    </Link>
+                    <Button className="navbar-top-Button">
+                        <Link to={"/sign-in"} className="flex flex-row items-center gap-x-1.5">
+                            <User className="fill-ghost-white" height="1.5em" width="1.5em" />
+                            Sign In
+                        </Link>
+                    </Button>
                 </div>
             </div>
         </div>

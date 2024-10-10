@@ -14,9 +14,7 @@ function BillingContacts() {
     const [ showGrid, setShowGrid ] = useState(false);
 
     return (
-        <div className="pb-32">
-            <div className="pb-12 flex justify-between">
-            </div>
+        <div>
             {showGrid ? <MyGrid items={items} /> : <MyTable items={items} />}
         </div>
     )

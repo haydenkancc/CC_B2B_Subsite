@@ -4,11 +4,9 @@ import BillingContacts from "../../account/contacts/billing-contacts";
 function Wallet() {
 
     return (
-        <div className="pb-32">
-            <div className="pb-12">
-                <PaymentMethods />
-                <BillingContacts />
-            </div>
+        <div>
+            <PaymentMethods />
+            <BillingContacts />
         </div>
     )
 }

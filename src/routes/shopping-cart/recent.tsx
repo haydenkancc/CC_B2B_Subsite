@@ -13,15 +13,15 @@ function Recent() {
 
     return (
         <div className="bg-lavender/10 text-oxford-blue border-lavender mb-8 w-full">
-            <div className="flex flex-col pl-4 pt-4">
-                <div className="text-2xl font-medium p-2 ml-6">Recently Viewed Items</div>
-                <div className="flex flex-col ml-8 pr-12">
+            <div className="flex flex-col pt-4">
+                <div className="text-2xl font-medium py-2">Recently Viewed Items</div>
+                <div className="flex flex-col">
                     <table className="w-full bg-transparent">
                         <thead>
                             <tr className="text-oxford-blue border-b border-black">
                                 <th className="py-2 text-left">Product:</th>
                                 <th className="py-2 px-4 text-left">Price:</th>
-                                <th className="py-2 px-4 text-left">Actions:</th>
+                                <th className="py-2 px-4 text-center">Actions:</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,10 +42,8 @@ function Recent() {
                                     </td>
                                     <td className="py-2 px-4 text-sm font-medium w-28">${item.price.toFixed(2)}</td>
                                     <td className="py-2 px-4 w-40">
-                                        <button className="flex flex-row justify-center items-center gap-x-2"
-                                        >
+                                        <button className="flex flex-row justify-center items-center gap-x-2 mx-auto">
                                             <ShoppingCart weight="light" size={24} />
-                                            <BellRinging weight="light" size={24} />
                                         </button>
                                     </td>
                                 </tr>
