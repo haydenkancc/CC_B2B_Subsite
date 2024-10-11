@@ -20,6 +20,7 @@ import Wishlist from './routes/wishlist/wishlist.tsx';
 import Standards from './routes/wishlist/standards.tsx';
 import Billing from './routes/billing/billing.tsx';
 import ShoppingCart from './routes/shopping-cart/shopping-cart.tsx';
+import Tickets from './routes/tickets/tickets.tsx';
 
 const router = createBrowserRouter([
     {
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
     {
         path: "cart",
         element: <ShoppingCart />
+    },
+    {
+        path: "tickets",
+        element: <Tickets />
     },
 ]);
 

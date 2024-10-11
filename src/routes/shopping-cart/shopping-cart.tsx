@@ -49,7 +49,7 @@ function ShoppingCart() {
             <div className="flex justify-center">
                 <div className="max-w-[1440px] flex-grow pl-4 pt-4">
                     <div className="pt-8 pb-16">
-                        <div className="text-4xl pb-6">Bugs' Shopping Cart</div>
+                        <div className="text-4xl pb-6">Wile's Shopping Cart</div>
                         <table className="w-full bg-transparent border-lavender mt-8">
                             <thead>
                                 <tr className="text-oxford-blue border-b border-black">

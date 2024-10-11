@@ -26,7 +26,6 @@ function NavbarTop() {
                 <div className="flex items-center pl-8 gap-6">
                     <Button className="navbar-top-Button">
                         <Question className="fill-ghost-white" height="1.5em" width="1.5em" />
-                        Help
                     </Button>
                     <Button className="navbar-top-Button">
                         <Cart className="fill-ghost-white" height="1.5em" width="1.5em" />

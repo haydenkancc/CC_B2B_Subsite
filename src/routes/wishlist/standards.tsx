@@ -3,7 +3,7 @@ import NavbarTopAccount from '../../components/navbar/navbar-top-account.tsx';
 import NavbarBottom from "../../components/navbar/navbar-bottom";
 import Bundle from "./bundle";
 import Recent from "./recent.tsx";
-import { CaretRight } from "@phosphor-icons/react";
+import { CaretRight, Users } from "@phosphor-icons/react";
 
 const pages = ['Dashboard', 'Orders', 'Billing', 'Saved Lists', 'Tickets', 'Account'];
 
@@ -13,7 +13,7 @@ const sets = [
 ]
 
 const wishlists = [
-    { name: "Bugs' Wishlist" },
+    { name: "Wile's Wishlist" },
     // { name: "Daffy's Wishlist" },
     // { name: "Porky's Wishlist" },
 ]
@@ -55,7 +55,10 @@ function Standards() {
                                 </div>
                             ))}
 
-                            <div className="font-semibold mt-6">Collaborative</div>
+                            <div className=" flex flex-row items-center font-semibold mt-6">
+                                <div>Collaborative</div>
+                                <Users size={20} className="ml-2.5" />
+                            </div>
                             {collaborative.map(item => (
                                 <div key={item.name} className="flex flex-row items-center">
                                     <button className="text-left">{item.name}</button>

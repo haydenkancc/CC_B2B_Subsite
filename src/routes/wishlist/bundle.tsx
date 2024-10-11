@@ -28,7 +28,7 @@ function Bundle() {
                 <div className="text-2xl font-medium p-2 ml-6">Wishlists</div>
                 <div className="pt-8 flex flex-row justify-between">
                     <div className="flex flex-col ml-8">
-                        <div className="text-2xl font-medium pb-6">Bugs' Wishlist</div>
+                        <div className="text-2xl font-medium pb-6">Wile's Wishlist</div>
                         <table className="w-164 bg-transparent">
                             <thead>
                                 <tr className="text-oxford-blue border-b border-black">
