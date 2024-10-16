@@ -7,13 +7,16 @@ import User from '../../assets/user-circle.svg?react';
 import Question from '../../assets/question.svg?react';
 import { Button, Input, TextField } from 'react-aria-components';
 import { Link } from 'react-router-dom';
-import { UserGear, Gear, SignOut, BellRinging, ListBullets, List, File, Bell } from '@phosphor-icons/react';
+import { UserGear, Gear, SignOut, BellRinging, ListBullets, List, File, Bell, CaretRight } from '@phosphor-icons/react';
 
 function NavbarTopAccount() {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
     const dropdownRef = useRef(null);
     const [isNotifsVisible, setNotifsVisible] = useState(false);
     const notifsRef = useRef(null);
+    const [isSolutionsVisible, setSolutionsVisible] = useState(false);
+    const solutionsRef = useRef(null);
+    const [isSearchExpanded, setSearchExpanded] = useState(false);
 
     const toggleDropdown = () => {
         setDropdownVisible(prev => !prev);
@@ -21,6 +24,14 @@ function NavbarTopAccount() {
 
     const toggleNotifs = () => {
         setNotifsVisible(prev => !prev);
+    };
+
+    const toggleSolutions = () => {
+        setSolutionsVisible(prev => !prev);
+    };
+
+    const toggleSearch = () => {
+        setSearchExpanded(prev => !prev);
     };
 
     useEffect(() => {
@@ -31,6 +42,12 @@ function NavbarTopAccount() {
             if (notifsRef.current && !notifsRef.current.contains(event.target)) {
                 setNotifsVisible(false);
             }
+            if (solutionsRef.current && !solutionsRef.current.contains(event.target)) {
+                setSolutionsVisible(false);
+            }
+            if (isSearchExpanded && !event.target.closest('.search-expanded')) {
+                setSearchExpanded(false);
+            }
         };
 
         document.addEventListener('mousedown', handleClickOutside);
@@ -38,23 +55,66 @@ function NavbarTopAccount() {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, []);
+    }, [isSearchExpanded]);
 
     return (
-        <div className="bg-oxford-blue text-ghost-white flex justify-center border-ghost-white/5 text-sm">
-            <div className="flex align-middle w-full pl-4 pr-4 pt-3 pb-3 box-border max-w-[1440px]">
+        <div className="bg-black text-ghost-white flex justify-center border-ghost-white/5 text-sm">
+            <div className="flex align-middle w-full px-4 py-6 box-border items-center">
                 <Link to={"/"}>
-                    <Logo className="h-full w-9"/>
+                    <Logo className="h-full w-9 py-1"/>
                 </Link>
+                <Button className="navbar-top-Button ml-10">
+                    <Link to={"/hardware"}>
+                        <div className="text-base">Hardware</div>
+                    </Link>
+                </Button>
+                <Button className="navbar-top-Button ml-2.5">
+                    <Link to={"/software"}>
+                        <div className="text-base">Software</div>
+                    </Link>
+                </Button>
+                <div className="relative" ref={solutionsRef}>
+                    <Button className="navbar-top-Button ml-2.5">
+                        <Link to={"/enterprise-solutions"}>
+                            <div className="text-base">Solutions</div>
+                        </Link>
+                    </Button>
+                    {isSolutionsVisible && (
+                        <div className="absolute w-56 text-left bg-black shadow-lg rounded-md z-50 flex flex-col mt-2.5">
+                            <Link to="/enterprise-solutions" className="dropdown-item flex flex-row justify-between items-center gap-y-0.5 px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow mt-2">
+                                <div className="text-sm">Enterprise Solutions</div>
+                                <CaretRight size={14} />
+                            </Link>
+                            <Link to="/healthcare-solutions" className="dropdown-item flex flex-row justify-between items-center gap-y-0.5 px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow">
+                                <div className="text-sm">Healthcare Solutions</div>
+                                <CaretRight size={14} />
+                            </Link>
+                            <Link to="/education-solutions" className="dropdown-item flex flex-row justify-between items-center gap-y-0.5 px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow mb-2">
+                                <div className="text-sm">Education Solutions</div>
+                                <CaretRight size={14} />
+                            </Link>
+                        </div>
+                    )}
+                </div>
+                <Button className="navbar-top-Button ml-2.5">
+                    <Link to={"/procurement"}>
+                        <div className="text-base">Procurement</div>
+                    </Link>
+                </Button>
+                <Button className="navbar-top-Button ml-2.5">
+                    <Link to={"/"}>
+                        <div className="text-base">About</div>
+                    </Link>
+                </Button>
                 <div className="flex grow items-center justify-end pl-4">
-                    <div className="flex h-full bg-ghost-white shadow-[inset_0_0_4px_0_rgba(0,0,0,0.2)] rounded-sm">
-                        <TextField className="flex items-center justify-between h-full box-border min-w-96 pl-2 pr-2 pt-1 pb-1">
-                            <Input className="search--input" placeholder="What are you looking for?"/>
-                            <Mag className="fill-oxford-blue" width="1em" height="1em" />
+                    <div className={`flex ${isSearchExpanded ? 'search-expanded' : 'search-collapsed'} bg-ghost-white shadow-[inset_0_0_4px_0_rgba(0,0,0,0.2)] rounded-sm transition-all duration-300`}>
+                        <TextField className="flex items-center justify-between box-border min-w-64 px-2.5 py-2 text-black">
+                            <Input className="search--input" placeholder="What are you looking for?" onFocus={toggleSearch} />
+                            <Mag className="fill-oxford-blue absolute right-2.5" width="1em" height="1em" />
                         </TextField>
                     </div>
                 </div>
-                <div className="flex items-center pl-8 gap-6">
+                <div className="flex items-center pl-8 gap-5">
                     <Button className="navbar-top-Button">
                         <Question className="fill-ghost-white" height="1.5em" width="1.5em" />
                     </Button>
@@ -65,17 +125,16 @@ function NavbarTopAccount() {
                             </div>
                         </Button>
                         {isNotifsVisible && (
-                            <div className="absolute left-1/2 top-12 w-60 text-left bg-oxford-blue shadow-lg rounded-md z-50 flex flex-col transform -translate-x-1/2">
-                                {/* <div className="triangle"></div> */}
-                                <Link to="/hardware" className="dropdown-item flex flex-col gap-y-0.5 px-4 py-2.5 mt-2 border-l-4 border-oxford-blue hover:border-school-bus-yellow">
+                            <div className="absolute left-1/2 top-16 w-60 text-left bg-black shadow-lg rounded-md z-50 flex flex-col transform -translate-x-1/2">
+                                <Link to="/hardware" className="dropdown-item flex flex-col gap-y-0.5 px-4 py-2.5 mt-2 border-l-4 border-black hover:border-school-bus-yellow">
                                     <div className="text-xs">2 hours ago</div>
                                     <div className="text-sm">GX4900X has an ongoing promotion!</div>
                                 </Link>
-                                <Link to="/account" className="dropdown-item flex flex-col gap-y-0.5 px-4 py-2.5 border-l-4 border-oxford-blue hover:border-school-bus-yellow">
+                                <Link to="/account" className="dropdown-item flex flex-col gap-y-0.5 px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow">
                                     <div className="text-xs">2021-10-01</div>
                                     <div className="text-sm">Your ticket has received a response!</div>
                                 </Link>
-                                <Link to="/orders" className="dropdown-item flex flex-col gap-y-0.5 px-4 py-2.5 mb-2 border-l-4 border-oxford-blue hover:border-school-bus-yellow">
+                                <Link to="/orders" className="dropdown-item flex flex-col gap-y-0.5 px-4 py-2.5 mb-2 border-l-4 border-black hover:border-school-bus-yellow">
                                 <div className="text-xs">2021-09-01</div>
                                 <div className="text-sm">Your order has been placed!</div>
                                 </Link>
@@ -96,25 +155,24 @@ function NavbarTopAccount() {
                             </div>
                         </Button>
                         {isDropdownVisible && (
-                            <div className="absolute right-0 top-12 w-40 text-left bg-oxford-blue shadow-lg rounded-md z-50 flex flex-col">
-                                {/* <div className="triangle"></div> */}
-                                <Link to="/account" className="dropdown-item flex flex-row items-center px-4 py-2.5 mt-2 border-l-4 border-oxford-blue hover:border-school-bus-yellow">
+                            <div className="absolute right-0 top-16 w-40 text-left bg-black shadow-lg rounded-md z-50 flex flex-col">
+                                <Link to="/account" className="dropdown-item flex flex-row items-center px-4 py-2.5 mt-2 border-l-4 border-black hover:border-school-bus-yellow">
                                     <UserGear size={18} />
                                     <div className="ml-4">Account</div>
                                 </Link>
-                                <Link to="/account" className="dropdown-item flex flex-row items-center px-4 py-2.5 border-l-4 border-oxford-blue hover:border-school-bus-yellow">
+                                <Link to="/message-center" className="dropdown-item flex flex-row items-center px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow">
                                     <BellRinging size={18} />
                                     <div className="ml-4">Notifications</div>
                                 </Link>
-                                <Link to="/orders" className="dropdown-item flex flex-row items-center px-4 py-2.5 border-l-4 border-oxford-blue hover:border-school-bus-yellow">
+                                <Link to="/orders" className="dropdown-item flex flex-row items-center px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow">
                                     <File size={18} />
                                     <div className="ml-4">Orders</div>
                                 </Link>
-                                <Link to="/saved-lists" className="dropdown-item flex flex-row items-center px-4 py-2.5 border-l-4 border-oxford-blue hover:border-school-bus-yellow">
+                                <Link to="/saved-lists" className="dropdown-item flex flex-row items-center px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow">
                                     <List size={18} />
                                     <div className="ml-4">Saved Lists</div>
                                 </Link>
-                                <Link to="/sign-in" className="dropdown-item flex flex-row items-center px-4 py-2.5 mb-2 border-l-4 border-oxford-blue hover:border-school-bus-yellow">
+                                <Link to="/sign-in" className="dropdown-item flex flex-row items-center px-4 py-2.5 mb-2 border-l-4 border-black hover:border-school-bus-yellow">
                                     <SignOut size={18} />
                                     <div className="ml-4">Sign Out</div>
                                 </Link>

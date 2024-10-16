@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./landing.css";
 import Carousel from './carousel.tsx';
 import { Link } from "react-router-dom";
-
 import header from "../../assets/header.png"
 import working from "../../assets/working.png"
 import person from "../../assets/person.png"
@@ -22,8 +21,10 @@ import out from "../../assets/out.png"
 import enterpriseicon from "../../assets/enterpriseicon.png"
 import healthcareicon from "../../assets/healthcareicon.png"
 import educationicon from "../../assets/educationicon.png"
-
 import { CaretRight, Envelope, Phone, Pen } from "@phosphor-icons/react";
+import FooterTop from "../../components/footer/footer-top.tsx";
+import FooterBottom from "../../components/footer/footer-bottom.tsx";
+import Logo from '../../assets/Canada_Computers_(Icon).svg?react';
 
 const pages = ['Partners', 'Industry', 'About'];
 
@@ -286,15 +287,15 @@ function Landing() {
                 </h1>
             </div>
 
-            {/* Banner */}
+            {/* Banner
             <div className="bg-oxford-blue flex flex-col items-center py-8 w-full overflow-hidden">
                 <h1 className="text-2xl text-white font-semibold text-center">
                     TAKE YOUR BUSINESS
                     <span className="text-2xl text-blue-400 font-bold ml-2">TO THE NEXT LEVEL</span>  
                 </h1>
-            </div>
+            </div> */}
 
-            {/* Contact */}
+            {/* Contact
             <div className="bg-ghost-white w-full py-14 max-w-[1440px] px-4 mx-auto text-center">
                 <div className="uppercase text-2xl font-semibold">Contact us for the solutions you need</div>
                 <div className="flex flex-row justify-between">
@@ -402,7 +403,10 @@ function Landing() {
                         </div>
                     </div>
                 )}
-            </div>
+            </div> */}
+
+            <FooterTop />
+            <FooterBottom />
                 
         </>        
     )

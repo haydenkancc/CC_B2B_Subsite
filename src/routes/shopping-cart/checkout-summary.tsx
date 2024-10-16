@@ -1,5 +1,8 @@
+import samplePDF from "../../assets/sample-pdf.pdf";
+import { Link } from "react-router-dom";
+
 const infos = [
-    { id: 1, name: "Daffy Duck", phone: "(647) 327-6457", email: "bugs.bunny@cc.ca", address: "75 West Wilmost Street", postal: "Toronto, ON L4B 1K7" },
+    { id: 1, name: "Wile E. Coyote", phone: "(647) 412-0786", email: "wile.e.coyote@cc.ca", address: "75 West Wilmot Street", postal: "Toronto, ON L4B 1K7" },
 ];
 
 function CheckoutSummary() {
@@ -30,7 +33,9 @@ function CheckoutSummary() {
                     <div className="text-2xl text-center font-semibold mb-4">$12,069.89</div>
                     <div className="flex flex-row gap-x-2.5">
                         <button className="text-ghost-white bg-oxford-blue text-center border px-4 py-1.5 w-32">Checkout</button>
-                        <button className="text-ghost-white bg-oxford-blue text-center border px-4 py-1.5 w-32">Print Quote</button>
+                        <Link to={samplePDF} target="_blank" className="text-ghost-white bg-oxford-blue text-center border px-4 py-1.5 w-32">
+                            Print Quote
+                        </Link>
                     </div>
                 </div>
             </div>
