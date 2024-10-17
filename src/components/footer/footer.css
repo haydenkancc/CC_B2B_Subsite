@@ -40,27 +40,13 @@
     position: relative;
 }
 
-.search-collapsed {
-    width: auto;
-}
-
-.search-expanded {
+.triangle {
     position: absolute;
-    left: 6rem;
-    width: calc(100% - 29.47rem);
-    z-index: 10;
-}
-
-/* .search-expanded {
-    position: absolute;
-    left: 6rem;
-    width: calc(100% - 14rem);
-    z-index: 10;
-} */
-
-.search-expanded-no {
-    position: absolute;
-    left: 6rem;
-    width: calc(100% - 28.16rem);
-    z-index: 10;
+    top: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #1A1A2E;
 }

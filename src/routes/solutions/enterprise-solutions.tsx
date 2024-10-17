@@ -18,6 +18,8 @@ import enterprise3 from "../../assets/enterprise3.png"
 import { Link } from "react-router-dom";
 import person2 from "../../assets/person2.png"
 import solutionsblue from "../../assets/solutionsblue.png"
+import FooterBottom from "../../components/footer/footer-bottom.tsx";
+import FooterTop from "../../components/footer/footer-top.tsx";
 
 const pages = ['Partners', 'Industry', 'About'];
 
@@ -70,14 +72,14 @@ function EnterpriseSolutions() {
         <>
 
             {/* NavBar */}
-            <div className="w-full overflow-hidden">
+            <div className="w-full">
                 <NavbarTop />
-                <NavbarBottom pages={pages} />
+                {/* <NavbarBottom pages={pages} /> */}
             </div>
 
             {/* Homepage */}
             <div
-                className="overflow-hidden h-116 w-full bg-center"
+                className="overflow-hidden h-120 w-full bg-center"
                 style={{
                     backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 1) 100%), url(${enterprise})`,
                     backgroundSize: '100%',
@@ -316,137 +318,16 @@ function EnterpriseSolutions() {
                 </div>
             </div>
 
-            {/* Banner */}
-            <div className="bg-oxford-blue py-10 w-full relative">
-                <div className="flex flex-row justify-between max-w-[1440px] px-4 mx-auto">
-                    <div className="flex flex-col">
-                        <div className="text-3xl text-white font-bold mb-4">Empower your Workplace Today</div>
-                        <h1 className="text-xl text-white">Contact us today to get started!</h1>
-                    </div>
-                    <div className="">
-                        <Logo className="h-full w-24"></Logo>
-                    </div>
-                </div>
-            </div>
-
             {/* Corporate Sales Carousel */}
-            <div className="bg-white">
-                <div className="py-20 max-w-[1440px] px-4 mx-auto">
+            <div className="bg-ghost-white">
+                <div className="mt-5 mb-20 max-w-[1440px] px-4 mx-auto">
                     <CorporateSalesCarousel slides={slides} />
                 </div>
             </div>
 
-            {/* Contact */}
-            <div className="bg-ghost-white w-full py-14 max-w-[1440px] px-44 mx-auto text-center" ref={bottomRef}>
-                <div className="uppercase text-2xl font-semibold">Contact us for the solutions you need</div>
-                <div className="flex flex-row justify-between">
-                    <div 
-                        className={`flex flex-col items-center font-medium text-lg mt-10 w-28 h-18 cursor-pointer rounded-sm ${isHighlighted ? '' : ''}`} 
-                        onClick={handleOpen}
-                    >
-                        <Envelope size={40} weight="light" />
-                        <div>Message Us</div>
-                    </div>
-                    <div className="flex flex-col items-center font-medium text-lg mt-10 w-72">
-                        <Phone size={40} weight="light" />
-                        <div>Call Us</div>
-                        <div className="text-sm">Toll-Free : 1-855-940-2400</div>
-                        <div className="text-sm">Toronto/GTA : 905-780-2632</div>
-                        <div className="text-sm">Ottawa Area : 613-225-8188</div>
-                        <div className="text-sm">Vancouver Area : 604-235-3251</div>
-                    </div>
-                    <Link to={"/create-account"} className="flex flex-col items-center font-medium text-lg mt-10 w-28 h-18">
-                        <Pen size={40} weight="light" />
-                        <div>Sign Up</div>
-                    </Link>
-                </div>
-
-                {isOpen && (
-                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                        <div className="bg-ghost-white rounded shadow-lg w-full max-w-[70vw] relative">
-                            <div className="h-[90vh] overflow-y-auto">
-                            <div className="flex flex-row">
-                                <div className="bg-oxford-blue w-1/2">
-                                    <img src={person2} className="rounded-l-sm h-full absolute bg-contain" />
-                                </div>
-                                <form className="rounded-r-sm w-1/2 h-full">
-                                    <img src={solutionsblue} className="h-10 mt-8 px-[3vw]" />
-                                    <div className="text-2xl text-black font-semibold mt-4 px-[3vw] text-left">Send us a Message</div>
-                                    <div className="text-slate-500 text-sm font-medium text-left py-2.5 px-[3vw]">Have a question or need assistance? Just fill out the form, and we'll get back to you shortly.</div>
-                                        <div className="flex flex-wrap mb-2 justify-between">
-                                            <div className="w-2/5 ml-[3vw]">
-                                                <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">First Name</label>
-                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
-                                            </div>
-                                            <div className="w-2/5 mr-[3vw]">
-                                                <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Last Name</label>
-                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-wrap px-[3vw] mb-2">
-                                            <div className="w-full">
-                                                <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Company Name</label>
-                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
-                                                <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Business Email</label>
-                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
-                                                <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Phone Number</label>
-                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-wrap px-[3vw] mb-2">
-                                            <label className="block tracking-wide text-black text-sm font-bold mb-2">What is your current working relationship with us?</label>
-                                            <div className="relative w-full">
-                                                <select className="block appearance-none w-full bg-white border-2 border-slate-300 text-black py-2 px-3 pr-8 rounded leading-tight" value={currentRelationship} onChange={handleSelectChange}>
-                                                    <option value="" disabled selected>Please Select</option>
-                                                    <option value="working">I'm currently working with Canada Computers</option>
-                                                    <option value="not-working">I'm not currently working with Canada Computers</option>
-                                                    <option value="want-to-work">I want to work with Canada Computers</option>
-                                                </select>
-                                                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-black">
-                                                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                                                </div>
-                                            </div>
-                                            {currentRelationship === "working" && (
-                                                <div className="flex flex-wrap mt-4 mb-2">
-                                                    <div className="w-full md:w-1/2 mb-6 pr-3 md:mb-0">
-                                                        <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Account Number</label>
-                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
-                                                    </div>
-                                                    <div className="w-full md:w-1/2 pl-3">
-                                                        <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Corporate Account Rep</label>
-                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
-                                                    </div>
-                                                    <div className="w-full md:w-1/2 mb-6 pr-3 md:mb-0">
-                                                        <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Invoice Number</label>
-                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
-                                                    </div>
-                                                    <div className="w-full md:w-1/2 pl-3">
-                                                        <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Quote/Order Number</label>
-                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
-                                                    </div>
-                                                </div>
-                                            )}
-                                        </div>
-                                        <div className="flex flex-wrap px-[3vw] mb-4">
-                                            <div className="w-full">
-                                                <label className="block tracking-wide text-left text-black text-sm font-bold mt-3 mb-2">How can we be of assistance?</label>
-                                                <textarea className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-6" rows="3" />
-                                            </div>
-                                        </div>
-                                        <div className="px-[3vw]">
-                                            <button type="submit" className="px-[3vw] mb-6 w-full shadow bg-blue-900 hover:bg-blue-800 text-white font-medium py-2 rounded">
-                                                Send Message
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <button className="absolute top-6 right-8 text-gray-500 text-xl" onClick={handleClose}>
-                                ✖
-                            </button>
-                        </div>
-                    </div>
-                )}
+            <FooterTop />
+            <div ref={bottomRef}>
+                <FooterBottom />
             </div>
 
         </>

@@ -21,6 +21,8 @@ import Standards from './routes/wishlist/standards.tsx';
 import Billing from './routes/billing/billing.tsx';
 import ShoppingCart from './routes/shopping-cart/shopping-cart.tsx';
 import Tickets from './routes/tickets/tickets.tsx';
+import Messages from './routes/messages/messages.tsx';
+import About from './routes/about/about.tsx';
 
 const router = createBrowserRouter([
     {
@@ -98,6 +100,14 @@ const router = createBrowserRouter([
     {
         path: "tickets",
         element: <Tickets />
+    },
+    {
+        path: "message-center",
+        element: <Messages />
+    },
+    {
+        path: "about",
+        element: <About />
     },
 ]);
 

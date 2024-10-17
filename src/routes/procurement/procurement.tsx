@@ -24,6 +24,7 @@ import spend from "../../assets/spend.png"
 import contract from "../../assets/contract.png"
 import supplier from "../../assets/supplier.png"
 import optimization from "../../assets/optimization.png"
+import FooterBottom from "../../components/footer/footer-bottom.tsx";
 
 const pages = ['Partners', 'Industry', 'About'];
 
@@ -267,14 +268,14 @@ function Procurement() {
     return (
         <>
             {/* NavBar */}
-            <div className="w-full overflow-hidden">
+            <div className="w-full">
                 <NavbarTop />
-                <NavbarBottom pages={pages} />
+                {/* <NavbarBottom pages={pages} /> */}
             </div>
 
             {/* Homepage */}
             <div
-                className="overflow-hidden bg-cover h-116 bg-top"
+                className="overflow-hidden bg-cover h-120 bg-top"
                 style={{
                     backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 75%), url(${changebuilding})`,
                 }}
@@ -478,7 +479,7 @@ function Procurement() {
             {/* Banner */}
             <div ref={bannerRef} className={`bg-oxford-blue text-ghost-white flex flex-col w-full overflow-hidden ${startBannerAnimation ? 'animate' : ''}`}>
                 <div className="max-w-[1440px] px-4 mx-auto">
-                    <div className="flex flex-row py-14 gap-x-20">
+                    <div className="flex flex-row py-8 gap-x-20">
                         {/* Leftside */}
                         <div className="w-88 flex flex-col items-center">
                             <div className="font-bold text-4xl">${revenue}M</div>
@@ -497,7 +498,8 @@ function Procurement() {
                     </div>
                 </div>
             </div>
-            
+            <FooterBottom />
+
         </>
     );
 }
