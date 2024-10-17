@@ -87,14 +87,14 @@ function EducationSolutions() {
         <>
 
             {/* NavBar */}
-            <div className="w-full overflow-hidden">
+            <div className="w-full">
                 <NavbarTop />
-                <NavbarBottom pages={pages} />
+                {/* <NavbarBottom pages={pages} /> */}
             </div>
 
             {/* Homepage */}
             <div
-                className="overflow-hidden h-116 w-full bg-center"
+                className="overflow-hidden h-120 w-full bg-center"
                 style={{
                     backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 1) 100%), url(${education})`,
                     backgroundSize: '100%',

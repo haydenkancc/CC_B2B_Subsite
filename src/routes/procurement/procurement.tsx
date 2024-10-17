@@ -268,14 +268,14 @@ function Procurement() {
     return (
         <>
             {/* NavBar */}
-            <div className="w-full overflow-hidden">
+            <div className="w-full">
                 <NavbarTop />
-                <NavbarBottom pages={pages} />
+                {/* <NavbarBottom pages={pages} /> */}
             </div>
 
             {/* Homepage */}
             <div
-                className="overflow-hidden bg-cover h-116 bg-top"
+                className="overflow-hidden bg-cover h-120 bg-top"
                 style={{
                     backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 75%), url(${changebuilding})`,
                 }}

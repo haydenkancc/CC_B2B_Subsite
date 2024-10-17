@@ -39,9 +39,6 @@ function NavbarTopAccount() {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                 setDropdownVisible(false);
             }
-            if (notifsRef.current && !notifsRef.current.contains(event.target)) {
-                setNotifsVisible(false);
-            }
             if (solutionsRef.current && !solutionsRef.current.contains(event.target)) {
                 setSolutionsVisible(false);
             }
@@ -75,13 +72,11 @@ function NavbarTopAccount() {
                 </Button>
                 <div className="relative" ref={solutionsRef}>
                     <Button className="navbar-top-Button ml-2.5">
-                        <Link to={"/enterprise-solutions"}>
-                            <div className="text-base">Solutions</div>
-                        </Link>
+                        <div className="text-base" onClick={toggleSolutions}>Solutions</div>
                     </Button>
                     {isSolutionsVisible && (
-                        <div className="absolute w-56 text-left bg-black shadow-lg rounded-md z-50 flex flex-col mt-2.5">
-                            <Link to="/enterprise-solutions" className="dropdown-item flex flex-row justify-between items-center gap-y-0.5 px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow mt-2">
+                        <div className="absolute w-56 top-12 text-left bg-black shadow-lg rounded-b-md z-50 flex flex-col mt-2">
+                            <Link to="/enterprise-solutions" className="dropdown-item flex flex-row justify-between items-center gap-y-0.5 px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow">
                                 <div className="text-sm">Enterprise Solutions</div>
                                 <CaretRight size={14} />
                             </Link>
@@ -102,13 +97,13 @@ function NavbarTopAccount() {
                     </Link>
                 </Button>
                 <Button className="navbar-top-Button ml-2.5">
-                    <Link to={"/"}>
+                    <Link to={"/about"}>
                         <div className="text-base">About</div>
                     </Link>
                 </Button>
                 <div className="flex grow items-center justify-end pl-4">
                     <div className={`flex ${isSearchExpanded ? 'search-expanded' : 'search-collapsed'} bg-ghost-white shadow-[inset_0_0_4px_0_rgba(0,0,0,0.2)] rounded-sm transition-all duration-300`}>
-                        <TextField className="flex items-center justify-between box-border min-w-64 px-2.5 py-2 text-black">
+                        <TextField className="relative flex items-center justify-between box-border min-w-64 px-2.5 py-2 text-black">
                             <Input className="search--input" placeholder="What are you looking for?" onFocus={toggleSearch} />
                             <Mag className="fill-oxford-blue absolute right-2.5" width="1em" height="1em" />
                         </TextField>
