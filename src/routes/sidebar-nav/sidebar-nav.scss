@@ -1,0 +1,58 @@
+$border-color: #e6e6e6;
+$bg-hover-color: #f5f5f5;
+$bg-select-color: #e5f4ff;
+
+.sn-container {
+  height: 100%;
+  width: 16rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid $border-color;
+}
+
+.sn-title {
+
+}
+
+.sn-list-box {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $border-color;
+
+  &--header {
+    margin: 0.5rem 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+  }
+
+  &--list {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.sn-list-box-item {
+  &--wrapper {
+    margin-right: 0.125rem;
+    padding: 0 1rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    &:hover {
+      background: $bg-hover-color
+    }
+  }
+
+  &--icon {
+    height: 1rem;
+    width: 1rem;
+  }
+
+  &--content {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
