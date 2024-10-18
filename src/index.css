@@ -14,7 +14,7 @@
 
   color-scheme: light dark;
   color: var(--oxford-blue);
-  background-color: var(--ghost-white);
+  background-color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

@@ -205,10 +205,10 @@ function Landing() {
 
                     <div
                         className="relative bg-slate-200 w-1/2 h-96 flex flex-col justify-center items-center ease-in-out text-oxford-blue"
-                        onMouseEnter={() => setHoveredSide('software')}
-                        onMouseLeave={() => setHoveredSide('software')}
+                        onMouseEnter={() => setHoveredSide('sam')}
+                        onMouseLeave={() => setHoveredSide('sam')}
                     >
-                        {hoveredSide === 'software' ? null : (
+                        {hoveredSide === 'sam' ? null : (
                             <div
                                 className="absolute inset-0 transition-opacity duration-300 ease-in-out"
                                 style={{
@@ -219,17 +219,17 @@ function Landing() {
                                 }}
                             />
                         )}
-                        {hoveredSide === 'software' && (
+                        {hoveredSide === 'sam' && (
                             <div className="font-bold text-xl z-10 relative">
-                                Software for a Smarter Workplace
+                                Sam for a Smarter Workplace
                             </div>
                         )}
-                        {hoveredSide === 'software' && (
+                        {hoveredSide === 'sam' && (
                             <div className="text-lg font-medium px-10 py-1 z-10 relative flex flex-col items-center">
                                 <div className="text-center">
                                     Streamline processes and boost productivity—transform the way you work.
                                 </div>
-                                <Link to={"/software"} className="text-sm uppercase border-2 border-oxford-blue px-2 py-1 font-semibold mt-4">
+                                <Link to={"/sam"} className="text-sm uppercase border-2 border-oxford-blue px-2 py-1 font-semibold mt-4">
                                     Shop Now
                                 </Link>
                             </div>
@@ -268,7 +268,7 @@ function Landing() {
                                 <div className="text-center">
                                     Streamline processes and boost productivity—transform the way you work.
                                 </div>
-                                <Link to={"/software"} className="text-sm uppercase border-2 border-oxford-blue px-2 py-1 font-semibold mt-4">
+                                <Link to={"/sam"} className="text-sm uppercase border-2 border-oxford-blue px-2 py-1 font-semibold mt-4">
                                     Shop Now
                                 </Link>
                             </div>

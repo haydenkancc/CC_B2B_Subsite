@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Landing from './routes/landing/landing.tsx';
+import SAM from './routes/sam/sam.tsx';
 import Dashboard from './routes/dashboard/dashboard.tsx';
 import Account from './routes/account/account.tsx';
 import './index.css'
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Landing />,
+    },
+    {
+        path: "temp",
+        element: <SAM />
     },
     {
       path: "enterprise-solutions",

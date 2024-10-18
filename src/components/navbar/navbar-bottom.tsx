@@ -49,7 +49,7 @@ const bchild = [
 
 const items = [
     { id: 1, title: 'Shop Hardware', children: hwchild},
-    { id: 2, title: 'Shop Software', children: swchild},
+    { id: 2, title: 'Shop Sam', children: swchild},
     { id: 3, title: 'Shop By Brand', children: bchild},
 ]
 function NavbarBottom({ pages }) {
