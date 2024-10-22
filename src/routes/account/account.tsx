@@ -24,6 +24,9 @@ import PortalHeading from '../../components/portal-page/portal-heading.tsx';
 import PortalBody from '../../components/portal-page/portal-body.tsx';
 import PageWrap from '../../components/portal-page/page-wrap.tsx';
 import PageTabs from '../../components/portal-page/page-tabs.tsx';
+import { useEffect } from 'react';
+import SidebarNav from '../sidebar-nav/sidebar-nav.tsx';
+import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 
 const items = [
     {
@@ -72,15 +75,35 @@ const pages = ['Dashboard', 'Orders', 'Billing', 'Saved Lists', 'Tickets', 'Acco
 
 
 function Account() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     return (
-        <PortalBody>
-            <NavbarTopAccount/>
-            <NavbarBottom pages={pages} />
-            <PageWrap>
-                <PortalHeading heading="Account" subheading="View and modify your account details" />
-                <PageTabs tabs={tabs} />
-            </PageWrap>
-        </PortalBody>
+        <div className="flex">
+            <div className="">
+                <SidebarNav />
+            </div>
+            <div className="grow">
+                <div className="sam-title-section">
+                    <div className="sam-title">
+                        <div className="w-8 h-8 flex items-center justify-center">
+                            <MagnifyingGlassIcon />
+                        </div>
+                        <div className="text-[#808080]">
+                            Search for anything
+                        </div>
+                    </div>
+                </div>
+                <div className="px-8 pt-8">
+                    <div className="text-2xl font-medium">Account Settings</div>
+                </div>
+                <div className="px-8 pt-8">
+                    <PageTabs tabs={tabs} />
+                </div>
+            </div>
+        </div>
     )
 }
 

@@ -30,21 +30,30 @@ const items = [
 function Invoices() {
 
     return (
-        <div className="">
-            <Calendar />
+        <div className="mb-20">
+            <div className="px-8">
+                <Calendar />
+            </div>
             <table className="w-full bg-transparent border-lavender">
                 <thead>
-                    <tr className="text-oxford-blue border-b border-black">
+                    <tr className="text-oxford-blue border-b border-slate-300">
                         <th></th>
                         {titles.map(title => (
                             <th key={title.id} className="py-2">
-                                <div className="flex flex-row items-center">
-                                    <div>{title.name}</div>
-                                    <div className="flex flex-col ml-2.5">
-                                        <CaretUp size={10} />
-                                        <CaretDown size={10} />
+                                {title.name === "Number:" &&
+                                    <div className="flex flex-row items-center">
+                                        <div>{title.name}</div>
+                                        <div className="flex flex-col ml-2.5">
+                                            <CaretUp size={10} />
+                                            <CaretDown size={10} />
+                                        </div>
                                     </div>
-                                </div>
+                                }
+                                {title.name !== "Number:" &&
+                                    <div className="flex flex-row items-center">
+                                        <div>{title.name}</div>
+                                    </div>
+                                }
                             </th>
                         ))}
                         <th></th>
@@ -52,7 +61,7 @@ function Invoices() {
                 </thead>
                 <tbody>
                     {items.map(item => (
-                        <tr key={item.id} className="border-b border-black text-sm">
+                        <tr key={item.id} className="border-b border-slate-300 text-sm">
                             <td className="w-12">
                                 <div className="px-4">
                                     <Star size={18} />
@@ -61,19 +70,22 @@ function Invoices() {
                             <td className="py-2 font-medium">{item.number}</td>
                             <td className="py-2 font-medium">
                                 {item.status === "Paid" &&
-                                    <div className="inline-flex pl-2 pr-2 pt-1 pb-1 bg-green-200 text-black rounded-sm">
+                                    <span className="text-sm text-green-600 flex items-center">
+                                        <div className="h-1 w-1 rounded-full bg-green-600 mr-1.5 ml-0.5"/>
                                         Paid
-                                    </div>
+                                    </span>
                                 }
                                 {item.status === "Partial" &&
-                                    <div className="inline-flex pl-2 pr-2 pt-1 pb-1 bg-yellow-200 text-black rounded-sm">
+                                    <span className="text-sm text-yellow-600 flex items-center">
+                                        <div className="h-1 w-1 rounded-full bg-yellow-600 mr-1.5 ml-0.5"/>
                                         Partial
-                                    </div>
+                                    </span>
                                 }
                                 {item.status === "Overdue" &&
-                                    <div className="inline-flex pl-2 pr-2 pt-1 pb-1 bg-red-200 text-black rounded-sm">
+                                    <span className="text-sm text-red-600 flex items-center">
+                                        <div className="h-1 w-1 rounded-full bg-red-600 mr-1.5 ml-0.5"/>
                                         Overdue
-                                    </div>
+                                    </span>
                                 }
                             </td>
                             <td className="py-6 font-medium">{item.user}</td>

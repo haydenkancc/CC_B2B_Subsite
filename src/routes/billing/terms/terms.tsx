@@ -46,6 +46,24 @@ function Terms() {
                         <div className="block appearance-none w-full bg-ghost-white border border-slate-300 text-oxford-blue py-2 px-3 rounded-sm">$22,023.00</div>
                     </div>
                 </div>
+                <div>
+                    <div className="absolute bg-white p-2.5 mt-10 ml-10 rounded-full border border-slate-400" />
+                    <div className="flex flex-row border border-slate-400">
+                        <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="40" fill="oxford-blue" />
+                        <path
+                            d="M50,10 A40,40 0 0,1 90,50 L50,50 Z"
+                            fill="white"
+                        />
+                        </svg>
+                        <div className="flex flex-col mt-4 ml-2.5">
+                            <div className="text-lg font-bold">Credit Limit</div>
+                            <div className="font-medium">$7,500 /
+                                <span className="text-slate-500 font-medium text-sm">$10,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <DialogTrigger>
                     <Button className="credit-Button w-60 text-center">
                         Request Credit Adjustment

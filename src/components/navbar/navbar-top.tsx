@@ -60,20 +60,15 @@ function NavbarTop() {
                 <Link to={"/"}>
                     <Logo className="h-full w-9 py-1"/>
                 </Link>
-                <Button className="navbar-top-Button ml-10">
-                    <Link to={"/about"}>
-                        <div className="text-base">About</div>
-                    </Link>
-                </Button>
                 <div className="relative" ref={productsRef}>
-                    <Button className="navbar-top-Button ml-2.5">
+                    <Button className="navbar-top-Button ml-10">
                         <div className="flex flex-row items-center gap-x-1.5" onClick={toggleProducts}>
                            <div className="text-base">Products</div>
                            {isProductsVisible ? <CaretUp size={16} /> : <CaretDown size={16} />}
                         </div>
                     </Button>
                     {isProductsVisible && (
-                        <div className="absolute w-56 top-12 text-left bg-black shadow-lg rounded-b-md z-50 flex flex-col mt-2">
+                        <div className="absolute w-40 top-12 text-left bg-black shadow-lg rounded-b-md z-50 flex flex-col mt-2 ml-8">
                             <Link to="/hardware" className="dropdown-item flex flex-row justify-between items-center gap-y-0.5 px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow">
                                 <div className="text-sm">Hardware</div>
                                 <CaretRight size={14} />
@@ -93,7 +88,7 @@ function NavbarTop() {
                         </div>
                     </Button>
                     {isSolutionsVisible && (
-                        <div className="absolute w-56 top-12 text-left bg-black shadow-lg rounded-b-md z-50 flex flex-col mt-2">
+                        <div className="absolute w-56 top-12 text-left bg-black shadow-lg rounded-b-md z-50 flex flex-col mt-2 ml-0.5">
                             <Link to="/enterprise-solutions" className="dropdown-item flex flex-row justify-between items-center gap-y-0.5 px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow">
                                 <div className="text-sm">Enterprise Solutions</div>
                                 <CaretRight size={14} />
@@ -112,6 +107,11 @@ function NavbarTop() {
                 <Button className="navbar-top-Button ml-2.5">
                     <Link to={"/procurement"}>
                         <div className="text-base">Procurement</div>
+                    </Link>
+                </Button>
+                <Button className="navbar-top-Button ml-2.5">
+                    <Link to={"/about"}>
+                        <div className="text-base">About</div>
                     </Link>
                 </Button>
                 <div className="flex grow items-center justify-end pl-4">

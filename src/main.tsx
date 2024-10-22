@@ -24,6 +24,7 @@ import ShoppingCart from './routes/shopping-cart/shopping-cart.tsx';
 import Tickets from './routes/tickets/tickets.tsx';
 import Messages from './routes/messages/messages.tsx';
 import About from './routes/about/about.tsx';
+import Checkout from './routes/checkout/checkout.tsx';
 
 const router = createBrowserRouter([
     {
@@ -113,6 +114,10 @@ const router = createBrowserRouter([
     {
         path: "about",
         element: <About />
+    },
+    {
+        path: "checkout",
+        element: <Checkout />
     },
 ]);
 

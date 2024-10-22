@@ -262,8 +262,10 @@ function EnterpriseSolutions() {
             </div>
 
             {/* Succeed */}
-            <div className="bg-ghost-white flex flex-col items-center py-4 px-20 w-full overflow-hidden justify-center max-w-[1440px] px-12 mx-auto">
-                <div className="text-xl text-oxford-blue font-bold text-center mt-12 mb-10">With unparalleled expertise and delivery capabilities, we tackle complexity and drive innovation across diverse environments. We'll craft tailored solutions that optimize functionality and enhance performance.</div>
+            <div className="bg-ghost-white items-center w-full justify-center">
+                <div className="py-4 px-20 max-w-[1440px] px-12 mx-auto">
+                    <div className="text-xl text-oxford-blue font-bold text-center mt-12 mb-10">With unparalleled expertise and delivery capabilities, we tackle complexity and drive innovation across diverse environments. We'll craft tailored solutions that optimize functionality and enhance performance.</div>
+                </div>
             </div>
             <div className="bg-ghost-white items-center w-full overflow-hidden py-4">
                 <div className="flex flex-row justify-between max-w-[1440px] px-4 mx-auto">
@@ -320,7 +322,7 @@ function EnterpriseSolutions() {
 
             {/* Corporate Sales Carousel */}
             <div className="bg-ghost-white">
-                <div className="mt-5 mb-20 max-w-[1440px] px-4 mx-auto">
+                <div className="pt-5 pb-20 max-w-[1440px] px-4 mx-auto">
                     <CorporateSalesCarousel slides={slides} />
                 </div>
             </div>

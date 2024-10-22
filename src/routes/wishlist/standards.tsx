@@ -4,6 +4,10 @@ import NavbarBottom from "../../components/navbar/navbar-bottom";
 import Bundle from "./bundle";
 import Recent from "./recent.tsx";
 import { CaretRight, Users } from "@phosphor-icons/react";
+import SidebarNav from "../sidebar-nav/sidebar-nav.tsx";
+import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import { useEffect } from "react";
+import ListsOverview from "./lists-overview.tsx";
 
 const pages = ['Dashboard', 'Orders', 'Billing', 'Saved Lists', 'Tickets', 'Account'];
 
@@ -13,9 +17,8 @@ const sets = [
 ]
 
 const wishlists = [
-    { name: "Wile's Wishlist" },
-    // { name: "Daffy's Wishlist" },
-    // { name: "Porky's Wishlist" },
+    { name: "Wile's Wishlist 1" },
+    { name: "Wile's Wishlist 2" },
 ]
 
 const collaborative = [
@@ -23,51 +26,35 @@ const collaborative = [
 ]
 
 function Standards() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     return (
-        <div className="bg-lavender/10 text-oxford-blue border-lavender pb-10">
-            <NavbarTopAccount />
-            <NavbarBottom pages={pages} />
-            <div className="max-w-[1440px] px-4 mx-auto pt-12 pb-16">
-                <div className="text-4xl pb-6">
-                    Saved Lists
-                </div>
-                <div className="flex flex-row justify-between gap-x-4 mt-8">
-                    <div className="flex flex-col w-1/5">
-                        <div className="flex flex-row gap-x-2">
-                            <button className="border border-oxford-blue hover:bg-oxford-blue hover:text-ghost-white font-medium w-32 px-2 py-1">New List</button>
-                            <button className="border border-oxford-blue hover:bg-oxford-blue hover:text-ghost-white font-medium w-32 px-2 py-1">Edit Lists</button>
+        <div className="flex">
+            <div className="">
+                <SidebarNav />
+            </div>
+            <div className="grow">
+                <div className="sam-title-section">
+                    <div className="sam-title">
+                        <div className="w-8 h-8 flex items-center justify-center">
+                            <MagnifyingGlassIcon />
                         </div>
-
-                        <div className="flex flex-col mt-4">
-                            <div className="font-semibold">Sets</div>
-                            {sets.map(item => (
-                                <div key={item.name} className="flex flex-row items-center">
-                                    <button className="text-left">{item.name}</button>
-                                    <CaretRight size={14} className="ml-2" />
-                                </div>
-                            ))}
-
-                            <div className="font-semibold mt-6">Wishlists</div>
-                            {wishlists.map(item => (
-                                <div key={item.name} className="flex flex-row items-center">
-                                    <button className="text-left">{item.name}</button>
-                                    <CaretRight size={14} className="ml-2" />
-                                </div>
-                            ))}
-
-                            <div className=" flex flex-row items-center font-semibold mt-6">
-                                <div>Collaborative</div>
-                                <Users size={20} className="ml-2.5" />
-                            </div>
-                            {collaborative.map(item => (
-                                <div key={item.name} className="flex flex-row items-center">
-                                    <button className="text-left">{item.name}</button>
-                                    <CaretRight size={14} className="ml-2" />
-                                </div>
-                            ))}
+                        <div className="text-[#808080]">
+                            Search for anything
                         </div>
                     </div>
-                    <div className="flex flex-col border border-oxford-blue w-4/5 mr-4">
+                </div>
+                <div className="px-8 py-8">
+                    <div className="text-2xl font-medium">Saved Lists</div>
+                </div>
+                <div className="px-8 pb-8">
+                    <ListsOverview />
+                </div>
+                <div className="px-8 pb-20">
+                    <div className="flex flex-col border border grow rounded-sm">
                         <Bundle />
                         <Recent />
                     </div>

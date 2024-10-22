@@ -15,3 +15,15 @@
         transition: all 200ms;
     }
 }
+
+.fade-out {
+    opacity: 0.5; /* Adjust the fade level */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.caret-wrapper {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}

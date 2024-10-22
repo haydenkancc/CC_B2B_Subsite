@@ -1,22 +1,9 @@
-import './billing.css'
-import Terms from "./terms/terms.tsx";
-import Wallet from './wallet/wallet.tsx';
 import SidebarNav from '../sidebar-nav/sidebar-nav.tsx';
-import NavigationTabs from '../../components/tab-navigation/navigation-tabs.tsx';
-import PaymentMethods from './wallet/payment-methods.tsx';
-import BillingContacts from '../account/contacts/billing-contacts.tsx';
-import Invoices from './terms/invoices.tsx';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import { useEffect } from 'react';
+import OrderSummary from './order-summary.tsx';
 
-const tabs = [
-    { id: 1, title: 'Billing', content: <Wallet /> },
-    { id: 2, title: 'Payment', content: <Terms /> },
-]
-
-const pages = ['Dashboard', 'Orders', 'Billing', 'Saved Lists', 'Tickets', 'Account']
-
-function Billing() {
+function Checkout() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -39,20 +26,14 @@ function Billing() {
                     </div>
                 </div>
                 <div className="px-8 py-8">
-                    <div className="text-2xl font-medium">Billing and Payment</div>
+                    <div className="text-2xl font-medium">Checkout</div>
                 </div>
                 <div className="px-8">
-                    <PaymentMethods />
-                </div>
-                <div className="pr-8">
-                    <BillingContacts />
-                </div>
-                <div className="pt-8">
-                    <Invoices />
+                    <OrderSummary />
                 </div>
             </div>
         </div>
     )
 }
 
-export default Billing;
+export default Checkout;

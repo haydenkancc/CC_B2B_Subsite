@@ -7,6 +7,9 @@ import PageTabs from '../../components/portal-page/page-tabs.tsx';
 import Terms from '../billing/terms/terms.tsx';
 import Wallet from '../billing/wallet/wallet.tsx';
 import TicketTable from './ticket-table.tsx';
+import { useEffect } from 'react';
+import SidebarNav from '../sidebar-nav/sidebar-nav.tsx';
+import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 
 const tabs = [
     { id: 1, title: 'Wallet', content: <Wallet /> },
@@ -17,15 +20,32 @@ const tabs = [
 const pages = ['Dashboard', 'Orders', 'Billing', 'Saved Lists', 'Tickets', 'Account']
 
 function Tickets() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     return (
-        <PortalBody>
-            <NavbarTopAccount/>
-            <NavbarBottom pages={pages} />
-            <PageWrap>
-                <PortalHeading heading="Tickets" subheading="View and modify your tickets" />
-                <PageTabs tabs={tabs} />
-            </PageWrap>
-        </PortalBody>
+        <div className="flex">
+            <div className="">
+                <SidebarNav />
+            </div>
+            <div className="grow">
+                <div className="sam-title-section">
+                    <div className="sam-title">
+                        <div className="w-8 h-8 flex items-center justify-center">
+                            <MagnifyingGlassIcon />
+                        </div>
+                        <div className="text-[#808080]">
+                            Search for anything
+                        </div>
+                    </div>
+                </div>
+                <div className="px-8 py-8">
+                    <div className="text-2xl font-medium">Ticket Management</div>
+                </div>
+                <TicketTable />
+            </div>
+        </div>
     )
 }
 

@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Plus, Minus, Check, X } from "@phosphor-icons/react";
 import laptop from "../../assets/laptop.png";
 import { Link } from "react-router-dom";
+import { Button, DialogTrigger } from "react-aria-components";
 
 const items = [
     { id: 1, image: laptop, name: "Macally Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612", onlineIcon: <X weight="bold" />, onlineText: "Unavailable Online", storeIcon: <X weight="bold" />, storeText: "Unavailable In-Store", date: "2024-10-02", user: "Porky Pig", price: 17.99},
     { id: 2, image: laptop, name: "ICAN 10000mAh Super Quick Charge - QC & PD 18W Power Bank (F1002PD)", code: "NAFOX00001", onlineIcon: <Check weight="bold" />, onlineText: "Available Online", storeIcon: <Check weight="bold" />, storeText: "Available In-Store", date: "2024-09-28", user: "Bugs Bunny", price: 24.99 },
-    { id: 3, image: laptop, name: "Macally Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612", onlineIcon: <Check weight="bold" />, onlineText: "Available Online", storeIcon: <X weight="bold" />, storeText: "Unavailable In-Store", date: "2024-10-02", user: "Porky Pig", price: 17.99 },
+    { id: 3, image: laptop, name: "G4900X (MISDWADADWA100 White Black All the Colors of the Rainbow)", code: "HHACMC0612", onlineIcon: <Check weight="bold" />, onlineText: "Available Online", storeIcon: <X weight="bold" />, storeText: "Unavailable In-Store", date: "2024-10-02", user: "Porky Pig", price: 17.99 },
 ];
 
 function Bundle() {
@@ -23,22 +24,21 @@ function Bundle() {
     const totalPrice = items.reduce((total, item) => total + item.price, 0) * bundleQuantity;
 
     return (
-        <div className="bg-lavender/10 text-oxford-blue border-lavender mb-16 w-full">
-            <div className="flex flex-col pl-4 pt-4">
-                <div className="text-2xl font-medium p-2 ml-6">Wishlists</div>
-                <div className="pt-8 flex flex-row justify-between">
-                    <div className="flex flex-col ml-8">
-                        <div className="text-2xl font-medium pb-6">Wile's Wishlist</div>
-                        <table className="w-164 bg-transparent">
+        <div className="text-oxford-blue mb-16">
+            <div className="flex flex-col pt-8">
+                <div className="px-8 flex flex-row gap-x-16">
+                    <div className="flex flex-col grow">
+                        <div className="text-2xl font-medium pb-6">Wile's List 1</div>
+                        <table className="bg-transparent">
                             <thead>
-                                <tr className="text-oxford-blue border-b border-black">
+                                <tr className="text-oxford-blue border-b border-slate-300">
                                     <th className="py-2 text-left">Product</th>
                                     <th className="py-2 px-4 text-left">Price:</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {items.map(item => (
-                                    <tr key={item.id} className="border-b border-black">
+                                    <tr key={item.id} className="border-b border-slate-300">
                                         <td className="py-2 flex flex-row">
                                             <img src={item.image} className="border w-32" alt={item.name} />
                                             <div className="flex flex-col gap-y-1 ml-4 w-80 text-sm">
@@ -58,7 +58,7 @@ function Bundle() {
                             </tbody>
                         </table>
                     </div>
-                    <div className="flex flex-col ml-8 w-48 mr-10">
+                    <div className="flex flex-col w-48">
                         <div>Bundle Price:</div>
                         <div className="font-medium text-lg">${totalPrice.toFixed(2)}</div>
                         <div className="mt-4">Quantity:</div>
@@ -76,8 +76,16 @@ function Bundle() {
                                 <Plus size={10} />
                             </button>
                         </div>
-                        <button className="border border-oxford-blue text-center px-4 py-1 hover:bg-oxford-blue hover:text-ghost-white mt-4">Add Wishlist to Cart</button>
-                        <Link to={"/wishlist"} className="border border-oxford-blue text-center px-4 py-1 hover:bg-oxford-blue hover:text-ghost-white mt-2">Edit Wishlist</Link>
+                        <DialogTrigger>
+                            <Link to="/cart" className="bg-slate-100 hover:bg-slate-200 border border-slate-400 rounded-md text-center text-sm font-semibold py-1.5 px-4 mt-4">
+                                Add List to Cart
+                            </Link>
+                        </DialogTrigger>
+                        <DialogTrigger>
+                            <Link to="/wishlist" className="bg-slate-100 hover:bg-slate-200 border border-slate-400 rounded-md text-center text-sm font-semibold py-1.5 px-4 mt-2">
+                                Edit List
+                            </Link>
+                        </DialogTrigger>
                     </div>
                 </div>
             </div>

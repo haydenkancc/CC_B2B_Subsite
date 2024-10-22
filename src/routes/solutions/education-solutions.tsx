@@ -310,8 +310,10 @@ function EducationSolutions() {
             </div>
 
             {/* Succeed */}
-            <div className="bg-ghost-white flex flex-col items-center py-4 px-20 w-full overflow-hidden justify-center max-w-[1440px] px-12 mx-auto">
-                <div className="text-xl text-oxford-blue font-bold text-center mt-12">With our extensive experience in education, we simplify complex challenges and drive innovation in learning spaces with customized solutions that elevate the overall educational experience.</div>
+            <div className="bg-ghost-white items-center w-full justify-center">
+                <div className="py-4 px-20 max-w-[1440px] px-12 mx-auto">
+                    <div className="text-xl text-oxford-blue font-bold text-center mt-12 mb-10">With our extensive experience in education, we simplify complex challenges and drive innovation in learning spaces with customized solutions that elevate the overall educational experience.</div>
+                </div>
             </div>
 
             {/* Quotes */}
@@ -344,7 +346,7 @@ function EducationSolutions() {
                 </div>
             </div>
 
-            <div className="bg-ghost-white items-center w-full overflow-hidden py-4 mt-6">
+            <div className="bg-ghost-white items-center w-full overflow-hidden pb-4 pt-10">
                 <div className="flex flex-row justify-between max-w-[1440px] px-4 mx-auto">
                     <div className="bg-white rounded-lg shadow flex flex-wrap justify-center gap-10 mb-8 ml-2 2xl:ml-0">
                         <div className="flex flex-col w-96">
@@ -399,7 +401,7 @@ function EducationSolutions() {
 
             {/* Corporate Sales Carousel */}
             <div className="bg-ghost-white">
-                <div className="mt-5 mb-20 max-w-[1440px] px-4 mx-auto">
+                <div className="pt-5 pb-20 max-w-[1440px] px-4 mx-auto">
                     <CorporateSalesCarousel slides={slides} />
                 </div>
             </div>

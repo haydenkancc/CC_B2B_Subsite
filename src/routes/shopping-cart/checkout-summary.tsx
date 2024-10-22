@@ -1,3 +1,4 @@
+import { Button, DialogTrigger } from "react-aria-components";
 import samplePDF from "../../assets/sample-pdf.pdf";
 import { Link } from "react-router-dom";
 
@@ -8,7 +9,7 @@ const infos = [
 function CheckoutSummary() {
 
     return (
-        <div className="bg-lavender/10 text-oxford-blue border rounded-sm px-4 py-8 w-full">
+        <div className="text-oxford-blue border rounded-sm px-4 py-8 w-full">
             <div className="flex flex-row justify-between gap-x-10">
                 <div className="flex flex-col w-1/3 gap-y-2.5">
                     <div className="flex flex-row items-center">
@@ -16,8 +17,8 @@ function CheckoutSummary() {
                         <div className="ml-10 text-sm">10 Items</div>
                         <div className="ml-5 text-sm">2021-09-23</div>
                     </div>
-                    <div>Delivery expected in 4 days on 2021-09-27</div>
-                    <div>Tax and shipping will be calculated at checkout.</div>
+                    <div className="text-sm">Delivery expected in 4 days on 2021-09-27</div>
+                    <div className="text-sm">Tax and shipping will be calculated at checkout.</div>
                 </div>
                 <div className="flex flex-col w-1/3">
                     {infos.map(info => (
@@ -30,12 +31,16 @@ function CheckoutSummary() {
                     ))}
                 </div>
                 <div className="1/3 flex flex-col">
-                    <div className="text-2xl text-center font-semibold mb-4">$12,069.89</div>
+                    <div className="text-2xl text-center font-semibold mb-4">$60.97</div>
                     <div className="flex flex-row gap-x-2.5">
-                        <button className="text-ghost-white bg-oxford-blue text-center border px-4 py-1.5 w-32">Checkout</button>
-                        <Link to={samplePDF} target="_blank" className="text-ghost-white bg-oxford-blue text-center border px-4 py-1.5 w-32">
-                            Print Quote
+                        <Link to="/checkout" className="bg-slate-100 hover:bg-slate-200 border border-slate-400 rounded-md text-center text-sm font-semibold py-1.5 px-4 mt-2">
+                            Checkout
                         </Link>
+                        <DialogTrigger>
+                            <Link to={samplePDF} target="_blank" className="bg-slate-100 hover:bg-slate-200 border border-slate-400 rounded-md text-center text-sm font-semibold py-1.5 px-4 mt-2">
+                                Print Quote
+                            </Link>
+                        </DialogTrigger>
                     </div>
                 </div>
             </div>

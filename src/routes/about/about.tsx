@@ -86,8 +86,10 @@ function About() {
             </div>
 
             {/* Succeed */}
-            <div className="bg-ghost-white flex flex-col items-center py-4 px-20 w-full overflow-hidden justify-center max-w-[1440px] px-12 mx-auto">
-                <div className="text-xl text-oxford-blue font-medium text-center mt-12 mb-10">Harnessing deep industry knowledge and agile methodologies, we transform challenges into opportunities that elevate operational efficiency and drive sustainable growth.</div>
+            <div className="bg-ghost-white items-center w-full justify-center">
+                <div className="py-4 px-20 max-w-[1440px] px-12 mx-auto">
+                    <div className="text-xl text-oxford-blue font-medium text-center mt-12 mb-10">Harnessing deep industry knowledge and agile methodologies, we transform challenges into opportunities that elevate operational efficiency and drive sustainable growth.</div>
+                </div>
             </div>
             <div className="bg-gradient-to-b from-ghost-white to-white items-center w-full overflow-hidden py-4">
                 <div className="flex flex-row justify-between max-w-[1440px] px-4 mx-auto">

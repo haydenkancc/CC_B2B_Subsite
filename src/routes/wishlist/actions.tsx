@@ -1,94 +1,22 @@
 import React, { useState } from 'react';
 import { X } from '@phosphor-icons/react';
+import { Button, DialogTrigger } from 'react-aria-components';
 
 const Actions = () => {
-    const [selectedAction, setSelectedAction] = useState('cart');
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [note, setNote] = useState('');
-
-    const handleActionChange = (event) => {
-        const action = event.target.value;
-        setSelectedAction(action);
-
-        if (action === 'cart') {
-            setIsModalOpen(false);
-        }
-        if (action === 'note') {
-            setIsModalOpen(true);
-        }
-        if (action === 'promo') {
-            setIsModalOpen(false);
-        }
-        if (action === 'remove') {
-            setIsModalOpen(false);
-        }
-    };
-
-    const handleApplyClick = () => {
-        switch (selectedAction) {
-            case 'cart':
-                addToCart();
-                break;
-            case 'note':
-                break;
-            case 'promo':
-                notifyOnPromotion();
-                break;
-            case 'remove':
-                removeItem();
-                break;
-            default:
-                break;
-        }
-    };
-
-    const addToCart = () => {
-        console.log("Adding to cart...");
-    };
-
-    const notifyOnPromotion = () => {
-        console.log("Setting up notification for promotion...");
-    };
-
-    const removeItem = () => {
-        console.log("Removing item...");
-    };
-
     return (
-        <div>
+        <div className="flex flex-row items-center">
             <select
-                className="bg-transparent text-oxford-blue font-semibold uppercase ml-6 border-b border-oxford-blue pr-7 focus:outline-none"
-                value={selectedAction}
-                onChange={handleActionChange}
+                className="bg-transparent text-oxford-blue font-semibold ml-6 border-b border-oxford-blue pr-7 focus:outline-none"
             >
-                <option className="font-semibold" value="cart">Add to cart</option>
-                {/* <option className="font-semibold" value="note">Add note</option> */}
-                <option className="font-semibold" value="promo">Notify when on promotion</option>
-                <option className="font-semibold" value="remove">Remove item</option>
+                <option className="font-semibold" value="cart">Add to Cart</option>
+                <option className="font-semibold" value="promo">Notify when on Promotion</option>
+                <option className="font-semibold" value="remove">Remove Item</option>
             </select>
-            <button
-                className="uppercase border-2 border-oxford-blue px-5 py-1 ml-6 rounded-sm font-semibold hover:bg-oxford-blue hover:text-ghost-white"
-                onClick={handleApplyClick}
-                // onClick={() => setIsModalOpen(false)}
-            >
-                Apply
-            </button>
-
-            {isModalOpen && (
-                <div className="modal absolute mt-2 w-80">
-                    <div className="absolute top-2 right-2 cursor-pointer" onClick={() => setIsModalOpen(false)}>
-                        <X />
-                    </div>
-                    <div className="modal-content flex flex-col ml-6">
-                        <textarea
-                            value={note}
-                            onChange={(e) => setNote(e.target.value)}
-                            placeholder="Add a note..."
-                            className="p-2 focus:outline-none"
-                        />
-                    </div>
-                </div>
-            )}
+            <DialogTrigger>
+                <Button className="bg-slate-100 hover:bg-slate-200 border border-slate-400 rounded-md text-center text-sm font-semibold py-1.5 px-4 ml-4">
+                    Apply
+                </Button>
+            </DialogTrigger>
         </div>
     );
 };

@@ -100,8 +100,8 @@ function Landing() {
             </div>
             
             {/* About Us */}
-            <div className="bg-ghost-white max-w-[1440px] px-4 mx-auto">
-                <div className="flex flex-row items-center justify-between py-20">
+            <div className="bg-ghost-white">
+                <div className="max-w-[1440px] px-4 mx-auto flex flex-row items-center justify-between py-20">
                     <div className="flex flex-col text-black w-1/2">
                         <div className="text-2xl font-semibold">Transform your future with technology.</div>
                         <p className="mt-4">
@@ -117,8 +117,8 @@ function Landing() {
             </div>
 
             {/* Solutions */}
-            <div className="max-w-[1440px] px-4 mx-auto">
-                <div className="bg-ghost-white flex flex-col">
+            <div className="bg-ghost-white">
+                <div className="max-w-[1440px] px-4 mx-auto flex flex-col">
                     <div className="flex flex-row justify-between">
                         <div className="bg-slate-200 rounded-sm w-2/5 h-60 mb-4 px-8 py-7 mt-10 mr-4">
                             <img src={prototype} className="w-12 mb-2"/>
@@ -134,8 +134,8 @@ function Landing() {
                         </div>
                     </div>
                 </div>
-                <div className="bg-ghost-white flex flex-col">
-                    <div className="flex flex-row justify-between gap-4">
+                <div className="max-w-[1440px] px-4 mx-auto flex flex-col">
+                    <div className="bg-ghost-white flex flex-row justify-between gap-4">
                         <div className="bg-slate-200 rounded-sm w-1/3 h-60 mb-10 px-8 py-7">
                             <img src={enterpriseicon} className="w-12 mb-2"/>
                             <div className="text-black font-semibold py-1">Enterprise Solutions</div>
@@ -241,7 +241,7 @@ function Landing() {
 
             {/* Products */}
             <div className="bg-gradient-to-b from-ghost-white to-white">
-                <div className="flex flex-col mt-10 max-w-[1440px] px-4 mx-auto">
+                <div className="flex flex-col pt-10 max-w-[1440px] px-4 mx-auto">
                     <div className="flex flex-row justify-between text-center mt-10">
                         <img src={hardwarebg} className="bg-cover w-1/2 rounded-tl-sm" />
                         <div className="relative bg-oxford-blue w-1/2 h-90 flex flex-col justify-center items-center ease-in-out text-ghost-white rounded-tr-sm">

@@ -14,7 +14,7 @@ function BillingContacts() {
     const [ showGrid, setShowGrid ] = useState(false);
 
     return (
-        <div>
+        <div className="pl-8">
             {showGrid ? <MyGrid items={items} /> : <MyTable items={items} />}
         </div>
     )

@@ -1,16 +1,17 @@
-import { Star, CaretUp, CaretDown, Funnel, Eye, X } from '@phosphor-icons/react';
+import { Star, CaretUp, CaretDown, Funnel, Eye, X, CaretLeft, CaretRight } from '@phosphor-icons/react';
 import { SearchField, Input } from 'react-aria-components';
 import samplePDF from "../../assets/sample-pdf.pdf";
 import { Link } from 'react-router-dom';
 import { DialogTrigger, Button } from 'react-aria-components';
 import PaymentMethodModal from '../billing/wallet/payment-method-modal';
+import Calendar from '../../components/calendar/calendar';
 
 const titles = [
-    { id: 1, name: "Number" },
-    { id: 2, name: "Modified" },
-    { id: 3, name: "Status" },
-    { id: 4, name: "Subject" },
-    { id: 5, name: "Department" },
+    { id: 1, name: "Number:" },
+    { id: 2, name: "Modified:" },
+    { id: 3, name: "Status:" },
+    { id: 4, name: "Subject:" },
+    { id: 5, name: "Department:" },
 ]
 
 const items = [
@@ -29,39 +30,31 @@ const items = [
 function TicketTable() {
 
     return (
-        <div className="">
-            <div className="flex flex-row justify-between items-center mb-10">
-                <div className="flex flex-row items-center">
-                    <div className="flex flex-row border border-slate-300 rounded-sm px-4 py-2 items-center">
-                        <div className="font font-bold">Active Filters</div>
-                        <Funnel size={24} weight="light" className="ml-2.5" />
-                    </div>
-                    <div className="flex flex-row ml-4 border rounded-full border-slate-300 px-4 py-2 items-center">
-                        <div className="font-semibold">Due Date:</div>
-                        <div className="ml-2.5">2021-04-01 to 2021-04-10</div>
-                        <X size={14} weight="light" className="ml-2.5" />
-                    </div>
-                    <div className="flex flex-row ml-4 border rounded-full border-slate-300 px-4 py-2 items-center">
-                        <div className="font-semibold">User:</div>
-                        <div className="ml-2.5">Wile E. Coyote</div>
-                        <X size={14} weight="light" className="ml-2.5" />
-                    </div>
-                </div>
-                <SearchField>
-                    <Input className="pl-3 pr-3 pt-2 pb-2 bg-ghost-white text-oxford-blue border border-1 border-oxford-blue rounded-sm" placeholder="Search Tickets" />
-                </SearchField>
+        <div className="mb-20">
+            <div className="px-8">
+                <Calendar />
             </div>
             <table className="w-full bg-transparent border-lavender">
                 <thead>
-                    <tr className="text-oxford-blue border-b border-black">
+                    <tr className="text-oxford-blue border-b border-slate-300">
+                        <th></th>
                         {titles.map(title => (
                             <th key={title.id} className="px-4 py-2">
                                 <div className="flex flex-row items-center">
-                                    <div>{title.name}</div>
-                                    <div className="flex flex-col ml-2.5">
-                                        <CaretUp size={10} />
-                                        <CaretDown size={10} />
-                                    </div>
+                                    {title.name === "Number:" &&
+                                        <div className="flex flex-row items-center">
+                                            <div>{title.name}</div>
+                                            <div className="flex flex-col ml-2.5">
+                                                <CaretUp size={10} />
+                                                <CaretDown size={10} />
+                                            </div>
+                                        </div>
+                                    }
+                                    {title.name !== "Number:" &&
+                                        <div className="flex flex-row items-center">
+                                            <div>{title.name}</div>
+                                        </div>
+                                    }
                                 </div>
                             </th>
                         ))}
@@ -70,19 +63,26 @@ function TicketTable() {
                 </thead>
                 <tbody>
                     {items.map(item => (
-                        <tr key={item.id} className="border-b border-black text-sm">
+                        <tr key={item.id} className="border-b border-slate-300 text-sm">
+                            <td className="w-12">
+                                <div className="px-4">
+                                    <Star size={18} />
+                                </div>
+                            </td>
                             <td className="px-4 py-2 font-medium">{item.number}</td>
                             <td className="px-4 py-6 font-medium">{item.date}</td>
-                            <td className="px-4 py-2 font-medium">
+                            <td className="py-2 font-medium">
                                 {item.status === "Open" &&
-                                    <div className="inline-flex pl-2 pr-2 pt-1 pb-1 bg-green-200 text-black rounded-sm">
+                                    <span className="text-sm text-green-600 flex items-center">
+                                        <div className="h-1 w-1 rounded-full bg-green-600 mr-1.5 ml-0.5"/>
                                         Open
-                                    </div>
+                                    </span>
                                 }
                                 {item.status === "Closed" &&
-                                    <div className="inline-flex pl-2 pr-2 pt-1 pb-1 bg-red-200 text-black rounded-sm">
+                                    <span className="text-sm text-red-600 flex items-center">
+                                        <div className="h-1 w-1 rounded-full bg-red-600 mr-1.5 ml-0.5"/>
                                         Closed
-                                    </div>
+                                    </span>
                                 }
                             </td>
                             <td className="px-4 py-6 font-medium">{item.subject}</td>
@@ -96,16 +96,24 @@ function TicketTable() {
                     ))}
                 </tbody>
             </table>
-            <div className="flex flex-row justify-between items-center mt-5">
+            <div className="flex flex-row justify-between items-center px-8">
                 <DialogTrigger>
-                    <Button className="credit-Button w-40 text-center">
+                    <Button className="bg-slate-100 hover:bg-slate-200 border border-slate-400 rounded-md text-center text-sm font-semibold py-1.5 px-4 mt-4">
                         Open New Ticket
                     </Button>
                     <PaymentMethodModal />
                 </DialogTrigger>
                 <div className="flex flex-row">
-                    <div className="border px-4 py-2.5">Previous</div>
-                    <div className="border px-4 py-2.5">Next</div>
+                    <DialogTrigger>
+                        <Button className="text-center text-sm font-semibold py-1.5 px-2 mt-4">
+                            <CaretLeft />
+                        </Button>
+                    </DialogTrigger>
+                    <DialogTrigger>
+                        <Button className="text-center text-sm font-semibold py-1.5 px-2 mt-4">
+                            <CaretRight />
+                        </Button>
+                    </DialogTrigger>
                 </div>
             </div>
         </div>

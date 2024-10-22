@@ -7,8 +7,13 @@ import { SearchField, Input } from 'react-aria-components';
 function Calendar() {
 
     const DateRangeSelector = () => {
-        const [startDate, setStartDate] = useState(new Date('2024-01-02'));
-        const [endDate, setEndDate] = useState(new Date('2024-01-03'));
+
+        const today = new Date();
+        const lastMonth = new Date(today);
+        lastMonth.setMonth(today.getMonth() - 1);
+
+        const [startDate, setStartDate] = useState(new Date(lastMonth));
+        const [endDate, setEndDate] = useState(today);
         const [isStartDatePickerOpen, setStartDatePickerOpen] = useState(false);
         const [isEndDatePickerOpen, setEndDatePickerOpen] = useState(false);
 
@@ -16,14 +21,14 @@ function Calendar() {
             <div className="">
                 <div className="flex flex-row justify-between items-center mb-10">
                     <div className="flex flex-row items-center">
-                        <div className="w-60 flex flex-row justify-between border border-slate-300 rounded-sm px-4 py-2 items-center">
+                        <div className="w-60 flex flex-row justify-between border border-slate-400 rounded-sm px-4 py-2 items-center">
                             <div className="font font-bold w-10">From:</div>
                             <div>{startDate.toLocaleDateString()}</div>
                             <button onClick={() => setStartDatePickerOpen(!isStartDatePickerOpen)}>
                                 <CalendarDots size={24} weight="light" className="ml-2.5" />
                             </button>
                             {isStartDatePickerOpen && (
-                                <div className="absolute mt-80 left-4">
+                                <div className="absolute mt-80 left-72">
                                     <DatePicker
                                         selected={startDate}
                                         onChange={(date) => {
@@ -35,14 +40,14 @@ function Calendar() {
                                 </div>
                             )}
                         </div>
-                        <div className="w-60 flex flex-row justify-between border border-slate-300 rounded-sm px-4 py-2 ml-4 items-center">
+                        <div className="w-60 flex flex-row justify-between border border-slate-400 rounded-sm px-4 py-2 ml-4 items-center">
                             <div className="font font-bold w-10">To:</div>
                             <div>{endDate.toLocaleDateString()}</div>
                             <button onClick={() => setEndDatePickerOpen(!isEndDatePickerOpen)}>
                                 <CalendarDots size={24} weight="light" className="ml-2.5" />
                             </button>
                             {isEndDatePickerOpen && (
-                                <div className="absolute mt-80 left-68">
+                                <div className="absolute mt-80 left-136">
                                     <DatePicker
                                         selected={endDate}
                                         onChange={(date) => {
@@ -56,7 +61,7 @@ function Calendar() {
                         </div>
                     </div>
                     <SearchField>
-                        <Input className="pl-3 pr-3 pt-2 pb-2 bg-ghost-white text-oxford-blue border border-1 border-oxford-blue rounded-sm" placeholder="Search" />
+                        <Input className="pl-3 pr-3 pt-2 pb-2 bg-ghost-white text-oxford-blue border border-1 border-slate-400 rounded-sm" placeholder="Search" />
                     </SearchField>
                 </div>
             </div>

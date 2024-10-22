@@ -292,8 +292,8 @@ function Procurement() {
             </div>
 
             {/* Problems */}
-            <div className="bg-ghost-white max-w-[1440px] px-4 mx-auto">
-                <div className="flex flex-row mt-20 mb-18 justify-center">
+            <div className="bg-ghost-white">
+                <div className="flex flex-row max-w-[1440px] px-4 mx-auto pt-20 pb-18 justify-center">
                     <img src={out} className="rounded-sm object-cover w-72" />
                     <div className="flex flex-col ml-14">
                         <div className="text-2xl font-bold flex mt-6 mb-2 justify-center"> {/* Changed to justify-center */}
@@ -402,76 +402,80 @@ function Procurement() {
             </div>
 
             {/* Process */}
-            <div className="bg-ghost-white flex flex-col mt-14 max-w-[1440px] px-4 mx-auto overflow-hidden">
-                <div className="text-2xl text-black font-bold mt-4">Join our network.</div>
-                <div className="text-2xl text-black font-bold mb-10">Simplify the process.</div>
-                <div className="flex flex-col mb-14">
-                    {stratcards.map((strat, index) => (
-                        <div key={index} className={`py-2.5 ${index % 2 === 1 ? 'ml-72' : ''}`}>
-                            <div className={`fade-in-left`} ref={el => leftRefs.current[index] = el}>
-                                <div className="flex flex-row">
-                                    <img src={strat.image} className="w-64 h-48 object-cover rounded-xl" />
-                                    <div className="flex flex-col ml-8 justify-center">
-                                        <div className="text-blue-700 text-sm uppercase">{strat.step}</div>
-                                        <div className="text-lg font-semibold">{strat.title}</div>
-                                        <span>
-                                            <span className="text-sm font-medium">{strat.sub1}</span>
-                                            <span className="ml-1 text-sm">{strat.text1}</span>
-                                        </span>
-                                        <span>
-                                            <span className="text-sm font-medium">{strat.sub2}</span>
-                                            <span className="ml-1 text-sm">{strat.text2}</span>
-                                        </span>
-                                        <span>
-                                            <span className="text-sm font-medium">{strat.sub3}</span>
-                                            <span className="ml-1 text-sm">{strat.text3}</span>
-                                        </span>
+            <div className="bg-ghost-white flex flex-col pt-14">
+                <div className="max-w-[1440px] px-4 mx-auto">
+                    <div className="text-2xl text-black font-bold mt-4">Join our network.</div>
+                    <div className="text-2xl text-black font-bold mb-10">Simplify the process.</div>
+                    <div className="flex flex-col mb-14">
+                        {stratcards.map((strat, index) => (
+                            <div key={index} className={`py-2.5 ${index % 2 === 1 ? 'ml-72' : ''}`}>
+                                <div className={`fade-in-left`} ref={el => leftRefs.current[index] = el}>
+                                    <div className="flex flex-row">
+                                        <img src={strat.image} className="w-64 h-48 object-cover rounded-xl" />
+                                        <div className="flex flex-col ml-8 justify-center">
+                                            <div className="text-blue-700 text-sm uppercase">{strat.step}</div>
+                                            <div className="text-lg font-semibold">{strat.title}</div>
+                                            <span>
+                                                <span className="text-sm font-medium">{strat.sub1}</span>
+                                                <span className="ml-1 text-sm">{strat.text1}</span>
+                                            </span>
+                                            <span>
+                                                <span className="text-sm font-medium">{strat.sub2}</span>
+                                                <span className="ml-1 text-sm">{strat.text2}</span>
+                                            </span>
+                                            <span>
+                                                <span className="text-sm font-medium">{strat.sub3}</span>
+                                                <span className="ml-1 text-sm">{strat.text3}</span>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))} 
+                        ))} 
+                    </div>
                 </div>
             </div>
 
             {/* Expertise */}
-            <div className="bg-ghost-white max-w-[1440px] px-4 mx-auto py-14 text-center mb-8">
-                <div className="text-2xl text-black font-semibold">What We Do Best</div>
-                <div className="text-md text-black mt-4">
-                    Under our main brand, we are a leading technology retailer in Canada, we have a strong foundation in procurement and sourcing due to our extensive experience and operations.
-                </div>
-                <div className="flex flex-row justify-between mt-10">
-                    <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
-                        <img src={scale} className="w-12 py-1"/>
-                        <div className="text-black font-semibold mt-2">Scale and Buying Power</div>
-                        <div className="text-black text-sm mt-2">Using significant purchasing power and expert negotiation skills to secure advantageous terms.</div>
+            <div className="bg-ghost-white pt-8 pb-14 text-center">
+                <div className="max-w-[1440px] px-4 mx-auto">
+                    <div className="text-2xl text-black font-semibold">What We Do Best</div>
+                    <div className="text-md text-black mt-4">
+                        Under our main brand, we are a leading technology retailer in Canada, we have a strong foundation in procurement and sourcing due to our extensive experience and operations.
                     </div>
-                    <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
-                        <img src={supply} className="w-12 py-1"/>
-                        <div className="text-black font-semibold mt-2">Supply Chain Management</div>
-                        <div className="text-black text-sm mt-2">Sourcing products efficiently with a global supply chian network while expertly managing risks.</div>
+                    <div className="flex flex-row justify-between mt-10">
+                        <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
+                            <img src={scale} className="w-12 py-1"/>
+                            <div className="text-black font-semibold mt-2">Scale and Buying Power</div>
+                            <div className="text-black text-sm mt-2">Using significant purchasing power and expert negotiation skills to secure advantageous terms.</div>
+                        </div>
+                        <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
+                            <img src={supply} className="w-12 py-1"/>
+                            <div className="text-black font-semibold mt-2">Supply Chain Management</div>
+                            <div className="text-black text-sm mt-2">Sourcing products efficiently with a global supply chian network while expertly managing risks.</div>
+                        </div>
+                        <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
+                            <img src={knowledge} className="w-12 py-1"/>
+                            <div className="text-black font-semibold mt-2">Product Knowledge</div>
+                            <div className="text-black text-sm mt-2">A deep understanding of technology products ensures we can accurately evaluate quality.</div>
+                        </div>
                     </div>
-                    <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
-                        <img src={knowledge} className="w-12 py-1"/>
-                        <div className="text-black font-semibold mt-2">Product Knowledge</div>
-                        <div className="text-black text-sm mt-2">A deep understanding of technology products ensures we can accurately evaluate quality.</div>
-                    </div>
-                </div>
-                <div className="flex flex-row justify-between mt-10">
-                    <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
-                        <img src={tech} className="w-12 py-1"/>
-                        <div className="text-black font-semibold mt-2">Technology Expertise</div>
-                        <div className="text-black text-sm mt-2">Leverage data analytics with a robust IT infrastructure to streamline procurement processes and identify savings.</div>
-                    </div>
-                    <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
-                        <img src={relationships} className="w-12 py-1"/>
-                        <div className="text-black font-semibold mt-2">Supplier Relationships</div>
-                        <div className="text-black text-sm mt-2">Long-term partnerships with suppliers through trust and ethical practices provide us with a competitive advantage.</div>
-                    </div>
-                    <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
-                        <img src={compliance} className="w-12 py-1"/>
-                        <div className="text-black font-semibold mt-2">Regulatory Compliance</div>
-                        <div className="text-black text-sm mt-2">Being well-versed in industry regulations and standards ensure compliance while helping clients navigate complexities and mitigate risks.</div>
+                    <div className="flex flex-row justify-between mt-10">
+                        <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
+                            <img src={tech} className="w-12 py-1"/>
+                            <div className="text-black font-semibold mt-2">Technology Expertise</div>
+                            <div className="text-black text-sm mt-2">Leverage data analytics with a robust IT infrastructure to streamline procurement processes and identify savings.</div>
+                        </div>
+                        <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
+                            <img src={relationships} className="w-12 py-1"/>
+                            <div className="text-black font-semibold mt-2">Supplier Relationships</div>
+                            <div className="text-black text-sm mt-2">Long-term partnerships with suppliers through trust and ethical practices provide us with a competitive advantage.</div>
+                        </div>
+                        <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
+                            <img src={compliance} className="w-12 py-1"/>
+                            <div className="text-black font-semibold mt-2">Regulatory Compliance</div>
+                            <div className="text-black text-sm mt-2">Being well-versed in industry regulations and standards ensure compliance while helping clients navigate complexities and mitigate risks.</div>
+                        </div>
                     </div>
                 </div>
             </div>
