@@ -25,8 +25,8 @@ function RealTerms() {
             )}
 
             <div className={`${hoveredSide === 'terms-locked' ? 'opacity-30' : 'opacity-100'}`}>
-                <div className="text-xl font-semibold my-1.5 pb-3">Terms</div>
-                <div className="relative">
+                <div className="text-xl font-semibold my-1.5 pb-3">Net Terms</div>
+                {/* <div className="relative">
                     <select className="block appearance-none w-full bg-slate-100 border border-slate-300 text-oxford-blue py-2 px-3 rounded-sm">
                         <option value="" disabled selected>Please Select</option>
                         <option value="30">NET30</option>
@@ -36,8 +36,19 @@ function RealTerms() {
                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-oxford-blue">
                         <CaretDown />
                     </div>
+                </div> */}
+                <div className="flex flex-row gap-x-2.5">
+                    <div className="w-full">
+                        <div className="block appearance-none w-full bg-slate-100 border border-slate-300 text-oxford-blue py-2 px-3 rounded-sm">NET30</div>
+                    </div>
                 </div>
                 <div className="flex flex-row gap-x-2.5 mt-5">
+                    <div className="w-full">
+                        <div className="font-medium mb-2">Outstanding Invoice Balance</div>
+                        <div className="block appearance-none w-full bg-slate-100 border border-slate-300 text-oxford-blue py-2 px-3 rounded-sm">$22,023.00</div>
+                    </div>
+                </div>
+                {/* <div className="flex flex-row gap-x-2.5 mt-5">
                     <div className="w-1/2">
                         <div className="font-medium mb-2">First Invoice Date</div>
                         <div className="block appearance-none w-full bg-slate-100 border border-slate-300 text-oxford-blue py-2 px-3 rounded-sm">2024-04-26</div>
@@ -46,7 +57,7 @@ function RealTerms() {
                         <div className="font-medium mb-2">Last Invoice Date</div>
                         <div className="block appearance-none w-full bg-slate-100 border border-slate-300 text-oxford-blue py-2 px-3 rounded-sm">2024-05-26</div>
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className={`flex flex-row gap-x-5 justify-between items-center ${hoveredSide === 'terms-locked' ? 'opacity-30' : 'opacity-100'}`}>
                 <div>

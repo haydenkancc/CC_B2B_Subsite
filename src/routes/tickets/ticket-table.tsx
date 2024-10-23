@@ -1,5 +1,4 @@
-import { Star, CaretUp, CaretDown, Funnel, Eye, X, CaretLeft, CaretRight } from '@phosphor-icons/react';
-import { SearchField, Input } from 'react-aria-components';
+import { Star, CaretUp, CaretDown, Eye, CaretLeft, CaretRight } from '@phosphor-icons/react';
 import samplePDF from "../../assets/sample-pdf.pdf";
 import { Link } from 'react-router-dom';
 import { DialogTrigger, Button } from 'react-aria-components';
@@ -88,7 +87,7 @@ function TicketTable() {
                             <td className="px-4 py-6 font-medium">{item.subject}</td>
                             <td className="px-4 py-6 font-medium">{item.department}</td>
                             <td className="w-12">
-                                <Link to={item.src} target="_blank">
+                                <Link to="/ticket-open" target="_blank">
                                     <Eye size={18} />
                                 </Link>
                             </td>

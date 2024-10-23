@@ -1,11 +1,11 @@
-import Terms from '../billing/terms/terms.tsx';
-import Wallet from '../billing/wallet/wallet.tsx';
 import TicketTable from './ticket-table.tsx';
 import { useEffect } from 'react';
 import SidebarNav from '../sidebar-nav/sidebar-nav.tsx';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
+import TicketContent from './ticket-content.tsx';
+import { Link } from 'react-router-dom';
 
-function Tickets() {
+function TicketOpen() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location]);
@@ -26,13 +26,20 @@ function Tickets() {
                         </div>
                     </div>
                 </div>
-                <div className="px-8 py-8">
-                    <div className="text-2xl font-medium">Ticket Management</div>
+                <div className="px-8 py-4">
+                    <Link to={"/tickets"} className="text-black underline text-sm">
+                        Return to Tickets
+                    </Link>
                 </div>
-                <TicketTable />
+                <div className="px-8">
+                    <div className="text-xl font-medium">Ticket #172934</div>
+                </div>
+                <div className="py-4">
+                    <TicketContent />
+                </div>
             </div>
         </div>
     )
 }
 
-export default Tickets;
+export default TicketOpen;

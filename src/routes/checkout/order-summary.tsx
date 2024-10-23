@@ -5,6 +5,7 @@ import mastercard from "../../assets/mastercard.png";
 import { Button, DialogTrigger } from "react-aria-components";
 import fedex from "../../assets/fedex.png";
 import NewContactModal from "../account/contacts/new-contact-modal";
+import PaymentDetails from "./payment-details";
 
 const items = [
     { id: 1, image: laptop, name: "Macally Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612", onlineIcon: <X weight="bold" />, onlineText: "Unavailable Online", storeIcon: <X weight="bold" />, storeText: "Unavailable In-Store", date: "2024-10-02", user: "Porky Pig", quantity: "1", price: "$17.99"},
@@ -66,43 +67,17 @@ function OrderSummary() {
                             </button>
                         ))}
                 </div>
-                <div className="flex flex-col border rounded-sm p-6 gap-y-2.5">
-                    <div className="flex flex-row justify-between items-center">
-                        <div className="font-semibold">Payment Details</div>
-                        <DialogTrigger>
-                            <Button className="bg-slate-100 hover:bg-slate-200 font-semibold p-2.5 border border-slate-400 rounded-md text-center flex flex-row items-center">
-                                <div className="text-sm rounded-md">Net Terms</div>
-                            </Button>
-                            <NewContactModal />
-                        </DialogTrigger>
-                    </div>
-                    <div className="flex flex-row items-center justify-between">
-                    </div>
-                    {cards1.map((card, index) => (
-                        <div key={index} className={`border border-slate-300 rounded-sm bg-slate-100 cursor-pointer ${index === cards1.length - 1 ? 'fade-out' : ''}`}>
-                            <div className="flex flex-col p-4">
-                                <div className="flex flex-row justify-between">
-                                    <div className="flex flex-row">
-                                        <img src={card.image} className="border border-slate-400 rounded-md h-10" />
-                                        <div className="flex flex-col text-sm ml-2.5">
-                                            <div>{card.num}</div>
-                                            <div>{card.expiry}</div>
-                                        </div>
-                                    </div>
-                                    {card.default && <div className="text-sm font-semibold">{card.default}</div>}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                    <div className="relative flex-1">
-                        <div className="bg-slate-100 border border-slate-400 rounded-full p-2.5 text-center mx-auto caret-wrapper cursor-pointer">
-                            <CaretDown />
-                        </div>
-                    </div>
-                </div>
+                <PaymentDetails />
             </div>
             <div className="flex flex-col border rounded-sm p-6 w-80 h-108">
-                <div className="font-semibold mb-4">Summary</div>
+                <div className="flex flex-row justify-between">
+                    <div className="font-semibold mb-4">Summary</div>
+                    <DialogTrigger>
+                        <Button className="text-sm font-semibold mb-4 border-b-2 border-white hover:border-b-2 hover:border-black focus:outline-none">
+                            Export Quote
+                        </Button>
+                    </DialogTrigger>
+                </div>
                 <div className="flex flex-col text-sm gap-y-2">
                     <div className="flex flex-row justify-between">
                         <div>Total Items:</div>
@@ -133,7 +108,7 @@ function OrderSummary() {
                     ))}
                     <DialogTrigger>
                         <Button className="bg-slate-100 hover:bg-slate-200 border border-slate-400 rounded-md text-center text-sm font-semibold py-1.5 px-4 mt-2">
-                            Pay $68.90
+                            Send to Authorized Buyer
                         </Button>
                     </DialogTrigger>
                 </div>

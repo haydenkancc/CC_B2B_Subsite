@@ -30,12 +30,12 @@ function Orders() {
                     {item => <Tab className="account-Tab">{item.title}</Tab>}
                 </TabList>
                 <Collection items={tabs}>
-                        {item => (
-                            <TabPanel className="mt-6">
-                                {item.content}
-                            </TabPanel>
-                        )}
-                    </Collection>
+                    {item => (
+                        <TabPanel className="mt-6">
+                            {item.content}
+                        </TabPanel>
+                    )}
+                </Collection>
             </Tabs>
         </div>
     );

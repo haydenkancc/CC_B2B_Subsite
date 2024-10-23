@@ -25,6 +25,8 @@ import Tickets from './routes/tickets/tickets.tsx';
 import Messages from './routes/messages/messages.tsx';
 import About from './routes/about/about.tsx';
 import Checkout from './routes/checkout/checkout.tsx';
+import Catalogue from './routes/catalogue/catalogue.tsx';
+import TicketOpen from './routes/tickets/ticket-open.tsx';
 
 const router = createBrowserRouter([
     {
@@ -118,6 +120,14 @@ const router = createBrowserRouter([
     {
         path: "checkout",
         element: <Checkout />
+    },
+    {
+        path: "catalogue",
+        element: <Catalogue />
+    },
+    {
+        path: "ticket-open",
+        element: <TicketOpen />
     },
 ]);
 
