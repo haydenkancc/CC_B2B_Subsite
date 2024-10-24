@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../products/products.css";
 import laptop from '../../assets/laptop.png';
 import { CaretDown, CaretUp, Star, Check, X } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
 
 function NoPriceProductListing() {
 
@@ -343,15 +344,17 @@ function NoPriceProductListing() {
                     <div className="flex flex-wrap gap-4 w-full">
                         {items.map((product, index) => (
                             <div key={index} className="flex flex-col">
-                                <img
-                                    src={product.image}
-                                    className="w-full h-38 rounded-sm object-cover bg-slate-300"
-                                    alt={`Profile ${index}`}
-                                />
+                                <Link to="/hardware-product" className="font-medium">
+                                    <img
+                                        src={product.image}
+                                        className="w-full h-38 rounded-sm object-cover bg-slate-300"
+                                        alt={`Profile ${index}`}
+                                    />
+                                </Link>
                                 <div className="text-sm w-full px-0.5 py-2.5 rounded-sm">
                                     <div className="flex flex-col gap-y-1.5">
                                         <div className="flex flex-row justify-between">
-                                            <div className="font-medium">{product.name}</div>
+                                            <Link to="/hardware-product" className="font-medium">{product.name}</Link>
                                             <div className="flex flex-row items-center">
                                                 <Star weight="fill" className="ml-0.5" />
                                                 <div className="ml-0.5">{product.rating}</div>

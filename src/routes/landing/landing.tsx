@@ -1,79 +1,30 @@
-import React, { useState, useEffect } from "react";
+import { useRef } from "react";
 import "./landing.css";
-import Carousel from './carousel.tsx';
 import { Link } from "react-router-dom";
 import header from "../../assets/header.png"
 import working from "../../assets/working.png"
-import person from "../../assets/person.png"
-import person2 from "../../assets/person2.png"
 import partners from "../../assets/partners.png"
-import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
 import adspace from "../../assets/adspace.png"
-import services from "../../assets/services.png"
-import hardware from "../../assets/hardware.png"
-import software from "../../assets/software.png"
 import prototype from "../../assets/prototype.png"
 import hardwarebg from "../../assets/hardwarebg.png"
 import softwarebg from "../../assets/softwarebg.png"
-import solutionsblue from "../../assets/solutionsblue.png"
-import out from "../../assets/out.png"
 import enterpriseicon from "../../assets/enterpriseicon.png"
 import healthcareicon from "../../assets/healthcareicon.png"
 import educationicon from "../../assets/educationicon.png"
-import { CaretRight, Envelope, Phone, Pen } from "@phosphor-icons/react";
+import { CaretRight, Compass } from "@phosphor-icons/react";
 import FooterTop from "../../components/footer/footer-top.tsx";
 import FooterBottom from "../../components/footer/footer-bottom.tsx";
-import Logo from '../../assets/Canada_Computers_(Icon).svg?react';
-
-const pages = ['Partners', 'Industry', 'About'];
-
-
 
 function Landing() {
 
-    const [currentRelationship, setCurrentRelationship] = useState("");
+    const exploreRef = useRef(null);
 
-    const [hoveredSide, setHoveredSide] = useState('hardware');
-
-    const handleSelectChange = (event) => {
-        setCurrentRelationship(event.target.value);
-    };
-
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleOpen = () => setIsOpen(true);
-    const handleClose = () => setIsOpen(false);
-
-    let slides = [
-        {
-            image: "https://learn.credly.com/hs-fs/hubfs/shutterstock_370595594-2000x400-sfw-1.webp?width=2000&height=400&name=shutterstock_370595594-2000x400-sfw-1.webp",
-            text: "Enterprise Solutions",
-            body: "Unlock unparalleled growth and efficiency with our advanced enterprise solutions, crafted to streamline your operations and propel your business forward.",
-            link: "/enterprise-solutions",
-        },
-        {
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGgCwrQ9IuQEc-Afea7lwVHZoJXvskB0BPdQ&s",
-            text: "Healthcare Solutions",
-            body: "Enhance patient care and operational excellence with our state-of-the-art healthcare solutions, designed to meet the unique needs of your medical practice or facility.",
-            link: "/healthcare-solutions",
-        },
-        {
-            image: "https://www.havanail.gov/wp-content/uploads/header-sunflowers-2000x400.jpg",
-            text: "Education Solutions",
-            body: "Revolutionize your educational environment with our innovative solutions, offering tools and resources that empower both educators and students for success.",
-            link: "/education-solutions",
-        }
-    ];
-    
     return (
-
         <>
-
             {/* NavBar */}
             <div className="w-full">
                 <NavbarTop />
-                {/* <NavbarBottom pages={pages} /> */}
             </div>
 
             {/* Homepage */}
@@ -81,7 +32,7 @@ function Landing() {
                 className="overflow-hidden bg-cover h-120"
                 style={{
                     backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 75%), url(${header})`,
-                    backgroundSize: '100%', // Adjust this value as needed
+                    backgroundSize: '100%',
                     backgroundPosition: 'center'
                 }}
             >
@@ -91,8 +42,14 @@ function Landing() {
                             <h1 className="text-5xl font-bold">Welcome to Better</h1>
                             <h1 className="text-5xl font-bold mt-3">Business Buying</h1>
                             <p className="text-xl mt-6">Elevate your business to the next level</p>
-                            <button className="text-lg bg-ghost-white hover:bg-slate-300 text-oxford-blue font-bold py-2 px-8 my-8 rounded-sm">
-                                EXPLORE
+                            <button 
+                                    onClick={() => {
+                                        exploreRef.current.scrollIntoView({ behavior: 'smooth' });
+                                    }} className="text-lg bg-ghost-white hover:bg-slate-300 text-oxford-blue font-bold py-2 px-8 my-8 rounded-sm">
+                                <div className="flex flex-row gap-x-2.5 items-center">
+                                    <div>Explore</div>
+                                    <div><Compass size={22} /></div>
+                                </div>
                             </button>
                         </div>
                     </div>
@@ -100,7 +57,7 @@ function Landing() {
             </div>
             
             {/* About Us */}
-            <div className="bg-ghost-white">
+            <div ref={exploreRef} className="bg-ghost-white">
                 <div className="max-w-[1440px] px-4 mx-auto flex flex-row items-center justify-between py-20">
                     <div className="flex flex-col text-black w-1/2">
                         <div className="text-2xl font-semibold">Transform your future with technology.</div>
@@ -167,78 +124,6 @@ function Landing() {
                 </div>
             </div>
 
-            {/* Products
-            <div className="bg-gradient-to-b from-ghost-white to-white px-[10vw] 2xl:px-[20vw]">
-                <div className="flex flex-row justify-between text-center mt-20">
-                    <div
-                        className="relative bg-oxford-blue w-1/2 h-96 flex flex-col justify-center items-center ease-in-out text-ghost-white"
-                        onMouseEnter={() => setHoveredSide('hardware')}
-                        onMouseLeave={() => setHoveredSide('hardware')}
-                    >
-                        {hoveredSide === 'hardware' ? null : (
-                            <div
-                                className="absolute inset-0 transition-opacity duration-300 ease-in-out"
-                                style={{
-                                    backgroundImage: `url(${softwarebg})`,
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    backgroundRepeat: 'no-repeat'
-                                }}
-                            />
-                        )}
-                        {hoveredSide === 'hardware' && (
-                            <div className="font-bold text-xl z-10 relative">
-                                Hardware for Enhanced Performance
-                            </div>
-                        )}
-                        {hoveredSide === 'hardware' && (
-                            <div className="text-lg font-medium px-10 py-1 z-10 relative flex flex-col items-center">
-                                <div className="text-center">
-                                    Enhance efficiency and reliability—invest in the best for your business.
-                                </div>
-                                <Link to={"/hardware"} className="text-sm uppercase border-2 border-ghost-white px-2 py-1 font-semibold mt-4 flex flex-row items-center z-10 relative">
-                                    Shop Now
-                                </Link>
-                            </div>
-                        )}
-                    </div>
-
-                    <div
-                        className="relative bg-slate-200 w-1/2 h-96 flex flex-col justify-center items-center ease-in-out text-oxford-blue"
-                        onMouseEnter={() => setHoveredSide('sam')}
-                        onMouseLeave={() => setHoveredSide('sam')}
-                    >
-                        {hoveredSide === 'sam' ? null : (
-                            <div
-                                className="absolute inset-0 transition-opacity duration-300 ease-in-out"
-                                style={{
-                                    backgroundImage: `url(${hardwarebg})`,
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    backgroundRepeat: 'no-repeat'
-                                }}
-                            />
-                        )}
-                        {hoveredSide === 'sam' && (
-                            <div className="font-bold text-xl z-10 relative">
-                                Sam for a Smarter Workplace
-                            </div>
-                        )}
-                        {hoveredSide === 'sam' && (
-                            <div className="text-lg font-medium px-10 py-1 z-10 relative flex flex-col items-center">
-                                <div className="text-center">
-                                    Streamline processes and boost productivity—transform the way you work.
-                                </div>
-                                <Link to={"/sam"} className="text-sm uppercase border-2 border-oxford-blue px-2 py-1 font-semibold mt-4">
-                                    Shop Now
-                                </Link>
-                            </div>
-                        )}
-
-                    </div>
-                </div>
-            </div> */}
-
             {/* Products */}
             <div className="bg-gradient-to-b from-ghost-white to-white">
                 <div className="flex flex-col pt-10 max-w-[1440px] px-4 mx-auto">
@@ -258,7 +143,6 @@ function Landing() {
                             </div>
                         </div>
                     </div>
-
                     <div className="flex flex-row justify-between text-center">
                         <div className="relative bg-slate-200 w-1/2 h-90 flex flex-col justify-center items-center ease-in-out text-oxford-blue rounded-bl-sm">
                             <div className="font-bold text-xl relative">
@@ -286,10 +170,8 @@ function Landing() {
                     <img src={partners} className="w-[75vw] 2xl:w-[55vw] mb-6 mt-4" />
                 </h1>
             </div>
-
             <FooterTop />
             <FooterBottom />
-                
         </>        
     )
 }
