@@ -1,27 +1,18 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./solutions.css"
 import CorporateSalesCarousel from "./corporate-sales-carousel.tsx";
-import { Link } from "react-router-dom";
-import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
 import healthcare from "../../assets/healthcare.png"
 import common from "../../assets/common.png"
 import hoffice from "../../assets/hoffice.png"
 import meeting from "../../assets/meeting.png"
 import hmeeting from "../../assets/hmeeting.png"
-import Logo from '../../assets/Canada_Computers_(Icon).svg?react';
-import envelope from "../../assets/envelope.png"
-import call from "../../assets/call.png"
-import { ClipboardText, Cardholder, HandCoins, UserCircleGear, CaretRight, Check, UserFocus, ChartLineUp, Pen, Envelope, Phone } from '@phosphor-icons/react';
+import { ClipboardText, Cardholder, HandCoins, UserCircleGear, CaretRight, Check, UserFocus, ChartLineUp } from '@phosphor-icons/react';
 import enterprise1 from "../../assets/enterprise1.png"
 import enterprise2 from "../../assets/enterprise2.png"
 import enterprise3 from "../../assets/enterprise3.png"
-import person2 from "../../assets/person2.png"
-import solutionsblue from "../../assets/solutionsblue.png"
 import FooterTop from "../../components/footer/footer-top.tsx";
 import FooterBottom from "../../components/footer/footer-bottom.tsx";
-
-const pages = ['Partners', 'Industry', 'About'];
 
 function HealthcareSolutions() {
 
@@ -54,25 +45,12 @@ function HealthcareSolutions() {
         },
     ];
 
-    const [currentRelationship, setCurrentRelationship] = useState("");
-
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleSelectChange = (event) => {
-        setCurrentRelationship(event.target.value);
-    };
-
-    const handleOpen = () => setIsOpen(true);
-    const handleClose = () => setIsOpen(false);
-
-
     return (
         <>
 
             {/* NavBar */}
             <div className="w-full">
                 <NavbarTop />
-                {/* <NavbarBottom pages={pages} /> */}
             </div>
 
             {/* Homepage */}
@@ -132,7 +110,7 @@ function HealthcareSolutions() {
             {/* Benefits */}
             <div className="bg-ghost-white flex flex-col items-center py-4 w-full overflow-hidden">
                 <h1 className="text-2xl text-black font-bold text-center mt-12">Create Solutions for Every Healthcare Facility</h1>
-                <div className="text-black py-6">We’ll design customized strategies to improve efficiency and boost performance in every healthcare setting.</div>
+                <div className="text-black py-4 mb-2">We'll design customized strategies to improve efficiency and boost performance in every healthcare setting.</div>
             </div>
 
             {/* Solutions */}

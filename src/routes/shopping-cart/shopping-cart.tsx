@@ -1,15 +1,10 @@
 import { useEffect, useState } from "react";
-import NavbarTopAccount from '../../components/navbar/navbar-top-account.tsx';
-import NavbarBottom from "../../components/navbar/navbar-bottom";
 import { Trash, Check, X, Plus, Minus } from "@phosphor-icons/react";
 import laptop from "../../assets/laptop.png";
-import MyCheckbox from "../../components/form/my-checkbox";
 import CheckoutSummary from "./checkout-summary.tsx";
 import Recent from "./recent.tsx";
 import SidebarNav from "../sidebar-nav/sidebar-nav.tsx";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
-
-const pages = ['Dashboard', 'Orders', 'Billing', 'Saved Lists', 'Tickets', 'Account'];
 
 const items = [
     { id: 1, image: laptop, name: "Macally Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612", onlineIcon: <X weight="bold" />, onlineText: "Unavailable Online", storeIcon: <X weight="bold" />, storeText: "Unavailable In-Store", date: "2024-10-02", user: "Porky Pig", price: "$17.99"},
@@ -86,26 +81,20 @@ function ShoppingCart() {
                                         <div className="flex flex-col gap-y-1 ml-4 w-80 text-sm">
                                             <div>Item Code: {item.code}</div>
                                             <div>{item.name}</div>
-                                            <div className="flex flex-row items-center gap-x-1">
-                                                {/* <div>{item.onlineIcon}</div>
-                                                <div>{item.onlineText}</div>
-                                                <div className="ml-3">{item.storeIcon}</div>
-                                                <div>{item.storeText}</div> */}
-                                            </div>
                                         </div>
                                     </td>
-                                    <td className="py-2 px-4 text-sm text-center font-medium w-40">
-                                        <div className="flex justify-center">
-                                            <button onClick={() => handleDecrease(item.id)} className="p-2 bg-gray-200">
+                                    <td className="py-2 px-4 text-sm text-center font-medium w-48">
+                                        <div className="flex justify-center border border-slate-300 rounded-full">
+                                            <button onClick={() => handleDecrease(item.id)} className="p-3 border-r rounded-l-full hover:bg-slate-100">
                                                 <Minus size={10} />
                                             </button>
                                             <input
                                                 type="number"
                                                 value={itemQuantities[item.id]} // Display the quantity
                                                 readOnly
-                                                className="w-full mx-2 pl-3 border border-gray-300 focus:outline-none text-center"
+                                                className="w-full pl-3 focus:outline-none text-center"
                                             />
-                                            <button onClick={() => handleIncrease(item.id)} className="p-2 bg-gray-200">
+                                            <button onClick={() => handleIncrease(item.id)} className="p-3 border-l rounded-r-full hover:bg-slate-100">
                                                 <Plus size={10} />
                                             </button>
                                         </div>

@@ -28,6 +28,7 @@ import Checkout from './routes/checkout/checkout.tsx';
 import Catalogue from './routes/catalogue/catalogue.tsx';
 import TicketOpen from './routes/tickets/ticket-open.tsx';
 import HardwareProduct from './routes/products/hardware/hardware-product.tsx';
+import Profile from './routes/profile/profile.tsx';
 
 const router = createBrowserRouter([
     {
@@ -133,6 +134,10 @@ const router = createBrowserRouter([
     {
         path: "hardware-product",
         element: <HardwareProduct />
+    },
+    {
+        path: "profile",
+        element: <Profile />
     },
 ]);
 

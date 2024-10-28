@@ -1,10 +1,7 @@
-import React, { startTransition, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./procurement.css";
-import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
 import changebuilding from "../../assets/changebuilding.gif";
-import tmulogo from "../../assets/tmulogo.png"
-import tmumeeting from "../../assets/tmumeeting.png"
 import out from "../../assets/out.png"
 import strat1 from "../../assets/strat1.png"
 import strat2 from "../../assets/strat2.png"
@@ -270,7 +267,6 @@ function Procurement() {
             {/* NavBar */}
             <div className="w-full">
                 <NavbarTop />
-                {/* <NavbarBottom pages={pages} /> */}
             </div>
 
             {/* Homepage */}

@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Plus, Minus, Check, X, ShoppingCart, BellRinging } from "@phosphor-icons/react";
-import laptop from "../../assets/laptop.png";
+import laptop2 from "../../assets/laptop2.png";
 import { Link } from "react-router-dom";
 import { Button, DialogTrigger } from "react-aria-components";
 
 const items = [
-    { id: 1, image: laptop, name: "Macally Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612", onlineIcon: <X weight="bold" />, onlineText: "Unavailable Online", storeIcon: <X weight="bold" />, storeText: "Unavailable In-Store", date: "2024-10-02", user: "Porky Pig", price: 17.99},
-    { id: 2, image: laptop, name: "ICAN 10000mAh Super Quick Charge - QC & PD 18W Power Bank (F1002PD)", code: "NAFOX00001", onlineIcon: <Check weight="bold" />, onlineText: "Available Online", storeIcon: <Check weight="bold" />, storeText: "Available In-Store", date: "2024-09-28", user: "Bugs Bunny", price: 24.99 },
-    { id: 3, image: laptop, name: "G4900X (MISDWADADWA100 White Black All the Colors of the Rainbow)", code: "HHACMC0612", onlineIcon: <Check weight="bold" />, onlineText: "Available Online", storeIcon: <X weight="bold" />, storeText: "Unavailable In-Store", date: "2024-10-02", user: "Porky Pig", price: 17.99 },
+    { id: 1, image: laptop2, name: "Macally Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612", online: "Yes", store: "Yes", date: "2024-10-02", user: "Porky Pig", price: 17.99},
+    { id: 2, image: laptop2, name: "ICAN 10000mAh Super Quick Charge - QC & PD 18W Power Bank (F1002PD)", code: "NAFOX00001", online: "Yes", store: "Yes", date: "2024-09-28", user: "Bugs Bunny", price: 24.99 },
+    { id: 3, image: laptop2, name: "G4900X (MISDWADADWA100 White Black All the Colors of the Rainbow)", code: "HHACMC0612", online: "Yes", store: "Yes", date: "2024-10-02", user: "Porky Pig", price: 17.99 },
 ];
 
 function Recent() {
@@ -33,11 +33,31 @@ function Recent() {
                                         <div className="flex flex-col gap-y-1 ml-4 w-80 text-sm">
                                             <div>Item Code: {item.code}</div>
                                             <div>{item.name}</div>
-                                            <div className="flex flex-row items-center gap-x-1">
-                                                <div>{item.onlineIcon}</div>
-                                                <div>{item.onlineText}</div>
-                                                <div className="ml-3">{item.storeIcon}</div>
-                                                <div>{item.storeText}</div>
+                                            <div className="flex flex-row items-center gap-x-5">
+                                                {item.online === "Yes" &&
+                                                    <div className="flex flex-row items-center gap-x-1">
+                                                        <Check weight="bold" color="#16a34a" />
+                                                        <div className="text-sm text-green-600">Available Online</div> 
+                                                    </div>
+                                                }
+                                                {item.online === "No" &&
+                                                    <div className="flex flex-row items-center gap-x-1">
+                                                        <X weight="bold" color="#ef4444" />
+                                                        <div className="text-sm text-red-500">Unavailable Online</div> 
+                                                    </div>
+                                                }
+                                                {item.store === "Yes" &&
+                                                    <div className="flex flex-row items-center gap-x-1">
+                                                        <Check weight="bold" color="#16a34a" />
+                                                        <div className="text-sm text-green-600">Available In-Store</div> 
+                                                    </div>
+                                                }
+                                                {item.store === "No" &&
+                                                    <div className="flex flex-row items-center gap-x-1">
+                                                        <X weight="bold" color="#ef4444" />
+                                                        <div className="text-sm text-red-500">Unavailable In-Store</div> 
+                                                    </div>
+                                                }
                                             </div>
                                         </div>
                                     </td>

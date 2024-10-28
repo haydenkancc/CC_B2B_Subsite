@@ -10,7 +10,7 @@
 
     td {
         border-bottom: 1px solid var(--lavender);
-        background: var(--ghost-white);
+        background: var(--white);
         &:first-of-type {
             border-left: 1px solid var(--lavender);
         }

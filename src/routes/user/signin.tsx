@@ -19,7 +19,7 @@ function Signin() {
                         <div className="font-bold text-xl mt-4">Sign In To Your Account</div>
                         <div className="mt-5 w-full px-8">
                             <label className="text-left text-black font-medium mb-1">Email Address</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5" />
                         </div>
                         <div className="mt-4 w-full px-8">
                             <div className="flex flex-row justify-between">                                
@@ -31,7 +31,7 @@ function Signin() {
                             <div className="relative">
                                 <input 
                                     type={showPassword ? "text" : "password"} 
-                                    className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" 
+                                    className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5" 
                                 />
                                 <button 
                                     type="button" 

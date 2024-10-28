@@ -10,8 +10,8 @@ function Create() {
     }, [location]);
 
     return (
-        <>
-            <div className="bg-ghost-white w-full px-[10vw] 2xl:px-[20vw]">
+        <div className="bg-ghost-white">
+            <div className="w-full max-w-[1440px] px-4 mx-auto">
                 <div className="flex flex-col">
                     <img src={solutionsblue} className="bg-contain w-40 mt-14" />
                     <div className="font-bold text-2xl mt-4">Corporate Account Application</div>
@@ -20,19 +20,19 @@ function Create() {
                     
                     <div className="font-bold text-xl mt-8">Basic Information</div>
                     <div className="mt-3">If you'd like to purchase products online from us in the future, please use the same address as you would for your credit card bill or monthly bank statement. Otherwise, your order may not be processed.</div>
-                    <div className="flex flex-row justify-between gap-x-6 2xl:gap-x-12">
+                    <div className="flex flex-row justify-between gap-x-10">
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Trade Company Name</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Legal Company Name</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Type of Company</label>
                             <div className="relative w-full">
-                                <select className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5">
+                                <select className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none">
                                     <option value="" disabled selected>Please Select</option>
                                     <option>Corporate</option>
                                     <option>Reseller</option>
@@ -41,76 +41,76 @@ function Create() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-row justify-between gap-x-6 2xl:gap-x-12">
+                    <div className="flex flex-row justify-between gap-x-10">
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Business Since</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Primary Business Address</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">City</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                     </div>
-                    <div className="flex flex-row justify-between gap-x-6 2xl:gap-x-12">
+                    <div className="flex flex-row justify-between gap-x-10">
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Province</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Postal Code</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Phone Number</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                     </div>
 
                     <div className="font-bold text-xl mt-12">Primary Contact</div>
-                    <div className="flex flex-row justify-between gap-x-6 2xl:gap-x-12">
+                    <div className="flex flex-row justify-between gap-x-10">
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Name</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Position</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Work Address</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                     </div>
-                    <div className="flex flex-row justify-between gap-x-6 2xl:gap-x-12">
+                    <div className="flex flex-row justify-between gap-x-10">
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">City</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Province</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Postal Code</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                     </div>
-                    <div className="flex flex-row justify-between gap-x-6 2xl:gap-x-12">
+                    <div className="flex flex-row justify-between gap-x-10">
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Phone Number</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Fax Number</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Business Email</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                     </div>
 
@@ -121,42 +121,42 @@ function Create() {
                             <label className="ml-4 text-black">Same address as primary business address above</label>
                         </div>
                     </div>
-                    <div className="flex flex-row justify-between gap-x-6 2xl:gap-x-12">
+                    <div className="flex flex-row justify-between gap-x-10">
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Name</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Position</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Work Address</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                     </div>
-                    <div className="flex flex-row justify-between gap-x-6 2xl:gap-x-12">
+                    <div className="flex flex-row justify-between gap-x-10">
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">City</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Province</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Postal Code</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                     </div>
-                    <div className="flex flex-row justify-between gap-x-6 2xl:gap-x-12">
+                    <div className="flex flex-row justify-between gap-x-10">
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Phone Number</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                             <label className="text-left text-black mb-1">Fax Number</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
                         </div>
                         <div className="mt-5 w-1/3">
                         </div>
@@ -175,7 +175,7 @@ function Create() {
                     <Link to={"/sign-in"} className="bg-oxford-blue text-ghost-white py-2 rounded-sm text-center w-44 font-semibold text-lg mt-6 mb-14">Create Account</Link>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

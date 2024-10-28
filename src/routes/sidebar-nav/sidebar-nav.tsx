@@ -18,10 +18,10 @@ function SidebarNav() {
             <div className="sn-container px-2.5">
                 <div>
                     <div className="w-full border-b py-2.5 flex flex-col gap-0.5">
-                        <div className="pl-1.5 flex flex-row justify-betweengap-2.5 border-b py-1.5">
+                        <Link to="/" className="pl-1.5 flex flex-row justify-betweengap-2.5 border-b py-1.5">
                             <img src={solutionsblue} className="w-32" />
                             <div className="text-oxford-blue ml-2.5 text-xl font-semibold">Portal</div>
-                        </div>
+                        </Link>
                         <div className="pl-1.5 flex gap-2.5 items-center pt-1.5">
                             <div className="h-10 w-10">
                                 <img src={logoSrc} className="h-full w-full rounded-full" />
@@ -47,7 +47,7 @@ function SidebarNav() {
                             </Link>
                             <Link to="/account" className="sn-list-box-item--wrapper">
                                 <MixerVerticalIcon className="sn-list-box-item--icon"/>
-                                <span className="sn-list-box-item--content">Account Settings</span>
+                                <span className="sn-list-box-item--content">Company Settings</span>
                             </Link>
                             <Link to="/orders" className="sn-list-box-item--wrapper">
                                 <ArchiveIcon className="sn-list-box-item--icon"/>
@@ -97,10 +97,10 @@ function SidebarNav() {
                             <BellIcon className="sn-list-box-item--icon"/>
                             <span className="sn-list-box-item--content">Notifications</span>
                         </Link>
-                        <div className="sn-list-box-item--wrapper">
+                        <Link to="/profile" className="sn-list-box-item--wrapper">
                             <AvatarIcon className="sn-list-box-item--icon"/>
                             <span className="sn-list-box-item--content">Profile</span>
-                        </div>
+                        </Link>
                         <Link to="/sign-in" className="sn-list-box-item--wrapper">
                             <ExitIcon className="sn-list-box-item--icon -scale-x-100"/>
                             <span className="sn-list-box-item--content">Sign Out</span>

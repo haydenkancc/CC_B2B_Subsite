@@ -4,7 +4,7 @@ import './general.css';
 
 function General() {
     return (
-        <div className="pb-16">
+        <div className="pb-20 px-8">
             <div className="pb-8 flex justify-between">
                 <Button className="general-Button">
                     Save Changes
@@ -13,7 +13,7 @@ function General() {
                     Discard Changes
                 </Button>
             </div>
-            <div className="pl-4 pr-4 pt-8 pb-8 bg-ghost-white border rounded-sm">
+            <div className="pl-4 pr-4 pt-8 pb-8 bg-white border rounded-sm">
                 <ListBox layout="grid" orientation="horizontal" className="grid w-full grid-cols-3 gap-x-8 gap-y-8">
                     <ListBoxItem>
                         <MyTextField label="Legal Company Name"/>
@@ -44,9 +44,6 @@ function General() {
                     </ListBoxItem>
                 </ListBox>
             </div>
-            <Button className="general-Button--cancel mt-8">
-                Change Password
-            </Button>
         </div>
     )
 }

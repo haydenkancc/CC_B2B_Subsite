@@ -7,7 +7,7 @@ const items = [
 function HardwareWarranty() {
     return (
         <div className="flex flex-col">
-            <div className="py-5 border-b">Returns for refunds must include complete original packaging and contents, including accessories, manuals, software, and any gifts or codes from the initial purchase. All items must be in original, re-salable condition including original software and operating system and accompanied by the original invoice.  Incomplete or physically damaged products will not be accepted. Refunds will be processed onto the original payment method, excluding shipping and handling fees if applicable. </div>
+            <div className="pt-5 pb-10 border-b">Returns for refunds must include complete original packaging and contents, including accessories, manuals, software, and any gifts or codes from the initial purchase. All items must be in original, re-salable condition including original software and operating system and accompanied by the original invoice.  Incomplete or physically damaged products will not be accepted. Refunds will be processed onto the original payment method, excluding shipping and handling fees if applicable. </div>
             {items.map(item => (
                 <div className="flex flex-row justify-between items-center border-b py-5 font-medium">
                     <div>{item.title}</div>

@@ -15,34 +15,36 @@ const items = [
 
 function Documents() {
     return (
-        <Table className="w-full border-separate border-spacing-0" aria-label="Documents">
-            <MyTableHeader>
-                <MyColumn className="pl-4" isRowHeader>Date Uploaded</MyColumn>
-                <MyColumn>Name</MyColumn>
-                <MyColumn></MyColumn>
-            </MyTableHeader>
-            <TableBody items={items}>
-                {item =>
-                    <MyRow>
-                        <Cell>
-                            <div className="pl-4 pt-2 pb-2">
-                                {item.date}
-                            </div>
-                        </Cell>
-                        <Cell>
-                            {item.name}
-                        </Cell>
-                        <Cell>
-                            <div className="flex justify-end pr-4">
-                                <Link className="p-2" href={item.src} target="_blank">
-                                    <Eye weight="bold" className="text-oxford-blue/50"/>
-                                </Link>
-                            </div>
-                        </Cell>
-                    </MyRow>
-                }
-            </TableBody>
-        </Table>
+        <div className="pb-20 px-8">
+            <Table className="w-full border-separate border-spacing-0" aria-label="Documents">
+                <MyTableHeader>
+                    <MyColumn className="pl-4" isRowHeader>Date Uploaded</MyColumn>
+                    <MyColumn>Name</MyColumn>
+                    <MyColumn></MyColumn>
+                </MyTableHeader>
+                <TableBody items={items}>
+                    {item =>
+                        <MyRow>
+                            <Cell>
+                                <div className="pl-4 pt-2 pb-2">
+                                    {item.date}
+                                </div>
+                            </Cell>
+                            <Cell>
+                                {item.name}
+                            </Cell>
+                            <Cell>
+                                <div className="flex justify-end pr-4">
+                                    <Link className="p-2" href={item.src} target="_blank">
+                                        <Eye weight="bold" className="text-oxford-blue/50"/>
+                                    </Link>
+                                </div>
+                            </Cell>
+                        </MyRow>
+                    }
+                </TableBody>
+            </Table>
+        </div>
     )
 }
 

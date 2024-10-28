@@ -1,27 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import "./solutions.css"
 import CorporateSalesCarousel from "./corporate-sales-carousel.tsx";
-
-import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
 import enterprise from "../../assets/enterprise.png"
 import home from "../../assets/home.png"
 import office from "../../assets/office.png"
 import meeting from "../../assets/meeting.png"
-import Logo from '../../assets/Canada_Computers_(Icon).svg?react';
-import envelope from "../../assets/envelope.png"
-import call from "../../assets/call.png"
-import { ClipboardText, Cardholder, HandCoins, UserCircleGear, CaretRight, Check, ChartLineUp, UserFocus, Envelope, Pen, Phone } from '@phosphor-icons/react';
+import { ClipboardText, Cardholder, HandCoins, UserCircleGear, CaretRight, Check, ChartLineUp, UserFocus } from '@phosphor-icons/react';
 import enterprise1 from "../../assets/enterprise1.png"
 import enterprise2 from "../../assets/enterprise2.png"
 import enterprise3 from "../../assets/enterprise3.png"
-import { Link } from "react-router-dom";
-import person2 from "../../assets/person2.png"
-import solutionsblue from "../../assets/solutionsblue.png"
 import FooterBottom from "../../components/footer/footer-bottom.tsx";
 import FooterTop from "../../components/footer/footer-top.tsx";
-
-const pages = ['Partners', 'Industry', 'About'];
 
 function EnterpriseSolutions() {
 
@@ -53,17 +43,6 @@ function EnterpriseSolutions() {
         },
     ];
 
-    const [currentRelationship, setCurrentRelationship] = useState("");
-
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleSelectChange = (event) => {
-        setCurrentRelationship(event.target.value);
-    };
-
-    const handleOpen = () => setIsOpen(true);
-    const handleClose = () => setIsOpen(false);
-
     const bottomRef = useRef(null);
     const [isHighlighted, setIsHighlighted] = useState(false);
 
@@ -74,7 +53,6 @@ function EnterpriseSolutions() {
             {/* NavBar */}
             <div className="w-full">
                 <NavbarTop />
-                {/* <NavbarBottom pages={pages} /> */}
             </div>
 
             {/* Homepage */}
@@ -88,7 +66,7 @@ function EnterpriseSolutions() {
             >
                 <div className="contents absolute">
                     <div className="max-w-[1440px] px-4 mx-auto py-24">
-                        <p className="text-xl text-ghost-white mt-6">ENTERPRISE</p>
+                        <p className="text-lg text-ghost-white mt-6">ENTERPRISE</p>
                         <h1 className="text-4xl font-bold text-ghost-white mt-6">Fulfill the Needs of Your</h1>
                         <h1 className="text-4xl font-bold text-ghost-white mt-2">Employees and Unlock</h1>
                         <h1 className="text-4xl font-bold text-ghost-white mt-2">Your Team's True Potential</h1>
@@ -113,7 +91,7 @@ function EnterpriseSolutions() {
                                     }} 
                                     className="text-oxford-blue border-2 border-oxford-blue rounded-sm py-2 px-4 font-medium w-44 hover:bg-oxford-blue hover:text-ghost-white"
                                 >
-                                    Inquire More
+                                    Learn More
                                 </button>
                             </div>
                         <div className="ml-20 mt-20 w-1/2">
@@ -153,7 +131,7 @@ function EnterpriseSolutions() {
             {/* Benefits */}
             <div className="bg-ghost-white flex flex-col items-center py-4 w-full overflow-hidden">
                 <h1 className="text-2xl text-black font-bold text-center mt-12">Prepare Solutions for Every Space</h1>
-                <div className="text-black py-6">We'll craft tailored solutions that optimize functionality and enhance performance in every space.</div>
+                <div className="text-black py-4 mb-2">We'll craft tailored solutions that optimize functionality and enhance performance in every space.</div>
             </div>
 
             {/* Solutions */}

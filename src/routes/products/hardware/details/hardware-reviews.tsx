@@ -13,16 +13,16 @@ function HardwareReviews() {
                     <div className="text-lg font-medium">Average Rating</div>
                     <div className="flex flex-row gap-x-1.5">
                         <div className="flex flex-row items-center gap-x-1 text-black">
-                            <Star size={18} weight="fill" />
-                            <Star size={18} weight="fill" />
-                            <Star size={18} weight="fill" />
-                            <Star size={18} weight="fill" />
-                            <Star size={18} />
+                            <Star size={18} weight="fill" color="#facc15" />
+                            <Star size={18} weight="fill" color="#facc15" />
+                            <Star size={18} weight="fill" color="#facc15" />
+                            <Star size={18} weight="fill" color="#facc15" />
+                            <Star size={18} color="#facc15" />
                         </div>
                         <div className="text-lg pl-5">4.0/5 Rating</div>
                     </div>
                 </div>
-                <div className="border bg-slate-100 hover:bg-slate-200 px-5 py-2.5 rounded-sm border border-slate-300 text-center font-medium mr-8">Leave a Review</div>
+                <button className="border bg-slate-100 hover:bg-slate-200 px-5 py-2.5 rounded-sm border border-slate-300 text-center font-medium mr-8">Leave a Review</button>
             </div>
             {reviews.map(item => (
                 <div className="flex flex-row justify-between py-10 border-b">
@@ -30,11 +30,11 @@ function HardwareReviews() {
                         <div className="flex flex-col gap-y-2.5">
                             <div className="flex flex-row gap-x-1.5">
                                 <div className="flex flex-row items-center gap-x-1 text-black">
-                                    <Star size={16} weight="fill" />
-                                    <Star size={16} weight="fill" />
-                                    <Star size={16} weight="fill" />
-                                    <Star size={16} weight="fill" />
-                                    <Star size={16} />
+                                    <Star size={16} weight="fill" color="#facc15" />
+                                    <Star size={16} weight="fill" color="#facc15" />
+                                    <Star size={16} weight="fill" color="#facc15" />
+                                    <Star size={16} weight="fill" color="#facc15" />
+                                    <Star size={16} color="#facc15" />
                                 </div>
                             </div>
                             <div>{item.name}</div>

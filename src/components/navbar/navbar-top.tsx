@@ -68,14 +68,12 @@ function NavbarTop() {
                         </div>
                     </Button>
                     {isProductsVisible && (
-                        <div className="absolute w-40 top-12 text-left bg-black shadow-lg rounded-b-md z-50 flex flex-col mt-2 ml-8">
+                        <div className="absolute w-28 top-12 text-left bg-black rounded-b-md z-50 flex flex-col mt-2 ml-8">
                             <Link to="/hardware" className="dropdown-item flex flex-row justify-between items-center gap-y-0.5 px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow">
                                 <div className="text-sm">Hardware</div>
-                                <CaretRight size={14} />
                             </Link>
-                            <Link to="/software" className="dropdown-item flex flex-row justify-between items-center gap-y-0.5 px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow">
+                            <Link to="/software" className="dropdown-item flex flex-row justify-between items-center gap-y-0.5 px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow mb-2">
                                 <div className="text-sm">Software</div>
-                                <CaretRight size={14} />
                             </Link>
                         </div>
                     )}
@@ -88,18 +86,15 @@ function NavbarTop() {
                         </div>
                     </Button>
                     {isSolutionsVisible && (
-                        <div className="absolute w-56 top-12 text-left bg-black shadow-lg rounded-b-md z-50 flex flex-col mt-2 ml-0.5">
+                        <div className="absolute w-44 top-12 text-left bg-black rounded-b-md z-50 flex flex-col mt-2 ml-0.5">
                             <Link to="/enterprise-solutions" className="dropdown-item flex flex-row justify-between items-center gap-y-0.5 px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow">
                                 <div className="text-sm">Enterprise Solutions</div>
-                                <CaretRight size={14} />
                             </Link>
                             <Link to="/healthcare-solutions" className="dropdown-item flex flex-row justify-between items-center gap-y-0.5 px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow">
                                 <div className="text-sm">Healthcare Solutions</div>
-                                <CaretRight size={14} />
                             </Link>
                             <Link to="/education-solutions" className="dropdown-item flex flex-row justify-between items-center gap-y-0.5 px-4 py-2.5 border-l-4 border-black hover:border-school-bus-yellow mb-2">
                                 <div className="text-sm">Education Solutions</div>
-                                <CaretRight size={14} />
                             </Link>
                         </div>
                     )}

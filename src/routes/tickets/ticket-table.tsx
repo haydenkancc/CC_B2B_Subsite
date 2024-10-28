@@ -87,7 +87,7 @@ function TicketTable() {
                             <td className="px-4 py-6 font-medium">{item.subject}</td>
                             <td className="px-4 py-6 font-medium">{item.department}</td>
                             <td className="w-12">
-                                <Link to="/ticket-open" target="_blank">
+                                <Link to="/ticket-open">
                                     <Eye size={18} />
                                 </Link>
                             </td>

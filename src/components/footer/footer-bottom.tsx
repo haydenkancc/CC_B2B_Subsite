@@ -2,7 +2,7 @@ import './footer.css'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import solutionsblue from "../../assets/solutionsblue.png";
-import { Copyright, Envelope, FacebookLogo, LinkedinLogo, XLogo, YoutubeLogo } from '@phosphor-icons/react';
+import { Copyright, Envelope, FacebookLogo, LinkedinLogo, X, XLogo, YoutubeLogo } from '@phosphor-icons/react';
 import person2 from "../../assets/person2.png"
 
 function FooterBottom() {
@@ -30,7 +30,7 @@ function FooterBottom() {
                         </div>
                         {isOpen && (
                             <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                                <div className="bg-ghost-white rounded shadow-lg w-full max-w-[70vw] relative">
+                                <div className="bg-ghost-white rounded w-full max-w-[70vw] relative">
                                     <div className="h-[90vh] overflow-y-auto">
                                     <div className="flex flex-row">
                                         <div className="bg-oxford-blue w-1/2">
@@ -40,30 +40,30 @@ function FooterBottom() {
                                             <img src={solutionsblue} className="h-10 mt-8 px-[3vw]" />
                                             <div className="text-2xl text-black font-semibold mt-4 px-[3vw] text-left">Send us a Message</div>
                                             <div className="text-slate-500 text-sm font-medium text-left py-2.5 px-[3vw]">Have a question or need assistance? Just fill out the form, and we'll get back to you shortly.</div>
-                                                <div className="flex flex-wrap mb-2 justify-between">
+                                                <div className="flex flex-wrap mb-1.5 justify-between">
                                                     <div className="w-2/5 ml-[3vw]">
-                                                        <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">First Name</label>
-                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
+                                                        <label className="block tracking-wide text-left text-black text-sm font-semibold mb-1.5">First Name</label>
+                                                        <input className="appearance-none block w-full bg-white text-black border border-black rounded py-2 px-2.5 mb-3 leading-tight focus:outline-none" />
                                                     </div>
                                                     <div className="w-2/5 mr-[3vw]">
-                                                        <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Last Name</label>
-                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
+                                                        <label className="block tracking-wide text-left text-black text-sm font-semibold mb-1.5">Last Name</label>
+                                                        <input className="appearance-none block w-full bg-white text-black border border-black rounded py-2 px-2.5 leading-tight focus:outline-none" />
                                                     </div>
                                                 </div>
-                                                <div className="flex flex-wrap px-[3vw] mb-2">
+                                                <div className="flex flex-wrap px-[3vw] mb-1.5">
                                                     <div className="w-full">
-                                                        <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Company Name</label>
-                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
-                                                        <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Business Email</label>
-                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
-                                                        <label className="block tracking-wide text-left text-black text-sm font-bold mb-2">Phone Number</label>
-                                                        <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
+                                                        <label className="block tracking-wide text-left text-black text-sm font-semibold mb-1.5">Company Name</label>
+                                                        <input className="appearance-none block w-full bg-white text-black border border-black rounded py-2 px-2.5 mb-3 leading-tight focus:outline-none" />
+                                                        <label className="block tracking-wide text-left text-black text-sm font-semibold mb-1.5">Business Email</label>
+                                                        <input className="appearance-none block w-full bg-white text-black border border-black rounded py-2 px-2.5 mb-3 leading-tight focus:outline-none" />
+                                                        <label className="block tracking-wide text-left text-black text-sm font-semibold mb-1.5">Phone Number</label>
+                                                        <input className="appearance-none block w-full bg-white text-black border border-black rounded py-2 px-2.5 mb-3 leading-tight focus:outline-none" />
                                                     </div>
                                                 </div>
-                                                <div className="flex flex-wrap px-[3vw] mb-2">
-                                                    <label className="block tracking-wide text-black text-sm font-bold mb-2">What is your current working relationship with us?</label>
+                                                <div className="flex flex-wrap px-[3vw] mb-1.5">
+                                                    <label className="block tracking-wide text-black text-sm font-semibold mb-1.5">What is your current working relationship with us?</label>
                                                     <div className="relative w-full">
-                                                        <select className="block appearance-none w-full bg-white border-2 border-slate-300 text-black py-2 px-3 pr-8 rounded leading-tight" value={currentRelationship} onChange={handleSelectChange}>
+                                                        <select className="block appearance-none w-full bg-white border border-black text-black py-2 px-2.5 pr-8 rounded leading-tight focus:outline-none" value={currentRelationship} onChange={handleSelectChange}>
                                                             <option value="" disabled selected>Please Select</option>
                                                             <option value="working">I'm currently working with Canada Computers</option>
                                                             <option value="not-working">I'm not currently working with Canada Computers</option>
@@ -74,34 +74,34 @@ function FooterBottom() {
                                                         </div>
                                                     </div>
                                                     {currentRelationship === "working" && (
-                                                        <div className="flex flex-wrap mt-4 mb-2">
+                                                        <div className="flex flex-wrap mt-4 mb-1.5">
                                                             <div className="w-full md:w-1/2 mb-6 pr-3 md:mb-0">
-                                                                <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Account Number</label>
-                                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-tight" />
+                                                                <label className="block tracking-wide text-black text-left text-sm font-semibold mb-1.5">Account Number</label>
+                                                                <input className="appearance-none block w-full bg-white text-black border border-black rounded py-2 px-2.5 mb-3 leading-tight focus:outline-none" />
                                                             </div>
                                                             <div className="w-full md:w-1/2 pl-3">
-                                                                <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Corporate Account Rep</label>
-                                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
+                                                                <label className="block tracking-wide text-black text-left text-sm font-semibold mb-1.5">Corporate Account Rep</label>
+                                                                <input className="appearance-none block w-full bg-white text-black border border-black rounded py-2 px-2.5 leading-tight focus:outline-none" />
                                                             </div>
                                                             <div className="w-full md:w-1/2 mb-6 pr-3 md:mb-0">
-                                                                <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Invoice Number</label>
-                                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
+                                                                <label className="block tracking-wide text-black text-left text-sm font-semibold mb-1.5">Invoice Number</label>
+                                                                <input className="appearance-none block w-full bg-white text-black border border-black rounded py-2 px-2.5 leading-tight focus:outline-none" />
                                                             </div>
                                                             <div className="w-full md:w-1/2 pl-3">
-                                                                <label className="block tracking-wide text-black text-left text-sm font-bold mb-2">Quote/Order Number</label>
-                                                                <input className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 leading-tight" />
+                                                                <label className="block tracking-wide text-black text-left text-sm font-semibold mb-1.5">Quote/Order Number</label>
+                                                                <input className="appearance-none block w-full bg-white text-black border border-black rounded py-2 px-2.5 leading-tight focus:outline-none" />
                                                             </div>
                                                         </div>
                                                     )}
                                                 </div>
                                                 <div className="flex flex-wrap px-[3vw] mb-4">
                                                     <div className="w-full">
-                                                        <label className="block tracking-wide text-left text-black text-sm font-bold mt-3 mb-2">How can we be of assistance?</label>
-                                                        <textarea className="appearance-none block w-full bg-white text-black border-2 border-slate-300 rounded py-2 px-3 mb-3 leading-6" rows="3" />
+                                                        <label className="block tracking-wide text-left text-black text-sm font-semibold mt-3 mb-1.5">How can we be of assistance?</label>
+                                                        <textarea className="appearance-none block w-full bg-white text-black border border-black rounded py-2 px-2.5 mb-3 leading-6" rows="3" />
                                                     </div>
                                                 </div>
                                                 <div className="px-[3vw]">
-                                                    <button type="submit" className="px-[3vw] mb-6 w-full shadow bg-blue-900 hover:bg-blue-800 text-white font-medium py-2 rounded">
+                                                    <button className="px-[3vw] mb-6 w-full bg-slate-200 hover:bg-slate-300 border border-slate-400 font-medium py-2 rounded" onClick={handleClose}>
                                                         Send Message
                                                     </button>
                                                 </div>
@@ -109,7 +109,7 @@ function FooterBottom() {
                                         </div>
                                     </div>
                                     <button className="absolute top-6 right-8 text-gray-500 text-xl" onClick={handleClose}>
-                                        ✖
+                                        <X />
                                     </button>
                                 </div>
                             </div>

@@ -1,4 +1,4 @@
-import { Plus, UserCircle } from "@phosphor-icons/react";
+import { Plus } from "@phosphor-icons/react";
 import { Button, DialogTrigger, Input, TextField } from "react-aria-components";
 import ash from "../../assets/ash.png"
 import wile from "../../assets/wile.png"
@@ -18,12 +18,12 @@ function TicketContent() {
             <div className="flex flex-col">
                 <div className="flex flex-row items-center mb-8">
                     <div className="bg-white w-full border rounded grow">
-                        <TextField className="px-4 py-4 text-black border-b">
+                        <TextField className="px-4 py-3 text-black border-b text-sm">
                             <Input className="focus:outline-none w-full" placeholder="Message" />
                         </TextField>
                         <div className="rounded flex flex-row items-center justify-between px-4 py-2.5">
-                            <label for="file-upload" class="cursor-pointer">
-                                <div className="flex flex-row items-center bg-slate-100 rounded-full p-2 border hover:bg-slate-200 border border-slate-400">
+                            <label for="file-upload" className="cursor-pointer">
+                                <div className="flex flex-row items-center bg-slate-100 rounded-full p-1.5 border hover:bg-slate-200 border border-slate-400">
                                     <Plus />
                                 </div>
                             </label>

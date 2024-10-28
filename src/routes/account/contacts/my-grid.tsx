@@ -6,7 +6,7 @@ function MyGrid({ items }) {
     return (
         <ListBox items={items} className="grid grid-cols-3 gap-4">
             {item => (
-                <ListBoxItem className="w-full pt-6 pb-4 pl-4 pr-4 bg-ghost-white rounded-sm flex border">
+                <ListBoxItem className="w-full pt-6 pb-4 pl-4 pr-4 bg-white rounded-sm flex border">
                     <div className="grow flex flex-col">
                         <div className="flex gap-4">
                             <img src={AnonymousProfile} className="h-12 w-12 rounded-full"/>

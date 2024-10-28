@@ -12,7 +12,7 @@ import softwarebg from "../../assets/softwarebg.png"
 import enterpriseicon from "../../assets/enterpriseicon.png"
 import healthcareicon from "../../assets/healthcareicon.png"
 import educationicon from "../../assets/educationicon.png"
-import { CaretRight, Compass } from "@phosphor-icons/react";
+import { CaretDown, CaretRight } from "@phosphor-icons/react";
 import FooterTop from "../../components/footer/footer-top.tsx";
 import FooterBottom from "../../components/footer/footer-bottom.tsx";
 
@@ -38,11 +38,11 @@ function Landing() {
             >
                 <div className="text-ghost-white h-full">
                     <div className="max-w-[1440px] px-4 mx-auto h-full flex items-center">
-                        <div>
+                        <div className="w-full">
                             <h1 className="text-5xl font-bold">Welcome to Better</h1>
                             <h1 className="text-5xl font-bold mt-3">Business Buying</h1>
                             <p className="text-xl mt-6">Elevate your business to the next level</p>
-                            <button 
+                            {/* <button 
                                     onClick={() => {
                                         exploreRef.current.scrollIntoView({ behavior: 'smooth' });
                                     }} className="text-lg bg-ghost-white hover:bg-slate-300 text-oxford-blue font-bold py-2 px-8 my-8 rounded-sm">
@@ -50,7 +50,15 @@ function Landing() {
                                     <div>Explore</div>
                                     <div><Compass size={22} /></div>
                                 </div>
-                            </button>
+                            </button> */}
+                            <div className="absolute left-0 right-0">
+                                <button 
+                                        onClick={() => {
+                                            exploreRef.current.scrollIntoView({ behavior: 'smooth' });
+                                        }} className="mt-20 flex justify-center items-center mx-auto text-black bg-ghost-white hover:bg-slate-300 p-2.5 rounded-full">
+                                        <div className="items-center"><CaretDown size={22} /></div>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

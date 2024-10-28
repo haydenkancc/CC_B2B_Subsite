@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import "../solutions/solutions.css"
-import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
 import bluilding from "../../assets/bluilding.png";
 import { CaretRight } from '@phosphor-icons/react';
@@ -27,7 +26,6 @@ function About() {
             {/* NavBar */}
             <div className="w-full">
                 <NavbarTop />
-                {/* <NavbarBottom pages={pages} /> */}
             </div>
 
             {/* Homepage */}

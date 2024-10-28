@@ -1,15 +1,7 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import solutionsblue from "../../assets/solutionsblue.png";
-import { CaretLeft } from "@phosphor-icons/react";
 
 function Forgot() {
-    const [showPassword, setShowPassword] = useState(false);
-
-    const togglePasswordVisibility = () => {
-        setShowPassword(prevState => !prevState);
-    };
-
     return (
         <>
             <div className="bg-oxford-blue h-svh flex items-center justify-center">
@@ -20,7 +12,7 @@ function Forgot() {
                         <div className="text-sm font-medium text-center px-10 mt-4">Enter the email address associated with your account and we'll send you password reset instructions.</div>
                         <div className="mt-5 w-full px-8">
                             <label className="text-left text-black font-medium mb-1">Email Address</label>
-                            <input className="w-full bg-white text-black border border-black rounded-sm py-1.5 px-2.5" />
+                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5" />
                         </div>
                         <Link to={"/forgot-submission"} className="flex items-center justify-center bg-oxford-blue text-white rounded-sm font-medium text-center w-24 h-8 mt-8">
                             Submit

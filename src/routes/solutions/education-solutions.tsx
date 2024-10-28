@@ -1,8 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./solutions.css"
 import CorporateSalesCarousel from "./corporate-sales-carousel.tsx";
-import { Link } from "react-router-dom";
-import NavbarBottom from '../../components/navbar/navbar-bottom.tsx';
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
 import education from "../../assets/education.png"
 import remote from "../../assets/remote.png"
@@ -12,21 +10,14 @@ import meeting from "../../assets/meeting.png"
 import dormitories from "../../assets/dormitories.png"
 import itroom from "../../assets/itroom.png"
 import esports from "../../assets/esports.png"
-import Logo from '../../assets/Canada_Computers_(Icon).svg?react';
-import envelope from "../../assets/envelope.png"
-import call from "../../assets/call.png"
-import { ClipboardText, Cardholder, HandCoins, UserCircleGear, CaretRight, Check, UserFocus, ChartLineUp, Envelope, Pen, Phone } from '@phosphor-icons/react';
+import { ClipboardText, Cardholder, HandCoins, UserCircleGear, CaretRight, Check, UserFocus, ChartLineUp } from '@phosphor-icons/react';
 import enterprise1 from "../../assets/enterprise1.png"
 import enterprise2 from "../../assets/enterprise2.png"
 import enterprise3 from "../../assets/enterprise3.png"
 import tmumeeting from "../../assets/tmumeeting.png"
 import tmulogo from "../../assets/tmulogo.png"
-import solutionsblue from "../../assets/solutionsblue.png"
-import person2 from "../../assets/person2.png"
 import FooterTop from "../../components/footer/footer-top.tsx";
 import FooterBottom from "../../components/footer/footer-bottom.tsx";
-
-const pages = ['Partners', 'Industry', 'About'];
 
 const quotes = [
     // {
@@ -72,24 +63,12 @@ function EducationSolutions() {
         },
     ];
 
-    const [currentRelationship, setCurrentRelationship] = useState("");
-
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleSelectChange = (event) => {
-        setCurrentRelationship(event.target.value);
-    };
-
-    const handleOpen = () => setIsOpen(true);
-    const handleClose = () => setIsOpen(false);
-
     return (
         <>
 
             {/* NavBar */}
             <div className="w-full">
                 <NavbarTop />
-                {/* <NavbarBottom pages={pages} /> */}
             </div>
 
             {/* Homepage */}
@@ -156,7 +135,7 @@ function EducationSolutions() {
             {/* Benefits */}
             <div className="bg-ghost-white flex flex-col items-center py-4 w-full overflow-hidden">
                 <h1 className="text-2xl text-black font-bold text-center mt-12">Prepare Solutions for Every Space</h1>
-                <div className="text-black py-6">We'll craft tailored solutions that optimize functionality and enhance performance in every space.</div>
+                <div className="text-black py-4 mb-2">We'll craft tailored solutions that optimize functionality and enhance performance in every space.</div>
             </div>
 
             {/* Solutions */}

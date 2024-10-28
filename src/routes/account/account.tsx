@@ -99,7 +99,7 @@ function Account() {
                 <div className="px-8 pt-8">
                     <div className="text-2xl font-medium">Account Settings</div>
                 </div>
-                <div className="px-8 pt-8">
+                <div className="pt-8">
                     <PageTabs tabs={tabs} />
                 </div>
             </div>

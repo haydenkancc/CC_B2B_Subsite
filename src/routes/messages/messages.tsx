@@ -1,31 +1,48 @@
-import NavbarTopAccount from "../../components/navbar/navbar-top-account.tsx";
-import NavbarBottom from "../../components/navbar/navbar-bottom.tsx";
 import '../billing/billing.css'
-import PortalHeading from "../../components/portal-page/portal-heading.tsx";
-import PortalBody from "../../components/portal-page/portal-body.tsx";
-import PageWrap from "../../components/portal-page/page-wrap.tsx";
-import PageTabs from "../../components/portal-page/page-tabs.tsx";
 import MessageTable from "./message-table.tsx";
+import SidebarNav from "../sidebar-nav/sidebar-nav.tsx";
+import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import NotificationTabs from "../../components/tab-navigation/notification-tabs.tsx";
+import PromotionsTable from './promotions-table.tsx';
+import SystemTable from './system-table.tsx';
+import { useEffect } from 'react';
 
 const tabs = [
-    { id: 1, title: 'All', content: <MessageTable/> },
-    { id: 2, title: 'Sent', content: <MessageTable/> },
-    { id: 3, title: 'Promotions', content: <MessageTable/> },
-    { id: 4, title: 'System', content: <MessageTable/> },
+    { id: 1, title: 'All', content: <MessageTable /> },
+    { id: 2, title: 'Promotions', content: <PromotionsTable /> },
+    { id: 3, title: 'System', content: <SystemTable /> },
 ]
 
-const pages = ['Dashboard', 'Orders', 'Billing', 'Saved Lists', 'Tickets', 'Account']
-
 function Messages() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     return (
-        <PortalBody>
-            <NavbarTopAccount/>
-            <NavbarBottom pages={pages} />
-            <PageWrap>
-                <PortalHeading heading="Message Center" subheading="View and send messages" />
-                <PageTabs tabs={tabs} />
-            </PageWrap>
-        </PortalBody>
+        <div className="flex">
+            <div className="">
+                <SidebarNav />
+            </div>
+            <div className="grow">
+                <div className="sam-title-section">
+                    <div className="sam-title">
+                        <div className="w-8 h-8 flex items-center justify-center">
+                            <MagnifyingGlassIcon />
+                        </div>
+                        <div className="text-[#808080]">
+                            Search for anything
+                        </div>
+                    </div>
+                </div>
+                <div className="px-8 py-8">
+                    <div className="text-2xl font-medium">Notifications</div>
+                </div>
+                <div className="">
+                    <NotificationTabs tabs={tabs} />
+                </div>
+            </div>
+        </div>
     )
 }
 

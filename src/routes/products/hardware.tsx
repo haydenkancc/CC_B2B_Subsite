@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./products.css";
 import NavbarTop from '../../components/navbar/navbar-top.tsx';
 import typing from '../../assets/typing.png';
 import FooterTop from "../../components/footer/footer-top.tsx";
 import FooterBottom from "../../components/footer/footer-bottom.tsx";
 import NoPriceProductListing from "./noprice-product-listing.tsx";
-
-const pages = ['Partners', 'Industry', 'About'];
 
 function Hardware() {
 

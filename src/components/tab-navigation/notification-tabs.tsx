@@ -1,24 +1,27 @@
 import {Collection, Tab, TabList, TabPanel, Tabs} from 'react-aria-components';
 import {ReactNode} from 'react';
+import './tabs-navigation.css'
 
 type PageTab = {
     id: number;
     title: string;
     content: ReactNode;
 }
-interface PageTabsProps {
+interface NavigationTabsProps {
     tabs: Array<PageTab>
 }
 
-function PageTabs({ tabs } : PageTabsProps) {
+function NotificationTabs({ tabs } : NavigationTabsProps) {
     return (
         <Tabs className="">
-            <TabList className="px-8 flex text-lg border-b gap-1" items={tabs}>
-                {item => <Tab className="account-Tab">{item.title}</Tab>}
+            <TabList className="pl-8 flex border-b gap-x-2.5" items={tabs}>
+                {item => <Tab className="navigation-Tab flex flex-row items-end">
+                    {item.title}
+                </Tab>}
             </TabList>
             <Collection items={tabs}>
                 {item => (
-                    <TabPanel className="pt-16">
+                    <TabPanel className="pt-8">
                         {item.content}
                     </TabPanel>
                 )}
@@ -27,4 +30,4 @@ function PageTabs({ tabs } : PageTabsProps) {
     )
 }
 
-export default PageTabs;
+export default NotificationTabs;
