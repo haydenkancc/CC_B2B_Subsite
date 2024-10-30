@@ -115,7 +115,7 @@ function HardwareDisplay() {
                                         <Plus size={10} weight="bold" />
                                     </button>
                                 </div>
-                                <Link to="/sign-in" className="border bg-slate-100 hover:bg-slate-200 p-2.5 rounded-sm text-center w-80 font-medium grow">Sign In to Purchase</Link>
+                                <Link to="/sign-in" className="border bg-slate-100 hover:bg-slate-200 p-2.5 rounded-sm text-center w-80 font-medium grow">Add to Cart</Link>
                             </div>
                             <div className="flex flex-col gap-y-5">
                                 <div className="flex flex-row items-center justify-between gap-x-5">

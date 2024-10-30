@@ -7,7 +7,7 @@ import User from '../../assets/user-circle.svg?react';
 import Question from '../../assets/question.svg?react';
 import { Button, Input, TextField } from 'react-aria-components';
 import { Link } from 'react-router-dom';
-import { CaretRight, CaretDown, CaretUp } from '@phosphor-icons/react';
+import { CaretDown, CaretUp } from '@phosphor-icons/react';
 
 function NavbarTop() {
     const [isProductsVisible, setProductsVisible] = useState(false);
@@ -118,9 +118,15 @@ function NavbarTop() {
                     </div>
                 </div>
                 <div className="flex items-center pl-8 gap-6">
-                    <Button className="navbar-top-Button">
+                    {/* <Button className="navbar-top-Button">
                         <Question className="fill-ghost-white" height="1.5em" width="1.5em" />
                         Help
+                    </Button> */}
+                    <Button className="navbar-top-Button">
+                        <Link to={"/create-account"} className="flex flex-row items-center gap-x-1.5">
+                            <Question className="fill-ghost-white" height="1.5em" width="1.5em" />
+                            Help
+                        </Link>
                     </Button>
                     <Button className="navbar-top-Button">
                         <Link to={"/sign-in"} className="flex flex-row items-center gap-x-1.5">

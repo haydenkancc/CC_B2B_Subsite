@@ -35,8 +35,8 @@ function Messages() {
                         </div>
                     </div>
                 </div>
-                <div className="px-8 py-8">
-                    <div className="text-2xl font-medium">Notifications</div>
+                <div className="px-8 pt-5 pb-8">
+                    <div className="text-2xl">Notifications</div>
                 </div>
                 <div className="">
                     <NotificationTabs tabs={tabs} />

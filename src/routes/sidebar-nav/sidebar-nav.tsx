@@ -28,7 +28,6 @@ function SidebarNav() {
                             </div>
                             <div className="flex flex-col">
                                 <span className="text-sm font-medium flex items-center gap-0.5">Acme Corporation<CaretDownIcon className="h-5 w-5"/></span>
-                                <span className="text-xs">Wile E. Coyote</span>
                             </div>
                         </div>
                     </div>
@@ -41,11 +40,11 @@ function SidebarNav() {
                                 <DashboardIcon className="sn-list-box-item--icon"/>
                                 <span className="sn-list-box-item--content">Dashboard</span>
                             </Link>
-                            <Link to="/catalogue" className="sn-list-box-item--wrapper">
+                            {/* <Link to="/catalogue" className="sn-list-box-item--wrapper">
                                 <ReaderIcon className="sn-list-box-item--icon"/>
                                 <span className="sn-list-box-item--content">Catalogue</span>
-                            </Link>
-                            <Link to="/account" className="sn-list-box-item--wrapper">
+                            </Link> */}
+                            <Link to="/company" className="sn-list-box-item--wrapper">
                                 <MixerVerticalIcon className="sn-list-box-item--icon"/>
                                 <span className="sn-list-box-item--content">Company Settings</span>
                             </Link>

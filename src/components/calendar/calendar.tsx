@@ -61,7 +61,7 @@ function Calendar() {
                         </div>
                     </div>
                     <SearchField>
-                        <Input className="pl-3 pr-3 pt-2 pb-2 bg-ghost-white text-oxford-blue border border-1 border-slate-400 rounded-sm" placeholder="Search" />
+                        <Input className="pl-3 pr-3 pt-2 pb-2 bg-white text-oxford-blue border border-1 border-slate-400 rounded-sm focus:outline-none" placeholder="Search" />
                     </SearchField>
                 </div>
             </div>

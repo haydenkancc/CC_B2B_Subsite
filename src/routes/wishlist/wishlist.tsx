@@ -43,8 +43,8 @@ function Wishlist() {
                         </div>
                     </div>
                 </div>
-                <div className="px-8 pt-8">
-                    <div className="text-2xl font-medium">Wile's List 1</div>
+                <div className="px-8 pt-5">
+                    <div className="text-2xl">Wile's List 1</div>
                 </div>
                 <table className="w-full bg-transparent border-lavender mt-8">
                     <thead>

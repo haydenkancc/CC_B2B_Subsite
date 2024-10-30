@@ -47,10 +47,10 @@ function Standards() {
                         </div>
                     </div>
                 </div>
-                <div className="px-8 py-8">
-                    <div className="text-2xl font-medium">Saved Lists</div>
+                <div className="px-8 pt-5">
+                    <div className="text-2xl">Saved Lists</div>
                 </div>
-                <div className="px-8 pb-8">
+                <div className="px-8 py-8">
                     <ListsOverview />
                 </div>
                 <div className="px-8 pb-20">

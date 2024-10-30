@@ -47,20 +47,12 @@
 .search-expanded {
     position: absolute;
     left: 6rem;
-    width: calc(100% - 29.47rem);
+    width: calc(100% - 25.37rem);
     z-index: 10;
 }
-
-/* .search-expanded {
-    position: absolute;
-    left: 6rem;
-    width: calc(100% - 14rem);
-    z-index: 10;
-} */
-
 .search-expanded-no {
     position: absolute;
     left: 6rem;
-    width: calc(100% - 28.16rem);
+    width: calc(100% - 28.04rem);
     z-index: 10;
 }

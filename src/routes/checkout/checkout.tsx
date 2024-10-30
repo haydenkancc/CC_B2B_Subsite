@@ -25,8 +25,8 @@ function Checkout() {
                         </div>
                     </div>
                 </div>
-                <div className="px-8 py-8">
-                    <div className="text-2xl font-medium">Checkout</div>
+                <div className="px-8 pt-5 pb-8">
+                    <div className="text-2xl">Checkout</div>
                 </div>
                 <div className="px-8">
                     <OrderSummary />

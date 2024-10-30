@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Landing from './routes/landing/landing.tsx';
 import SAM from './routes/sam/sam.tsx';
-import Dashboard from './routes/dashboard/dashboard.tsx';
 import Account from './routes/account/account.tsx';
 import './index.css'
 import EnterpriseSolutions from './routes/solutions/enterprise-solutions.tsx';
@@ -29,6 +28,9 @@ import Catalogue from './routes/catalogue/catalogue.tsx';
 import TicketOpen from './routes/tickets/ticket-open.tsx';
 import HardwareProduct from './routes/products/hardware/hardware-product.tsx';
 import Profile from './routes/profile/profile.tsx';
+import Optimize from './routes/procurement/optimize.tsx';
+import Company from './routes/company/company.tsx';
+import DashboardNew from './routes/dashboard-new/dashboard-new.tsx';
 
 const router = createBrowserRouter([
     {
@@ -53,7 +55,7 @@ const router = createBrowserRouter([
     },
     {
         path: "dashboard",
-        element: <Dashboard />,
+        element: <DashboardNew />,
     },
     {
         path: "account",
@@ -138,6 +140,14 @@ const router = createBrowserRouter([
     {
         path: "profile",
         element: <Profile />
+    },
+    {
+        path: "optimize",
+        element: <Optimize />
+    },
+    {
+        path: "company",
+        element: <Company />
     },
 ]);
 

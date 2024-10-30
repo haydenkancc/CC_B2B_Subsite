@@ -338,9 +338,9 @@ function NoPriceProductListing() {
                                             </button>
                                         )}
                                         {pricing === 'pricing-unlocked' && (
-                                            <button className="hover:bg-slate-100 border border-slate-400 rounded-lg py-1.5 text-center mt-2" onClick={() => setPricing('pricing-unlocked')}>
+                                            <Link to="/hardware-product" className="hover:bg-slate-100 border border-slate-400 rounded-lg py-1.5 text-center mt-2" onClick={() => setPricing('pricing-unlocked')}>
                                                 {product.price}
-                                            </button>
+                                            </Link>
                                         )}
                                     </div>
                                 </div>

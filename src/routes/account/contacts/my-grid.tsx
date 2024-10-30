@@ -36,19 +36,22 @@ function MyGrid({ items }) {
                         </div>
                         <div className="flex gap-4 text-sm">
                             {item.primary &&
-                                <div className="flex pl-2 pr-2 pt-1 pb-1 bg-amber-200 text-amber-800 rounded-sm">
-                                    Primary Contact
-                                </div>
+                                    <span className="text-sm text-amber-600 flex items-center">
+                                        <div className="h-1 w-1 rounded-full bg-amber-600 mr-1.5 ml-0.5"/>
+                                        Primary Contact
+                                    </span>
                             }
                             {item.billing &&
-                                <div className="flex pl-2 pr-2 pt-1 pb-1 bg-blue-200 text-blue-800 rounded-sm">
+                                <span className="text-sm text-blue-600 flex items-center">
+                                    <div className="h-1 w-1 rounded-full bg-blue-600 mr-1.5 ml-0.5"/>
                                     Billing Contact
-                                </div>
+                                </span>
                             }
                             {item.web ?
-                                (<div className="flex pl-2 pr-2 pt-1 pb-1 bg-green-200 text-green-800 rounded-sm">
+                                (<span className="text-sm text-green-600 flex items-center">
+                                    <div className="h-1 w-1 rounded-full bg-green-600 mr-1.5 ml-0.5"/>
                                     {item.web}
-                                </div>)
+                                </span>)
                                 :
                                 (<div className="flex pl-2 pr-2 pt-1 pb-1 bg-red-200 text-red-800 rounded-sm">
                                     Not Web-Enabled

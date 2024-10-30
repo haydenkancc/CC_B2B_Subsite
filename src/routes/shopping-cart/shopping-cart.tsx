@@ -60,8 +60,8 @@ function ShoppingCart() {
                         </div>
                     </div>
                 </div>
-                <div className="px-8 pt-8">
-                    <div className="text-2xl font-medium">Wile's Shopping Cart</div>
+                <div className="px-8 pt-5">
+                    <div className="text-2xl">Wile's Shopping Cart</div>
                 </div>
                 <div className="px-8">
                     <table className="w-full bg-transparent border-lavender mt-8">

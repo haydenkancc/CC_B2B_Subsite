@@ -21,7 +21,7 @@ function Logs() {
         <div className="pb-20 px-8">
             <div className="pb-12">
                 <SearchField>
-                    <Input className="pl-3 pr-3 pt-2 pb-2 bg-ghost-white text-oxford-blue border border-1 border-oxford-blue rounded-sm" placeholder="Search Logs" />
+                    <Input className="pl-3 pr-3 pt-2 pb-2 bg-white text-oxford-blue border border-1 border-oxford-blue rounded-sm" placeholder="Search Logs" />
                 </SearchField>
             </div>
             <Table className="w-full border-separate border-spacing-0" aria-label="Documents">

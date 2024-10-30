@@ -38,8 +38,8 @@ function Billing() {
                         </div>
                     </div>
                 </div>
-                <div className="px-8 py-8">
-                    <div className="text-2xl font-medium">Billing and Payment</div>
+                <div className="px-8 pt-5 pb-8">
+                    <div className="text-2xl">Billing and Payment</div>
                 </div>
                 <div className="px-8">
                     <PaymentMethods />

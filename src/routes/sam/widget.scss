@@ -64,4 +64,11 @@ $text-disabled-color: #808080;
     flex: 1 1 auto;
     width: 100%;
   }
+
+  &--card-graph {
+    margin: 5rem 0 1rem;
+    position: relative;
+    flex: 1 1 auto;
+    width: 100%;
+  }
 }

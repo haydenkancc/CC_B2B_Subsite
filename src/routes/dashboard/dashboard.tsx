@@ -48,8 +48,8 @@ function Dashboard() {
                         </div>
                     </div>
                 </div>
-                <div className="px-8 pt-8">
-                    <div className="text-2xl font-medium">Dashboard</div>
+                <div className="px-8 pt-5">
+                    <div className="text-2xl">Dashboard</div>
                 </div>
                 <div className="flex flex-wrap gap-5 px-8 pt-8">
                     <Link to={'/account'} className="w-108 border rounded-sm hover:border-oxford-blue">

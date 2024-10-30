@@ -8,7 +8,7 @@
 }
 
 .my-text-field-Input {
-    background: var(--ghost-white);
+    background: var(---white);
     border: 1px solid var(--slate-gray);
     border-radius: 0.25rem;
     padding: 0.5rem 0.5rem;

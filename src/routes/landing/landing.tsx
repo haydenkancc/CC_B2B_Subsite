@@ -15,6 +15,7 @@ import educationicon from "../../assets/educationicon.png"
 import { CaretDown, CaretRight } from "@phosphor-icons/react";
 import FooterTop from "../../components/footer/footer-top.tsx";
 import FooterBottom from "../../components/footer/footer-bottom.tsx";
+import NavbarTopAccount from "../../components/navbar/navbar-top-account.tsx";
 
 function Landing() {
 
@@ -55,8 +56,10 @@ function Landing() {
                                 <button 
                                         onClick={() => {
                                             exploreRef.current.scrollIntoView({ behavior: 'smooth' });
-                                        }} className="mt-20 flex justify-center items-center mx-auto text-black bg-ghost-white hover:bg-slate-300 p-2.5 rounded-full">
-                                        <div className="items-center"><CaretDown size={22} /></div>
+                                        }} className="mt-20 flex justify-center items-center mx-auto text-white p-2.5 rounded-full">
+                                        <div className="items-center animate-bounce">
+                                            <CaretDown size={40} weight="thin" />
+                                        </div>
                                 </button>
                             </div>
                         </div>
@@ -94,9 +97,9 @@ function Landing() {
                                 <CaretRight size={20} weight="light" />
                             </Link>
                         </div>
-                        <div className="bg-slate-200 rounded-sm w-3/5 h-60 mb-4 mt-10">
+                        <Link to="/hardware-product" className="bg-slate-200 rounded-sm w-3/5 h-60 mb-4 mt-10">
                             <img src={adspace} className="w-full h-full object-contain" />
-                        </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="max-w-[1440px] px-4 mx-auto flex flex-col">

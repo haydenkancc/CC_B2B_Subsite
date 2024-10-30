@@ -97,7 +97,7 @@ function FooterBottom() {
                                                 <div className="flex flex-wrap px-[3vw] mb-4">
                                                     <div className="w-full">
                                                         <label className="block tracking-wide text-left text-black text-sm font-semibold mt-3 mb-1.5">How can we be of assistance?</label>
-                                                        <textarea className="appearance-none block w-full bg-white text-black border border-black rounded py-2 px-2.5 mb-3 leading-6" rows="3" />
+                                                        <textarea className="appearance-none block w-full bg-white text-black border border-black rounded py-2 px-2.5 mb-3 leading-6 focus:outline-none" rows="3" />
                                                     </div>
                                                 </div>
                                                 <div className="px-[3vw]">
@@ -118,7 +118,7 @@ function FooterBottom() {
 
                     <div className="flex flex-col gap-y-2">
                         <div className="font-medium text-lg">Company Profile</div>
-                        <div>About Us</div>
+                        <Link to="/about">About Us</Link>
                         <div>Press Room</div>
                         <div>Philantrophy</div>
                         <div>Careers</div>
@@ -141,7 +141,7 @@ function FooterBottom() {
                         <div>Rebates & Promotions</div>
                         <div>Service and Repair Center</div>
                         <div>Product Request</div>
-                        <div>Create an Account</div>
+                        <Link to="/create-account">Create an Account</Link>
                     </div>
                     <div className="flex flex-col gap-y-2">
                         <div className="font-medium text-lg">Policies</div>
@@ -155,10 +155,18 @@ function FooterBottom() {
             </div>
             <div className="w-full pl-4 pr-4 py-5 border border-t-black">
                 <div className="flex flex-row justify-center gap-x-8">
-                    <FacebookLogo  weight="light" size={40} />
-                    <LinkedinLogo  weight="light" size={40} />
-                    <XLogo  weight="light" size={40} />
-                    <YoutubeLogo  weight="light" size={40} />
+                    <a href="https://www.canadacomputers.com/" target="_blank">
+                        <FacebookLogo  weight="light" size={40} />
+                    </a>
+                    <a href="https://www.canadacomputers.com/" target="_blank">
+                        <LinkedinLogo  weight="light" size={40} />
+                    </a>
+                    <a href="https://www.canadacomputers.com/" target="_blank">
+                        <XLogo  weight="light" size={40} />
+                    </a>
+                    <a href="https://www.canadacomputers.com/" target="_blank">
+                        <YoutubeLogo  weight="light" size={40} />
+                    </a>
                 </div>
             </div>
             <div className="pt-3 pb-20 border border-t-black">
