@@ -1,4 +1,3 @@
-
 .navigation-Tab {
     position: relative;
     padding: 0.5rem 1rem 0.75rem 1rem;
@@ -31,3 +30,35 @@
     }
 }
 
+
+.list-Tab {
+    position: relative;
+    padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+    cursor: pointer;
+
+    &[data-focused] {
+        outline: none;
+    }
+
+    &[data-hovered], &[data-focused] {
+        background: var(--tabs-gray);
+    }
+
+    &[data-selected] {
+        background: var(--tabs-gray);
+    }
+}
+
+.search-no {
+    width: auto;
+}
+
+.search-yes {
+    position: relative;
+    width: 10rem;
+    z-index: 10;
+}
+
+.search--input {
+    all: unset;
+}

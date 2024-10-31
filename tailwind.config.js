@@ -9,7 +9,8 @@ export default {
         'glaucous': '#0f224d',
         'ghost-white': '#f8f7ff',
         'lavender': '#e6e6fa',
-        'slate-gray': '#798A9E'
+        'slate-gray': '#798A9E',
+        'tabs-gray': '#f5f5f5',
       },
       spacing: {
         '18': '4.5rem',

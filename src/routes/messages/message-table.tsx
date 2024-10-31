@@ -19,12 +19,10 @@ function MessageTable({ items=[
 ] })  {
     return (
         <div className="mb-20">
-            <div className="px-8">
-                <Calendar />
-            </div>
-            <table className="w-full bg-transparent border-lavender">
+            {/* <Calendar /> */}
+            <table className="w-full bg-transparent border">
                 <thead>
-                    <tr className="text-oxford-blue border-b">
+                    <tr className="text-oxford-blue">
                         <th></th>
                         {titles.map(title => (
                             <th key={title.id}>
@@ -38,12 +36,9 @@ function MessageTable({ items=[
                 </thead>
                 <tbody>
                     {items.map(item => (
-                        <tr key={item.id} className="border-b text-sm">
-                            <td className="w-12">
-                                <div className="px-4">
-                                    <Star size={18} />
-                                </div>
-                            </td>
+                        <tr key={item.id} className="border-b text-xs">
+                            <div className="ml-4">
+                            </div>
                             <td className="py-5 w-56">{item.name}</td>
                             <td className="px-10 py-5">{item.message}</td>
                             <td className="py-5 w-32">{item.time}</td>

@@ -19,12 +19,26 @@ function NewContactModal() {
     const [selectedKey, setSelectedKey] = useState<Key | null>();
     return (
         <MyDialogForm>
-            <Heading slot="title" className="col-span-2 flex justify-left text-3xl pt-8 pb-8">Add New Contact</Heading>
+            <Heading slot="title" className="col-span-2 flex justify-left text-3xl pt-8 pb-8">Add New User</Heading>
             <MyTextField label="Name" />
-            <MyTextField className="" label="Role" />
+            <MyTextField className="" label="Position" />
             <MyTextField label="Phone" />
             <MyTextField label="Email" />
             <MySelect onSelectionChange={(key) => {setSelectedKey(key)}} items={items} label="Address" className="col-span-2">
+                {item => (
+                    item.other ?
+                        (<MySelectItem>
+                            <Text slot="label" className="flex">Custom Address</Text>
+                        </MySelectItem>)
+                        :
+                        (<MySelectItem>
+                            <Text slot="label" className="flex">{item.location}</Text>
+                            <Text slot="description" className="text-xs text-oxford-blue/75">{item.address1} {item.address2}, {item.city} {item.province} {item.postal}</Text>
+                        </MySelectItem>)
+
+                )}
+            </MySelect>
+            <MySelect onSelectionChange={(key) => {setSelectedKey(key)}} items={items} label="Permission" className="col-span-2">
                 {item => (
                     item.other ?
                         (<MySelectItem>

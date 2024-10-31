@@ -16,8 +16,7 @@ const tabs = [
     { id: 2, title: 'Contacts',  content: <Contacts /> },
     { id: 3, title: 'Addresses',  content: <Addresses /> },
     { id: 4, title: 'Documents',  content: <Documents /> },
-    { id: 5, title: 'Logs',  content: <Logs /> },
-    { id: 5, title: 'Permissions',  content: <Permissions /> },
+    { id: 6, title: 'Permissions',  content: <Permissions /> },
 ]
 
 function Company() {
@@ -51,7 +50,9 @@ function Company() {
                 <div className="px-8 pt-5">
                     <div className="text-2xl">Company Settings</div>
                 </div>
-                <NavigationTabs tabs={tabs} />
+                <div className="px-8">
+                    <NavigationTabs tabs={tabs} />
+                </div>
             </div>
         </div>
     )

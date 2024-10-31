@@ -14,7 +14,7 @@ interface NavigationTabsProps {
 function NotificationTabs({ tabs } : NavigationTabsProps) {
     return (
         <Tabs className="">
-            <TabList className="pl-8 flex border-b gap-x-2.5" items={tabs}>
+            <TabList className="flex border-b gap-x-2.5" items={tabs}>
                 {item => <Tab className="navigation-Tab flex flex-row items-end">
                     {item.title}
                 </Tab>}

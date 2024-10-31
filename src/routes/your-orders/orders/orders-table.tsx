@@ -26,15 +26,12 @@ function OrdersTable({ items=[
 ] })  {
     return (
         <div className="mb-20">
-            <div className="px-8">
-                <Calendar />
-            </div>
-            <table className="w-full bg-transparent border-lavender">
+            <table className="w-full bg-transparent border">
                 <thead>
-                    <tr className="text-oxford-blue border-b border-slate-300">
+                    <tr className="text-oxford-blue border border-slate-300 bg-tabs-gray">
                         <th></th>
                         {titles.map(title => (
-                            <th key={title.id} className="py-2">
+                            <th key={title.id} className="py-4 text-sm">
                                 <div className="flex flex-row items-center">
                                     {title.name === "Number:" &&
                                         <div className="flex flex-row items-center">
@@ -58,28 +55,24 @@ function OrdersTable({ items=[
                 </thead>
                 <tbody>
                     {items.map(item => (
-                        <tr key={item.id} className="border-b border-slate-300 text-sm">
-                            <td className="w-12">
-                                <div className="px-4 ml-4">
-                                    <Star size={18} />
-                                </div>
-                            </td>
-                            <td className="py-2 font-medium">{item.number}</td>
-                            <td className="py-2 font-medium">
+                        <tr key={item.id} className="border-b border-slate-300 text-xs">
+                            <div className="ml-4" />
+                            <td className="font-medium">{item.number}</td>
+                            <td className="font-medium">
                                 {item.status === "Completed" &&
-                                    <span className="text-sm text-green-600 flex items-center">
+                                    <span className="text-xs text-green-600 flex items-center">
                                         <div className="h-1 w-1 rounded-full bg-green-600 mr-1.5 ml-0.5"/>
                                         Completed
                                     </span>
                                 }
                                 {item.status === "Pending" &&
-                                    <span className="text-sm text-yellow-600 flex items-center">
+                                    <span className="text-xs text-yellow-600 flex items-center">
                                         <div className="h-1 w-1 rounded-full bg-yellow-600 mr-1.5 ml-0.5"/>
                                         In Progress
                                     </span>
                                 }
                                 {item.status === "Cancelled" &&
-                                    <span className="text-sm text-red-600 flex items-center">
+                                    <span className="text-xs text-red-600 flex items-center">
                                         <div className="h-1 w-1 rounded-full bg-red-600 mr-1.5 ml-0.5"/>
                                         Cancelled
                                     </span>

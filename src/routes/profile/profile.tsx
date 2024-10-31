@@ -28,9 +28,12 @@ function Profile() {
                             </div>
                         </div>
                     </div>
-                    <Link to="/cart" className="pr-10">
-                        <ShoppingCart size={20} />
-                    </Link>
+                    <div className="flex justify-center items-center border border-slate-300 w-7 h-7 rounded-lg mr-8">
+                        <Link to="/cart" className="">
+                            <ShoppingCart size={18} />
+                        </Link>
+                    </div>
+                    
                 </div>
                 
                 <div className="px-8 pt-5 pb-8">

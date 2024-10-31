@@ -8,13 +8,17 @@ import BillingContacts from '../account/contacts/billing-contacts.tsx';
 import Invoices from './terms/invoices.tsx';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import { useEffect } from 'react';
+import OrdersTabs from '../../components/tab-navigation/orders-tabs.tsx';
+import PaidTable from './terms/paid-table.tsx';
+import OngoingTable from './terms/ongoing-table.tsx';
+import OverdueTable from './terms/overdue-table.tsx';
 
 const tabs = [
-    { id: 1, title: 'Billing', content: <Wallet /> },
-    { id: 2, title: 'Payment', content: <Terms /> },
+    { id: 1, title: 'All', content: <Invoices /> },
+    { id: 2, title: 'Paid',  content: <PaidTable /> },
+    { id: 3, title: 'Ongoing',  content: <OngoingTable /> },
+    { id: 4, title: 'Overdue',  content: <OverdueTable /> },
 ]
-
-const pages = ['Dashboard', 'Orders', 'Billing', 'Saved Lists', 'Tickets', 'Account']
 
 function Billing() {
 
@@ -44,11 +48,8 @@ function Billing() {
                 <div className="px-8">
                     <PaymentMethods />
                 </div>
-                <div className="pr-8">
-                    <BillingContacts />
-                </div>
-                <div className="pt-8">
-                    <Invoices />
+                <div className="px-8">
+                    <OrdersTabs tabs={tabs} />
                 </div>
             </div>
         </div>

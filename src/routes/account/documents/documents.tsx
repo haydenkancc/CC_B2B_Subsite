@@ -15,7 +15,7 @@ const items = [
 
 function Documents() {
     return (
-        <div className="pb-20 px-8">
+        <div className="pb-20">
             <Table className="w-full border-separate border-spacing-0" aria-label="Documents">
                 <MyTableHeader>
                     <MyColumn className="pl-4" isRowHeader>Date Uploaded</MyColumn>

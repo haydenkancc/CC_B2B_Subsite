@@ -34,11 +34,11 @@ function Contacts() {
     const [ showGrid, setShowGrid ] = useState(false);
 
     return (
-        <div className="pb-20 px-8">
+        <div className="pb-20">
             <div className="pb-12 flex justify-between">
                 <DialogTrigger>
                     <Button className="contacts-Button">
-                        Add New Contact
+                        Add New User
                     </Button>
                     <NewContactModal />
                 </DialogTrigger>

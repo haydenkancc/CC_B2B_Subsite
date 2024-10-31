@@ -14,7 +14,7 @@ const titles = [
     { id: 7, name: "Payable:" },
 ]
 
-const items = [
+function Invoices({ items=[
     { id: 1, number: "CCINV000001", status: "Paid", date: "2021-03-17", due: "2021-04-01", user: "Wile E. Coyote", total: "$15,200.00", payable: "$0.00", src: samplePDF  },
     { id: 2, number: "CCINV000002", status: "Overdue", date: "2021-03-18", due: "2021-04-02", user: "Wile E. Coyote", total: "$15,300.00", payable: "$15,300.00", src: samplePDF  },
     { id: 3, number: "CCINV000003", status: "Paid", date: "2021-03-17", due: "2021-04-03", user: "Wile E. Coyote", total: "$15,400.00", payable: "$0.00", src: samplePDF  },
@@ -25,21 +25,16 @@ const items = [
     { id: 8, number: "CCINV000008", status: "Overdue", date: "2021-03-18", due: "2021-04-08", user: "Wile E. Coyote", total: "$15,900.00", payable: "$7,900.00", src: samplePDF  },
     { id: 9, number: "CCINV000009", status: "Paid", date: "2021-03-17", due: "2021-04-09", user: "Wile E. Coyote", total: "$16,000.00", payable: "$0.00", src: samplePDF  },
     { id: 10, number: "CCINV000010", status: "Overdue", date: "2021-03-18", due: "2021-04-10", user: "Wile E. Coyote", total: "$16,100.00", payable: "$12,100.00", src: samplePDF  },
-]
-
-function Invoices() {
+] })  {
 
     return (
         <div className="mb-20">
-            <div className="px-8">
-                <Calendar />
-            </div>
-            <table className="w-full bg-transparent border-lavender">
+            <table className="w-full bg-transparent border">
                 <thead>
-                    <tr className="text-oxford-blue border-b border-slate-300">
+                    <tr className="text-oxford-blue border border-slate-300 bg-tabs-gray">
                         <th></th>
                         {titles.map(title => (
-                            <th key={title.id} className="py-2">
+                            <th key={title.id} className="py-4 text-sm">
                                 {title.name === "Number:" &&
                                     <div className="flex flex-row items-center">
                                         <div>{title.name}</div>
@@ -61,28 +56,24 @@ function Invoices() {
                 </thead>
                 <tbody>
                     {items.map(item => (
-                        <tr key={item.id} className="border-b border-slate-300 text-sm">
-                            <td className="w-12">
-                                <div className="px-4">
-                                    <Star size={18} />
-                                </div>
-                            </td>
+                        <tr key={item.id} className="border-b border-slate-300 text-xs">
+                            <div className="ml-4" />
                             <td className="py-2 font-medium">{item.number}</td>
                             <td className="py-2 font-medium">
                                 {item.status === "Paid" &&
-                                    <span className="text-sm text-green-600 flex items-center">
+                                    <span className="text-xs text-green-600 flex items-center">
                                         <div className="h-1 w-1 rounded-full bg-green-600 mr-1.5 ml-0.5"/>
                                         Paid
                                     </span>
                                 }
                                 {item.status === "Partial" &&
-                                    <span className="text-sm text-yellow-600 flex items-center">
+                                    <span className="text-xs text-yellow-600 flex items-center">
                                         <div className="h-1 w-1 rounded-full bg-yellow-600 mr-1.5 ml-0.5"/>
-                                        Partial
+                                        Ongoing
                                     </span>
                                 }
                                 {item.status === "Overdue" &&
-                                    <span className="text-sm text-red-600 flex items-center">
+                                    <span className="text-xs text-red-600 flex items-center">
                                         <div className="h-1 w-1 rounded-full bg-red-600 mr-1.5 ml-0.5"/>
                                         Overdue
                                     </span>

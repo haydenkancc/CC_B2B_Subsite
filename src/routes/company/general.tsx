@@ -1,8 +1,8 @@
 const fields = [
     { field: "Trade Company Name", placeholder: "Acme Corporation" },
     { field: "Legal Company Name", placeholder: "Acme Corporation" },
-    { field: "Business Since", placeholder: "1999-01-01" },
-    { field: "Primary Business Address", placeholder: "75 West Wilmot Street" },
+    { field: "Business Address 2 (Optional)", placeholder: "1999-01-01" },
+    { field: "Business Address 1", placeholder: "75 West Wilmot Street" },
     { field: "City", placeholder: "Richmond Hill" },
     { field: "Province", placeholder: "Ontario" },
     { field: "Postal Code", placeholder: "L4B 1K7" },
@@ -12,7 +12,7 @@ const fields = [
 
 function General() {
     return (
-        <div className="px-8 mb-20">
+        <div className="mb-20">
             <div className="py-4">
                 <div className="border rounded-sm p-6">
                     <div className="columns-3 gap-8">

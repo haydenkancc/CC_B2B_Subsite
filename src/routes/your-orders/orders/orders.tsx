@@ -9,10 +9,10 @@ import CancelledTable from './cancelled-table.tsx';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 
 const tabs = [
-    { id: 1, title: 'All Orders', number: "10", content: <OrdersTable /> },
-    { id: 2, title: 'Completed', number: "4",  content: <CompletedTable /> },
-    { id: 3, title: 'In Progress', number: "2",  content: <PendingTable /> },
-    { id: 4, title: 'Cancelled', number: "4",  content: <CancelledTable /> },
+    { id: 1, title: 'All', content: <OrdersTable /> },
+    { id: 2, title: 'Completed',  content: <CompletedTable /> },
+    { id: 3, title: 'In Progress',  content: <PendingTable /> },
+    { id: 4, title: 'Cancelled',  content: <CancelledTable /> },
 ]
 
 function Orders() {
@@ -38,7 +38,9 @@ function Orders() {
                 <div className="px-8 pt-8">
                     <OrdersOverview />
                 </div>
-                <OrdersTabs tabs={tabs} />
+                <div className="px-8">
+                    <OrdersTabs tabs={tabs} />
+                </div>
             </div>
         </div>
     )

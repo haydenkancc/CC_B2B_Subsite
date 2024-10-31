@@ -30,7 +30,7 @@ function TicketTable() {
 
     return (
         <div className="mb-20">
-            <div className="px-8">
+            <div className="">
                 <Calendar />
             </div>
             <table className="w-full bg-transparent border-lavender">
@@ -38,7 +38,7 @@ function TicketTable() {
                     <tr className="text-oxford-blue border-b border-slate-300">
                         <th></th>
                         {titles.map(title => (
-                            <th key={title.id} className="px-4 py-2">
+                            <th key={title.id} className="px-4 py-2 text-sm">
                                 <div className="flex flex-row items-center">
                                     {title.name === "Number:" &&
                                         <div className="flex flex-row items-center">
@@ -62,7 +62,7 @@ function TicketTable() {
                 </thead>
                 <tbody>
                     {items.map(item => (
-                        <tr key={item.id} className="border-b border-slate-300 text-sm">
+                        <tr key={item.id} className="border-b border-slate-300 text-xs">
                             <td className="w-12">
                                 <div className="px-4">
                                     <Star size={18} />
@@ -72,13 +72,13 @@ function TicketTable() {
                             <td className="px-4 py-6 font-medium">{item.date}</td>
                             <td className="py-2 font-medium">
                                 {item.status === "Open" &&
-                                    <span className="text-sm text-green-600 flex items-center">
+                                    <span className="text-xs text-green-600 flex items-center">
                                         <div className="h-1 w-1 rounded-full bg-green-600 mr-1.5 ml-0.5"/>
                                         Open
                                     </span>
                                 }
                                 {item.status === "Closed" &&
-                                    <span className="text-sm text-red-600 flex items-center">
+                                    <span className="text-xs text-red-600 flex items-center">
                                         <div className="h-1 w-1 rounded-full bg-red-600 mr-1.5 ml-0.5"/>
                                         Closed
                                     </span>

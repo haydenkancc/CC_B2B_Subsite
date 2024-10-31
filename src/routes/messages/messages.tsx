@@ -6,6 +6,7 @@ import NotificationTabs from "../../components/tab-navigation/notification-tabs.
 import PromotionsTable from './promotions-table.tsx';
 import SystemTable from './system-table.tsx';
 import { useEffect } from 'react';
+import OrderTabs from '../../components/tab-navigation/orders-tabs.tsx';
 
 const tabs = [
     { id: 1, title: 'All', content: <MessageTable /> },
@@ -38,8 +39,8 @@ function Messages() {
                 <div className="px-8 pt-5 pb-8">
                     <div className="text-2xl">Notifications</div>
                 </div>
-                <div className="">
-                    <NotificationTabs tabs={tabs} />
+                <div className="px-8">
+                    <OrderTabs tabs={tabs} />
                 </div>
             </div>
         </div>
