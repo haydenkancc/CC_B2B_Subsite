@@ -12,7 +12,7 @@ function MyTextField({ label, description, errorMessage, className } : MyTextFie
         <>
             <TextField className={`${className} my-text-field-TextField`}>
                 <Label className="my-text-field-Label">{label}</Label>
-                <Input className="my-text-field-Input"/>
+                <Input className="my-text-field-Input focus:outline-none"/>
                 {description && <Text slot="description">{description}</Text>}
                 <FieldError className="my-text-field-FieldError">{errorMessage}</FieldError>
             </TextField>

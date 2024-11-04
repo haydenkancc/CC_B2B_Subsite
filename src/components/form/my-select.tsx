@@ -20,7 +20,7 @@ export function MySelect<T extends object>(
     return (
         <Select {...props} onSelectionChange={onSelectionChange} className={`${className} my-select-Select`}>
             <Label className="my-select-Label">{label}</Label>
-            <Button className="my-select-Button">
+            <Button className="my-select-Button focus:outline-none">
                 <SelectValue className="flex flex-col">
                     {({defaultChildren, isPlaceholder}) => {
                         return isPlaceholder ? <span className="text-slate-gray"> - Select an item -</span> : defaultChildren;

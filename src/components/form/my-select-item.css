@@ -5,6 +5,7 @@
     border-radius: 0.125rem;
 
     &[data-hovered] {
-        background: var(--lavender);
+        background: var(--tabs-gray);
+        cursor: pointer;
     }
 }

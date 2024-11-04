@@ -7,6 +7,7 @@ import supplychain from "../../assets/supplychain.png"
 import compliant from "../../assets/compliant.png"
 import { Check } from '@phosphor-icons/react';
 import business from "../../assets/business.png"
+import { useEffect } from 'react';
 
 const risk = [
     { image: mitigation, title: "Risk Identification and Assessment", body: "By analyzing the likelihood and potential impact of each risk, we prioritize them based on severity, ensuring that critical risks are addressed." },
@@ -33,9 +34,9 @@ const supply = [
 
 function Optimize() {
 
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    // }, [location]);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
     return (
         <>
