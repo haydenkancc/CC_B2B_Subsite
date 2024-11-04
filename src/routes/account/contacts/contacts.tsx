@@ -15,6 +15,7 @@ import {useState} from 'react';
 import MyTable from './my-table.tsx';
 import MyGrid from './my-grid.tsx';
 import NewContactModal from './new-contact-modal.tsx';
+import NewUserModal from '../../company/modals/new-user-modal.tsx';
 
 const items = [
     { id: 1, first: 'Bugs', last: 'Bunny', role: 'President', phone: '(647) 327-6457', email: 'bugs.bunny@cc.ca', address: '75 West Wilmot Street', city: 'Toronto', province: 'ON', postal: 'L4B 1K7', primary: true, web: 'Administrator' },
@@ -40,7 +41,7 @@ function Contacts() {
                     <Button className="contacts-Button">
                         Add New User
                     </Button>
-                    <NewContactModal />
+                    <NewUserModal />
                 </DialogTrigger>
                 <span className="flex gap-16">
                     <SearchField>

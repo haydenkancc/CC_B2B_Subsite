@@ -4,6 +4,9 @@ import { useEffect } from 'react';
 import Basic from './basic.tsx';
 import { ShoppingCart } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
+import Overview from './overview.tsx';
+import TwoFactor from './two-factor.tsx';
+import ChangePassword from './change-password.tsx';
 
 function Profile() {
 
@@ -35,12 +38,24 @@ function Profile() {
                     </div>
                     
                 </div>
-                
-                <div className="px-8 pt-5 pb-8">
-                    <div className="text-2xl">Profile</div>
-                </div>
-                <div className="px-8">
-                    <Basic />
+
+                <div className=" flex flex-row px-8 gap-x-10 pt-8">
+                    <div className="flex flex-col gap-y-5 grow">
+                        <div className="flex flex-col mb-3">
+                            <div className="text-2xl">Profile</div>
+                            <div className="text-slate-600 text-sm">Manage settings related to signing in to your account and account security.</div>
+                        </div>
+                        <div className="flex flex-row gap-x-10">
+                            <Overview />
+                            <div className="flex flex-col gap-y-5 grow">
+                                <TwoFactor />
+                                <ChangePassword />
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
                 </div>
             </div>
         </div>
