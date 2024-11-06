@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 import Calendar from '../../../components/calendar/calendar';
 
 const titles = [
-    { id: 1, name: "Number:" },
-    { id: 2, name: "Status:" },
+    { id: 1, name: "Invoice Number:" },
+    { id: 2, name: "Invoice Status:" },
     { id: 3, name: "User:" },
-    { id: 4, name: "Total:" },
-    { id: 5, name: "Issued:" },
-    { id: 6, name: "Due Date:" },
+    { id: 4, name: "Total Amount:" },
+    { id: 5, name: "Date Issued:" },
+    { id: 6, name: "Date Due:" },
     { id: 7, name: "Payable:" },
 ]
 

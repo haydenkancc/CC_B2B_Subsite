@@ -63,7 +63,7 @@ function OrdersTabs({ tabs } : NavigationTabsProps) {
                 <div className="flex flex-row gap-x-1">
                     <div className={`flex border border-slate-300 rounded-lg flex flex-row gap-x-1.5 items-center px-1.5 cursor-pointer h-7` } onClick={toggleSearch}>
                         <TextField className="relative flex items-center justify-between text-black">
-                            <Input className={`focus:outline-none text-sm ${isSearchExpanded ? 'w-48' : 'w-0'}`} placeholder="Search" onFocus={toggleSearch} />
+                            <Input className={`focus:outline-none text-xs ${isSearchExpanded ? 'w-48' : 'w-0'}`} placeholder="Search" onFocus={toggleSearch} />
                             <MagnifyingGlass size={16} weight="light" />
                         </TextField>
                     </div>
@@ -75,7 +75,7 @@ function OrdersTabs({ tabs } : NavigationTabsProps) {
                             <div className="absolute bg-white w-32 top-9 right-0 text-left bg-black rounded-lg z-50 flex flex-col border">
                                 {dates.map(item => (
                                     <div className="hover:bg-tabs-gray px-4 py-2.5 cursor-pointer" onClick={toggleCalendar}>
-                                        <div className="text-sm text-center">{item.time}</div>
+                                        <div className="text-xs text-center">{item.time}</div>
                                     </div>
                                 ))}
                             </div>

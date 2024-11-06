@@ -59,7 +59,7 @@ function RealTerms() {
                 </div>
                 <DialogTrigger>
                     <Button className="bg-slate-100 hover:bg-slate-200 border border-slate-400 rounded-md text-center text-sm font-semibold p-2.5">
-                        Request Credit Adjustment
+                        Credit Adjustment
                     </Button>
                     <CreditModal />
                 </DialogTrigger>

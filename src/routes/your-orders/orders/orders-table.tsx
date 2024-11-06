@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import Calendar from '../../../components/calendar/calendar';
 
 const titles = [
-    { id: 1, name: "Number:" },
-    { id: 2, name: "Status:" },
+    { id: 1, name: "Order Number:" },
+    { id: 2, name: "Order Status:" },
     { id: 3, name: "User:" },
-    { id: 4, name: "Total:" },
-    { id: 5, name: "Ordered:" },
-    { id: 7, name: "Tracking:" },
+    { id: 4, name: "Total Amount:" },
+    { id: 5, name: "Date Ordered:" },
+    { id: 7, name: "Tracking Number:" },
 ]
 
 function OrdersTable({ items=[

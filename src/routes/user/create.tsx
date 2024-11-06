@@ -1,178 +1,363 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import solutionsblue from "../../assets/solutionsblue.png";
-import { UploadSimple } from "@phosphor-icons/react";
+import { useState, useEffect, useRef } from "react";
+import { CheckSquare, Square, UploadSimple } from "@phosphor-icons/react";
+import { NavigationBar } from "../../components/navigation-bar/navigation-bar";
+import FileUpload from "./file-upload";
 
-function Create() {
+const basic1 = [
+    { title: "Trade Company Name", required: true },
+    { title: "Primary Business Address", required: true },
+    { title: "Legal Company Name", required: true },
+    { title: "City", required: true },
+    { title: "Type of Company", required: true },
+    { title: "Province", required: true },
+    { title: "Business Since", required: true },
+    { title: "Postal Code", required: true },
+]
+
+const basic2 = [
+    { title: "Phone Number", required: true },
+    { title: "Company Website", required: false },
+]
+
+const primary = [
+    { title: "Name", required: true },
+    { title: "Position", required: true },
+    { title: "Phone Number", required: true },
+    { title: "Business Email", required: true },
+]
+
+const account = [
+    { title: "Name", required: true },
+    { title: "Position", required: true },
+    { title: "Phone Number", required: true },
+    { title: "Business Email", required: true },
+]
+
+const agreement = [
+    { title: "I/We expressly consent to CANADA COMPUTERS obtaining any necessary reports containing business credit or relevant information to facilitate credit considerations with CANADA COMPUTERS. I/We declare that all information provided is true and accurate in every aspect. This declaration is made solely for the purpose of establishing credit arrangements with CANADA COMPUTERS and will remain confidential." }
+]
+
+function Create({ referral=[
+    { name: ""  },
+] })  {
+
+    const topRef = useRef(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location]);
 
+    const [websiteAvailable, setWebsiteAvailable] = useState('website-yes');
+    const [sameContact, setSameContact] = useState('same-no');
+    const [termsAgree, setTermsAgree] = useState('terms-no');
+
+    // States to track the validation status of fields
+    const [invalidFields, setInvalidFields] = useState({
+        basic1: [],
+        basic2: [],
+        primary: [],
+        account: [],
+        agreement: [],
+    });
+
+    // Hold values in primary contact
+    const [primaryContactValues, setPrimaryContactValues] = useState(
+        primary.reduce((acc, item) => {
+            acc[item.title] = ''; // Initialize w empty string
+            return acc;
+        }, {})
+    );
+
+    // Handle changes in accounts payable contact
+    const handlePrimaryContactChange = (e, field) => {
+        const newValues = { ...primaryContactValues, [field]: e.target.value };
+        setPrimaryContactValues(newValues);
+    };
+
+    const validateForm = () => {
+        let isValid = true;
+        const newInvalidFields = {
+            basic1: [],
+            basic2: [],
+            primary: [],
+            account: [],
+            agreement: [],
+        };
+
+        // Check all basic1 fields
+        for (const field of basic1) {
+            const value = document.querySelector(`input[name="${field.title}"], select[name="${field.title}"]`)?.value;
+            if (field.required && !value) {
+                isValid = false;
+                newInvalidFields.basic1.push(field.title);
+            }
+        }
+
+        // Check all basic2 fields
+        for (const field of basic2) {
+            const value = document.querySelector(`input[name="${field.title}"], select[name="${field.title}"]`)?.value;
+            if (field.required && !value) {
+                isValid = false;
+                newInvalidFields.basic2.push(field.title);
+            }
+            if(field.title === "Company Website" && !value && websiteAvailable === 'website-yes') {
+                isValid = false;
+                newInvalidFields.basic2.push(field.title);
+            }
+            if(field.title === "Company Website" && !(value.includes(".")) && websiteAvailable === 'website-yes') {
+                isValid = false;
+                newInvalidFields.basic2.push(field.title);
+            }
+        }
+
+        // Check all primary contact fields
+        for (const field of primary) {
+            if (primaryContactValues[field.title] === '') {
+                isValid = false;
+                newInvalidFields.primary.push(field.title);
+            }
+        }
+
+        // Check all accounts payable contact fields
+        if(sameContact === 'same-no') {
+            for (const field of account) {
+                const value = document.querySelector(`input[name="${field.title}"], select[name="${field.title}"]`)?.value;
+                if (field.required && !value) {
+                    isValid = false;
+                    newInvalidFields.account.push(field.title);
+                }
+            }
+        }
+
+        // Check for only if there is a requested limit has been entered
+        for (const field of agreement) {
+            const value = document.querySelector(`input[name="${field.title}"], select[name="${field.title}"]`)?.value;
+            if (value && termsAgree === 'terms-no') {
+                isValid = false;
+                newInvalidFields.agreement.push(field.title);
+            }
+        }
+
+        setInvalidFields(newInvalidFields);
+
+        return isValid;
+    };
+
+    // Handle form submission
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        if (validateForm()) {
+            alert("alert for me to verify");
+        }
+    };
+
+    // Helper function to check if a field is invalid
+    const getInputClassName = (field, section) => {
+        const invalid = invalidFields[section].includes(field);
+        return invalid ? "text-sm w-full bg-red-100 border border-red-500 rounded py-2.5 px-3 mt-1.5 focus:outline-none" : "text-sm w-full bg-slate-white border border-slate-400 rounded py-2.5 px-3 mt-1.5 focus:outline-none";
+    };
+
     return (
-        <div className="bg-ghost-white">
-            <div className="w-full max-w-[1440px] px-4 mx-auto">
-                <div className="flex flex-col">
-                    <img src={solutionsblue} className="bg-contain w-40 mt-14" />
-                    <div className="font-bold text-2xl mt-4">Corporate Account Application</div>
-                    <div className="mt-4">To help Canada Computers serve you as a corporate customer, please fill out the form below. Thank you for joining our corporate family and enjoy the associated benefits and discounts!</div>
-                    <div className="mt-4 font-semibold">Please note that upon being accepted as a corporate customer, you will be contacted by a member of our corporate sales team.</div>
-                    
-                    <div className="font-bold text-xl mt-8">Basic Information</div>
-                    <div className="mt-3">If you'd like to purchase products online from us in the future, please use the same address as you would for your credit card bill or monthly bank statement. Otherwise, your order may not be processed.</div>
-                    <div className="flex flex-row justify-between gap-x-10">
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Trade Company Name</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Legal Company Name</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Type of Company</label>
-                            <div className="relative w-full">
-                                <select className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none">
-                                    <option value="" disabled selected>Please Select</option>
-                                    <option>Corporate</option>
-                                    <option>Reseller</option>
-                                    <option>Government</option>
-                                </select>
+        <div>
+            <div className="w-full" ref={topRef}>
+                <NavigationBar />
+            </div>
+            <div className="bg-white text-black text-sm">
+                <div className="w-full max-w-[1440px] px-4 mx-auto">
+                    <form onSubmit={handleSubmit}>
+                        <div className="flex flex-col">
+                            <div className="flex flex-row justify-between mt-10">
+                                <div className="font-bold text-2xl">Corporate Account Application</div>
+                                {referral.map(item => (
+                                    <div>
+                                        <div>{item.name}</div>
+                                    </div>
+                                ))}
                             </div>
-                        </div>
-                    </div>
-                    <div className="flex flex-row justify-between gap-x-10">
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Business Since</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Primary Business Address</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">City</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                    </div>
-                    <div className="flex flex-row justify-between gap-x-10">
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Province</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Postal Code</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Phone Number</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                    </div>
+                            
+                            <div className="mt-4">To help Canada Computers serve you as a corporate customer, please fill out the form below.</div>
+                            <div className="font-semibold text-xl mt-8">Basic Information</div>
+                            <div className="my-4">If you'd like to purchase products online from us in the future, please use the same address as you would for your credit card bill or monthly bank statement. Otherwise, your order may not be processed.</div>
+                            <div className="columns-4 gap-8">
+                                {basic1.map(item => (
+                                    <div className="mb-5" key={item.title}>
+                                        <label className="text-left mb-1 text-sm">{item.title}</label>
+                                        {item.title === "Type of Company" &&
+                                            <div className="relative w-full">
+                                                <select className={getInputClassName(item.title, 'basic1')} name={item.title}>
+                                                    <option value="" disabled selected>Please Select</option>
+                                                    <option>Corporate</option>
+                                                    <option>Reseller</option>
+                                                    <option>Government</option>
+                                                </select>
+                                            </div>
+                                        }
+                                        {item.title !== "Type of Company" &&
+                                            <input
+                                                type="text"
+                                                name={item.title}
+                                                className={getInputClassName(item.title, 'basic1')}
+                                            />
+                                        }
+                                    </div>
+                                ))}
+                            </div>
 
-                    <div className="font-bold text-xl mt-12">Primary Contact</div>
-                    <div className="flex flex-row justify-between gap-x-10">
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Name</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Position</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Work Address</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                    </div>
-                    <div className="flex flex-row justify-between gap-x-10">
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">City</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Province</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Postal Code</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                    </div>
-                    <div className="flex flex-row justify-between gap-x-10">
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Phone Number</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Fax Number</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Business Email</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                    </div>
+                            <div className="columns-4 gap-8">
+                                {basic2.map(item => (
+                                    <div key={item.title}>
+                                        <label className="text-left mb-1 text-sm">{item.title}</label>
+                                        {item.title === "Company Website" && websiteAvailable === 'website-yes' &&
+                                            <div>
+                                                <div className="relative cursor-pointer" onClick={() => {setWebsiteAvailable('website-no')}}>
+                                                    <div className="flex flex-row gap-x-2 absolute items-center right-0 bottom-0">
+                                                        <Square size={20} weight="light" />
+                                                        <div className="text-sm">Not Available</div>
+                                                    </div>
+                                                </div>
+                                                <input type="text" name={item.title} className={getInputClassName(item.title, 'basic2')} />
+                                            </div>
+                                        }
+                                        {item.title === "Company Website" && websiteAvailable === 'website-no' &&
+                                            <div>
+                                                <div className="relative cursor-pointer" onClick={() => {setWebsiteAvailable('website-yes')}}>
+                                                    <div className="flex flex-row gap-x-2 absolute items-center right-0 bottom-0">
+                                                        <CheckSquare size={20} weight="light" />
+                                                        <div className="text-sm">Not Available</div>
+                                                    </div>
+                                                </div>
+                                                <input type="text" name={item.title} className="text-sm w-full bg-slate-100 border border-slate-400 rounded py-2.5 px-3 mt-1.5 focus:outline-none cursor-default" />
+                                            </div>
+                                        }
+                                        {item.title !== "Company Website" &&
+                                            <input
+                                                type="text"
+                                                name={item.title}
+                                                className={getInputClassName(item.title, 'basic2')}
+                                            />
+                                        }
+                                    </div>
+                                ))}
+                            </div>
 
-                    <div className="flex flex-row mt-12 justify-between">
-                        <div className="font-bold text-xl">Accounts Payable Contact</div>
-                        <div className="flex items-center">
-                            <input type="checkbox" className="bg-white border border-black w-5 h-5" />
-                            <label className="ml-4 text-black">Same address as primary business address above</label>
-                        </div>
-                    </div>
-                    <div className="flex flex-row justify-between gap-x-10">
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Name</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Position</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Work Address</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                    </div>
-                    <div className="flex flex-row justify-between gap-x-10">
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">City</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Province</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Postal Code</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                    </div>
-                    <div className="flex flex-row justify-between gap-x-10">
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Phone Number</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                            <label className="text-left text-black mb-1">Fax Number</label>
-                            <input className="w-full bg-white text-black border border-black rounded py-1.5 px-2.5 mt-1.5 focus:outline-none" />
-                        </div>
-                        <div className="mt-5 w-1/3">
-                        </div>
-                    </div>
+                            <div className="font-semibold text-xl mt-8 py-2">Primary Contact</div>
+                            <div className="columns-4 gap-8">
+                                {primary.map(item => (
+                                    <div key={item.title}>
+                                        <label className="text-left mb-1 text-sm">{item.title}</label>
+                                        <input
+                                            type="text"
+                                            value={primaryContactValues[item.title]}
+                                            onChange={(e) => handlePrimaryContactChange(e, item.title)}
+                                            className={getInputClassName(item.title, 'primary')}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
 
-                    <div className="font-bold text-xl mt-12">Supporting Documentation</div>
-                    <div className="mt-3">Please upload any supporting documentation here (Master Business License, Articles of Incorporation, Utility Bills, etc.)</div>
-                    <label for="file-upload" class="flex cursor-pointer items-center bg-ghost-white text-black rounded">
-                        <div className="flex flex-row items-center bg-ghost-white rounded-sm px-4 py-2.5 my-4 border border-oxford-blue hover:bg-slate-200">
-                            <UploadSimple size={24} />
-                            <div className="font-semibold ml-2.5 text-oxford-blue">Upload Document</div>
+                            {sameContact === 'same-no' &&
+                                <div>
+                                    <div className="font-semibold text-xl mt-8 py-2 flex flex-row justify-between">
+                                        <div>Accounts Payable Contact</div>
+                                        <div className="flex flex-row gap-x-2 items-center cursor-pointer" onClick={() => {setSameContact('same-yes')}}>
+                                            <Square size={20} weight="light" />
+                                            <div className="text-sm font-normal">Same as Primary Contact</div>
+                                        </div>
+                                    </div>
+                                    <div className="columns-4 gap-8">
+                                        {account.map(item => (
+                                            <div key={item.title} className="mb-5">
+                                                <label className="text-left mb-1 text-sm">{item.title}</label>
+                                                <input
+                                                    type="text"
+                                                    name={item.title}
+                                                    className={getInputClassName(item.title, 'account')}
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            }
+
+                            {sameContact === 'same-yes' &&
+                                <div>
+                                    <div className="font-semibold text-xl mt-8 py-2 flex flex-row justify-between">
+                                        <div>Accounts Payable Contact</div>
+                                        <div className="flex flex-row gap-x-2 items-center cursor-pointer" onClick={() => {setSameContact('same-no')}}>
+                                            <CheckSquare size={20} weight="light" />
+                                            <div className="text-sm font-normal">Same as Primary Contact</div>
+                                        </div>
+                                    </div>
+                                    <div className="columns-4 gap-8">
+                                        {primary.map(item => (
+                                            <div key={item.title} className="mb-5">
+                                                <label className="text-left mb-1 text-sm">{item.title}</label>
+                                                <input
+                                                    type="text"
+                                                    value={primaryContactValues[item.title]} // Mirror values from primary contact
+                                                    onChange={(e) => handlePrimaryContactChange(e, item.title)} // Updates to both
+                                                    className="text-sm w-full bg-slate-100 border border-slate-400 rounded py-2.5 px-3 mt-1.5 focus:outline-none cursor-default"
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            }
+                            
+                            {termsAgree === 'terms-no' &&
+                                <div>
+                                    <div className="font-bold text-xl mt-5 py-2">Apply for Net Terms (Optional)</div>
+                                        {agreement.map(item => (
+                                            <div>
+                                                <div className="columns-4 gap-8">
+                                                    <label className="text-left mb-1 text-sm">Request Credit</label>
+                                                    <input
+                                                        type="text"
+                                                        name={item.title}
+                                                        className={getInputClassName(item.title, 'agreement')}
+                                                    />
+                                                </div>
+                                                <div className="flex flex-row text-sm mt-5 gap-x-2.5 items-center" onClick={() => {setTermsAgree('terms-yes')}}>
+                                                    <Square size={20} weight="light" className="shrink-0" />
+                                                    <div>{item.title}</div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    <div className="text-sm mt-2.5">Please be advised that, in certain circumstances, we may reach out for additional information or connect you with one of our sales representatives.</div>
+                                </div>
+                            }
+
+                            {termsAgree === 'terms-yes' &&
+                                <div>
+                                    <div className="font-bold text-xl mt-5 py-2">Apply for Net Terms (Optional)</div>
+                                        {agreement.map(item => (
+                                            <div>
+                                                <div className="columns-4 gap-8">
+                                                    <label className="text-left mb-1 text-sm">Request Credit</label>
+                                                    <input
+                                                        type="text"
+                                                        name={item.title}
+                                                        className="text-sm w-full bg-slate-white border border-slate-400 rounded py-2.5 px-3 mt-1.5 focus:outline-none"
+                                                    />
+                                                </div>
+                                                <div className="flex flex-row text-sm mt-5 gap-x-2.5 items-center" onClick={() => {setTermsAgree('terms-no')}}>
+                                                    <CheckSquare size={20} weight="light" className="shrink-0" />
+                                                    <div>{item.title}</div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    <div className="text-sm mt-2.5">Please be advised that, in certain circumstances, we may reach out for additional information or connect you with one of our sales representatives.</div>
+                                </div>
+                            }
+
+                            <FileUpload />
+
+                            <div className="mt-6">The information you submit will be reviewed within 1-2 business days. You will be contacted by email once your account has been approved.</div>
+                            <div className="mt-2.5">By submitting this application, I verify the information submitted on this application is accurate to the best of my knowledge.</div>
+                            <button type="submit" onClick={() => {topRef.current.scrollIntoView({ behavior: 'smooth' });}} className="bg-black text-ghost-white py-2 text-sm rounded-lg text-center w-48 font-semibold text-lg mt-6 mb-14">Submit Application</button>
                         </div>
-                    </label>
-                    <input id="file-upload" type="file" className="hidden" />
-                    <div className="mt-6">Please note that additional users can be set up upon account confirmation.</div>
-                    <Link to={"/sign-in"} className="bg-oxford-blue text-ghost-white py-2 rounded-sm text-center w-44 font-semibold text-lg mt-6 mb-14">Create Account</Link>
+                    </form>
                 </div>
             </div>
         </div>

@@ -11,6 +11,7 @@ import logoSrc from '../../assets/ACME-Logo.webp';
 import './sidebar-nav.scss'
 import { Link } from 'react-router-dom';
 import solutionsblue from "../../assets/solutionsblue.png"
+import { ShoppingBagOpen } from '@phosphor-icons/react';
 
 function SidebarNav() {
     return (
@@ -92,6 +93,10 @@ function SidebarNav() {
                         Account
                     </span>
                     <div className="sn-list-box--list">
+                        <Link to="/cart" className="sn-list-box-item--wrapper">
+                            <ShoppingBagOpen className="sn-list-box-item--icon"/>
+                            <span className="sn-list-box-item--content">Cart</span>
+                        </Link>
                         <Link to="/message-center" className="sn-list-box-item--wrapper">
                             <BellIcon className="sn-list-box-item--icon"/>
                             <span className="sn-list-box-item--content">Notifications</span>
@@ -101,7 +106,7 @@ function SidebarNav() {
                             <span className="sn-list-box-item--content">Profile</span>
                         </Link>
                         <Link to="/sign-in" className="sn-list-box-item--wrapper">
-                            <ExitIcon className="sn-list-box-item--icon -scale-x-100"/>
+                            <ExitIcon className="sn-list-box-item--icon"/>
                             <span className="sn-list-box-item--content">Sign Out</span>
                         </Link>
                     </div>

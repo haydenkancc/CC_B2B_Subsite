@@ -50,7 +50,7 @@ function Signin() {
                             Sign In
                         </Link>
                         <Link to={"/create-account"} className="text-black underline text-sm mb-1 mt-4">
-                            Need An Account?
+                            Create an Account
                         </Link>
                     </div>
                 </div>
