@@ -16,6 +16,7 @@ import { CaretDown, CaretRight } from "@phosphor-icons/react";
 import FooterTop from "../../components/footer/footer-top.tsx";
 import FooterBottom from "../../components/footer/footer-bottom.tsx";
 import NavbarTopAccount from "../../components/navbar/navbar-top-account.tsx";
+import { NavigationBar } from "../../components/navigation-bar/navigation-bar.tsx";
 
 function Landing() {
 
@@ -24,8 +25,11 @@ function Landing() {
     return (
         <>
             {/* NavBar */}
-            <div className="w-full">
+            {/* <div className="w-full">
                 <NavbarTop />
+            </div> */}
+            <div className="w-full">
+                <NavigationBar />
             </div>
 
             {/* Homepage */}

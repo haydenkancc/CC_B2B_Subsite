@@ -31,6 +31,8 @@ import Profile from './routes/profile/profile.tsx';
 import Optimize from './routes/procurement/optimize.tsx';
 import Company from './routes/company/company.tsx';
 import DashboardNew from './routes/dashboard-new/dashboard-new.tsx';
+import CreateJamesChow from './routes/user/create-james-chow.tsx';
+import LandingNew from './routes/landing-new/landing-new.tsx';
 
 const router = createBrowserRouter([
     {
@@ -148,6 +150,14 @@ const router = createBrowserRouter([
     {
         path: "company",
         element: <Company />
+    },
+    {
+        path: "create-account/james-chow",
+        element: <CreateJamesChow />
+    },
+    {
+        path: "landing-new",
+        element: <LandingNew />
     },
 ]);
 
