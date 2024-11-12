@@ -14,7 +14,7 @@ function CheckoutItems() {
             <div className="flex flex-col">
                 {section === 'contact' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-blue-900 text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-oxford-blue text-white w-full">
                             <div>1.</div>
                             <div>Contact Information</div>
                         </div>
@@ -45,7 +45,7 @@ function CheckoutItems() {
                 }
                 {section === 'address' && delivery === 'deliver-yes' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-blue-900 text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-oxford-blue text-white w-full">
                             <div>2.</div>
                             <div>Address</div>
                         </div>
@@ -111,14 +111,14 @@ function CheckoutItems() {
                     </div>
                 }
                 {section === 'contact' &&
-                    <div className="flex flex-row gap-x-2.5 px-5 py-2.5 border-b bg-blue-900 text-white">
+                    <div className="flex flex-row gap-x-2.5 px-5 py-2.5 border-b bg-oxford-blue text-white">
                         <div>2.</div>
                         <div>Addresses</div>
                     </div>
                 }
                 {section === 'address' && delivery === 'deliver-no' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-blue-900 text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-oxford-blue text-white w-full">
                             <div>2.</div>
                             <div>Pickup In-Store</div>
                         </div>
@@ -184,7 +184,7 @@ function CheckoutItems() {
                 }
                 {section === 'payment' && credit === 'credit-yes' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-blue-900 text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-oxford-blue text-white w-full">
                             <div>3.</div>
                             <div>Payment Method</div>
                         </div>
@@ -219,7 +219,7 @@ function CheckoutItems() {
                 }
                 {section === 'payment' && credit === 'credit-no' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-blue-900 text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-oxford-blue text-white w-full">
                             <div>3.</div>
                             <div>Payment Method</div>
                         </div>
@@ -299,12 +299,11 @@ function CheckoutItems() {
                     </div>
                 }
                 {section !== 'payment' &&
-                    <div className="flex flex-row gap-x-2.5 px-5 py-2.5 bg-blue-900 text-white">
+                    <div className="flex flex-row gap-x-2.5 px-5 py-2.5 bg-oxford-blue text-white">
                         <div>3.</div>
                         <div>Payment Method</div>
                     </div>
                 }
-                
             </div>
         </div>
     )

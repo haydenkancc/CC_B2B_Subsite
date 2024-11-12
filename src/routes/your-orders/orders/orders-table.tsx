@@ -56,7 +56,7 @@ function OrdersTable({ items=[
                 <tbody>
                     {items.map(item => (
                         <tr key={item.id} className="border-b border-slate-300 text-xs">
-                            <div className="ml-4" />
+                            <div className="pr-2.5" />
                             <td className="font-medium">{item.number}</td>
                             <td className="font-medium">
                                 {item.status === "Completed" &&
