@@ -15,7 +15,7 @@ $text-disabled-color: #808080;
   flex-direction: column;
   justify-content: space-between;
   border-right: 1px solid $border-color;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .sn-title {

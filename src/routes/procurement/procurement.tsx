@@ -206,12 +206,12 @@ function Procurement() {
                 <div className="flex flex-row max-w-[1440px] px-4 mx-auto pt-20 pb-18 justify-center">
                     <img src={out} className="rounded-sm object-cover w-72" />
                     <div className="flex flex-col ml-14">
-                        <div className="text-2xl font-bold flex mt-6 mb-2 justify-center"> {/* Changed to justify-center */}
-                            The Problems And How We Address Them
+                        <div className="text-2xl font-bold flex mt-6 mb-2 justify-center">
+                            Our Approach
                         </div>
                         <div className="flex flex-col">
                             {/* First row of problems */}
-                            <div className="flex flex-row justify-center gap-x-7"> {/* Changed justify-between to justify-center */}
+                            <div className="flex flex-row justify-center gap-x-7">
                                 {problems1.map((problem, index) => (
                                     <div key={index} className="py-6 flex-1">
                                         <div className={`text-sm w-full px-4 py-4 rounded-sm`}>
@@ -225,7 +225,7 @@ function Procurement() {
                                 ))}
                             </div>
                             {/* Second row of problems */}
-                            <div className="flex flex-row justify-center gap-x-6"> {/* Changed justify-between to justify-center */}
+                            <div className="flex flex-row justify-center gap-x-6">
                                 {problems2.map((problem, index) => (
                                     <div key={index} className="flex-1">
                                         <div className={`text-sm w-full px-4 mb-4 rounded-sm`}>

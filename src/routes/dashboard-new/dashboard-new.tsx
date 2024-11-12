@@ -29,9 +29,6 @@ function DashboardNew() {
                             </div>
                         </div>
                     </div>
-                    <Link to="/cart" className="pr-10">
-                        <ShoppingCart size={20} />
-                    </Link>
                 </div>
                 
                 <div className="px-8 pt-5 pb-8">

@@ -2,7 +2,7 @@ import './footer.css'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import solutionsblue from "../../assets/solutionsblue.png";
-import { Copyright, Envelope, FacebookLogo, LinkedinLogo, X, XLogo, YoutubeLogo } from '@phosphor-icons/react';
+import { Copyright, Envelope, FacebookLogo, InstagramLogo, X, XLogo, YoutubeLogo } from '@phosphor-icons/react';
 import person2 from "../../assets/person2.png"
 
 function FooterBottom() {
@@ -159,21 +159,21 @@ function FooterBottom() {
                         <FacebookLogo  weight="light" size={40} />
                     </a>
                     <a href="https://www.canadacomputers.com/" target="_blank">
-                        <LinkedinLogo  weight="light" size={40} />
-                    </a>
-                    <a href="https://www.canadacomputers.com/" target="_blank">
                         <XLogo  weight="light" size={40} />
                     </a>
                     <a href="https://www.canadacomputers.com/" target="_blank">
                         <YoutubeLogo  weight="light" size={40} />
                     </a>
+                    <a href="https://www.canadacomputers.com/" target="_blank">
+                        <InstagramLogo  weight="light" size={40} />
+                    </a>
                 </div>
             </div>
-            <div className="pt-3 pb-20 border border-t-black">
-                <div className="flex flex-row justify-between gap-x-8 max-w-[1440px] px-4 mx-auto mt-8">
+            <div className="pt-8 pb-20 border border-t-black">
+                <div className="flex flex-row justify-between gap-x-8 max-w-[1440px] px-4 mx-auto">
                     <div className="flex flex-row">
                         <Copyright size={20} />
-                        <div className="ml-2.5">2024 Canada Computers & Electronics</div>
+                        <div className="ml-2.5">2024, Canada Computers & Electronics, Head Office - 168 Ultimate Dr, Richmond Hill, ON L4S 8M8</div>
                     </div>
                     <div className="flex flex-row gap-x-8">
                         <div>Terms & Conditions</div>

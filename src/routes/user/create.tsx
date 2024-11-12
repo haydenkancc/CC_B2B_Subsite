@@ -4,9 +4,9 @@ import { NavigationBar } from "../../components/navigation-bar/navigation-bar";
 import FileUpload from "./file-upload";
 
 const basic1 = [
-    { title: "Trade Company Name", required: true },
+    { title: "Company Name", required: true },
     { title: "Primary Business Address", required: true },
-    { title: "Legal Company Name", required: true },
+    { title: "Doing Business As (Optional)", required: false },
     { title: "City", required: true },
     { title: "Type of Company", required: true },
     { title: "Province", required: true },
@@ -148,7 +148,7 @@ function Create({ referral=[
         e.preventDefault();
         
         if (validateForm()) {
-            alert("alert for me to verify");
+            alert("Your application has been submitted and will be reviewed within 1-2 business days. You will be contacted by email once your account has been approved.");
         }
     };
 
@@ -177,8 +177,7 @@ function Create({ referral=[
                             </div>
                             
                             <div className="mt-4">To help Canada Computers serve you as a corporate customer, please fill out the form below.</div>
-                            <div className="font-semibold text-xl mt-8">Basic Information</div>
-                            <div className="my-4">If you'd like to purchase products online from us in the future, please use the same address as you would for your credit card bill or monthly bank statement. Otherwise, your order may not be processed.</div>
+                            <div className="font-semibold text-xl mt-8 mb-2">Basic Information</div>
                             <div className="columns-4 gap-8">
                                 {basic1.map(item => (
                                     <div className="mb-5" key={item.title}>
@@ -193,7 +192,27 @@ function Create({ referral=[
                                                 </select>
                                             </div>
                                         }
-                                        {item.title !== "Type of Company" &&
+                                        {item.title === "Province" &&
+                                            <div className="relative w-full">
+                                                <select className={getInputClassName(item.title, 'basic1')} name={item.title}>
+                                                    <option value="" disabled selected>Please Select</option>
+                                                    <option>Alberta</option>
+                                                    <option>British Columbia</option>
+                                                    <option>Manitoba</option>
+                                                    <option>New Brunswick</option>
+                                                    <option>Newfoundland and Labrador</option>
+                                                    <option>Northwest Territories</option>
+                                                    <option>Nova Scotia</option>
+                                                    <option>Nunavut</option>
+                                                    <option>Ontario</option>
+                                                    <option>Prince Edward Island</option>
+                                                    <option>Quebec</option>
+                                                    <option>Saskatchewan</option>
+                                                    <option>Yukon</option>
+                                                </select>
+                                            </div>
+                                        }
+                                        {item.title !== "Type of Company" && item.title !== "Province" &&
                                             <input
                                                 type="text"
                                                 name={item.title}
@@ -311,14 +330,14 @@ function Create({ referral=[
                                         {agreement.map(item => (
                                             <div>
                                                 <div className="columns-4 gap-8">
-                                                    <label className="text-left mb-1 text-sm">Request Credit</label>
+                                                    <label className="text-left mb-1 text-sm">Request Credit Amount</label>
                                                     <input
                                                         type="text"
                                                         name={item.title}
                                                         className={getInputClassName(item.title, 'agreement')}
                                                     />
                                                 </div>
-                                                <div className="flex flex-row text-sm mt-5 gap-x-2.5 items-center" onClick={() => {setTermsAgree('terms-yes')}}>
+                                                <div className="flex flex-row text-sm mt-5 gap-x-2.5 items-center cursor-pointer" onClick={() => {setTermsAgree('terms-yes')}}>
                                                     <Square size={20} weight="light" className="shrink-0" />
                                                     <div>{item.title}</div>
                                                 </div>
@@ -334,14 +353,14 @@ function Create({ referral=[
                                         {agreement.map(item => (
                                             <div>
                                                 <div className="columns-4 gap-8">
-                                                    <label className="text-left mb-1 text-sm">Request Credit</label>
+                                                    <label className="text-left mb-1 text-sm">Request Credit Amount</label>
                                                     <input
                                                         type="text"
                                                         name={item.title}
                                                         className="text-sm w-full bg-slate-white border border-slate-400 rounded py-2.5 px-3 mt-1.5 focus:outline-none"
                                                     />
                                                 </div>
-                                                <div className="flex flex-row text-sm mt-5 gap-x-2.5 items-center" onClick={() => {setTermsAgree('terms-no')}}>
+                                                <div className="flex flex-row text-sm mt-5 gap-x-2.5 items-center cursor-pointer" onClick={() => {setTermsAgree('terms-no')}}>
                                                     <CheckSquare size={20} weight="light" className="shrink-0" />
                                                     <div>{item.title}</div>
                                                 </div>

@@ -22,12 +22,12 @@ function Overview() {
     return (
         <div className="mb-20">
             <div className="px-5">
-                <div className="flex flex-col">
+                <div className="flex flex-col w-60">
                     {basic.map(item => (
                         <div className="flex flex-col pb-5 border-b">
                             <img src={item.image} className="rounded-full w-20 mb-2.5" />
                             <div className="text-lg">{item.name}</div>
-                            <div className="text-sm text-slate-600 mb-0.5">{item.role}</div>
+                            <div className="text-sm text-secondary-color mb-0.5">{item.role}</div>
                             <div className="text-sm text-green-600 flex items-center">
                                 <div className="h-1 w-1 rounded-full bg-green-600 mr-1.5 ml-0.5"/>
                                 {item.access}
@@ -38,7 +38,7 @@ function Overview() {
                         {about.map(item => (
                             <div className="flex flex-row gap-x-2 items-center text-sm">
                                 <div>{item.icon}</div>
-                                <div className="text-slate-600">{item.title}</div>
+                                <div className="text-secondary-color">{item.title}</div>
                                 <div>{item.content}</div>
                             </div>
                         ))}
@@ -47,13 +47,13 @@ function Overview() {
                         {address.map(item => (
                             <div className="flex flex-row gap-x-2 items-center text-sm">
                                 <div>{item.icon}</div>
-                                <div className="text-slate-600">{item.title}</div>
+                                <div className="text-secondary-color">{item.title}</div>
                                 <div>{item.content}</div>
                             </div>
                         ))}
                     </div>
-                    <div className="flex flex-col gap-y-1.5 py-5">
-                        <button className="text-sm px-2.5 py-1.5 border border-slate-300 hover:bg-tabs-gray focus:outline-none rounded-lg">Request Changes</button>
+                    <div className="flex flex-col gap-y-1.5 py-5 w-60">
+                        <div className="text-sm hover:bg-tabs-gray focus:outline-none rounded-lg">To update information, contact your primary user or administrator.</div>
                     </div>
                 </div>
             </div>

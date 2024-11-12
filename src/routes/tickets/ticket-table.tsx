@@ -3,7 +3,7 @@ import samplePDF from "../../assets/sample-pdf.pdf";
 import { Link } from 'react-router-dom';
 import { DialogTrigger, Button } from 'react-aria-components';
 import PaymentMethodModal from '../billing/wallet/payment-method-modal';
-import Calendar from '../../components/calendar/calendar';
+import Calendar from '../../components/calendar/calendar-to';
 
 const titles = [
     { id: 1, name: "Number:" },
@@ -30,9 +30,6 @@ function TicketTable() {
 
     return (
         <div className="mb-20">
-            <div className="">
-                <Calendar />
-            </div>
             <table className="w-full bg-transparent border-lavender">
                 <thead>
                     <tr className="text-oxford-blue border-b border-slate-300">

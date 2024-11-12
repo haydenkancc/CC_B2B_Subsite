@@ -80,7 +80,7 @@ function EnterpriseSolutions() {
                     <div className="flex flex-row">
                         <div className="flex flex-col mt-10 w-1/2">
                             <h1 className="text-3xl text-black mt-12 font-semibold">Gain Business Agility Through Canada Computers & Electronics</h1>
-                            <div className="text-black py-6">Regardless of where you are on your cloud journey, our services and expertise can empower your team to innovate with technology and mature your business processes. We focus on helping organizations improve their IT maturity through advancement in resiliency, portability, manageability, observability and cybersecurity. Our team of experts will help you build a cohesive strategyto drive business value and extend your lead over the competition. your lead over the competition.</div>
+                            <div className="text-black py-6">Regardless of where you are on your cloud journey, our services and expertise can empower your team to innovate with technology and mature your business processes. Our team of experts will help you build a cohesive strategy to drive business value and extend your lead over the competition.</div>
                                 <button 
                                     onClick={() => {
                                         bottomRef.current.scrollIntoView({ behavior: 'smooth' });

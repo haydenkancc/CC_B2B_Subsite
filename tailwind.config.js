@@ -11,6 +11,7 @@ export default {
         'lavender': '#e6e6fa',
         'slate-gray': '#798A9E',
         'tabs-gray': '#f5f5f5',
+        'secondary-color': '#4b4b4b',
       },
       spacing: {
         '18': '4.5rem',

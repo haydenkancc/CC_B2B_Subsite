@@ -2,9 +2,11 @@
 
 import { CaretDown, CaretUp, ShoppingCart, Storefront, User } from '@phosphor-icons/react/dist/ssr';
 import './navigation-bar.css';
-import solutionsblue from "../../assets/solutionsblue.png";
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ccfull from "../../assets/ccfull.png";
+import { MagnifyingGlass } from '@phosphor-icons/react';
+import ccother from "../../assets/ccother.svg"
 
 const shopProductItems = [
     {id: 1, title: 'Cables & Adapters'},
@@ -66,33 +68,43 @@ export function NavigationBar() {
     const [showPower, setShowPower] = useState(false);
 
     return (
-        <div className="bg-black">
-            <div className="max-w-[1440px] justify-center mx-auto px-4 pt-4">
-                <div className="flex flex-row justify-between items-center text-white">
-                    <img src={solutionsblue} className="w-40" />
-                    <input type="text" placeholder="Search..." className="searchBar" />
-                    <div className="button">
-                        <div>Francais</div>
-                    </div>
-                    <div className="button">
-                        <Storefront size={18} />
-                        <div>Store</div>
-                    </div>
-                    <Link to="/sign-in" className="button">
-                        <User size={18} />
-                        <div>Sign In</div>
+        <div className="bg-black h-28 z-10">
+            <div className="max-w-[1440px] justify-center mx-auto px-4 pt-5">
+                <div className="flex flex-row justify-between items-center text-white gap-x-10">
+                    <Link to="/landing-new">
+                        <img src={ccfull} className="h-8" />
                     </Link>
-                    <div className="button">
-                        <ShoppingCart size={18} />
-                        <div>Cart</div>
+                    <div className="flex flex-row items-center bg-white grow">
+                        <input type="text" placeholder="Search..." className="text-sm text-black focus:outline-none grow px-3 py-1.5" />
+                        <div className="px-2 bg-white cursor-pointer">
+                            <MagnifyingGlass size={18} weight="bold" color="000000" />
+                        </div>
+                    </div>
+                    
+                    <div className="flex flex-row justify-between items-center text-white">
+                        <div className="flex flex-row items-center gap-x-2.5 font-semibold hover:bg-blue-900 rounded-full cursor-pointer px-5 py-0.5">
+                            <div className="text-sm">Français</div>
+                        </div>
+                        <div className="flex flex-row items-center gap-x-2.5 font-semibold hover:bg-blue-900 rounded-full cursor-pointer px-5 py-0.5">
+                            <Storefront size={18} weight="bold" />
+                            <div className="text-sm">Store</div>
+                        </div>
+                        <Link to="/sign-in" className="flex flex-row items-center gap-x-2.5 font-semibold hover:bg-blue-900 rounded-full cursor-pointer px-5 py-0.5">
+                            <User size={18} weight="fill" />
+                            <div className="text-sm">Sign In</div>
+                        </Link>
+                        <div className="flex flex-row items-center gap-x-2.5 font-semibold hover:bg-blue-900 rounded-full cursor-pointer px-5 py-0.5">
+                            <ShoppingCart size={18} weight="fill" />
+                            <div className="text-sm">Cart (0)</div>
+                        </div>
                     </div>
                 </div>
-                <div className="flex flex-row gap-x-10 items-center pt-2 text-white">
+                <div className="flex flex-row gap-x-10 items-center text-white">
                     <div className="dropdown text-sm"
                         onMouseEnter={() => setShopProducts(true)}
                         onMouseLeave={() => setShopProducts(false)}>
-                        <div>Shop Products</div>
-                        {shopProducts ? <CaretUp /> : <CaretDown />}
+                        <div className="font-bold">Shop Products</div>
+                        {shopProducts ? <CaretUp weight="fill" /> : <CaretDown weight="fill" />}
                         {shopProducts && (
                             <div className="dropdownContent">
                                 {shopProductItems.map(item => (
@@ -125,12 +137,12 @@ export function NavigationBar() {
                             </div>
                         )}
                     </div>
-                    <div className="dropdown text-sm">Shop Brands</div>
+                    <div className="dropdown text-sm font-bold">Shop Brands</div>
                     <div className="dropdown text-sm"
                         onMouseEnter={() => setDeals(true)}
                         onMouseLeave={() => setDeals(false)}>
-                        <div>Deals</div>
-                        {deals ? <CaretUp /> : <CaretDown />}
+                        <div className="font-bold">Deals</div>
+                        {deals ? <CaretUp weight="fill" /> : <CaretDown weight="fill" />}
                         {deals && (
                             <div className="dropdownContent">
                                 {dealsItems.map(item => (
@@ -141,13 +153,13 @@ export function NavigationBar() {
                             </div>
                         )}
                     </div>
-                    <div className="dropdown text-sm">Services</div>
-                    <div className="dropdown text-sm">For Business</div>
+                    <div className="dropdown text-sm font-bold">Services</div>
+                    <div className="dropdown text-sm font-bold">For Business</div>
                     <div className="dropdown text-sm"
                         onMouseEnter={() => setProductFinders(true)}
                         onMouseLeave={() => setProductFinders(false)}>
-                        <div>Product Finders</div>
-                        {productFinders ? <CaretUp /> : <CaretDown />}
+                        <div className="font-bold">Product Finders</div>
+                        {productFinders ? <CaretUp weight="fill" /> : <CaretDown weight="fill" />}
                         {productFinders && (
                             <div className="dropdownContent">
                                 {productFindersItems.map(item => (
