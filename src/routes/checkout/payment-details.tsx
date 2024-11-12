@@ -28,7 +28,7 @@ function PaymentDetails() {
             <Tabs className="flex flex-col">
                 <div className="flex flex-col border">
                     <TabList items={actions}>
-                        {item => <Tab className="flex flex-row items-center hover:bg-slate-100 border cursor-pointer px-6 py-2.5">{item.title}</Tab>}
+                        {item => <Tab className="flex flex-row items-center hover:bg-slate-100 border cursor-pointer px-6 py-2.5 focus:outline-none">{item.title}</Tab>}
                     </TabList>
                 </div>
                 <Collection items={actions}>

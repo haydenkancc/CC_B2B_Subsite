@@ -3,12 +3,10 @@ import laptop2 from "../../assets/laptop2.png"
 import { useState } from "react";
 
 const items = [
-    { id: 1, image: laptop2, name: "Macally Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612", online: "Yes", store: "Yes", date: "2024-10-02", user: "Porky Pig", price: 33.33 },
-    { id: 2, image: laptop2, name: "ICAN 10000mAh Super Quick Charge - QC & PD 18W Power Bank (F1002PD)", code: "NAFOX00001", online: "Yes", store: "Yes", date: "2024-09-28", user: "Bugs Bunny", price: 33.34 },
-    { id: 3, image: laptop2, name: "G4900X (MISDWADADWA100 White Black All the Colors of the Rainbow)", code: "HHACMC0612", online: "Yes", store: "Yes", date: "2024-10-02", user: "Porky Pig", price: 33.33 },
+    { id: 1, image: laptop2, name: "Random Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612", online: "Yes", store: "Yes", date: "2024-10-02", user: "Porky Pig", price: 17.99 },
 ];
 
-function CartItems() {
+function SavedItems() {
 
     const [itemQuantities, setItemQuantities] = useState(
         items.reduce((acc, item) => {
@@ -71,12 +69,12 @@ function CartItems() {
                                         </div>
                                     }
                                     <div className="text-xs text-blue-700 hover:underline cursor-pointer">Remove</div>
-                                    <div className="text-xs text-blue-700 hover:underline cursor-pointer">Save for Later</div>
+                                    <div className="text-xs text-white bg-blue-700 px-2.5 py-1 hover:bg-blue-600 cursor-pointer rounded-sm">Move to Cart</div>
                                 </div>
                             </div>
                         </div>
                         <div className="flex flex-col w-56 items-end">
-                            <div className="text-lg font-medium text-red-600">{`$${((item.price) * itemQuantities[item.id]).toFixed(2)}`}</div>
+                            <div className="text-lg font-medium text-red-600">{`$${((item.price + 0.60) * itemQuantities[item.id]).toFixed(2)}`}</div>
                             <div className="text-xs">Plus $0.60 EHF</div>
 
                             <div className="text-sm text-center mt-2.5">
@@ -105,4 +103,4 @@ function CartItems() {
     )
 }
 
-export default CartItems;
+export default SavedItems;
