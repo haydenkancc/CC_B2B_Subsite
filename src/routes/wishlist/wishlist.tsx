@@ -10,8 +10,7 @@ import SidebarNav from "../sidebar-nav/sidebar-nav.tsx";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { Button, DialogTrigger } from "react-aria-components";
 import { Link } from "react-router-dom";
-
-const pages = ['Dashboard', 'Orders', 'Billing', 'Saved Lists', 'Tickets', 'Account'];
+import ListItems from "./list-items.tsx";
 
 const items = [
     { id: 1, image: laptop, name: "Macally Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612", onlineIcon: <X weight="bold" />, onlineText: "Unavailable Online", storeIcon: <X weight="bold" />, storeText: "Unavailable In-Store", date: "2024-10-02", user: "Porky Pig", quantity: "1", price: "$17.99"},
@@ -46,79 +45,17 @@ function Wishlist() {
                 <div className="px-8 pt-5">
                     <div className="text-2xl">Wile's List 1</div>
                 </div>
-                <table className="w-full bg-transparent border-lavender mt-8">
-                    <thead>
-                        <tr className="text-oxford-blue border-b border-slate-300">
-                            <th></th>
-                            <th className="py-2 text-left">Product:</th>
-                            <th className="py-2 px-4 text-left">Date Added:</th>
-                            <th className="py-2 px-4 text-left">Price:</th>
-                            <th className="py-2 px-4 text-left">Note:</th>
-                            <th className="py-2 px-4 text-left">Actions:</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {items.map(item => (
-                            <tr key={item.id} className="border-b border-slate-300">
-                                <td className="w-12">
-                                    <div className="ml-4">
-                                        <MyCheckbox />
-                                    </div>
-                                </td>
-                                <td className="py-2 flex flex-row">
-                                    <img src={item.image} className="border w-32" />
-                                    <div className="flex flex-col gap-y-1 ml-4 w-80 text-sm">
-                                        <div>Item Code: {item.code}</div>
-                                        <div>{item.name}</div>
-                                        <div className="flex flex-row items-center gap-x-1">
-                                            {/* <div>{item.onlineIcon}</div>
-                                            <div>{item.onlineText}</div>
-                                            <div className="ml-3">{item.storeIcon}</div>
-                                            <div>{item.storeText}</div> */}
-                                        </div>
-                                    </div>
-                                </td>
-                                <td className="py-2 px-4 text-sm font-medium w-40">
-                                    <div className="flex flex-col gap-y-1">
-                                        <div>{item.date}</div>
-                                        <div>{item.user}</div>
-                                    </div>
-                                </td>
-                                <td className="py-2 px-4 text-sm font-medium w-28">{item.price}</td>
-                                <td className="px-4 text-sm font-medium w-40">
-                                    <div className="flex flex-col w-32 border rounded-md">
-                                        <textarea
-                                            placeholder="Add a note..."
-                                            className="p-2 focus:outline-none bg-lavendar h-20"
-                                        />
-                                    </div>
-                                </td>
-                                <td className="py-2 px-4 w-40">
-                                    <button className="flex flex-row justify-center items-center gap-x-2"
-                                        onMouseEnter={() => setIsHovered(true)}
-                                        onMouseLeave={() => setIsHovered(false)}
-                                    >
-                                        <ShoppingCart weight="light" size={24} />
-                                        <BellRinging weight="light" size={24} />
-                                        <Trash weight="light" size={24} />
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-                <div className="flex flex-row justify-between mt-6 px-8">
-                    <div className="flex flex-row items-center">
-                        <div className="font-semibold">Apply to Selected Items:</div>
-                        <Actions />
+                <div className="flex flex-col gap-y-8 px-8 pt-8">
+                    <ListItems />
+                    <div className="flex flex-row justify-between">
+                        <div className="flex flex-row items-center">
+                            <div className="font-semibold">Apply to Selected Items:</div>
+                            <Actions />
+                        </div>
+                        <Link to="/checkout" className="text-sm font-medium text-center bg-black hover:bg-stone-700 text-white py-1.5 rounded px-2.5">Add All to Cart</Link>
                     </div>
-                    <DialogTrigger>
-                        <Link to="/cart" className="bg-slate-100 hover:bg-slate-200 border border-slate-400 rounded-md text-center text-sm font-semibold py-1.5 px-8 ml-4">
-                            Add All to Cart
-                        </Link>
-                    </DialogTrigger>
                 </div>
-            </div>
+            </div>        
         </div>
     );
 }

@@ -1,6 +1,3 @@
-import React, { useState } from 'react';
-import { X } from '@phosphor-icons/react';
-import { Button, DialogTrigger } from 'react-aria-components';
 
 const Actions = () => {
     return (
@@ -12,11 +9,7 @@ const Actions = () => {
                 <option className="font-semibold" value="promo">Notify when on Promotion</option>
                 <option className="font-semibold" value="remove">Remove Item</option>
             </select>
-            <DialogTrigger>
-                <Button className="bg-slate-100 hover:bg-slate-200 border border-slate-400 rounded-md text-center text-sm font-semibold py-1.5 px-4 ml-4">
-                    Apply
-                </Button>
-            </DialogTrigger>
+            <div className="text-sm font-medium text-center bg-black hover:bg-stone-700 text-white py-1.5 rounded px-2.5 ml-5 cursor-pointer">Apply</div>
         </div>
     );
 };
