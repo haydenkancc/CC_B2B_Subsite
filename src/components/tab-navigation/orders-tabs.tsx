@@ -2,6 +2,9 @@ import {Collection, Input, Tab, TabList, TabPanel, Tabs, TextField} from 'react-
 import {ReactNode, useEffect, useRef, useState} from 'react';
 import './tabs-navigation.css'
 import { Calendar, MagnifyingGlass } from '@phosphor-icons/react';
+import CalendarTo from '../calendar/calendar-to';
+import samplePDF from "../../assets/sample-pdf.pdf"
+import { Link } from 'react-router-dom';
 
 type PageTab = {
     id: number;
@@ -24,7 +27,6 @@ const dates = [
 function OrdersTabs({ tabs } : NavigationTabsProps) {
 
     const [isCalendarVisible, setCalendarVisible] = useState(false);
-    const calendarRef = useRef(null);
     const [isSearchExpanded, setSearchExpanded] = useState(false);
 
     const toggleCalendar = () => {
@@ -63,11 +65,11 @@ function OrdersTabs({ tabs } : NavigationTabsProps) {
                 <div className="flex flex-row gap-x-1">
                     <div className={`flex border border-slate-300 rounded-lg flex flex-row gap-x-1.5 items-center px-1.5 cursor-pointer h-7` } onClick={toggleSearch}>
                         <TextField className="relative flex items-center justify-between text-black">
-                            <Input className={`focus:outline-none text-xs ${isSearchExpanded ? 'w-48' : 'w-0'}`} placeholder="Search" onFocus={toggleSearch} />
+                            <Input className={`focus:outline-none text-xs ${isSearchExpanded ? 'w-48' : 'w-0 '}`} placeholder="Search" onFocus={toggleSearch} />
                             <MagnifyingGlass size={16} weight="light" />
                         </TextField>
                     </div>
-                    <div className="relative" ref={calendarRef}>
+                    {/* <div className="relative">
                         <div className="border border-slate-300 rounded-lg flex justify-center items-center px-1.5 h-7" onClick={toggleCalendar}>
                             <Calendar size={18} weight="light" className="cursor-pointer" />
                         </div>
@@ -80,7 +82,11 @@ function OrdersTabs({ tabs } : NavigationTabsProps) {
                                 ))}
                             </div>
                         )}
-                    </div>
+                    </div> */}
+                    <CalendarTo />
+                    <Link to={samplePDF} target="_blank" className="border border-slate-300 rounded-lg text-xs px-1.5 h-7 hover:bg-tabs-gray">
+                        <div className="flex flex-col min-h-full justify-center items-center">Export (.xls)</div>
+                    </Link>
                 </div>
             </div>
             <Collection items={tabs}>

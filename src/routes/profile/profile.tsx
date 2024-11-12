@@ -1,7 +1,6 @@
 import SidebarNav from '../sidebar-nav/sidebar-nav.tsx';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import { useEffect } from 'react';
-import Basic from './basic.tsx';
 import { ShoppingCart } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 import Overview from './overview.tsx';
@@ -31,12 +30,6 @@ function Profile() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-center items-center border border-slate-300 w-7 h-7 rounded-lg mr-8">
-                        <Link to="/cart" className="">
-                            <ShoppingCart size={18} />
-                        </Link>
-                    </div>
-                    
                 </div>
 
                 <div className=" flex flex-row px-8 gap-x-10 pt-8">

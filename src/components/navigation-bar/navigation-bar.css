@@ -49,8 +49,8 @@
     display: flex;
     column-gap: 0.5rem;
     align-items: center;
-    padding-top: 0.25rem;
-    padding-bottom: 0.75rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
     position: relative;
 
     &:hover {

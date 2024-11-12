@@ -15,3 +15,8 @@
         transition: all 200ms;
     }
 }
+
+.dropdownTable {
+    max-height: 4rem;
+    overflow-y: scroll;
+}

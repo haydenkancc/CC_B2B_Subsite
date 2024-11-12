@@ -1,16 +1,10 @@
-import Terms from '../billing/terms/terms.tsx';
-import Wallet from '../billing/wallet/wallet.tsx';
-import TicketTable from './ticket-table.tsx';
-import { useEffect } from 'react';
 import SidebarNav from '../sidebar-nav/sidebar-nav.tsx';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
-import OrdersTabs from '../../components/tab-navigation/orders-tabs.tsx';
+import { useEffect } from 'react';
+import PermissionsTable from './permissions-table.tsx';
 
-const tabs = [
-    { id: 1, title: 'All', content: <TicketTable /> },
-]
+function Permissions() {
 
-function Tickets() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location]);
@@ -32,14 +26,14 @@ function Tickets() {
                     </div>
                 </div>
                 <div className="px-8 pt-5 pb-8">
-                    <div className="text-2xl">Ticket Management</div>
+                    <div className="text-2xl">Permissions</div>
                 </div>
-                <div className="px-8">
-                    <OrdersTabs tabs={tabs} />
+                <div className="px-8 pb-20">
+                    <PermissionsTable />
                 </div>
             </div>
         </div>
     )
 }
 
-export default Tickets;
+export default Permissions;

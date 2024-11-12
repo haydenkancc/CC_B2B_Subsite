@@ -1,7 +1,7 @@
 import { Star, CaretUp, CaretDown } from '@phosphor-icons/react';
 import samplePDF from "../../../assets/sample-pdf.pdf";
 import { Link } from 'react-router-dom';
-import Calendar from '../../../components/calendar/calendar';
+import Calendar from '../../../components/calendar/calendar-to';
 
 const titles = [
     { id: 1, name: "Order Number:" },
@@ -31,7 +31,7 @@ function OrdersTable({ items=[
                     <tr className="text-oxford-blue border border-slate-300 bg-tabs-gray">
                         <th></th>
                         {titles.map(title => (
-                            <th key={title.id} className="py-4 text-sm">
+                            <th key={title.id} className="py-4 text-xs">
                                 <div className="flex flex-row items-center">
                                     {title.name === "Number:" &&
                                         <div className="flex flex-row items-center">

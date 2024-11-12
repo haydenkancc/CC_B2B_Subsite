@@ -51,9 +51,10 @@ function RealTerms() {
                         </svg>
                         <div className="flex flex-col mt-4 ml-2.5">
                             <div className="text-lg font-bold">Credit Limit</div>
-                            <div className="font-medium">$7,500 /
+                            <div className="font-medium">$10,000.00</div>
+                            {/* <div className="font-medium">$7,500 /
                                 <span className="text-slate-500 font-medium text-sm">$10,000</span>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

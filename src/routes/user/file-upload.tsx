@@ -14,7 +14,7 @@ function FileUpload() {
   return (
     <div>
       <div className="font-bold text-xl mt-8">Supporting Documentation (Optional)</div>
-      <div className="mt-3">Please upload any supporting documentation here. (Government Documents, Bank Statements, Utility Bills)</div>
+      <div className="mt-3">Please upload any supporting documentation here. (Government Document, Bank Statement or Utility Bill)</div>
 
       <label 
         htmlFor="file-upload" 

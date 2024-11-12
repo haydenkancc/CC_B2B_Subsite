@@ -1,6 +1,6 @@
 import 'react-datepicker/dist/react-datepicker.css';
 import { Star } from '@phosphor-icons/react';
-import Calendar from '../../components/calendar/calendar';
+import Calendar from '../../components/calendar/calendar-to';
 
 const titles = [
     { id: 1, name: "From:" },

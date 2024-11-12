@@ -1,23 +1,16 @@
 import './billing.css'
-import Terms from "./terms/terms.tsx";
-import Wallet from './wallet/wallet.tsx';
 import SidebarNav from '../sidebar-nav/sidebar-nav.tsx';
-import NavigationTabs from '../../components/tab-navigation/navigation-tabs.tsx';
-import PaymentMethods from './wallet/payment-methods.tsx';
-import BillingContacts from '../account/contacts/billing-contacts.tsx';
 import Invoices from './terms/invoices.tsx';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import { useEffect } from 'react';
 import OrdersTabs from '../../components/tab-navigation/orders-tabs.tsx';
-import PaidTable from './terms/paid-table.tsx';
-import OngoingTable from './terms/ongoing-table.tsx';
-import OverdueTable from './terms/overdue-table.tsx';
+import OutstandingTable from './terms/outstanding-table.tsx';
+import Cards from './cards.tsx';
+import Terms from './terms.tsx';
 
 const tabs = [
-    { id: 1, title: 'All', content: <Invoices /> },
-    { id: 2, title: 'Paid',  content: <PaidTable /> },
-    { id: 3, title: 'Ongoing',  content: <OngoingTable /> },
-    { id: 4, title: 'Overdue',  content: <OverdueTable /> },
+    { id: 1, title: 'Outstanding', content: <OutstandingTable /> },
+    { id: 2, title: 'All',  content: <Invoices /> },
 ]
 
 function Billing() {
@@ -45,8 +38,11 @@ function Billing() {
                 <div className="px-8 pt-5 pb-8">
                     <div className="text-2xl">Billing and Payment</div>
                 </div>
-                <div className="px-8">
-                    <PaymentMethods />
+                <div className="px-8 pb-8">
+                    <Cards />
+                </div>
+                <div className="px-8 pb-8">
+                    <Terms />
                 </div>
                 <div className="px-8">
                     <OrdersTabs tabs={tabs} />

@@ -33,6 +33,7 @@ import Company from './routes/company/company.tsx';
 import DashboardNew from './routes/dashboard-new/dashboard-new.tsx';
 import CreateJamesChow from './routes/user/create-james-chow.tsx';
 import LandingNew from './routes/landing-new/landing-new.tsx';
+import Permissions from './routes/permissions/permissions.tsx';
 
 const router = createBrowserRouter([
     {
@@ -158,6 +159,10 @@ const router = createBrowserRouter([
     {
         path: "landing-new",
         element: <LandingNew />
+    },
+    {
+        path: "permissions",
+        element: <Permissions />
     },
 ]);
 
