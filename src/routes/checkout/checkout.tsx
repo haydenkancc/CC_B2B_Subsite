@@ -1,7 +1,9 @@
 import SidebarNav from '../sidebar-nav/sidebar-nav.tsx';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import { useEffect } from 'react';
-import OrderSummary from './order-summary.tsx';
+import CheckoutItems from './checkout-items.tsx';
+import CheckoutSummary from './checkout-summary.tsx';
+import PaymentDetails from './payment-details.tsx';
 
 function Checkout() {
 
@@ -28,8 +30,11 @@ function Checkout() {
                 <div className="px-8 pt-5 pb-8">
                     <div className="text-2xl">Checkout</div>
                 </div>
-                <div className="px-8">
-                    <OrderSummary />
+                <div className="flex px-8 gap-x-5 pb-20">
+                    <div className="flex flex-col grow">
+                        <CheckoutItems />
+                    </div>
+                    <CheckoutSummary />
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Trash, Check, X, Plus, Minus } from "@phosphor-icons/react";
 import laptop from "../../assets/laptop.png";
-import CheckoutSummary from "./checkout-summary.tsx";
+import CheckoutSummary from "./cart-summary.tsx";
 import Recent from "./recent.tsx";
 import SidebarNav from "../sidebar-nav/sidebar-nav.tsx";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";

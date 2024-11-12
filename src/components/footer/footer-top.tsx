@@ -18,7 +18,7 @@ function FooterTop() {
                         </div>
                         <div className="flex flex-row items-center bg-white grow">
                             <input type="text" placeholder="Your email address" className="text-sm text-black focus:outline-none grow px-3 py-1.5" />
-                            <button className="font-semibold  text-sm bg-blue-900 px-4 py-3">Subscribe</button>
+                            <button className="font-semibold  text-sm bg-blue-900 hover:bg-blue-800 px-4 py-3">Subscribe</button>
                         </div>
                         <div className="flex flex-row items-center gap-x-6">
                             <div className="uppercase font-medium">Follow Us</div>

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { Trash, Check, X, Plus, Minus } from "@phosphor-icons/react";
 import laptop2 from "../../assets/laptop2.png";
-import CheckoutSummary from "./checkout-summary.tsx";
+import CartSummary from "./cart-summary.tsx";
 import Recent from "./recent.tsx";
 import SidebarNav from "../sidebar-nav/sidebar-nav.tsx";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import CartItems from "./cart-items.tsx";
+import SavedItems from "./saved-items.tsx";
 
 const items = [
     { id: 1, image: laptop2, name: "Macally Lightning USB Cable White (MISYNCABLEL10W)", code: "HHACMC0612", online: "Yes", store: "No", date: "2024-10-02", user: "Porky Pig", price: 17.99},
@@ -40,8 +41,14 @@ function ShoppingCart() {
                 </div>
                 <div className="px-8 pt-8">
                     <div className="flex flex-row gap-x-5">
-                        <CartItems />
-                        <CheckoutSummary />
+                        <div className="flex flex-col grow">
+                            <CartItems />
+                            <div className="pt-16 pb-8">
+                                <div className="text-2xl">Saved for Later (1 Item)</div>
+                            </div>
+                            <SavedItems />
+                        </div>
+                        <CartSummary />
                     </div>
                 </div>
             </div>
