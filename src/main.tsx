@@ -34,6 +34,7 @@ import DashboardNew from './routes/dashboard-new/dashboard-new.tsx';
 import CreateJamesChow from './routes/user/create-james-chow.tsx';
 import LandingNew from './routes/landing-new/landing-new.tsx';
 import Permissions from './routes/permissions/permissions.tsx';
+import TicketClosed from './routes/tickets/ticket-closed.tsx';
 
 const router = createBrowserRouter([
     {
@@ -135,6 +136,10 @@ const router = createBrowserRouter([
     {
         path: "ticket-open",
         element: <TicketOpen />
+    },
+    {
+        path: "ticket-closed",
+        element: <TicketClosed />
     },
     {
         path: "hardware-product",

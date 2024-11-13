@@ -1,4 +1,3 @@
-import TicketTable from './ticket-table.tsx';
 import { useEffect } from 'react';
 import SidebarNav from '../sidebar-nav/sidebar-nav.tsx';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';

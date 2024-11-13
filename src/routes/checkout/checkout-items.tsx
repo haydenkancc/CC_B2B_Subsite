@@ -1,5 +1,6 @@
 import { CaretRight, Check, Circle, RadioButton } from "@phosphor-icons/react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function CheckoutItems() {
 
@@ -14,7 +15,7 @@ function CheckoutItems() {
             <div className="flex flex-col">
                 {section === 'contact' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-oxford-blue text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-black text-white w-full">
                             <div>1.</div>
                             <div>Contact Information</div>
                         </div>
@@ -29,7 +30,7 @@ function CheckoutItems() {
                     </div>
                 }
                 {section !== 'contact' &&
-                    <div className="flex flex-col border-b">
+                    <div className="bg-tabs-gray flex flex-col border-b">
                         <div className="flex flex-row px-5 py-2.5 justify-between items-center">
                             <div className="flex flex-row gap-x-2.5 items-center">
                                 <div>1.</div>
@@ -45,7 +46,7 @@ function CheckoutItems() {
                 }
                 {section === 'address' && delivery === 'deliver-yes' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-oxford-blue text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-black text-white w-full">
                             <div>2.</div>
                             <div>Address</div>
                         </div>
@@ -111,14 +112,14 @@ function CheckoutItems() {
                     </div>
                 }
                 {section === 'contact' &&
-                    <div className="flex flex-row gap-x-2.5 px-5 py-2.5 border-b bg-oxford-blue text-white">
+                    <div className="flex flex-row gap-x-2.5 px-5 py-2.5 border-b bg-black text-white">
                         <div>2.</div>
                         <div>Addresses</div>
                     </div>
                 }
                 {section === 'address' && delivery === 'deliver-no' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-oxford-blue text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-black text-white w-full">
                             <div>2.</div>
                             <div>Pickup In-Store</div>
                         </div>
@@ -145,7 +146,7 @@ function CheckoutItems() {
                     </div>
                 }
                 {section === 'payment' && delivery === 'deliver-yes' &&
-                    <div className="flex flex-col border-b">
+                    <div className="bg-tabs-gray flex flex-col border-b">
                         <div className="flex flex-row px-5 py-2.5 justify-between items-center">
                             <div className="flex flex-row gap-x-2.5 items-center">
                                 <div>2.</div>
@@ -168,7 +169,7 @@ function CheckoutItems() {
                     </div>
                 }
                 {section === 'payment' && delivery === 'deliver-no' &&
-                    <div className="flex flex-col border-b">
+                    <div className="bg-tabs-gray flex flex-col border-b">
                         <div className="flex flex-row px-5 py-2.5 justify-between items-center">
                             <div className="flex flex-row gap-x-2.5 items-center">
                                 <div>2.</div>
@@ -184,7 +185,7 @@ function CheckoutItems() {
                 }
                 {section === 'payment' && credit === 'credit-yes' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-oxford-blue text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-black text-white w-full">
                             <div>3.</div>
                             <div>Payment Method</div>
                         </div>
@@ -210,16 +211,16 @@ function CheckoutItems() {
                                 <CaretRight size={14} color="#444AA2" weight="bold" className="cursor-pointer" />
                             </div>
                             <div>
-                                <div className="text-sm text-white rounded-sm bg-blue-900 hover:bg-blue-800 px-4 py-1.5 inline-block w-auto cursor-pointer" onClick={() => setSection('payment')}>
-                                    Continue
-                                </div>
+                                <Link to="/orders" className="text-sm text-white rounded-sm bg-blue-900 hover:bg-blue-800 px-4 py-1.5 inline-block w-auto cursor-pointer" onClick={() => setSection('payment')}>
+                                    Submit Order
+                                </Link>
                             </div>
                         </div>
                     </div>
                 }
                 {section === 'payment' && credit === 'credit-no' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-oxford-blue text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-black text-white w-full">
                             <div>3.</div>
                             <div>Payment Method</div>
                         </div>
@@ -291,15 +292,15 @@ function CheckoutItems() {
                                 }
                             </div>
                             <div>
-                                <div className="text-sm text-white rounded-sm bg-blue-900 hover:bg-blue-800 px-4 py-1.5 inline-block w-auto cursor-pointer" onClick={() => setSection('payment')}>
-                                    Continue
-                                </div>
+                                <Link to="/orders" className="text-sm text-white rounded-sm bg-blue-900 hover:bg-blue-800 px-4 py-1.5 inline-block w-auto cursor-pointer" onClick={() => setSection('payment')}>
+                                    Submit Order
+                                </Link>
                             </div>
                         </div>
                     </div>
                 }
                 {section !== 'payment' &&
-                    <div className="flex flex-row gap-x-2.5 px-5 py-2.5 bg-oxford-blue text-white">
+                    <div className="flex flex-row gap-x-2.5 px-5 py-2.5 bg-black text-white">
                         <div>3.</div>
                         <div>Payment Method</div>
                     </div>

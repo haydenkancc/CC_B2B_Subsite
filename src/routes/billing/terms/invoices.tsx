@@ -1,4 +1,4 @@
-import { CaretUp, CaretDown, Eye, FilePdf } from '@phosphor-icons/react';
+import { Eye, FilePdf } from '@phosphor-icons/react';
 import samplePDF from "../../../assets/sample-pdf.pdf";
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
@@ -35,27 +35,16 @@ function Invoices({ items=[
     };
 
     return (
-        <div className="mb-20">
+        <div className="">
             <table className="w-full bg-transparent border">
                 <thead>
                     <tr className="text-black border border-slate-300 bg-tabs-gray">
                         <th></th>
                         {titles.map(title => (
                             <th key={title.id} className="py-4 text-xs">
-                                {title.name === "Number:" &&
-                                    <div className="flex flex-row items-center">
-                                        <div>{title.name}</div>
-                                        <div className="flex flex-col ml-2.5">
-                                            <CaretUp size={10} />
-                                            <CaretDown size={10} />
-                                        </div>
-                                    </div>
-                                }
-                                {title.name !== "Number:" &&
-                                    <div className="flex flex-row items-center">
-                                        <div>{title.name}</div>
-                                    </div>
-                                }
+                                <div className="flex flex-row items-center">
+                                    <div>{title.name}</div>
+                                </div>
                             </th>
                         ))}
                         <th></th>

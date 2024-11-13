@@ -1,22 +1,17 @@
 import SidebarNav from '../sidebar-nav/sidebar-nav.tsx';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import { useEffect } from 'react';
-import { ShoppingCart } from '@phosphor-icons/react';
-import { Link } from 'react-router-dom';
 import General from './general.tsx';
 import Contacts from '../account/contacts/contacts.tsx';
 import Addresses from '../account/addresses/addresses.tsx';
 import Documents from '../account/documents/documents.tsx';
-import Logs from '../account/logs/logs.tsx';
 import NavigationTabs from '../../components/tab-navigation/navigation-tabs.tsx';
-import Permissions from './permissions.tsx';
 
 const tabs = [
     { id: 1, title: 'General', content: <General /> },
     { id: 2, title: 'Contacts',  content: <Contacts /> },
     { id: 3, title: 'Addresses',  content: <Addresses /> },
     { id: 4, title: 'Documents',  content: <Documents /> },
-    { id: 6, title: 'Permissions',  content: <Permissions /> },
 ]
 
 function Company() {

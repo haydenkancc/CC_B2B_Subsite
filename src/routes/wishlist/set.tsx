@@ -9,7 +9,7 @@ const items = [
     { id: 3, image: laptop2, name: "G4900X (MISDWADADWA100 White Black All the Colors of the Rainbow)", code: "HHACMC0612", online: "Yes", store: "Yes", date: "2024-10-02", user: "Porky Pig", price: 33.33 },
 ];
 
-function Recent() {
+function Set() {
     const [allQuantity, setAllQuantity] = useState(1); // Global multiplier for all items
     const [itemQuantities, setItemQuantities] = useState(
         items.reduce((acc, item) => {
@@ -51,8 +51,8 @@ function Recent() {
     return (
         <div className="flex flex-col gap-y-5">
             <div className="flex flex-row items-center justify-between pb-3">
-                <div className="text-2xl">Recently Viewed</div>
-                <div className="flex flex-row items-center gap-x-10">
+                <div className="text-2xl">Wile's List 1</div>
+                <div className="flex flex-row items-center gap-x-5">
                     {/* Controls for the global quantity multiplier */}
                     <div className="flex justify-center border border-slate-300 rounded-full">
                         <button onClick={handleDecreaseAll} className="p-2.5 border-r rounded-l-full hover:bg-slate-100">
@@ -68,7 +68,7 @@ function Recent() {
                             <Plus size={10} />
                         </button>
                     </div>
-                    <div>Subtotal: ${totalPrice.toFixed(2)}</div>
+                    <div className="w-40 text-right">Subtotal: ${totalPrice.toFixed(2)}</div>
                 </div>                
             </div>
 
@@ -108,7 +108,7 @@ function Recent() {
                                                 <div className="text-xs text-red-500">Unavailable In-Store</div> 
                                             </div>
                                         )}
-                                        <div className="text-xs text-blue-700 hover:underline cursor-pointer">Add to Cart</div>
+                                        <div className="text-xs text-blue-700 hover:underline cursor-pointer">Remove</div>
                                         <div className="text-xs text-blue-700 hover:underline cursor-pointer">Notify on Sale</div>
                                     </div>
                                 </div>
@@ -137,10 +137,11 @@ function Recent() {
                 );
             })}
             <div className="flex justify-end gap-x-5">
+                <Link to="/wishlist" className="text-sm font-medium text-center bg-blue-900 hover:bg-blue-800 text-white py-2 rounded px-4">Edit List</Link>
                 <Link to="/cart" className="text-sm font-medium text-center bg-blue-900 hover:bg-blue-800 text-white py-2 rounded px-4">Add List to Cart</Link>
             </div>
         </div>
     );
 }
 
-export default Recent;
+export default Set;

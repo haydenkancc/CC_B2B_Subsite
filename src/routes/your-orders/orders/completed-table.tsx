@@ -10,7 +10,7 @@ const items = [
 
 function CompletedTable() {
     return (
-        <div className="mb-20">
+        <div className="">
             <OrdersTable items={items} />
         </div>
     )
