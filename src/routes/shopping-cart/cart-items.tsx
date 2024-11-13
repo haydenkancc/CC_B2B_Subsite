@@ -49,25 +49,25 @@ function CartItems() {
                                     {item.online === "Yes" &&
                                         <div className="flex flex-row items-center gap-x-1">
                                             <Check weight="bold" color="#16a34a" />
-                                            <div className="text-xs text-green-600">Available Online</div> 
+                                            <div className="text-xs text-green-600">Available Online</div>
                                         </div>
                                     }
                                     {item.online === "No" &&
                                         <div className="flex flex-row items-center gap-x-1">
                                             <X weight="bold" color="#ef4444" />
-                                            <div className="text-xs text-red-500">Unavailable Online</div> 
+                                            <div className="text-xs text-red-500">Unavailable Online</div>
                                         </div>
                                     }
                                     {item.store === "Yes" &&
                                         <div className="flex flex-row items-center gap-x-1">
                                             <Check weight="bold" color="#16a34a" />
-                                            <div className="text-xs text-green-600">Available In-Store</div> 
+                                            <div className="text-xs text-green-600">Available In-Store</div>
                                         </div>
                                     }
                                     {item.store === "No" &&
                                         <div className="flex flex-row items-center gap-x-1">
                                             <X weight="bold" color="#ef4444" />
-                                            <div className="text-xs text-red-500">Unavailable In-Store</div> 
+                                            <div className="text-xs text-red-500">Unavailable In-Store</div>
                                         </div>
                                     }
                                     <div className="text-xs text-blue-700 hover:underline cursor-pointer">Remove</div>

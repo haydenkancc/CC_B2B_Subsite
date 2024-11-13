@@ -1,19 +1,10 @@
-import TicketTable from './ticket-table.tsx';
 import { useEffect } from 'react';
 import SidebarNav from '../sidebar-nav/sidebar-nav.tsx';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
-import PageNavigation from '../../components/page-navigation/page-navigation.tsx';
-import OpenTable from './open-table.tsx';
-import ClosedTable from './closed-table.tsx';
-import ProfileTabs from '../../components/tab-navigation/profile-tabs.tsx';
+import { Link } from 'react-router-dom';
+import TicketContentClosed from './ticket-content-closed.tsx';
 
-const tabs = [
-    { id: 1, title: 'All', content: <TicketTable /> },
-    { id: 2, title: 'Open', content: <OpenTable /> },
-    { id: 3, title: 'Closed', content: <ClosedTable /> },
-]
-
-function Tickets() {
+function TicketClosed() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location]);
@@ -34,16 +25,20 @@ function Tickets() {
                         </div>
                     </div>
                 </div>
-                <div className="px-8 pt-5 pb-8">
-                    <div className="text-2xl">Ticket Management</div>
+                <div className="px-8 py-4">
+                    <Link to={"/tickets"} className="text-black underline text-sm">
+                        Return to Tickets
+                    </Link>
                 </div>
-                <div className="flex flex-col gap-y-4 px-8 pb-20">
-                    <ProfileTabs tabs={tabs} />
-                    <PageNavigation />
+                <div className="px-8">
+                    <div className="text-xl font-medium">Ticket #172934 - This Ticket has been Closed</div>
+                </div>
+                <div className="py-4">
+                    <TicketContentClosed />
                 </div>
             </div>
         </div>
     )
 }
 
-export default Tickets;
+export default TicketClosed;

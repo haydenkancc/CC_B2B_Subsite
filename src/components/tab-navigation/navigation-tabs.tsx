@@ -5,7 +5,6 @@ import './tabs-navigation.css'
 type PageTab = {
     id: number;
     title: string;
-    number: string;
     content: ReactNode;
 }
 interface NavigationTabsProps {

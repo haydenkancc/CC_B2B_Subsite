@@ -12,7 +12,7 @@ const items = [
 
 function OutstandingTable() {
     return (
-        <div className="mb-20">
+        <div className="">
             <Invoices items={items} />
         </div>
     )

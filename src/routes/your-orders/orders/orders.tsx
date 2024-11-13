@@ -7,6 +7,7 @@ import CompletedTable from './completed-table.tsx';
 import PendingTable from './pending-table.tsx';
 import CancelledTable from './cancelled-table.tsx';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
+import PageNavigation from '../../../components/page-navigation/page-navigation.tsx';
 
 const tabs = [
     { id: 1, title: 'All', content: <OrdersTable /> },
@@ -38,8 +39,9 @@ function Orders() {
                 <div className="px-8 pt-8">
                     <OrdersOverview />
                 </div>
-                <div className="px-8">
+                <div className="flex flex-col gap-y-4 px-8 pb-20">
                     <OrdersTabs tabs={tabs} />
+                    <PageNavigation />
                 </div>
             </div>
         </div>

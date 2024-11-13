@@ -1,7 +1,5 @@
-import { Star, CaretUp, CaretDown } from '@phosphor-icons/react';
 import samplePDF from "../../../assets/sample-pdf.pdf";
 import { Link } from 'react-router-dom';
-import Calendar from '../../../components/calendar/calendar-to';
 
 const titles = [
     { id: 1, name: "Order Number:" },
@@ -25,7 +23,7 @@ function OrdersTable({ items=[
     { id: 10, number: "CCORD000010", status: "Cancelled", date: "2021-03-18", user: "Wile E. Coyote", total: "$16,100.00", track: "CCTRK000010", src: samplePDF  },
 ] })  {
     return (
-        <div className="mb-20">
+        <div className="">
             <table className="w-full bg-transparent border">
                 <thead>
                     <tr className="text-oxford-blue border border-slate-300 bg-tabs-gray">
@@ -33,20 +31,9 @@ function OrdersTable({ items=[
                         {titles.map(title => (
                             <th key={title.id} className="py-4 text-xs">
                                 <div className="flex flex-row items-center">
-                                    {title.name === "Number:" &&
-                                        <div className="flex flex-row items-center">
-                                            <div>{title.name}</div>
-                                            <div className="flex flex-col ml-2.5">
-                                                <CaretUp size={10} />
-                                                <CaretDown size={10} />
-                                            </div>
-                                        </div>
-                                    }
-                                    {title.name !== "Number:" &&
-                                        <div className="flex flex-row items-center">
-                                            <div>{title.name}</div>
-                                        </div>
-                                    }
+                                    <div className="flex flex-row items-center">
+                                        <div>{title.name}</div>
+                                    </div>
                                 </div>
                             </th>
                         ))}

@@ -7,6 +7,7 @@ import OrdersTabs from '../../components/tab-navigation/orders-tabs.tsx';
 import OutstandingTable from './terms/outstanding-table.tsx';
 import Cards from './cards.tsx';
 import Terms from './terms.tsx';
+import PageNavigation from '../../components/page-navigation/page-navigation.tsx';
 
 const tabs = [
     { id: 1, title: 'Outstanding', content: <OutstandingTable /> },
@@ -44,8 +45,9 @@ function Billing() {
                 <div className="px-8 pb-8">
                     <Terms />
                 </div>
-                <div className="px-8">
+                <div className="flex flex-col gap-y-4 px-8 pb-20">
                     <OrdersTabs tabs={tabs} />
+                    <PageNavigation />
                 </div>
             </div>
         </div>
