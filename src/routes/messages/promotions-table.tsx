@@ -7,7 +7,7 @@ const items = [
 
 function PromotionsTable() {
     return (
-        <div className="mb-20">
+        <div className="">
             <MessageTable items={items} />
         </div>
     )
