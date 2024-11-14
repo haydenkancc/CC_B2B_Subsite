@@ -5,8 +5,9 @@ import './navigation-bar.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ccfull from "../../assets/ccfull.png";
-import { MagnifyingGlass } from '@phosphor-icons/react';
+import { MagnifyingGlass, SignOut } from '@phosphor-icons/react';
 import ccother from "../../assets/ccother.svg"
+import { ExitIcon } from '@radix-ui/react-icons';
 
 const shopProductItems = [
     {id: 1, title: 'Cables & Adapters'},
@@ -62,10 +63,10 @@ export function NavigationBar() {
     const [shopProducts, setShopProducts] = useState(false);
     const [deals, setDeals] = useState(false);
     const [productFinders, setProductFinders] = useState(false);
-
     const [showCables, setShowCables] = useState(false);
-
     const [showPower, setShowPower] = useState(false);
+    const [account, setAccount] = useState(false);
+    const [showAccount, setShowAccount] = useState(false);
 
     return (
         <div className="bg-black h-28 z-10">
@@ -89,14 +90,50 @@ export function NavigationBar() {
                             <Storefront size={18} weight="bold" />
                             <div className="text-sm">Store</div>
                         </div>
-                        <Link to="/sign-in" className="flex flex-row items-center gap-x-2.5 font-semibold hover:bg-blue-900 rounded-full cursor-pointer px-5 py-0.5">
-                            <User size={18} weight="fill" />
-                            <div className="text-sm">Sign In</div>
-                        </Link>
-                        <div className="flex flex-row items-center gap-x-2.5 font-semibold hover:bg-blue-900 rounded-full cursor-pointer px-5 py-0.5">
-                            <ShoppingCart size={18} weight="fill" />
-                            <div className="text-sm">Cart (0)</div>
-                        </div>
+                        {!account &&
+                        <div className="flex flex-row justify-between items-center text-white">
+                                <div className="flex flex-row items-center gap-x-2.5 font-semibold hover:bg-blue-900 rounded-full cursor-pointer px-5 py-0.5" onClick={() => setAccount(true)}>
+                                    <User size={18} weight="fill" />
+                                    <div className="text-sm">Sign In</div>
+                                </div>
+                                <div className="flex flex-row items-center gap-x-2.5 font-semibold hover:bg-blue-900 rounded-full cursor-pointer px-5 py-0.5">
+                                    <ShoppingCart size={18} weight="fill" />
+                                    <div className="text-sm">Cart (0)</div>
+                                </div>
+                            </div>
+                        }
+                        {account &&
+                            <div className="flex flex-row justify-between items-center text-white">
+                                <Link to="/dashboard" className="flex flex-row items-center gap-x-2.5 font-semibold hover:bg-blue-900 rounded-full cursor-pointer px-5 py-0.5 dropdown"
+                                    // onMouseEnter={() => setShowAccount(true)}
+                                >
+                                    {showAccount && (
+                                        <div className="dropdownContent mt-1.5 rounded">
+                                            <div className="dropdownItem text-xs font-normal bg-white hover:bg-white rounded"
+                                                onMouseEnter={() => setAccount(true)}
+                                                onMouseLeave={() => setShowAccount(false)}>
+                                                <div className="flex flex-col gap-y-2.5">
+                                                    <Link to="/profile" className="flex flex-row items-center gap-x-2.5 hover:bg-tabs-gray">
+                                                        <User size={14} weight="fill" />
+                                                        <div>Account</div>
+                                                    </Link>
+                                                    <Link to="/sign-in" className="flex flex-row items-center gap-x-2.5 hover:bg-tabs-gray">
+                                                        <SignOut size={14} weight="fill" />
+                                                        <div>Sign Out</div>
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                    <User size={18} weight="fill" />
+                                    <div className="text-sm">Wile E.</div>
+                                </Link>
+                                <Link to="/cart" className="flex flex-row items-center gap-x-2.5 font-semibold hover:bg-blue-900 rounded-full cursor-pointer px-5 py-0.5">
+                                    <ShoppingCart size={18} weight="fill" />
+                                    <div className="text-sm">Cart (3)</div>
+                                </Link>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div className="flex flex-row gap-x-10 items-center text-white">

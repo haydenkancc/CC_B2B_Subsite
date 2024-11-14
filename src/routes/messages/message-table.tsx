@@ -18,7 +18,7 @@ function MessageTable({ items=[
     { id: 7, message: "Ash Ketchup has replied to your ticket \"My SUPERPC9000 never arrived, can I have some assistance?\"", name: "Canada Computers & Electronics", time: "12 Hours Ago", type: "System" },
 ] })  {
     return (
-        <div className="mb-20">
+        <div className="">
             {/* <Calendar /> */}
             <table className="w-full bg-transparent border">
                 <thead>

@@ -2,11 +2,11 @@ import '../billing/billing.css'
 import MessageTable from "./message-table.tsx";
 import SidebarNav from "../sidebar-nav/sidebar-nav.tsx";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
-import NotificationTabs from "../../components/tab-navigation/notification-tabs.tsx";
 import PromotionsTable from './promotions-table.tsx';
 import SystemTable from './system-table.tsx';
 import { useEffect } from 'react';
 import OrderTabs from '../../components/tab-navigation/orders-tabs.tsx';
+import PageNavigation from '../../components/page-navigation/page-navigation.tsx';
 
 const tabs = [
     { id: 1, title: 'All', content: <MessageTable /> },
@@ -39,8 +39,9 @@ function Messages() {
                 <div className="px-8 pt-5 pb-8">
                     <div className="text-2xl">Notifications</div>
                 </div>
-                <div className="px-8">
+                <div className="flex flex-col gap-y-4 px-8 pb-20">
                     <OrderTabs tabs={tabs} />
+                    <PageNavigation />
                 </div>
             </div>
         </div>
