@@ -22,7 +22,7 @@ function ReviewSummary() {
                         <div className="font-medium">Total:</div>
                         <div className="text-sm font-medium text-red-600">$114.80</div>
                     </div>
-                    <Link to="/orders" className="text-sm font-medium text-center bg-black hover:bg-stone-700 text-white py-2 rounded mt-2.5">Place Order</Link>
+                    <Link to="/checkout-completed" className="text-sm font-medium text-center bg-black hover:bg-stone-700 text-white py-2 rounded mt-2.5">Place Order</Link>
                 </div>
             </div>
         </div>

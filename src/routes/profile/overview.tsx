@@ -53,7 +53,7 @@ function Overview() {
                         ))}
                     </div>
                     <div className="flex flex-col gap-y-1.5 py-5 w-60">
-                        <div className="text-sm hover:bg-tabs-gray focus:outline-none rounded-lg">To update information, contact your primary user or administrator.</div>
+                        <div className="text-sm">To update information, contact your primary user or administrator.</div>
                     </div>
                 </div>
             </div>
