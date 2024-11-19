@@ -19,7 +19,7 @@ function BannerLanding() {
                         <div className="font-extrabold text-3xl">Your business is our priority. Create an account today.</div>
                         <div className="">Access all the resources your organization needs to grow, with a wide range of products, full-service solutions, and flexible payment options.</div>
                         <div className="inline-block w-auto pt-2.5">
-                            <Link to="/create-account" className="bg-black text-center text-white font-bold rounded-sm px-4 py-2.5 hover:bg-stone-700">Apply for a Free Business Account</Link>
+                            <Link to="/create-account" className="bg-black text-center text-white font-bold rounded-sm px-4 py-2.5 hover:bg-stone-700">Apply for a Business Account</Link>
                         </div>
                     </div>
                 </div>

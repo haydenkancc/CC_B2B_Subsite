@@ -76,23 +76,26 @@ function CartItems() {
                             </div>
                         </div>
                         <div className="flex flex-col w-56 items-end">
-                            <div className="text-lg font-medium text-red-600">{`$${((item.price) * itemQuantities[item.id]).toFixed(2)}`}</div>
-                            <div className="text-xs">Plus $0.60 EHF</div>
-
-                            <div className="text-sm text-center mt-2.5">
-                                <div className="flex justify-center border border-slate-300 rounded-full">
-                                    <button onClick={() => handleDecrease(item.id)} className="p-1.5 border-r rounded-l-full hover:bg-slate-100">
-                                        <Minus size={10} />
-                                    </button>
-                                    <input
-                                        type="number"
-                                        value={itemQuantities[item.id]} // Display the quantity
-                                        readOnly
-                                        className="w-14 pl-4 focus:outline-none text-center text-xs"
-                                    />
-                                    <button onClick={() => handleIncrease(item.id)} className="p-1.5 border-l rounded-r-full hover:bg-slate-100">
-                                        <Plus size={10} />
-                                    </button>
+                            <div className="flex flex-col grow justify-between items-end">
+                                <div className="flex flex-col items-end">
+                                    <div className="text-lg font-medium text-red-600">{`$${((item.price) * itemQuantities[item.id]).toFixed(2)}`}</div>
+                                    <div className="text-xs">Plus $0.60 EHF</div>
+                                </div>
+                                <div className="text-sm text-center mt-2.5">
+                                    <div className="flex justify-center border border-slate-300 rounded-full">
+                                        <button onClick={() => handleDecrease(item.id)} className="p-1.5 border-r rounded-l-full hover:bg-slate-100">
+                                            <Minus size={10} />
+                                        </button>
+                                        <input
+                                            type="number"
+                                            value={itemQuantities[item.id]} // Display the quantity
+                                            readOnly
+                                            className="w-14 pl-4 focus:outline-none text-center text-xs"
+                                        />
+                                        <button onClick={() => handleIncrease(item.id)} className="p-1.5 border-l rounded-r-full hover:bg-slate-100">
+                                            <Plus size={10} />
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 

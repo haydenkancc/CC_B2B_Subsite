@@ -96,15 +96,15 @@ export function NavigationBar() {
                                     <User size={18} weight="fill" />
                                     <div className="text-sm">Sign In</div>
                                 </div>
-                                <div className="flex flex-row items-center gap-x-2.5 font-semibold hover:bg-blue-900 rounded-full cursor-pointer px-5 py-0.5">
+                                <Link to="/cart-out" className="flex flex-row items-center gap-x-2.5 font-semibold hover:bg-blue-900 rounded-full cursor-pointer px-5 py-0.5">
                                     <ShoppingCart size={18} weight="fill" />
                                     <div className="text-sm">Cart (0)</div>
-                                </div>
+                                </Link>
                             </div>
                         }
                         {account &&
                             <div className="flex flex-row justify-between items-center text-white">
-                                <Link to="/dashboard" className="flex flex-row items-center gap-x-2.5 font-semibold hover:bg-blue-900 rounded-full cursor-pointer px-5 py-0.5 dropdown"
+                                <Link to="/company" className="flex flex-row items-center gap-x-2.5 font-semibold hover:bg-blue-900 rounded-full cursor-pointer px-5 py-0.5 dropdown"
                                     // onMouseEnter={() => setShowAccount(true)}
                                 >
                                     {showAccount && (

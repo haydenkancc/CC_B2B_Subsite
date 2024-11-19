@@ -17,7 +17,7 @@ function WhyLanding() {
                 <div className="columns-3">
                     {services.map(item => (
                         <div className="mb-4">
-                            <div className="flex flex-col gap-y-2 items-center text-center border rounded-sm p-5 h-48">
+                            <div className="flex flex-col gap-y-2 items-center text-center border rounded p-5 h-48 bg-tabs-gray">
                                 <div>{item.icon}</div>
                                 <div className="font-extrabold">{item.title}</div>
                                 <div>{item.body}</div>

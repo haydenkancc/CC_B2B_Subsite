@@ -1,3 +1,8 @@
+import { Circle, RadioButton } from "@phosphor-icons/react";
+import { useState } from "react";
+import { Button, DialogTrigger } from "react-aria-components";
+import CreditModal from "../billing/terms/credit-modal";
+
 const fields = [
     { field: "Trade Company Name", placeholder: "Acme Corporation" },
     { field: "Legal Company Name", placeholder: "Acme Corporation" },
@@ -10,33 +15,103 @@ const fields = [
     { field: "Date of Application", placeholder: "2024-05-05" },
 ]
 
+const info = [
+    { title: "Company Name", body1: "Acme Corporation" },
+    { title: "Phone Number", body1: "(647) 327-6457" },
+    { title: "Business Address", body1: "75 West Wilmot Street", body2: "Richmond Hill ON, L4B 1K7" },
+]
+
+const cards = [
+    { title1: "Only administrators can add and manage credit cards", title2: "All users can add, manage and use credit cards individually" },
+]
+
 function General() {
+
+    const [all, setAll] = useState(false);
+
     return (
         <div className="mb-20">
-            <div className="py-4">
-                <div className="border rounded-sm p-6">
-                    <div className="columns-3 gap-8">
-                        {fields.map(item => (
-                            <div className="mb-5">
-                                <label className="text-left text-black mb-1 text-sm">{item.field}</label>
-                                {item.field === "Date of Application" &&
-                                    <input className="text-sm w-full bg-slate-100 text-black border border-slate-400 rounded py-2.5 px-3 mt-1.5 focus:outline-none cursor-default"
-                                    placeholder={item.placeholder} />
-                                }
-                                {item.field !== "Date of Application" &&
-                                    <input className="text-sm w-full bg-slate-white text-black border border-slate-400 rounded py-2.5 px-3 mt-1.5 focus:outline-none"
-                                    placeholder={item.placeholder} />
-                                }
-                            </div>
-                        ))}
-                    </div>
-                    <div className="flex justify-center">
-                        <button className="bg-slate-100 hover:bg-slate-200 border border-slate-400 rounded-md text-center text-sm font-semibold py-2.5 px-4 mt-2.5">
-                            Save Changes
-                        </button>
-                    </div>
+            <div className="flex flex-col gap-y-5">
+                <div className="font-bold">Company Information</div>
+                <div className="flex flex-col gap-y-4">
+                    {info.map(item => (
+                        <div className="flex flex-col gap-y-1 text-sm">
+                            <div className="font-semibold">{item.title}</div>
+                            <div>{item.body1}</div>
+                            <div>{item.body2}</div>
+                        </div>
+                    ))}
                 </div>
+                <div className="font-bold mt-5">Credit Card Management</div>
+                <div className="flex flex-col gap-y-4">
+                    {cards.map(item => (
+                        <div>
+                            { all &&
+                                <div className="flex flex-col gap-y-2.5">
+                                    <div className="flex flex-row items-center gap-x-1.5 text-sm cursor-pointer" onClick={() => setAll(false)}>
+                                        <Circle size={20} />
+                                        {item.title1}
+                                    </div>
+                                    <div className="flex flex-row items-center gap-x-1.5 text-sm cursor-pointer">
+                                        <RadioButton size={20} weight="fill" />
+                                        {item.title2}
+                                    </div>
+                                </div>
+                            }
+                            { !all &&
+                                <div className="flex flex-col gap-y-2.5">
+                                    <div className="flex flex-row items-center gap-x-1.5 text-sm cursor-pointer">
+                                        <RadioButton size={20} weight="fill" />
+                                        {item.title1}
+                                    </div>
+                                    <div className="flex flex-row items-center gap-x-1.5 text-sm cursor-pointer" onClick={() => setAll(true)}>
+                                        <Circle size={20} />
+                                        {item.title2}
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    ))}
+                </div>
+
+                <div className="flex flex-row items-center gap-x-2.5 mt-5">
+                    <div className="font-bold">Credit Limit: $6,000.00</div>
+                    <DialogTrigger>
+                        <Button className="focus:outline-none hover:bg-tabs-gray px-1.5 py-0.5 border rounded-lg text-center">
+                            <div className="text-sm text-secondary-color">Request Credit Adjustment</div>
+                        </Button>
+                        <CreditModal />
+                    </DialogTrigger>
+                </div>
+                
+                <div className="inline-block w-auto mt-2.5">
+                    <button className="text-sm bg-oxford-blue text-center text-white font-medium rounded-sm px-4 py-2.5 hover:bg-stone-700">Save Changes</button>
+                </div>
+            
             </div>
+
+            {/* <div className="border rounded-sm p-6">
+                <div className="columns-3 gap-8">
+                    {fields.map(item => (
+                        <div className="mb-5">
+                            <label className="text-left text-black mb-1 text-sm">{item.field}</label>
+                            {item.field === "Date of Application" &&
+                                <input className="text-sm w-full bg-slate-100 text-black border border-slate-400 rounded py-2.5 px-3 mt-1.5 focus:outline-none cursor-default"
+                                placeholder={item.placeholder} />
+                            }
+                            {item.field !== "Date of Application" &&
+                                <input className="text-sm w-full bg-slate-white text-black border border-slate-400 rounded py-2.5 px-3 mt-1.5 focus:outline-none"
+                                placeholder={item.placeholder} />
+                            }
+                        </div>
+                    ))}
+                </div>
+                <div className="flex justify-center">
+                    <button className="bg-slate-100 hover:bg-slate-200 border border-slate-400 rounded-md text-center text-sm font-semibold py-2.5 px-4 mt-2.5">
+                        Save Changes
+                    </button>
+                </div>
+            </div> */}
         </div>
     )
 }

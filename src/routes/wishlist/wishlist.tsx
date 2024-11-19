@@ -37,7 +37,7 @@ function Wishlist() {
                             <div className="font-semibold">Apply to Selected Items:</div>
                             <Actions />
                         </div>
-                        <Link to="/cart" className="text-sm font-medium text-center bg-blue-900 hover:bg-blue-800 text-white py-1.5 rounded px-2.5">Add List to Cart</Link>
+                        <Link to="/cart" className="text-white bg-blue-700 hover:bg-blue-800 rounded-md text-center text-sm font-medium py-1.5 px-4">Add List to Cart</Link>
                     </div>
                 </div>
             </div>        

@@ -46,7 +46,7 @@ function Signin() {
                                 </button>
                             </div>
                         </div>
-                        <Link to={"/dashboard"} className="flex items-center justify-center bg-oxford-blue text-white rounded-sm font-medium text-center w-24 h-8 mt-8">
+                        <Link to={"/company"} className="flex items-center justify-center bg-oxford-blue text-white rounded-sm font-medium text-center w-24 h-8 mt-8">
                             Sign In
                         </Link>
                         <Link to={"/create-account"} className="text-black underline text-sm mb-1 mt-4">

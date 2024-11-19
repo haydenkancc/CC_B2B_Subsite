@@ -1,7 +1,7 @@
 import card from "../../assets/card.png";
 import visa from "../../assets/visa.png";
 import mastercard from "../../assets/mastercard.png";
-import { Trash } from "@phosphor-icons/react";
+import { CaretLeft, CaretRight, Trash } from "@phosphor-icons/react";
 import { useState } from "react";
 import { Button, DialogTrigger } from "react-aria-components";
 import PaymentMethodModal from "./wallet/payment-method-modal";
@@ -19,14 +19,13 @@ function Cards() {
         <div className="flex flex-row gap-x-8">
             <div className="border rounded-lg p-5">
                 <div className="flex flex-row gap-x-5">
-                    <div className="flex flex-col gap-y-1.5 py-2.5 pr-5">
+                    <div className="flex flex-col justify-between gap-y-1.5 py-2.5 pr-5">
                         <div className="text-sm">Default Card</div>
-                        <div className="text-3xl">CAD $7000.00</div>
                         {!changeCard &&
-                            <button className="text-sm bg-black hover:bg-stone-700 text-white p-2 rounded mt-9" onClick={() => setChangeCard(true)}>Change Card</button>
+                            <button className="w-52 text-sm bg-black hover:bg-stone-700 text-white p-2 rounded" onClick={() => setChangeCard(true)}>Change Payment Card</button>
                         }
                         {changeCard &&
-                            <button className="text-sm bg-black hover:bg-stone-700 text-white p-2 rounded mt-9" onClick={() => setChangeCard(false)}>Cancel</button>
+                            <button className="w-52 text-sm bg-black hover:bg-stone-700 text-white p-2 rounded" onClick={() => setChangeCard(false)}>Cancel</button>
                         }
                     </div>
                     <img src={card} className="h-40" />
@@ -79,10 +78,14 @@ function Cards() {
                     </div>
                 ))}
                 <div className="flex flex-row items-center justify-between">
-                    <div className="flex flex-row items-center gap-x-2 py-1">
-                        <div className="text-sm">Page</div>
-                        <input type="text" placeholder="1" className="text-sm text-black focus:outline-none w-12 text-center border rounded-lg py-0.5" />
-                        <div className="text-sm">of 2</div>
+                    <div className="flex flex-row items-center gap-x-5">
+                        <CaretLeft className="cursor-pointer" />
+                        <div className="flex flex-row items-center gap-x-2 py-1">
+                            <div className="text-sm">Page</div>
+                            <input type="text" placeholder="1" className="text-sm text-black focus:outline-none w-12 text-center border rounded-lg py-0.5" />
+                            <div className="text-sm">of 2</div>
+                        </div>
+                        <CaretRight className="cursor-pointer" />
                     </div>
                     <DialogTrigger>
                         <Button className="focus:outline-none hover:bg-tabs-gray px-2.5 py-1.5 border rounded-lg text-center">
