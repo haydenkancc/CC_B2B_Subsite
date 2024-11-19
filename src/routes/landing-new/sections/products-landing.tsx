@@ -1,17 +1,17 @@
 import server from "../../../assets/server.png";
 import businesslaptop from "../../../assets/businesslaptop.png";
 import printer from "../../../assets/printer.png";
-import headset from "../../../assets/headset.png";
+import router from "../../../assets/router.png";
 import { Link } from "react-router-dom";
-import chair from "../../../assets/chair.png";
+import SSD from "../../../assets/SSD.png";
 import keyboard from "../../../assets/keyboard.png";
 
 const products = [
     { image: keyboard, title: "Keyboards & Mice", },
     { image: printer, title: "Printers & Scanners" },
     { image: businesslaptop, title: "Business Laptops" },
-    { image: chair, title: "Office Essentials" },
-    { image: headset, title: "PC Headsets" },
+    { image: SSD, title: "PC & Server Components" },
+    { image: router, title: "Networking" },
     { image: server, title: "Servers & Workstations" },
 ]
 
@@ -23,7 +23,7 @@ function ProductsLanding() {
                 <div className="columns-3 mt-5">
                     {products.map(item => (
                         <Link to="/hardware">
-                            <div className="border p-5 mb-4">
+                            <div className="border p-5 mb-4 shadow-lg">
                                 <img src={item.image} className="h-32 mx-auto" />
                                 <div className="text-xl font-bold text-center mt-2.5">{item.title}</div>
                             </div>

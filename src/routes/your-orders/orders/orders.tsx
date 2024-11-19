@@ -34,14 +34,13 @@ function Orders() {
                     </div>
                 </div>
                 <div className="px-8 pt-5">
-                    <div className="text-2xl">Order Management</div>
+                    <div className="text-2xl">Orders</div>
                 </div>
                 <div className="px-8 pt-8">
                     <OrdersOverview />
                 </div>
                 <div className="flex flex-col gap-y-4 px-8 pb-20">
                     <OrdersTabs tabs={tabs} />
-                    <PageNavigation />
                 </div>
             </div>
         </div>

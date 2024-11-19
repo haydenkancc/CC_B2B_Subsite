@@ -3,7 +3,7 @@ import { City, Envelope, Eye, EyeSlash, MapPin, MapTrifold, Numpad, Pen, Phone }
 import wile from "../../assets/wile.png"
 
 const basic = [
-    { image: wile, name: "Wile E. Coyote", role: "Coyote", access: "View-Only" },
+    { image: wile, name: "Wile E. Coyote", role: "Business Analyst", access: "View-Only" },
 ]
 
 const about = [

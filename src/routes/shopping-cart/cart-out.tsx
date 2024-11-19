@@ -67,8 +67,9 @@ import CartSummary from "./cart-summary";
 import SavedItems from "./saved-items";
 import { CaretRight } from "@phosphor-icons/react";
 import { useEffect } from "react";
+import CartSummaryOut from "./cart-summary-out";
 
-function ShoppingCart() {
+function CartOut() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -101,7 +102,7 @@ function ShoppingCart() {
                             </div>
                             <SavedItems />
                         </div>
-                        <CartSummary />
+                        <CartSummaryOut />
                     </div>
                 </div>
             </div>
@@ -113,4 +114,4 @@ function ShoppingCart() {
     )
 }
 
-export default ShoppingCart;
+export default CartOut;

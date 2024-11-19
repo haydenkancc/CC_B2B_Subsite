@@ -8,7 +8,7 @@ const basic = [
 
 const fields = [
     { field: "Name", placeholder: "Wile E. Coyote" },
-    { field: "Position", placeholder: "Coyote" },
+    { field: "Position", placeholder: "Business Analyst" },
     { field: "Work Address", placeholder: "75 West Wilmot Street" },
     { field: "City", placeholder: "Richmond Hill" },
     { field: "Province", placeholder: "Ontario" },

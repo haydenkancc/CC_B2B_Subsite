@@ -4,14 +4,14 @@ import { useEffect } from 'react';
 import General from './general.tsx';
 import Contacts from '../account/contacts/contacts.tsx';
 import Addresses from '../account/addresses/addresses.tsx';
-import Documents from '../account/documents/documents.tsx';
 import NavigationTabs from '../../components/tab-navigation/navigation-tabs.tsx';
+import Credit from './credit.tsx';
 
 const tabs = [
     { id: 1, title: 'General', content: <General /> },
-    { id: 2, title: 'Contacts',  content: <Contacts /> },
-    { id: 3, title: 'Addresses',  content: <Addresses /> },
-    { id: 4, title: 'Documents',  content: <Documents /> },
+    { id: 2, title: 'Users',  content: <Contacts /> },
+    { id: 3, title: 'Shipping Addresses',  content: <Addresses /> },
+    { id: 4, title: 'Company Credit Cards',  content: <Credit /> },
 ]
 
 function Company() {
@@ -40,7 +40,7 @@ function Company() {
                 </div>
                 
                 <div className="px-8 pt-5">
-                    <div className="text-2xl">Company Settings</div>
+                    <div className="text-2xl">Company Information</div>
                 </div>
                 <div className="px-8">
                     <NavigationTabs tabs={tabs} />

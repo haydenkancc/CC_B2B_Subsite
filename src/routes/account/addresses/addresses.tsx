@@ -17,16 +17,16 @@ function Addresses() {
         <div className="pb-20">
             <div className="pb-12 flex justify-between">
                 <DialogTrigger>
-                    <Button className="contacts-Button">
-                        Add New Address
+                    <Button className="text-sm bg-oxford-blue text-center text-white font-medium rounded-sm px-4 py-2.5 hover:bg-stone-700">
+                        Add New Shipping Address
                     </Button>
                     <NewAddressModal />
                 </DialogTrigger>
                 <span className="flex gap-16">
                     <SearchField>
-                        <Input className="pl-3 pr-3 pt-2 pb-2 bg-white text-oxford-blue border border-1 border-oxford-blue rounded-sm" placeholder="Search Addresses" />
+                        <Input className="px-3 py-2.5 bg-white text-oxford-blue border border-1 border-oxford-blue rounded-sm" placeholder="Search Addresses" />
                     </SearchField>
-                    <ToggleButton className="contacts-Button" onChange={(isSelected) => {setShowGrid(isSelected)}}>
+                    <ToggleButton className="text-sm bg-oxford-blue text-center text-white font-medium rounded-sm px-4 py-2.5 hover:bg-stone-700" onChange={(isSelected) => {setShowGrid(isSelected)}}>
                         {showGrid ? (
                             <span className="flex items-center gap-2">
                                 <SquareSplitVertical size={24} /> List

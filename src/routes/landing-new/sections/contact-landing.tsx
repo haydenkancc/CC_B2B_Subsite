@@ -8,7 +8,7 @@ const options = [
 const contact = [
     { title: "Send us a Message", icon: <Envelope size={25}  />, link: "/create-account" },
     { title: "Give us a Call", icon: <Phone size={25}    />, body1: "Toll-Free : 1-855-940-2400", body2: "Toronto/GTA : 905-780-2632", body3: "Ottawa Area : 613-225-8188", body4: "Vancouver Area : 604-235-3251" },
-    { title: "Apply for a Free Business Account", icon: <Pen size={25}   />, link: "/create-account" },
+    { title: "Apply for a Business Account", icon: <Pen size={25}   />, link: "/create-account" },
 ]
 
 function ContactLanding() {

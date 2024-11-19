@@ -56,7 +56,7 @@ function OrdersTabs({ tabs } : NavigationTabsProps) {
                     }
                     <CalendarTo />
                     <Link to={samplePDF} target="_blank" className="border border-slate-300 rounded-lg text-xs px-1.5 h-7 hover:bg-tabs-gray">
-                        <div className="flex flex-col min-h-full justify-center items-center">Export (.xls)</div>
+                        <div className="flex flex-col min-h-full justify-center items-center">Export (.pdf)</div>
                     </Link>
                 </div>
             </div>

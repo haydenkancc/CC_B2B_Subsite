@@ -137,7 +137,7 @@ function Recent() {
                 );
             })}
             <div className="flex justify-end gap-x-5">
-                <Link to="/cart" className="text-sm font-medium text-center bg-blue-900 hover:bg-blue-800 text-white py-2 rounded px-4">Add List to Cart</Link>
+                <Link to="/cart" className="text-white bg-blue-700 hover:bg-blue-800 rounded-md text-center text-xs font-medium py-2 px-4">Add List to Cart</Link>
             </div>
         </div>
     );

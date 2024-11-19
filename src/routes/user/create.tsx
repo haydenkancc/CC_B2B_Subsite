@@ -370,7 +370,7 @@ function Create({ referral=[
                                 </div>
                             }
 
-                            <FileUpload />
+                            {/* <FileUpload /> */}
 
                             <div className="mt-6">The information you submit will be reviewed within 1-2 business days. You will be contacted by email once your account has been approved.</div>
                             <div className="mt-2.5">By submitting this application, I verify the information submitted on this application is accurate to the best of my knowledge.</div>

@@ -35,6 +35,11 @@ import CreateJamesChow from './routes/user/create-james-chow.tsx';
 import LandingNew from './routes/landing-new/landing-new.tsx';
 import Permissions from './routes/permissions/permissions.tsx';
 import TicketClosed from './routes/tickets/ticket-closed.tsx';
+import OrderDetails from './routes/your-orders/orders/order-details.tsx';
+import OrderDetailsPending from './routes/your-orders/orders/order-details-pending.tsx';
+import CheckoutOut from './routes/checkout/checkout-out.tsx';
+import CartOut from './routes/shopping-cart/cart-out.tsx';
+import CheckoutReview from './routes/checkout/checkout-review.tsx';
 
 const router = createBrowserRouter([
     {
@@ -168,6 +173,22 @@ const router = createBrowserRouter([
     {
         path: "permissions",
         element: <Permissions />
+    },
+    {
+        path: "order-details",
+        element: <OrderDetails />
+    },
+    {
+        path: "order-details-pending",
+        element: <OrderDetailsPending />
+    },
+    {
+        path: "cart-out",
+        element: <CartOut />
+    },
+    {
+        path: "checkout-review",
+        element: <CheckoutReview />
     },
 ]);
 

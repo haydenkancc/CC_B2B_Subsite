@@ -1,21 +1,22 @@
-import { CaretRight, Check, Circle, RadioButton } from "@phosphor-icons/react";
+import { CaretRight, Check, CheckSquare, Circle, RadioButton, Square } from "@phosphor-icons/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function CheckoutItems() {
 
-    const [section, setSection] = useState('contact');
+    const [section, setSection] = useState('address');
     const [delivery, setDelivery] = useState('deliver-yes');
     const [address, setAddress] = useState('bugs');
     const [credit, setCredit] = useState('credit-yes');
-    const [terms, setTerms] = useState('30');
+    const [terms, setTerms] = useState('30'); // Terms are decided at application so they dont get to choose between 30, 45, 60
+    const [po, setPo] = useState('po-yes');
 
     return (
         <div className="border text-black">
             <div className="flex flex-col">
                 {section === 'contact' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-black text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-blue-700 text-white w-full">
                             <div>1.</div>
                             <div>Contact Information</div>
                         </div>
@@ -46,7 +47,7 @@ function CheckoutItems() {
                 }
                 {section === 'address' && delivery === 'deliver-yes' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-black text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-blue-700 text-white w-full">
                             <div>2.</div>
                             <div>Address</div>
                         </div>
@@ -103,6 +104,36 @@ function CheckoutItems() {
                                     </div>
                                 </div>
                             }
+                            <div className="flex flex-col gap-y-2.5">
+                                <div className="text-sm font-medium flex flex-row gap-x-5 justify-between items-center">
+                                    <div className="w-60">Shipment Attention To:</div>
+                                    <input type="text" placeholder="" className="border text-sm text-black border-slate-400 focus:outline-none px-3 py-1.5 grow" />
+                                </div>
+                                {po === "po-yes" &&
+                                    <div className="text-sm font-medium flex flex-row gap-x-5 justify-between items-center">
+                                        <div className="w-60">Purchase Order (PO Number):</div>
+                                        <div className="flex flex-row items-center gap-x-10 grow">
+                                            <input type="text" placeholder="" className="border text-sm text-black border-slate-400 focus:outline-none px-3 py-1.5 grow" />
+                                            <div className="flex flex-row gap-x-2 items-center cursor-pointer" onClick={() => {setPo('po-no')}}>
+                                                <Square size={20} weight="light" />
+                                                <div className="text-sm font-normal">Not Available</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                {po === "po-no" &&
+                                    <div className="text-sm font-medium flex flex-row gap-x-5 justify-between items-center">
+                                        <div className="w-60">Purchase Order (PO Number):</div>
+                                        <div className="flex flex-row items-center gap-x-10 grow">
+                                            <input type="text" placeholder="" className="bg-slate-100 cursor-default border text-sm text-black border-slate-400 focus:outline-none px-3 py-1.5 grow" />
+                                            <div className="flex flex-row gap-x-2 items-center cursor-pointer" onClick={() => {setPo('po-yes')}}>
+                                                <CheckSquare size={20} weight="light" />
+                                                <div className="text-sm font-normal">Not Available</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
                             <div>
                                 <div className="text-sm text-white rounded-sm bg-blue-900 hover:bg-blue-800 px-4 py-1.5 inline-block w-auto cursor-pointer" onClick={() => setSection('payment')}>
                                     Continue
@@ -112,14 +143,14 @@ function CheckoutItems() {
                     </div>
                 }
                 {section === 'contact' &&
-                    <div className="flex flex-row gap-x-2.5 px-5 py-2.5 border-b bg-black text-white">
+                    <div className="flex flex-row gap-x-2.5 px-5 py-2.5 border-b bg-blue-700 text-white">
                         <div>2.</div>
                         <div>Addresses</div>
                     </div>
                 }
                 {section === 'address' && delivery === 'deliver-no' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-black text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-blue-700 text-white w-full">
                             <div>2.</div>
                             <div>Pickup In-Store</div>
                         </div>
@@ -136,6 +167,36 @@ function CheckoutItems() {
                             <div className="flex flex-row items-center gap-x-1.5">
                                 <div className="text-sm text-blue-700 font-medium cursor-pointer">Change Pickup Location</div>
                                 <CaretRight size={14} color="#444AA2" weight="bold" className="cursor-pointer" />
+                            </div>
+                            <div className="flex flex-col gap-y-2.5">
+                                <div className="text-sm font-medium flex flex-row gap-x-5 justify-between items-center">
+                                    <div className="w-60">Authorized Pickup Person(s):</div>
+                                    <input type="text" placeholder="" className="border text-sm text-black border-slate-400 focus:outline-none px-3 py-1.5 grow" />
+                                </div>
+                                {po === "po-yes" &&
+                                    <div className="text-sm font-medium flex flex-row gap-x-5 justify-between items-center">
+                                        <div className="w-60">Purchase Order (PO Number):</div>
+                                        <div className="flex flex-row items-center gap-x-10 grow">
+                                            <input type="text" placeholder="" className="border text-sm text-black border-slate-400 focus:outline-none px-3 py-1.5 grow" />
+                                            <div className="flex flex-row gap-x-2 items-center cursor-pointer" onClick={() => {setPo('po-no')}}>
+                                                <Square size={20} weight="light" />
+                                                <div className="text-sm font-normal">Not Available</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                {po === "po-no" &&
+                                    <div className="text-sm font-medium flex flex-row gap-x-5 justify-between items-center">
+                                        <div className="w-60">Purchase Order (PO Number):</div>
+                                        <div className="flex flex-row items-center gap-x-10 grow">
+                                            <input type="text" placeholder="" className="bg-slate-100 cursor-default border text-sm text-black border-slate-400 focus:outline-none px-3 py-1.5 grow" />
+                                            <div className="flex flex-row gap-x-2 items-center cursor-pointer" onClick={() => {setPo('po-yes')}}>
+                                                <CheckSquare size={20} weight="light" />
+                                                <div className="text-sm font-normal">Not Available</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
                             </div>
                             <div>
                                 <div className="text-sm text-white rounded-sm bg-blue-900 hover:bg-blue-800 px-4 py-1.5 inline-block w-auto cursor-pointer" onClick={() => setSection('payment')}>
@@ -185,7 +246,7 @@ function CheckoutItems() {
                 }
                 {section === 'payment' && credit === 'credit-yes' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-black text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-blue-700 text-white w-full">
                             <div>3.</div>
                             <div>Payment Method</div>
                         </div>
@@ -211,8 +272,8 @@ function CheckoutItems() {
                                 <CaretRight size={14} color="#444AA2" weight="bold" className="cursor-pointer" />
                             </div>
                             <div>
-                                <Link to="/orders" className="text-sm text-white rounded-sm bg-blue-900 hover:bg-blue-800 px-4 py-1.5 inline-block w-auto cursor-pointer" onClick={() => setSection('payment')}>
-                                    Submit Order
+                                <Link to="/checkout-review" className="text-sm text-white rounded-sm bg-blue-900 hover:bg-blue-800 px-4 py-1.5 inline-block w-auto cursor-pointer" onClick={() => setSection('payment')}>
+                                    Continue
                                 </Link>
                             </div>
                         </div>
@@ -220,18 +281,18 @@ function CheckoutItems() {
                 }
                 {section === 'payment' && credit === 'credit-no' &&
                     <div className="flex flex-col">
-                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-black text-white w-full">
+                        <div className="flex flex-row gap-x-2.5 border-b px-5 py-2.5 bg-blue-700 text-white w-full">
                             <div>3.</div>
                             <div>Payment Method</div>
                         </div>
                         <div className="flex flex-col px-5 py-5 gap-y-5">
                             <div className="flex flex-row justify-between text-sm">
                                 <div className="flex flex-col gap-y-1.5 text-sm">
-                                    <div className="font-medium">Net Terms</div>
+                                    <div className="font-medium">Net Terms (NET30)</div>
                                 </div>
                                 <div className="text-blue-700 hover:underline cursor-pointer" onClick={() => setCredit('credit-yes')}>Switch to Credit Card</div>
                             </div>
-                            {terms === "30" &&
+                            {/* {terms === "30" &&
                                 <div className="flex flex-col gap-y-2.5">
                                     <div className="flex flex-row items-center gap-x-1.5 cursor-pointer">
                                         <RadioButton size={20} weight="fill" />
@@ -278,7 +339,7 @@ function CheckoutItems() {
                                         <div className="text-sm font-medium">NET60</div>
                                     </div>
                                 </div>
-                            }
+                            } */}
                             <div className="flex flex-col gap-y-1.5">
                                 <div className="text-sm font-medium">Issue Date: 2024-04-26</div>
                                 {terms === "30" &&
@@ -292,15 +353,15 @@ function CheckoutItems() {
                                 }
                             </div>
                             <div>
-                                <Link to="/orders" className="text-sm text-white rounded-sm bg-blue-900 hover:bg-blue-800 px-4 py-1.5 inline-block w-auto cursor-pointer" onClick={() => setSection('payment')}>
-                                    Submit Order
+                                <Link to="/checkout-review" className="text-sm text-white rounded-sm bg-blue-900 hover:bg-blue-800 px-4 py-1.5 inline-block w-auto cursor-pointer" onClick={() => setSection('payment')}>
+                                    Continue
                                 </Link>
                             </div>
                         </div>
                     </div>
                 }
                 {section !== 'payment' &&
-                    <div className="flex flex-row gap-x-2.5 px-5 py-2.5 bg-black text-white">
+                    <div className="flex flex-row gap-x-2.5 px-5 py-2.5 bg-blue-700 text-white">
                         <div>3.</div>
                         <div>Payment Method</div>
                     </div>

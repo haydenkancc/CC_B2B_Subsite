@@ -28,7 +28,7 @@ function Standards() {
                     </div>
                 </div>
                 <div className="px-8 pt-5">
-                    <div className="text-2xl">Saved Lists</div>
+                    <div className="text-2xl">Wishlists</div>
                 </div>
                 <div className="flex flex-row gap-x-5 px-8 pt-8 pb-20">
                     <div className="flex flex-col border-t pt-8 gap-y-16 grow rounded-sm">

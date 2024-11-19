@@ -9,7 +9,7 @@ const Actions = () => {
                 <option className="font-semibold" value="promo">Notify when on Promotion</option>
                 <option className="font-semibold" value="remove">Remove Item</option>
             </select>
-            <div className="text-sm font-medium text-center bg-blue-900 hover:bg-blue-800 text-white py-1.5 rounded px-2.5 ml-5 cursor-pointer">Apply</div>
+            <button className=" ml-5 text-white bg-blue-700 hover:bg-blue-800 rounded-md text-center text-sm font-medium py-1.5 px-4">Apply</button>
         </div>
     );
 };

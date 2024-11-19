@@ -35,7 +35,7 @@ function ChangePassword() {
                                     <div className="mb-5">
                                         <label className="text-left text-black mb-1 text-sm">{item.field}</label>
                                         <div className="relative">
-                                            <input type={showCurrent ? "text" : "password"} className="text-sm w-full bg-slate-white text-black border rounded py-2.5 px-3 focus:outline-none" />
+                                            <input type={showCurrent ? "text" : "password"} className="text-sm w-full bg-slate-white text-black border border-slate-400 rounded py-2 px-3 focus:outline-none" />
                                             <button 
                                                 onClick={toggleCurrentVisibility}
                                                 className="absolute right-2.5 top-1/2 transform -translate-y-1/2 mt-0.5"
@@ -53,7 +53,7 @@ function ChangePassword() {
                                     <div className="mb-5">
                                         <label className="text-left text-black mb-1 text-sm">{item.field}</label>
                                         <div className="relative">
-                                            <input type={showNew ? "text" : "password"} className="text-sm w-full bg-slate-white text-black border rounded py-2.5 px-3 focus:outline-none" />
+                                            <input type={showNew ? "text" : "password"} className="text-sm w-full bg-slate-white text-black border border-slate-400 rounded py-2 px-3 focus:outline-none" />
                                             <button 
                                                 onClick={toggleNewVisibility}
                                                 className="absolute right-2.5 top-1/2 transform -translate-y-1/2 mt-0.5"
@@ -71,7 +71,7 @@ function ChangePassword() {
                                     <div className="mb-5">
                                         <label className="text-left text-black mb-1 text-sm">{item.field}</label>
                                         <div className="relative">
-                                            <input type={showConfirm ? "text" : "password"}  className="text-sm w-full bg-slate-white text-black border rounded py-2.5 px-3 focus:outline-none" />
+                                            <input type={showConfirm ? "text" : "password"}  className="text-sm w-full bg-slate-white text-black border border-slate-400 rounded py-2 px-3 focus:outline-none" />
                                             <button 
                                                 onClick={toggleConfirmVisibility}
                                                 className="absolute right-2.5 top-1/2 transform -translate-y-1/2 mt-0.5"
@@ -89,7 +89,7 @@ function ChangePassword() {
                         ))}
                     </div>
                     <div className="flex justify-center">
-                        <button className="bg-red-200 hover:bg-red-300 border border-red-400 rounded-md text-center text-sm font-semibold p-2.5 px-4">
+                        <button className="text-white bg-blue-700 hover:bg-blue-800 rounded-md text-center text-sm font-medium py-2 px-4">
                             Change Password
                         </button>
                     </div>
