@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 const details = [
     { title: "Order Date", body: "2021-03-17" },
     { title: "Order Number", body: "CCORD000001" },
-    { title: "Order Status", body: "Completed" },
+    { title: "Order Status", body: "In Progress" },
     { title: "User", body: "Wile E. Coyote" },
 ]
 

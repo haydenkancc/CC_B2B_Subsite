@@ -9,7 +9,7 @@ function DetailSummary() {
                         <div className="text-sm font-light">$100.00</div>
                     </div>
                     <div className="flex flex-row justify-between items-center">
-                        <div className="text-sm font-light">Environmental Handling Fees (EHF):</div>
+                        <div className="text-sm font-light pr-2.5">Environmental Handling Fees (EHF):</div>
                         <div className="text-sm font-light">$1.80</div>
                     </div>
                     <div className="flex flex-row justify-between items-center">

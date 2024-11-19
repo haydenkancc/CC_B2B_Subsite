@@ -25,7 +25,9 @@ function OrderDetails() {
                     <div className="text-2xl">Order Details</div>
                 </div>
                 <div className="flex flex-row gap-x-5 px-8 pb-20">
-                    <DetailItems />
+                    <div className="grow">
+                        <DetailItems />
+                    </div>
                     <DetailSummary />
                 </div>
             </div>

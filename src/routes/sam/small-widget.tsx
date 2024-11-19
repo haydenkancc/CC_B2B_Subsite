@@ -10,7 +10,7 @@ function SmallWidget({ title, value } : { title: string, value: string }) {
                 {value}
             </div>
             <div className="widget--compare-section">
-                Data from W16 (Apr 15 - Apr 21, 2024)
+                Data between 2023-11-19 and 2024-11-19
             </div>
         </div>
     )

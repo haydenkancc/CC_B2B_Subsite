@@ -111,7 +111,7 @@ function CheckoutItems() {
                                 </div>
                                 {po === "po-yes" &&
                                     <div className="text-sm font-medium flex flex-row gap-x-5 justify-between items-center">
-                                        <div className="w-60">Purchase Order (PO Number):</div>
+                                        <div className="w-60">Purchase Order (PO) Number:</div>
                                         <div className="flex flex-row items-center gap-x-10 grow">
                                             <input type="text" placeholder="" className="border text-sm text-black border-slate-400 focus:outline-none px-3 py-1.5 grow" />
                                             <div className="flex flex-row gap-x-2 items-center cursor-pointer" onClick={() => {setPo('po-no')}}>
@@ -123,7 +123,7 @@ function CheckoutItems() {
                                 }
                                 {po === "po-no" &&
                                     <div className="text-sm font-medium flex flex-row gap-x-5 justify-between items-center">
-                                        <div className="w-60">Purchase Order (PO Number):</div>
+                                        <div className="w-60">Purchase Order (PO) Number:</div>
                                         <div className="flex flex-row items-center gap-x-10 grow">
                                             <input type="text" placeholder="" className="bg-slate-100 cursor-default border text-sm text-black border-slate-400 focus:outline-none px-3 py-1.5 grow" />
                                             <div className="flex flex-row gap-x-2 items-center cursor-pointer" onClick={() => {setPo('po-yes')}}>
@@ -175,7 +175,7 @@ function CheckoutItems() {
                                 </div>
                                 {po === "po-yes" &&
                                     <div className="text-sm font-medium flex flex-row gap-x-5 justify-between items-center">
-                                        <div className="w-60">Purchase Order (PO Number):</div>
+                                        <div className="w-60">Purchase Order (PO) Number:</div>
                                         <div className="flex flex-row items-center gap-x-10 grow">
                                             <input type="text" placeholder="" className="border text-sm text-black border-slate-400 focus:outline-none px-3 py-1.5 grow" />
                                             <div className="flex flex-row gap-x-2 items-center cursor-pointer" onClick={() => {setPo('po-no')}}>
@@ -187,7 +187,7 @@ function CheckoutItems() {
                                 }
                                 {po === "po-no" &&
                                     <div className="text-sm font-medium flex flex-row gap-x-5 justify-between items-center">
-                                        <div className="w-60">Purchase Order (PO Number):</div>
+                                        <div className="w-60">Purchase Order (PO) Number:</div>
                                         <div className="flex flex-row items-center gap-x-10 grow">
                                             <input type="text" placeholder="" className="bg-slate-100 cursor-default border text-sm text-black border-slate-400 focus:outline-none px-3 py-1.5 grow" />
                                             <div className="flex flex-row gap-x-2 items-center cursor-pointer" onClick={() => {setPo('po-yes')}}>

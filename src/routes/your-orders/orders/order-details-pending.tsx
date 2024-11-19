@@ -25,7 +25,9 @@ function OrderDetailsPending() {
                     <div className="text-2xl">Order Details</div>
                 </div>
                 <div className="flex flex-row gap-x-5 px-8 pb-20">
-                    <DetailItemsPending />
+                    <div className="grow">
+                        <DetailItemsPending />
+                    </div>
                     <DetailSummary />
                 </div>
             </div>

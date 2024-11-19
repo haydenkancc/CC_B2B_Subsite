@@ -45,7 +45,7 @@ function Contacts() {
                 </DialogTrigger>
                 <span className="flex gap-16">
                     <SearchField>
-                        <Input className="pl-3 pr-3 pt-2 pb-2 bg-white text-oxford-blue border border-1 border-oxford-blue rounded-sm" placeholder="Search Contacts" />
+                        <Input className="pl-3 pr-3 pt-2 pb-2 bg-white text-oxford-blue border border-1 border-oxford-blue rounded-sm" placeholder="Search Users" />
                     </SearchField>
                     <ToggleButton className="contacts-Button" onChange={(isSelected) => {setShowGrid(isSelected)}}>
                         {showGrid ? (

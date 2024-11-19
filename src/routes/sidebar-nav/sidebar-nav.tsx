@@ -1,7 +1,6 @@
 import {
-    ArchiveIcon, AvatarIcon, BookmarkIcon, CaretDownIcon, ExitIcon, IdCardIcon, MixerVerticalIcon,
+    ArchiveIcon, AvatarIcon, BookmarkIcon, ExitIcon, IdCardIcon, MixerVerticalIcon,
 } from '@radix-ui/react-icons';
-import martianSrc from '../../assets/martian.jpg';
 import logoSrc from '../../assets/ACME-Logo.webp';
 import './sidebar-nav.scss'
 import { Link } from 'react-router-dom';
@@ -25,7 +24,7 @@ function SidebarNav() {
                                 <img src={logoSrc} className="h-full w-full rounded-full" />
                             </div>
                             <div className="flex flex-col">
-                                <span className="text-sm font-medium flex items-center gap-0.5">Acme Corporation<CaretDownIcon className="h-5 w-5"/></span>
+                                <span className="text-sm font-medium flex items-center gap-0.5">Acme Corporation</span>
                             </div>
                         </div>
                     </div>
@@ -54,21 +53,6 @@ function SidebarNav() {
                     </div>
                 </div>
                 <div>
-                    {/* <div className="w-full py-6 flex flex-col border-b">
-                        <div className="flex flex-col">
-                            <span className="text-sm font-medium px-4">Your Account Manager</span>
-                            <div className="flex gap-3 mt-4 mb-1 px-4">
-                                <img src={martianSrc} className="h-10 w-10 rounded-full"/>
-                                <div className="flex flex-col">
-                                    <span className="sn-list-box-item--content">Marvin the Martian</span>
-                                    <span className="text-xs text-green-600 flex items-center">
-                                        <div className="h-1 w-1 rounded-full bg-green-600 mr-1.5 ml-0.5"/>
-                                        Available
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
                     <div className="w-full pb-6 flex flex-col border-b">
                         <div className="flex flex-col">
                             <span className="sn-list-box--header">

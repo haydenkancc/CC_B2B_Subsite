@@ -40,6 +40,7 @@ import OrderDetailsPending from './routes/your-orders/orders/order-details-pendi
 import CheckoutOut from './routes/checkout/checkout-out.tsx';
 import CartOut from './routes/shopping-cart/cart-out.tsx';
 import CheckoutReview from './routes/checkout/checkout-review.tsx';
+import CheckoutCompleted from './routes/checkout/checkout-completed.tsx';
 
 const router = createBrowserRouter([
     {
@@ -189,6 +190,10 @@ const router = createBrowserRouter([
     {
         path: "checkout-review",
         element: <CheckoutReview />
+    },
+    {
+        path: "checkout-completed",
+        element: <CheckoutCompleted />
     },
 ]);
 
