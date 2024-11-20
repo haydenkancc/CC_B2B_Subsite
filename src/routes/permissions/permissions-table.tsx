@@ -2,7 +2,6 @@ const titles = [
     { title: "Administrator" },
     { title: "Extended Access" },
     { title: "Limited Access" },
-    { title: "View-Only" },
 ];
 
 function PermissionsTable() {
@@ -10,33 +9,27 @@ function PermissionsTable() {
         <table className=" w-full border-collapse border border-gray-300">
             <thead>
                 <tr className="bg-gray-200">
-                    <th className="border border-gray-300 px-4 py-2 text-left text-sm font-medium">Company Information and Setting</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left text-sm font-medium">Company Information Management</th>
                     {titles.map((item, index) => (
                         <th key={index} className="border border-gray-300 px-4 py-2 text-center text-sm font-medium">{item.title}</th>
                     ))}
                 </tr>
             </thead>
             <tbody>
-                {renderRow("View Company Info", ["Yes", "Yes", "Yes", "Yes"])}
-                {renderRow("Edit Company Info", ["Yes", "No", "No", "No"])}
-                {renderRow("View All Company Users Address Book", ["Yes", "Yes", "Yes", "Yes"])}
-                {renderRow("Edit All Company Users Address Book", ["Yes", "Yes", "No", "No"])}
-                {renderSection("Net Term")}
-                {renderRow("Apply for Net Term Account", ["Yes", "No", "No", "No"])}
-                {renderRow("Pay With Company's Net Term Account", ["Yes", "No", "Yes", "No"])}
-                {renderSection("Manage Company Users")}
-                {renderRow("Create Users", ["Yes", "No", "No", "No"])}
-                {renderRow("Edit User Status", ["Yes", "Yes", "No", "No"])}
-                {renderRow("Delete User", ["Yes", "No", "No", "No"])}
-                {renderRow("Change/Switch Primary", ["Yes", "No", "No", "No"])}
+                {renderRow("Manage All Company Users", ["Yes", "No", "No"])}
+                {renderRow("Manage All Company Shipping Addresses", ["Yes", "Yes", "No"])}
+                {renderRow("Manage Company Payment Methods (including net terms)", ["Yes", "No", "No"])}
+                {renderRow("Set User Purchase Limits", ["Yes", "No", "No"])}
                 {renderSection("Orders")}
-                {renderRow("View All Company's Order History", ["Yes", "Yes", "No", "No"])}
-                {renderRow("Check All Company's Order Status", ["Yes", "Yes", "No", "No"])}
-                {renderSection("RMA")}
-                {renderRow("View All Company Users' RMA Status", ["Yes", "Yes", "No", "No"])}
-                {renderRow("View All Company Users' RMA History", ["Yes", "Yes", "No", "No"])}
-                {renderSection("Shopping Cart")}
-                {renderRow("View All Company Users' Saved Shopping Cart", ["Yes", "Yes", "No", "No"])}
+                {renderRow("Manage All Company Orders", ["Yes", "No", "No"])}
+                {renderRow("Manage Own Orders", ["Yes", "Yes", "Yes"])}
+                {renderRow("Manage All Company Invoices", ["Yes", "Yes", "No"])}
+                {renderSection("Returns")}
+                {renderRow("Manage All Company Returns", ["Yes", "Yes", "No"])}
+                {renderRow("Submit Returns", ["Yes", "Yes", "Yes"])}
+                {renderSection("Wishlists")}
+                {renderRow("Manage All Company Wishlists", ["Yes", "No", "No"])}
+                {renderRow("Manage Own Wishlists", ["Yes", "Yes", "Yes"])}
             </tbody>
         </table>
     );
