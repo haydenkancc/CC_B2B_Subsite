@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const items = [
     { id: 1, location: 'Head Office', first: "Bugs", last: "Bunny", address1: '75 West Wilmot Street', address2: '', city: 'Richmond Hill', province: 'ON', postal: 'L4B 1K7', billing: true, shipping: true, permission: "Extended Access" },
     { id: 2, location: 'Aquarium', first: 'Robert', last: 'Ripley', address1: '288 Bremner Boulevard', address2: '', city: 'Toronto', province: 'ON', postal: 'M5V 3L9', permission: "Limited Access" },
-    { id: 3, location: 'Jim Chai Kee Noodles', first: 'Barry', last: 'Bonds', address1: '270 West Beaver Creek Road', address2: '', city: 'Richmond Hill', province: 'ON', postal: 'L4B 3Z1', permission: "View-Only" },
+    { id: 3, location: 'Vaughan Office', first: 'Barry', last: 'Bonds', address1: '270 West Beaver Creek Road', address2: '', city: 'Richmond Hill', province: 'ON', postal: 'L4B 3Z1', permission: "View-Only" },
 ]
 
 const perms = [
@@ -42,7 +42,7 @@ function NewUserModal() {
                 <span>
                     <Link to="/permissions" target="_blank" className="flex flex-row items-center">
                         <div>Permissions</div>
-                        <Question size={18}className="ml-1.5 cursor-pointer" />
+                        <Question size={18} className="ml-1.5 cursor-pointer" />
                     </Link>
                 </span>
             } className="col-span-2">

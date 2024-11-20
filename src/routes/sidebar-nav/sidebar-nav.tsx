@@ -4,13 +4,13 @@ import {
 import logoSrc from '../../assets/ACME-Logo.webp';
 import './sidebar-nav.scss'
 import { Link } from 'react-router-dom';
-import { Clock, Envelope, Phone } from '@phosphor-icons/react';
+import { Alarm, Envelope, Phone } from '@phosphor-icons/react';
 import anthony from "../../assets/anthony.png";
 
 const about = [
     { icon: <Phone size={16} weight="light" />, title: "Phone:", content: "(905) 780-2632 Ext.414" },
     { icon: <Envelope size={16} weight="light" />, title: "Email:", content: "anthony.greenidge@cc.ca" },
-    { icon: <Clock size={16} weight="light" />, title: "Hours of Availability:", content: "" },
+    { icon: <Alarm size={16} weight="light" />, title: "Hours of Availability:", content: "" },
 ]
 
 function SidebarNav() {
