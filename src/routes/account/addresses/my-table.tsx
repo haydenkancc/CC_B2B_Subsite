@@ -33,7 +33,7 @@ function MyTable({items}) {
                             </div>
                         </Cell>
                         <Cell>
-                            <div className="flex text-sm">
+                            <div className="flex flex-col gap-x-4 gap-y-2 text-sm">
                                 {item.shipping ?
                                     (<span className="text-sm text-amber-600 flex items-center">
                                         <div className="h-1 w-1 rounded-full bg-amber-600 mr-1.5 ml-0.5"/>
@@ -41,14 +41,27 @@ function MyTable({items}) {
                                     </span>)
                                     :
                                     (
-                                        <Button className="flex pl-2 pr-2 pt-1 pb-1 bg-slate-100 hover:bg-slate-200 border border-slate-300 focus:outline-none text-oxford-blue rounded-sm">
-                                            Set as Shipping Address
+                                        <Button className="flex pl-2 pr-2 pt-1 pb-1 bg-slate-100 hover:bg-slate-200 border border-slate-300 focus:outline-none text-oxford-blue rounded-sm w-58">
+                                            Set as Default Shipping Address
                                         </Button>
+                                    )
+                                }
+                                {item.billing ?
+                                    (<span className="text-sm text-blue-600 flex items-center">
+                                        <div className="h-1 w-1 rounded-full bg-blue-600 mr-1.5 ml-0.5"/>
+                                        Default Billing Address
+                                    </span>)
+                                    :
+                                    (
+                                        // <Button className="flex pl-2 pr-2 pt-1 pb-1 bg-slate-100 hover:bg-slate-200 border border-slate-300 focus:outline-none text-oxford-blue rounded-sm">
+                                        //     Set as Billing Address
+                                        // </Button>
+                                        <div />
                                     )
                                 }
                             </div>
                         </Cell>
-                        <Cell>
+                        {/* <Cell>
                             <div className="flex text-sm">
                                 {item.billing ?
                                     (<span className="text-sm text-blue-600 flex items-center">
@@ -60,10 +73,11 @@ function MyTable({items}) {
                                         <Button className="flex pl-2 pr-2 pt-1 pb-1 bg-slate-100 hover:bg-slate-200 border border-slate-300 focus:outline-none text-oxford-blue rounded-sm">
                                             Set as Billing Address
                                         </Button>
+                                        <div />
                                     )
                                 }
                             </div>
-                        </Cell>
+                        </Cell> */}
                         <Cell>
                             <div className="flex gap-4 items-center">
                                 <Button><PencilSimple size={20} /></Button>

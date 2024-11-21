@@ -21,13 +21,7 @@ const info = [
     { title: "Business Address", body1: "75 West Wilmot Street", body2: "Richmond Hill ON, L4B 1K7" },
 ]
 
-const cards = [
-    { title1: "Only administrators can add and manage credit cards", title2: "All users can add, manage and use credit cards individually" },
-]
-
 function General() {
-
-    const [all, setAll] = useState(false);
 
     return (
         <div className="mb-20">
@@ -42,8 +36,23 @@ function General() {
                         </div>
                     ))}
                 </div>
-                <div className="font-bold mt-5">Credit Card Management</div>
-                <div className="flex flex-col gap-y-4">
+                
+                <div className="flex flex-col gap-y-1 mt-5">
+                    <div className="flex flex-row items-center gap-x-2.5">
+                        <div className="font-bold">Net Terms</div>
+                        <DialogTrigger>
+                            <Button className="focus:outline-none hover:bg-tabs-gray px-1.5 py-0.5 border rounded-lg text-center">
+                                <div className="text-sm text-secondary-color">Request Credit Adjustment</div>
+                            </Button>
+                            <CreditModal />
+                        </DialogTrigger>
+                    </div>
+                    <div className="text-sm font-medium">Terms: NET30</div>
+                    <div className="text-sm font-medium">Credit Limit: $6,000.00</div>
+                    <div className="text-sm font-medium">Available Credit: $701.31</div>
+                </div>
+                
+                {/* <div className="flex flex-col gap-y-4">
                     {cards.map(item => (
                         <div>
                             { all &&
@@ -72,22 +81,7 @@ function General() {
                             }
                         </div>
                     ))}
-                </div>
-
-                <div className="flex flex-row items-center gap-x-2.5 mt-5">
-                    <div className="font-bold">Credit Limit: $6,000.00</div>
-                    <DialogTrigger>
-                        <Button className="focus:outline-none hover:bg-tabs-gray px-1.5 py-0.5 border rounded-lg text-center">
-                            <div className="text-sm text-secondary-color">Request Credit Adjustment</div>
-                        </Button>
-                        <CreditModal />
-                    </DialogTrigger>
-                </div>
-                
-                <div className="inline-block w-auto mt-2.5">
-                    <button className="text-sm bg-oxford-blue text-center text-white font-medium rounded-sm px-4 py-2.5 hover:bg-stone-700">Save Changes</button>
-                </div>
-            
+                </div> */}            
             </div>
 
             {/* <div className="border rounded-sm p-6">

@@ -334,6 +334,7 @@ function Create({ referral=[
                                                     <input
                                                         type="text"
                                                         name={item.title}
+                                                        placeholder="$"
                                                         className={getInputClassName(item.title, 'agreement')}
                                                     />
                                                 </div>
@@ -357,6 +358,7 @@ function Create({ referral=[
                                                     <input
                                                         type="text"
                                                         name={item.title}
+                                                        placeholder="$"
                                                         className="text-sm w-full bg-slate-white border border-slate-400 rounded py-2.5 px-3 mt-1.5 focus:outline-none"
                                                     />
                                                 </div>
@@ -371,9 +373,10 @@ function Create({ referral=[
                             }
 
                             {/* <FileUpload /> */}
+                            <div className="py-4" />
 
                             <div className="mt-6">The information you submit will be reviewed within 1-2 business days. You will be contacted by email once your account has been approved.</div>
-                            <div className="mt-2.5">By submitting this application, I verify the information submitted on this application is accurate to the best of my knowledge.</div>
+                            <div className="mt-2">By submitting this application, I verify the information submitted on this application is accurate to the best of my knowledge.</div>
                             <button type="submit" onClick={() => {topRef.current.scrollIntoView({ behavior: 'smooth' });}} className="bg-black text-ghost-white py-2 text-sm rounded-lg text-center w-48 font-semibold text-lg mt-6 mb-14">Submit Application</button>
                         </div>
                     </form>

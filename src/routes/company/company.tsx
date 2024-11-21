@@ -6,12 +6,14 @@ import Contacts from '../account/contacts/contacts.tsx';
 import Addresses from '../account/addresses/addresses.tsx';
 import NavigationTabs from '../../components/tab-navigation/navigation-tabs.tsx';
 import Credit from './credit.tsx';
+import Authorized from './authorized.tsx';
 
 const tabs = [
     { id: 1, title: 'General', content: <General /> },
     { id: 2, title: 'Users',  content: <Contacts /> },
     { id: 3, title: 'Shipping Addresses',  content: <Addresses /> },
-    { id: 4, title: 'Company Credit Cards',  content: <Credit /> },
+    { id: 4, title: 'Credit Cards',  content: <Credit /> },
+    { id: 5, title: 'Authorized Pickup List',  content: <Authorized /> },
 ]
 
 function Company() {

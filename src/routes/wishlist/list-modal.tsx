@@ -7,7 +7,7 @@ function ListModal() {
         <MyCreditForm>
             <Heading slot="title" className="col-span-2 justify-left text-3xl pt-8 pb-4">New List</Heading>
             <div className="flex flex-col gap-y-2.5">
-                <MyTextField label="List Name" />
+                <MyTextField className="text-sm" label="List Name" />
             </div>
         </MyCreditForm>
     )

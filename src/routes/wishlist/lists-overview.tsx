@@ -11,7 +11,7 @@ const sets = [
 function ListsOverview () {
     return (
         <div className="w-64 text-sm">
-            <div className="flex flex-col gap-y-6 border rounded-lg p-4">
+            <div className="flex flex-col gap-y-5 border rounded-lg p-4">
                 {sets.map(item => (
                     <div className="flex flex-col">
                         {item.title !== "Collaborative" &&
@@ -23,9 +23,9 @@ function ListsOverview () {
                                 <Users size={20} />
                             </div>
                         }
-                        <div className="flex flex-col gap-y-1 cursor-pointer">
-                            <div className="text-xs text-indigo-700 hover:underline">{item.body1}</div>
-                            <div className="text-xs text-indigo-700 hover:underline">{item.body2}</div>
+                        <div className="text-xs text-indigo-700 flex flex-col gap-y-1">
+                            <div className="hover:underline cursor-pointer">{item.body1}</div>
+                            <div className="hover:underline cursor-pointer">{item.body2}</div>
                         </div>
                     </div>
                 ))}
