@@ -11,7 +11,7 @@ function MyTable({items}) {
             <MyTableHeader>
                 <MyColumn className="pl-4" isRowHeader>User</MyColumn>
                 <MyColumn>Contact</MyColumn>
-                <MyColumn>Address</MyColumn>
+                {/* <MyColumn>Address</MyColumn> */}
 
                 <MyColumn></MyColumn>
                 <MyColumn></MyColumn>
@@ -34,12 +34,12 @@ function MyTable({items}) {
                                 <span className="flex items-center gap-2"><Envelope weight="bold"/>{item.email}</span>
                             </div>
                         </Cell>
-                        <Cell>
+                        {/* <Cell>
                             <div className="flex flex-col gap-2 text-sm text-oxford-blue/75">
                                 <span>{item.address}</span>
                                 <span>{item.city}, {item.province} {item.postal}</span>
                             </div>
-                        </Cell>
+                        </Cell> */}
                         <Cell>
                             <div className="flex flex-col gap-x-4 gap-y-2 text-sm">
                                 {/* {item.primary &&

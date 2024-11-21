@@ -26,7 +26,7 @@ function ServicesLanding() {
                                     <div className="text-2xl font-bold">{item.body1}</div>
                                     <div className="text-2xl font-bold">{item.body2}</div>
                                 </div>
-                                <div className=" mt-1.5 text-blue-600 text-center inline-block w-auto">
+                                <div className="mt-1.5 text-blue-600 text-center inline-block w-auto">
                                     <Link to={item.link} className="hover:underline">Learn More</Link>
                                 </div>
                             </div>

@@ -69,7 +69,7 @@ export function NavigationBar() {
     const [showAccount, setShowAccount] = useState(false);
 
     return (
-        <div className="bg-black h-28 z-10">
+        <div className="bg-oxford-blue h-28 z-10">
             <div className="max-w-[1440px] justify-center mx-auto px-4 pt-5">
                 <div className="flex flex-row justify-between items-center text-white gap-x-10">
                     <Link to="/landing-new">

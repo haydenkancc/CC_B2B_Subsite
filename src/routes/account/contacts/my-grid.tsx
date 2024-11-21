@@ -28,10 +28,10 @@ function MyGrid({ items }) {
                                 <Envelope weight="bold"/>
                                 {item.email}
                             </div>
-                            <div className="flex items-center gap-2">
+                            {/* <div className="flex items-center gap-2">
                                 <MapPin weight="bold"/>
                                 {item.address}
-                            </div>
+                            </div> */}
 
                         </div>
                         <div className="flex gap-4 text-sm">

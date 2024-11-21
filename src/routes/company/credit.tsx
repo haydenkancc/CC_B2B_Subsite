@@ -13,13 +13,14 @@ function Credit({ items = [
 ] }) {
     return (
         <div className="pb-20">
-            <div className="pb-12">
+            <div className="pb-12 flex flex-row justify-between items-center">
                 <DialogTrigger>
                     <Button className="text-sm bg-oxford-blue text-center text-white font-medium rounded-sm px-4 py-3 hover:bg-stone-700">
                         Add New Credit Card
                     </Button>
                     <NewCreditCardModal />
                 </DialogTrigger>
+                <div>Only administrators and finance access users can add and manage credit cards</div>
             </div>
             <ListBox items={items} className="grid grid-cols-3 gap-4">
                 {item => (

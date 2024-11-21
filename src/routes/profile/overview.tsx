@@ -43,7 +43,7 @@ function Overview() {
                             </div>
                         ))}
                     </div>
-                    <div className="flex flex-col gap-y-1.5 py-5 border-b">
+                    {/* <div className="flex flex-col gap-y-1.5 py-5 border-b">
                         {address.map(item => (
                             <div className="flex flex-row gap-x-2 items-center text-sm">
                                 <div>{item.icon}</div>
@@ -51,7 +51,7 @@ function Overview() {
                                 <div>{item.content}</div>
                             </div>
                         ))}
-                    </div>
+                    </div> */}
                     <div className="flex flex-col gap-y-1.5 py-5 w-60">
                         <div className="text-sm">To update information, contact your primary user or administrator.</div>
                     </div>

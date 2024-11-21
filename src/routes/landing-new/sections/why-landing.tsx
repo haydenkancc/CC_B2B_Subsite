@@ -5,7 +5,7 @@ const services = [
     { icon: <HandCoins size={60} weight="light" />, title: "Savings on Products", body: "Receive special pricing tailored to your business." },
     { icon: <Cardholder size={60} weight="light" />, title: "Flexible Payment Options", body: "Credit cards, Net terms credit account, and more." },
     { icon: <ClipboardText size={60} weight="light" />, title: "Access to an Account Manager", body: "Personalized support from an account manager." },
-    { icon: <UserFocus size={60} weight="light" />, title: "Customized Solutions for Clients", body: "Solutions specialized for your business and clients." },
+    { icon: <UserFocus size={60} weight="light" />, title: "Pickup In-Store", body: "Pickup the product you need directly from our stores." },
     { icon: <Scroll size={60} weight="light" />, title: "Special Orders", body: "Including custom specifications, bulk quantities, and hard-to-find items." },
 ]
 

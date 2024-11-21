@@ -1,7 +1,7 @@
 const titles = [
     { title: "Administrator" },
-    { title: "Extended Access" },
-    { title: "Limited Access" },
+    { title: "Purchaser Access" },
+    { title: "Finance Access" },
 ];
 
 function PermissionsTable() {
@@ -17,19 +17,18 @@ function PermissionsTable() {
             </thead>
             <tbody>
                 {renderRow("Manage All Company Users", ["Yes", "No", "No"])}
-                {renderRow("Manage All Company Shipping Addresses", ["Yes", "Yes", "No"])}
-                {renderRow("Manage Company Payment Methods (including net terms)", ["Yes", "No", "No"])}
-                {renderRow("Set User Purchase Limits", ["Yes", "No", "No"])}
+                {renderRow("Manage Company Payment Methods (including net terms)", ["Yes", "No", "Yes"])}
                 {renderSection("Orders")}
                 {renderRow("Manage All Company Orders", ["Yes", "No", "No"])}
-                {renderRow("Manage Own Orders", ["Yes", "Yes", "Yes"])}
-                {renderRow("Manage All Company Invoices", ["Yes", "Yes", "No"])}
+                {renderRow("Manage Own Orders", ["Yes", "Yes", "No"])}
+                {renderRow("View All Company Invoices", ["Yes", "Yes", "Yes"])}
+                {renderRow("Ability to Checkout", ["Yes", "Yes", "No"])}
                 {renderSection("Returns")}
-                {renderRow("Manage All Company Returns", ["Yes", "Yes", "No"])}
+                {renderRow("Manage All Company Returns", ["Yes", "Yes", "Yes"])}
                 {renderRow("Submit Returns", ["Yes", "Yes", "Yes"])}
                 {renderSection("Wishlists")}
                 {renderRow("Manage All Company Wishlists", ["Yes", "No", "No"])}
-                {renderRow("Manage Own Wishlists", ["Yes", "Yes", "Yes"])}
+                {renderRow("Manage Own Wishlists", ["Yes", "Yes", "No"])}
             </tbody>
         </table>
     );
