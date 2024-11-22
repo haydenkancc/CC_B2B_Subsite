@@ -4,7 +4,7 @@ import { CaretRight, FacebookLogo, InstagramLogo, XLogo, YoutubeLogo } from '@ph
 
 function FooterTop() {
     return (
-        <div className="bg-black text-white flex justify-center w-full h-28">
+        <div className="bg-oxford-blue text-white flex justify-center w-full h-28">
             <div className="flex flex-row justify-center items-center w-full px-4 max-w-[1440px]">
                 <div className="py-8 w-full">
                     <div className="flex flex-row justify-between max-w-[1440px] mx-auto gap-x-10 items-center">

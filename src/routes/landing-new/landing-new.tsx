@@ -17,13 +17,15 @@ function LandingNew() {
 
 
             <div className="">
-                <div className="flex flex-col gap-y-20">
+                <div className="flex flex-col gap-y-24">
                     <BannerLanding />
                     <WhyLanding />
                     <ServicesLanding />
                     <ProductsLanding />
                     <FeaturedLanding />
-                    <ContactLanding />
+                    <div className="py-5">
+                        <ContactLanding />
+                    </div>
                     <div>
                         <FooterTop />
                         <FooterBottom />

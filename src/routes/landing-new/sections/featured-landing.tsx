@@ -1,11 +1,14 @@
-import printer from "../../../assets/printer.png";
 import { Link } from "react-router-dom";
+import businesslaptop2 from "../../../assets/businesslaptop2.png";
+import printer3 from "../../../assets/printer3.png"
+import server from "../../../assets/server.png"
+import businesslaptop3 from "../../../assets/businesslaptop3.png"
 
 const products = [
-    { image: printer, name: "Microsoft Surface Printer 6 for Business", description: "Built with the Intel Core Ultra H-series processor, this sleek device is designed for power and performance." },
-    { image: printer, name: "Dell Latitude Printer 5450", description: "Combines powerful performance with HD audio and visuals, making it ideal for both work and entertainment." },
-    { image: printer, name: "Lexmark CX431ADW Colour MFP", description: "Designed to be secure, sustainable and built to last." },
-    { image: printer, name: "Microsoft Surface Printer Copilot+ PC for Business", description: "Designed for advanced AI experiences with the Snapdragon X Elite and Plus processors for powerful performance." },
+    { image: printer3, name: "HP LaserJet M209dw Monochrome Laser Printer - 30ppm, WiFi, Auto Duplex", description: "Deliver multipage documents in a flash with the fastest two-sided printing in class." },
+    { image: businesslaptop2, name: "Lenovo ThinkBook G6 16\" FHD+ Intel i7-1355U 32GB 1TB SSD WIN11Pro", description: "Enhance productivity with a 16-inch display, i7 processor, improved keyboard design, and advanced security features." },
+    { image: businesslaptop3, name: "ASUS Zenbook Pro 16\" Core i9-12900H GeForce RTX 3060 32GB 1TB", description: "Delivers powerful performance for demanding business tasks, multitasking, and professional-level tasks." },
+    { image: server, name: "ARMOURY AMD Threadripper PRO 7995WX, 128GB DDR5, 2TB SSD, Win11", description: "Performance for demanding tasks, all running on Windows 11 Pro for enhanced productivity and reliability." },
 ]
 
 function FeaturedLanding() {
@@ -18,12 +21,12 @@ function FeaturedLanding() {
                         <div className="w-1/4">
                             <div className="flex flex-col gap-y-1 mt-5">
                                 <div className="flex justify-center">
-                                    <img src={item.image} className="w-32" />
+                                    <img src={item.image} className="w-32 h-32" />
                                 </div>
-                                <div className="font-semibold mt-1.5">{item.name}</div>
+                                <div className="font-semibold text-sm mt-1.5">{item.name}</div>
                                 <div className="text-sm">{item.description}</div>
                                 <div className="inline-block w-auto pt-2.5 mt-1.5">
-                                    <Link to="/hardware-product" className="text-sm bg-black text-center text-white font-bold rounded-lg px-4 py-2.5 hover:bg-stone-700">Shop Now</Link>
+                                    <Link to="/hardware-product" className="text-sm bg-oxford-blue text-center text-white font-bold rounded-lg px-4 py-2.5 hover:bg-stone-700">Shop Now</Link>
                                 </div>
                             </div>
                         </div>
