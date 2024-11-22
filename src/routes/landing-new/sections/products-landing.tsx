@@ -1,6 +1,6 @@
-import server from "../../../assets/server.png";
+import server2 from "../../../assets/server2.png";
 import businesslaptop from "../../../assets/businesslaptop.png";
-import printer from "../../../assets/printer.png";
+import printer2 from "../../../assets/printer2.png";
 import router from "../../../assets/router.png";
 import { Link } from "react-router-dom";
 import SSD from "../../../assets/SSD.png";
@@ -8,11 +8,11 @@ import keyboard from "../../../assets/keyboard.png";
 
 const products = [
     { image: keyboard, title: "Keyboards & Mice", },
-    { image: printer, title: "Printers & Scanners" },
+    { image: printer2, title: "Printers & Scanners" },
     { image: businesslaptop, title: "Business Laptops" },
     { image: SSD, title: "PC & Server Components" },
     { image: router, title: "Networking" },
-    { image: server, title: "Servers & Workstations" },
+    { image: server2, title: "Servers & Workstations" },
 ]
 
 function ProductsLanding() {
@@ -25,7 +25,7 @@ function ProductsLanding() {
                         <Link to="/hardware">
                             <div className="border p-5 mb-4 shadow-lg">
                                 <img src={item.image} className="h-32 mx-auto" />
-                                <div className="text-xl font-bold text-center mt-2.5">{item.title}</div>
+                                <div className="text-xl font-bold text-center mt-4">{item.title}</div>
                             </div>
                         </Link>
                     ))}

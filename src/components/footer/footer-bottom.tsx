@@ -153,7 +153,7 @@ function FooterBottom() {
                     </div>
                 </div>
             </div>
-            <div className="w-full pl-4 pr-4 py-5 border border-t-black">
+            {/* <div className="w-full pl-4 pr-4 py-5 border border-t-black">
                 <div className="flex flex-row justify-center gap-x-8">
                     <a href="https://www.canadacomputers.com/" target="_blank">
                         <FacebookLogo  weight="light" size={40} />
@@ -168,7 +168,7 @@ function FooterBottom() {
                         <InstagramLogo  weight="light" size={40} />
                     </a>
                 </div>
-            </div>
+            </div> */}
             <div className="pt-8 pb-20 border border-t-black">
                 <div className="flex flex-row justify-between gap-x-8 max-w-[1440px] px-4 mx-auto">
                     <div className="flex flex-row">

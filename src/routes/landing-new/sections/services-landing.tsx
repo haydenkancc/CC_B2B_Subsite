@@ -3,7 +3,8 @@ import office from "../../../assets/office.png";
 import working from "../../../assets/working.png";
 
 const options = [
-    { image: office, title: "Services", body1: "Simple Buying.", body2: "Reduce Costs.", link: "/enterprise-solutions" },
+    { image: office, title: "Renting", body1: "Flexible Options.", body2: "Extensive Catalogue.", link: "/enterprise-solutions" },
+    // { image: office, title: "Solutions", body1: "Simple Buying.", body2: "Reduce Costs.", link: "/enterprise-solutions" },
     { image: working, title: "Sourcing", body1: "Product Knowledge.", body2: "Technology Expertise.", link: "/procurement" },
 ]
 
