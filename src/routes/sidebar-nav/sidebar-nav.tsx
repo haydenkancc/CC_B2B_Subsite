@@ -6,6 +6,7 @@ import './sidebar-nav.scss'
 import { Link } from 'react-router-dom';
 import { Alarm, Envelope, Phone } from '@phosphor-icons/react';
 import anthony from "../../assets/anthony.png";
+import ccfullblue from "../../assets/ccfullblue.png"
 
 const about = [
     { icon: <Phone size={16} weight="light" />, title: "Phone:", content: "(905) 780-2632 Ext.414" },
@@ -20,12 +21,15 @@ function SidebarNav() {
                 <div>
                     <div className="w-full border-b py-2.5 flex flex-col gap-0.5">
                         <div className="pl-1.5 flex gap-2.5 items-center">
-                            <div className="h-10 w-10">
+                            {/* <div className="h-10 w-10">
                                 <img src={logoSrc} className="h-full w-full rounded-full" />
                             </div>
                             <div className="flex flex-col">
                                 <span className="text-sm font-medium flex items-center gap-0.5">Acme Corporation</span>
-                            </div>
+                            </div> */}
+                            <Link to="/landing-new" className="py-2">
+                                <img src={ccfullblue} className="h-8" />
+                            </Link>
                         </div>
                     </div>
                     <div className="sn-list-box">
