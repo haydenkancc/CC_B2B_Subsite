@@ -146,14 +146,14 @@ function CorporateSalesCarousel({ slides }) {
                 <button
                     onClick={prev}
                     disabled={isFirstSlide}
-                    className={`p-2 rounded-full ${isFirstSlide ? 'text-white' : 'text-gray-800'}`}
+                    className={`p-2 rounded-full ${isFirstSlide ? 'text-ghost-white' : 'text-gray-800'}`}
                 >
                     <CaretLeft size={32} weight="bold" />
                 </button>
                 <button
                     onClick={next}
                     disabled={isLastSlide}
-                    className={`p-2 rounded-full ${isLastSlide ? 'text-white' : 'text-gray-800'}`}
+                    className={`p-2 rounded-full ${isLastSlide ? 'text-ghost-white' : 'text-gray-800'}`}
                 >
                     <CaretRight size={32} weight="bold" />
                 </button>
