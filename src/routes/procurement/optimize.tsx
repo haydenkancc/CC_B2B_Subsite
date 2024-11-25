@@ -8,6 +8,7 @@ import compliant from "../../assets/compliant.png"
 import { Check } from '@phosphor-icons/react';
 import business from "../../assets/business.png"
 import { useEffect } from 'react';
+import { NavigationBar } from '../../components/navigation-bar/navigation-bar.tsx';
 
 const risk = [
     { image: mitigation, title: "Risk Identification and Assessment", body: "By analyzing the likelihood and potential impact of each risk, we prioritize them based on severity, ensuring that critical risks are addressed." },
@@ -42,7 +43,7 @@ function Optimize() {
         <>
             {/* NavBar */}
             <div className="w-full">
-                <NavbarTop />
+                <NavigationBar />
             </div>
 
             {/* Homepage */}
@@ -121,7 +122,7 @@ function Optimize() {
             </div>
 
             {/* Risk Mitigation */}
-            <div className="bg-ghost-white">
+            <div className="bg-ghost-white pb-10">
                 <div className="max-w-[1440px] px-4 mx-auto">
                     <div className="flex flex-row items-center">
                         <div className="grow border border-black" />

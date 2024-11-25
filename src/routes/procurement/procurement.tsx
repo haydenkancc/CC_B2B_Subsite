@@ -24,6 +24,7 @@ import optimization from "../../assets/optimization.png"
 import FooterBottom from "../../components/footer/footer-bottom.tsx";
 import { Link } from "react-router-dom";
 import ProcurementBanner from "./procurement-banner.tsx";
+import { NavigationBar } from "../../components/navigation-bar/navigation-bar.tsx";
 
 const problems1 = [
     {
@@ -180,7 +181,7 @@ function Procurement() {
         <>
             {/* NavBar */}
             <div className="w-full">
-                <NavbarTop />
+                <NavigationBar />
             </div>
 
             {/* Homepage */}
@@ -193,9 +194,7 @@ function Procurement() {
                 <div className="text-ghost-white h-full">
                     <div className="max-[1440px] px-6 h-full flex justify-center items-center">
                         <div>
-                            <h1 className="text-4xl font-bold uppercase">Optimize your technology with</h1>
-                            <h1 className="text-4xl font-bold uppercase mt-3">Canada Computers & Electronics</h1>
-                            <p className="text-xl font-medium mt-6">Innovative Services to Drive Your Success</p>
+                            <div className="text-4xl font-bold w-164 text-center">Sourcing and Procurement Services for Optimal Business Performance</div>
                         </div>
                     </div>
                 </div>
@@ -351,37 +350,37 @@ function Procurement() {
                 <div className="max-w-[1440px] px-4 mx-auto">
                     <div className="text-2xl text-black font-semibold">What We Do Best</div>
                     <div className="text-md text-black mt-4">
-                        Under our main brand, we are a leading technology retailer in Canada, we have a strong foundation in procurement and sourcing due to our extensive experience and operations.
+                        Our extensive experience and operational expertise establish a strong foundation in procurement and sourcing.
                     </div>
-                    <div className="flex flex-row justify-between mt-10">
-                        <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
+                    <div className="flex flex-row justify-between gap-x-8 mt-10">
+                        <div className="bg-slate-200 w-96 grow flex flex-col items-center p-4">
                             <img src={scale} className="w-12 py-1"/>
                             <div className="text-black font-semibold mt-2">Scale and Buying Power</div>
                             <div className="text-black text-sm mt-2">Using significant purchasing power and expert negotiation skills to secure advantageous terms.</div>
                         </div>
-                        <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
+                        <div className="bg-slate-200 w-96 grow flex flex-col items-center p-4">
                             <img src={supply} className="w-12 py-1"/>
                             <div className="text-black font-semibold mt-2">Supply Chain Management</div>
                             <div className="text-black text-sm mt-2">Sourcing products efficiently with a global supply chian network while expertly managing risks.</div>
                         </div>
-                        <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
+                        <div className="bg-slate-200 w-96 grow flex flex-col items-center p-4">
                             <img src={knowledge} className="w-12 py-1"/>
                             <div className="text-black font-semibold mt-2">Product Knowledge</div>
                             <div className="text-black text-sm mt-2">A deep understanding of technology products ensures we can accurately evaluate quality.</div>
                         </div>
                     </div>
-                    <div className="flex flex-row justify-between mt-10">
-                        <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
+                    <div className="flex flex-row justify-between gap-x-8 mt-10">
+                        <div className="bg-slate-200 w-96 grow flex flex-col items-center p-4">
                             <img src={tech} className="w-12 py-1"/>
                             <div className="text-black font-semibold mt-2">Technology Expertise</div>
                             <div className="text-black text-sm mt-2">Leverage data analytics with a robust IT infrastructure to streamline procurement processes and identify savings.</div>
                         </div>
-                        <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
+                        <div className="bg-slate-200 w-96 grow flex flex-col items-center p-4">
                             <img src={relationships} className="w-12 py-1"/>
                             <div className="text-black font-semibold mt-2">Supplier Relationships</div>
                             <div className="text-black text-sm mt-2">Long-term partnerships with suppliers through trust and ethical practices provide us with a competitive advantage.</div>
                         </div>
-                        <div className="bg-slate-200 w-96 flex flex-col items-center p-4">
+                        <div className="bg-slate-200 w-96 grow flex flex-col items-center p-4">
                             <img src={compliance} className="w-12 py-1"/>
                             <div className="text-black font-semibold mt-2">Regulatory Compliance</div>
                             <div className="text-black text-sm mt-2">Being well-versed in industry regulations and standards ensure compliance while helping clients navigate complexities and mitigate risks.</div>
