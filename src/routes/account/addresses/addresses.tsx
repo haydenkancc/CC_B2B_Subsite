@@ -18,7 +18,7 @@ function Addresses() {
             <div className="pb-12 flex justify-between">
                 <DialogTrigger>
                     <Button className="text-sm bg-oxford-blue text-center text-white font-medium rounded-sm px-4 py-2.5 hover:bg-stone-700">
-                        Add New Shipping Address
+                        Request New Shipping Address
                     </Button>
                     <NewAddressModal />
                 </DialogTrigger>
