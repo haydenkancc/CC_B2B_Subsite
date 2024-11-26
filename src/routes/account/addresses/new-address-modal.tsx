@@ -8,8 +8,10 @@ function NewAddressModal() {
         <MyRequestForm>
             <Heading slot="title" className="col-span-2 flex justify-left text-2xl py-8">New Shipping Address</Heading>
             <MyTextField className="col-span-2 text-sm" label="Address Name" />
-            <MyTextField className="col-span-2 text-sm" label="Address Line 1" />
-            <MyTextField className="col-span-2" label="Address Line 2" />
+            {/* <MyTextField className="col-span-2 text-sm" label="Address Line 1" />
+            <MyTextField className="col-span-2 text-sm" label="Address Line 2" /> */}
+            <MyTextField className="text-sm" label="Address Line 1" />
+            <MyTextField className="text-sm" label="Address Line 2" />
             <MyTextField className="text-sm" label="Attention" />
             <MyTextField className="text-sm" label="City" />
             <MyTextField className="text-sm" label="Province" />

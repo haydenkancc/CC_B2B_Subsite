@@ -4,6 +4,7 @@ import FooterTop from "../../../components/footer/footer-top";
 import FooterBottom from "../../../components/footer/footer-bottom";
 import HardwareDisplay from "./hardware-display";
 import { Link } from "react-router-dom";
+import { NavigationBar } from "../../../components/navigation-bar/navigation-bar";
 
 function HardwareProduct() {
     
@@ -15,7 +16,7 @@ function HardwareProduct() {
         <div>
             {/* NavBar */}
             <div className="w-full">
-                <NavbarTop />
+                <NavigationBar />
             </div>
 
             <div className="max-w-[1440px] px-4 py-6 mx-auto font-medium flex flex-row">

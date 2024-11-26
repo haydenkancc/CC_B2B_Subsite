@@ -1,9 +1,9 @@
 import SmallWidget from "../../sam/small-widget";
 
 const overview = [
-    { id: 1, title: "Total Orders", body: "10" },
-    { id: 2, title: "Average Order Value", body: "$15,650" },
-    { id: 3, title: "Total Order Amount", body: "$156,500" },
+    { id: 1, title: "Total Orders (Past 30 Days)", body: "10" },
+    { id: 2, title: "Total Amount Spent (Past 30 Days)", body: "$156,500" },
+    { id: 3, title: "Orders In Progress", body: "3" },
 ]
 
 function OrdersOverview() {

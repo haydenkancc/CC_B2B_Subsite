@@ -9,9 +9,9 @@ function SmallWidget({ title, value } : { title: string, value: string }) {
             <div className="widget--value-section">
                 {value}
             </div>
-            {/* <div className="widget--compare-section">
-                Data between 2023-11-19 and 2024-11-19
-            </div> */}
+            <div className="widget--compare-section">
+                Data between 2024-10-26 and 2024-11-26
+            </div>
         </div>
     )
 }
