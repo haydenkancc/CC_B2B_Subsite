@@ -13,7 +13,6 @@ function MyTable({items}) {
                 <MyColumn>Address</MyColumn>
                 <MyColumn></MyColumn>
                 <MyColumn></MyColumn>
-                <MyColumn></MyColumn>
             </MyTableHeader>
             <TableBody items={items}>
                 {item => (
