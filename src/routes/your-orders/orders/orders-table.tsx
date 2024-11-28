@@ -1,7 +1,7 @@
 import { useState } from "react";
 import samplePDF from "../../../assets/sample-pdf.pdf";
 import { Link } from 'react-router-dom';
-import { CaretDown, CaretLeft, CaretRight, CaretUp } from "@phosphor-icons/react";
+import { CaretDown, CaretLeft, CaretRight, CaretUp, Eye, FilePdf } from "@phosphor-icons/react";
 
 const titles = [
     { id: 1, name: "Order Number" },
@@ -132,7 +132,22 @@ function OrdersTable({ items=[
                             <td className="py-6 font-medium">{item.user}</td>
                             <td className="py-6 font-medium">{item.total}</td>
                             <td className="py-6 font-medium">{item.track}</td>
-                            <td className="flex flex-row py-6 font-medium hover:absolute">
+                            <td className="py-6 flex flex-row items-center gap-x-2.5">
+                                {item.status === "Pending" &&
+                                    <Link to="/order-details-pending" target="_blank">
+                                        <Eye size={18} className="cursor-pointer" />
+                                    </Link>
+                                }
+                                {item.status !== "Pending" &&
+                                    <Link to="/order-details" target="_blank">
+                                        <Eye size={18} className="cursor-pointer" />
+                                    </Link>
+                                }
+                                <Link to={item.src} target="_blank">
+                                    <FilePdf size={18} />
+                                </Link>
+                            </td>
+                            {/* <td className="flex flex-row py-6 font-medium hover:absolute">
                                 {item.status === "Completed" &&
                                     <div className="inline-flex text-black rounded-sm">
                                         <Link to={"/order-details"} className="hover:border-b-2 hover:border-oxford-blue hover:border-rounded">
@@ -160,7 +175,7 @@ function OrdersTable({ items=[
                                         <Link to={"/cart"} className="hover:border-b-2 hover:border-oxford-blue hover:border-rounded">Re-Order</Link>
                                     </div>
                                 }
-                            </td>
+                            </td> */}
                         </tr>
                     ))}
                 </tbody>

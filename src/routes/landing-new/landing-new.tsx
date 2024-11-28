@@ -26,7 +26,7 @@ function LandingNew() {
                 <div className="flex flex-col gap-y-24">
                     <BannerLanding />
                     <WhyLanding />
-                    <ServicesLanding />
+                    {/* <ServicesLanding /> */}
                     <ProductsLanding />
                     <FeaturedLanding />
                     <div className="py-5">
